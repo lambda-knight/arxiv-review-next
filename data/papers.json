@@ -234,30 +234,35 @@
         "index": 1,
         "title": "導入：なぜ量子誤り訂正が必要か",
         "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch01.mp3",
         "markdown": "<h2>導入：なぜ量子誤り訂正が必要か</h2>\n<h3>量子コンピュータの弱点</h3>\n<ul>\n<li>光子・トラップイオン・超伝導回路・半導体スピンなど多様な実装方式を追求中</li>\n<li><strong>共通の欠点</strong>: 量子ビット（qubit）は外部ノイズから十分に隔離することが困難</li>\n<li>古典ビット：トランジスタのオン/オフで数十億電子が区別 → 誤り余裕が大きい</li>\n<li>量子ビット：脆弱な量子状態として実現 → 誤りは<strong>必然的</strong>に発生する</li>\n</ul>\n<h3>ブレークスルー：Shor 1995年</h3>\n<ul>\n<li>Shor 1995年：量子もつれを利用した冗長符号化で誤り訂正が可能なことを発見</li>\n<li>続く研究で、物理誤り率が閾値以下なら論理誤り率を任意に小さくできることを証明</li>\n<li>これで量子コンピュータは「理論的好奇心」から「実現可能な技術」に変わった</li>\n</ul>\n<h3>量子誤り訂正が特別な理由（古典との違い）</h3>\n<table>\n<thead>\n<tr>\n<th>問題</th>\n<th>古典符号</th>\n<th>量子符号での制約</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>冗長性の付加</td>\n<td>データの複製でOK</td>\n<td><strong>複製禁止定理</strong>：量子状態は複製不可能</td>\n</tr>\n<tr>\n<td>誤りの種類</td>\n<td>ビット反転のみ</td>\n<td><strong>X誤り</strong>（ビット反転）＋<strong>Z誤り</strong>（位相反転）の2種</td>\n</tr>\n<tr>\n<td>測定</td>\n<td>任意測定可能</td>\n<td>波動関数崩壊でデータが消える → 慎重な測定が必要</td>\n</tr>\n</tbody>\n</table>\n<hr />"
       },
       {
         "index": 2,
         "title": "古典から量子へ：誤りの「デジタル化」",
         "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch02.mp3",
         "markdown": "<h2>古典から量子へ：誤りの「デジタル化」</h2>\n<h3>古典誤り訂正の基礎</h3>\n<p>3ビット反復符号 [3,1,3]：$0 \\to 000$、$1 \\to 111$</p>\n<p>$$d = 2t + 1 \\tag{2}$$</p>\n<ul>\n<li>$d$：符号距離（1つの符号語を別の符号語に変えるのに必要な最小ビット数）</li>\n<li>$t$：訂正できる誤り数</li>\n<li>[3,1,3]：$n=3$（総ビット数）、$k=1$（符号化されたビット）、$d=3$（距離）</li>\n</ul>\n<h3>量子ビットの状態</h3>\n<p>$$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle \\tag{3}$$</p>\n<p>ブロッホ球上の任意の点が量子ビットの状態：$|\\psi\\rangle = \\cos\\frac{\\theta}{2}|0\\rangle + e^{i\\phi}\\sin\\frac{\\theta}{2}|1\\rangle$</p>\n<h3>誤りのデジタル化（最重要）</h3>\n<p>任意のコヒーレント誤り $U(\\delta\\theta, \\delta\\phi)$ はパウリ行列の和に分解できる：</p>\n<p>$$U(\\delta\\theta,\\delta\\phi)|\\psi\\rangle = \\alpha_I\\mathbb{1}|\\psi\\rangle + \\alpha_X X|\\psi\\rangle + \\alpha_Z Z|\\psi\\rangle + \\alpha_{XZ}XZ|\\psi\\rangle \\tag{8}$$</p>\n<ul>\n<li><strong>X誤り</strong>（ビット反転）：$X|0\\rangle = |1\\rangle$、$X|1\\rangle = |0\\rangle$</li>\n<li><strong>Z誤り</strong>（位相反転）：$Z|0\\rangle = |0\\rangle$、$Z|1\\rangle = -|1\\rangle$（古典に対応物なし）</li>\n<li><strong>重要</strong>: スタビライザー測定が誤りの重ね合わせを射影 → X と Z だけ訂正できれば十分</li>\n</ul>\n<hr />"
       },
       {
         "index": 3,
         "title": "量子冗長性とスタビライザー測定",
         "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch03.mp3",
         "markdown": "<h2>量子冗長性とスタビライザー測定</h2>\n<h3>2量子ビット符号：量子冗長性の原理</h3>\n<p>$$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle \\xrightarrow{\\text{エンコード}} |\\psi\\rangle_L = \\alpha|00\\rangle + \\beta|11\\rangle \\tag{12}$$</p>\n<ul>\n<li>複製（クローン）ではなくもつれによる冗長性</li>\n<li>スタビライザー $Z_1Z_2$：両量子ビットがパリティを保つか検査</li>\n<li>$Z_1Z_2|\\psi\\rangle_L = |\\psi\\rangle_L$（誤りなし）→ 固有値 $+1$</li>\n<li>X誤りが発生 → 固有値 $-1$（シンドローム = 1）</li>\n</ul>\n<h3>3量子ビット反復符号 [[3,1,3]]</h3>\n<p>$|0\\rangle_L = |000\\rangle$、$|1\\rangle_L = |111\\rangle$</p>\n<p>スタビライザー：$\\mathcal{S} = \\langle Z_1Z_2,\\, Z_2Z_3 \\rangle$</p>\n<p>シンドロームによる誤り判定：</p>\n<table>\n<thead>\n<tr>\n<th>シンドローム $(s_1,s_2)$</th>\n<th>判定された誤り</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$(0,0)$</td>\n<td>誤りなし</td>\n</tr>\n<tr>\n<td>$(1,0)$</td>\n<td>$X_1$（1番目の量子ビット）</td>\n</tr>\n<tr>\n<td>$(1,1)$</td>\n<td>$X_2$（2番目の量子ビット）</td>\n</tr>\n<tr>\n<td>$(0,1)$</td>\n<td>$X_3$（3番目の量子ビット）</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li><strong>シンドロームは元の状態を壊さない</strong>（スタビライザー測定の鍵）</li>\n</ul>\n<hr />"
       },
       {
         "index": 4,
         "title": "スタビライザー形式論",
         "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch04.mp3",
         "markdown": "<h2>スタビライザー形式論</h2>\n<h3>[[n,k,d]] 符号の定義</h3>\n<p>$[[n,k,d]]$：$n$ 物理量子ビット、$k$ 論理量子ビット、距離 $d$</p>\n<p>スタビライザー群 $\\mathcal{S}$ の条件：</p>\n<p>$$\\mathcal{S} = \\{P_i \\in \\mathcal{G}_n \\mid P_i|\\psi\\rangle_L = (+1)|\\psi\\rangle_L\\ \\forall|\\psi\\rangle_L \\wedge [P_i,P_j]=0\\ \\forall(i,j)\\} \\tag{30}$$</p>\n<ul>\n<li>パウリ群の要素であること</li>\n<li>全論理状態を固有値 $+1$ で安定化すること</li>\n<li>互いに可換であること（同時測定のため）</li>\n<li>独立スタビライザー数：$m = n - k$ 個</li>\n</ul>\n<h3>論理演算子</h3>\n<p>各論理量子ビット $i$ に対して $\\bar{X}_i$（論理X）と $\\bar{Z}_i$（論理Z）：</p>\n<ul>\n<li>スタビライザーと可換</li>\n<li>$\\bar{X}_i$ と $\\bar{Z}_i$ は互いに反可換：$[\\bar{X}_i, \\bar{Z}_i]_+ = 0$</li>\n</ul>\n<p>論理量子ビット状態の操作はデコードなしに論理演算子で直接実行可能。</p>\n<hr />"
       },
       {
         "index": 5,
         "title": "表面符号（Surface Code）",
         "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch05.mp3",
         "markdown": "<h2>表面符号（Surface Code）</h2>\n<h3>なぜ表面符号か</h3>\n<ul>\n<li>現在最も実験的実装が追求されている量子誤り訂正符号</li>\n<li><strong>最近傍相互作用のみ</strong>で実装可能（長距離結合が苦手なデバイスに最適）</li>\n<li>トポロジカル符号族の一員：基本ブロック（4サイクル）を敷き詰めて構成</li>\n</ul>\n<h3>基本ブロック：4サイクル</h3>\n<p>2つのデータ量子ビット D1, D2 と 2つのアンシラ量子ビット A1, A2：</p>\n<table>\n<thead>\n<tr>\n<th>アンシラ</th>\n<th>スタビライザー</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$A_1$（赤エッジ）</td>\n<td>$X_{D_1}X_{D_2}$</td>\n</tr>\n<tr>\n<td>$A_2$（青エッジ）</td>\n<td>$Z_{D_1}Z_{D_2}$</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>$X_{D_1}X_{D_2}$ と $Z_{D_1}Z_{D_2}$ は可換（偶数個の量子ビットで非自明に交差）</li>\n</ul>\n<h3>[[5,1,2]] 表面符号</h3>\n<p>4×4サイクルを貼り合わせた最小の表面符号：$n=5$ データ量子ビット、$m=4$ スタビライザー → $k=1$ 論理量子ビット</p>\n<ul>\n<li>Xスタビライザー（赤）：X型誤りを検出</li>\n<li>Zスタビライザー（青）：Z型誤りを検出</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 7-9 参照（原論文）— 表面符号の図的表現とスタビライザー測定回路</p>\n</blockquote>\n<hr />"
       },
       {
@@ -271,6 +276,7 @@
         "index": 7,
         "title": "まとめ",
         "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch07.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch07.mp3",
         "markdown": "<h2>まとめ</h2>\n<ul>\n<li>量子誤り訂正は現実的な量子コンピュータ実現に<strong>不可欠</strong></li>\n<li>誤りのデジタル化：XとZ誤りの訂正で任意の誤りに対応可能</li>\n<li>スタビライザー形式論：符号語を損なわずに測定できる「スタビライザー」を使う</li>\n<li>表面符号：最近傍相互作用・高い閾値 $\\approx 1\\%$・スケーラブルな構造で現在の最有力候補</li>\n<li>誤り訂正符号の選択は量子コンピュータ全体の設計に影響する</li>\n</ul>\n<hr />"
       }
     ],
@@ -286,84 +292,98 @@
         "index": 1,
         "title": "研究の背景と概要",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch01.mp3",
         "markdown": "<h2>研究の背景と概要</h2>\n<ul>\n<li><strong>課題</strong>: 大規模言語モデルはデジタル領域で卓越した能力を示す一方、物理世界への展開は依然として困難</li>\n<li><strong>身体的推論（Embodied Reasoning）</strong>: ロボットが世界で行動するために必要な知識の総体</li>\n<li>3D環境の把握、物体間の関係理解、直感的物理の理解</li>\n<li><strong>キー問い</strong>: 最先端デジタルAIモデルに、汎用的かつ器用な方法で世界と対話する身体的推論能力を与えるには?</li>\n</ul>\n<p>発表された2つのモデル:\n- <strong>Gemini Robotics-ER</strong> (Embodied Reasoning): 身体的推論に特化したVLM。追加の行動データなしで空間理解・軌跡予測・把持予測が可能\n- <strong>Gemini Robotics</strong>: VLA（ビジョン・ランゲージ・アクション）モデル。クラウドバックボーン＋ローカルデコーダ構成でリアルタイム制御</p>\n<p>新規公開:\n- <strong>ERQA</strong>ベンチマーク（身体的推論の標準評価基盤）\n- 責任ある開発フレームワーク（安全性・社会的影響の評価）</p>\n<hr />"
       },
       {
         "index": 2,
         "title": "ERQA：身体的推論ベンチマーク",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch02.mp3",
         "markdown": "<h2>ERQA：身体的推論ベンチマーク</h2>\n<p>Embodied Reasoning Question Answering（ERQA）— 新規公開ベンチマーク</p>\n<ul>\n<li><strong>400問</strong>の多肢選択式VQA</li>\n<li>7カテゴリ: 空間推論・軌跡推論・行動推論・状態推定・ポインティング・多視点推論・タスク推論</li>\n<li>28%がマルチ画像問題（複数フレーム間での対応付けを要求）</li>\n</ul>\n<p>既存ベンチマークとの比較:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>RealworldQA</td>\n<td>一般的な空間・画像理解</td>\n</tr>\n<tr>\n<td>BLINK</td>\n<td>原子的視覚能力評価</td>\n</tr>\n<tr>\n<td><strong>ERQA</strong></td>\n<td><strong>物理世界で行動するために必要な能力の総体的評価（最も難しい）</strong></td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Table 1（p.5）参照: Gemini 2.0がERQA・RealworldQA・BLINKの全3ベンチマークでSOTA達成</p>\n</blockquote>\n<p>Chain-of-Thought（CoT）プロンプティングの効果:\n- CoTなし → CoTあり: Gemini 2.0 Flashの性能がGemini 2.0 Pro Experimental（CoTなし）を超える水準に\n- 「段階的な空間推論トレース」が複雑な身体的推論問題を正解に導く</p>\n<blockquote>\n<p>📊 Table 2（p.5）参照: CoT有無による性能比較</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 3,
         "title": "Gemini 2.0 の身体的推論能力",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch03.mp3",
         "markdown": "<h2>Gemini 2.0 の身体的推論能力</h2>\n<p>Gemini 2.0が習得した6種類の身体的推論能力:</p>\n<h3>2D空間理解</h3>\n<p><strong>1. 物体検出</strong> — オープンボキャブラリで2Dバウンディングボックス予測\n- 明示的なオブジェクト名だけでなく、カテゴリ・属性・機能でも検索可能\n- 例: \"こぼれたものと掃除に使えるもの\"を同時に検出</p>\n<p><strong>2. 2Dポインティング</strong> <code>[y, x]</code>\n- 物体・物体パーツ・空間概念・アフォーダンスへのポイント\n- Paco-LVIS / Pixmo-Point / Where2placeで定量評価</p>\n<blockquote>\n<p>📊 Table 3（p.7）参照: ポインティング定量評価（Gemini Robotics-ERはMolmoを3タスク中2タスクで上回る）</p>\n</blockquote>\n<p><strong>3. 2D軌跡予測</strong> — ポインティングを応用した動作軌跡生成</p>\n<p><strong>4. トップダウングラスプ予測</strong> <code>[y, x, θ]</code>\n- Gemini Robotics-ERで強化。実機のロボット制御に直結</p>\n<h3>3D空間理解</h3>\n<p><strong>5. 多視点対応</strong> — 複数カメラ視点間での3D点対応付け\n- 大幅に異なる視点間でも正確な対応を予測</p>\n<p><strong>6. 3Dバウンディングボックス検出</strong> — 単眼画像からメトリック3Dボックスを予測</p>\n<blockquote>\n<p>📊 Table 4（p.8）参照: SUN-RGBDでGemini Robotics-ERがSOTA達成</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 4,
         "title": "ゼロショット・少数ショット制御",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch04.mp3",
         "markdown": "<h2>ゼロショット・少数ショット制御</h2>\n<p>追加の行動データなしでのロボット制御実験（ALOHA 2ロボット）:</p>\n<h3>ゼロショット制御（コード生成）</h3>\n<p>Gemini 2.0 → コード生成 → API経由でロボット制御（外部モデル不要）</p>\n<pre><code>Gemini 2.0が自身で:\n- 物体検出・ポインティング\n- 状態推定・計画\n- コード生成・実行\n- フィードバック受信・再計画\n</code></pre>\n<blockquote>\n<p>📊 Table 5（p.10）参照: シミュレーションタスク成功率</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>平均成功率</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Gemini 2.0 Flash</td>\n<td>27%</td>\n</tr>\n<tr>\n<td><strong>Gemini Robotics-ER</strong></td>\n<td><strong>53%（約2倍）</strong></td>\n</tr>\n</tbody>\n</table>\n<h3>少数ショット制御（インコンテキスト学習）</h3>\n<p>10デモをプロンプトに組み込み、エンドエフェクタ姿勢の軌跡を直接出力</p>\n<blockquote>\n<p>📊 Table 6（p.10）参照: 実機ALOHA 2タスク成功率</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>シミュレーション</th>\n<th>実機</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Gemini 2.0 Flash</td>\n<td>51%</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>Gemini Robotics-ER</strong></td>\n<td><strong>65%</strong></td>\n<td><strong>65%</strong></td>\n</tr>\n</tbody>\n</table>\n<p>→ 服の折り畳みなど複雑な両腕タスクで特に効果大</p>\n<hr />"
       },
       {
         "index": 5,
         "title": "Gemini Robotics のアーキテクチャ",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch05.mp3",
         "markdown": "<h2>Gemini Robotics のアーキテクチャ</h2>\n<p>低レイテンシ・高精度なVLA実現のための2コンポーネント構成:</p>\n<pre><code>[クラウド] Gemini Robotics バックボーン\n    │  ・Gemini Robotics-ERの蒸留版\n    │  ・レイテンシ: 数秒 → 160ms以下に最適化\n    │\n    ▼\n[ロボット搭載] Gemini Robotics デコーダ\n    ・バックボーンのレイテンシを補償\n    ・低レベルアクションチャンクを50Hzで出力\n</code></pre>\n<ul>\n<li><strong>エンドツーエンドレイテンシ</strong>: 約250ms</li>\n<li><strong>有効制御周波数</strong>: <strong>50Hz</strong>（アクションチャンク方式で実現）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 14（p.11）参照: モデルアーキテクチャ概観</p>\n</blockquote>\n<p>この設計により:\n- スムーズな動作と反応的な挙動を実現（バックボーンのレイテンシにもかかわらず）\n- バックボーンの汎化能力を保持</p>\n<hr />"
       },
       {
         "index": 6,
         "title": "学習データと実験設定",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch06.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch06.mp3",
         "markdown": "<h2>学習データと実験設定</h2>\n<p><strong>データ収集</strong>:\n- <strong>ALOHA 2ロボット群</strong>で12ヶ月間収集\n- 数千時間の実世界エキスパートデモ\n- 数千種類の多様なタスク（難易度・エピソード長・器用さが多様）\n- 行動データ＋非行動データ（Webドキュメント・コード・マルチモーダルコンテンツ・身体的推論データ）</p>\n<p><strong>比較ベースライン</strong>:\n- <strong>π₀ reimplementation</strong>: 同じ多様なデータ混合で訓練した再実装版（公開版より高性能）\n- <strong>Multi-task diffusion policy</strong>: ALOHA Unleashedベースのタスク条件付き拡散ポリシー</p>\n<p>評価: すべて<strong>実世界ロボット実験</strong>（A/Bテスト＋統計的分析）</p>\n<p>Gemini Roboticsはクラウドで動作。2つのベースラインはNvidia RTX 4090搭載ワークステーションで動作。</p>\n<hr />"
       },
       {
         "index": 7,
         "title": "多様な操作タスクの実行",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch07.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch07.mp3",
         "markdown": "<h2>多様な操作タスクの実行</h2>\n<p>20タスクでの評価（洗濯室・台所・オフィス・日常活動など多様なセットアップ）:</p>\n<blockquote>\n<p>📊 Fig. 15（p.12）参照: 実験シーン例\n📊 Fig. 16（p.12）参照: 20タスクの成功率比較</p>\n</blockquote>\n<p>主な結果:\n- <strong>20タスクのうち50%以上で成功率80%超</strong>\n- 変形物体操作（\"fold pink cloth\", \"wrap the wire around the headphone\"）でベースライン圧倒\n- 困難タスク（\"open pink folder\", \"insert red block\", \"wrap wire\"）で<strong>Gemini Roboticsのみ非ゼロ成功率を達成</strong>\n- 最も器用なタスク（\"insert shoe lace\"）は多タスク設定のみでは依然困難</p>\n<p>→ 高容量モデルアーキテクチャ＋高品質な多様データ（視覚・言語・行動）の組み合わせが多タスク学習に必須</p>\n<hr />"
       },
       {
         "index": 8,
         "title": "言語指示への追従と汎化",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch08.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch08.mp3",
         "markdown": "<h2>言語指示への追従と汎化</h2>\n<p>25の言語指示 × 5シーン（訓練内＋未見シーン）での評価:</p>\n<blockquote>\n<p>📊 Fig. 17（p.14）参照: 言語指示追従の評価結果</p>\n</blockquote>\n<p>3軸での汎化評価（85タスク: 訓練内20%, 視覚28%, 指示28%, 行動24%）:</p>\n<p><strong>1. 視覚汎化</strong>: 背景・照明条件・妨害物体・テクスチャの変化に対する不変性</p>\n<p><strong>2. 指示汎化</strong>: 言い換え・タイポへの耐性・他言語・異なる抽象レベル</p>\n<p><strong>3. 行動汎化</strong>: 初期条件（物体位置）・物体インスタンス（形状・物理特性）の変化への適応</p>\n<blockquote>\n<p>📊 Fig. 21（p.15）参照: 汎化ベンチマークの平均プログレスコア</p>\n</blockquote>\n<ul>\n<li>Gemini Roboticsはすべての汎化軸でベースラインを上回る</li>\n<li>ベースラインが完全に失敗するケース（例: 他言語での指示）でも<strong>非ゼロの成功率を達成</strong></li>\n<li>大型VLMバックボーン＋SOTA視覚エンコーダ＋多様な訓練データが汎化の源泉</li>\n</ul>\n<hr />"
       },
       {
         "index": 9,
         "title": "長時間・高精度タスクへの特化",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch09.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch09.mp3",
         "markdown": "<h2>長時間・高精度タスクへの特化</h2>\n<p>各タスク2000〜5000エピソードのfine-tuningで実現:</p>\n<table>\n<thead>\n<tr>\n<th>タスク</th>\n<th>特徴</th>\n<th>成功率</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>折り紙のキツネ</strong></td>\n<td>4段階の精密な折り（両腕協調必須、ずれ不可）</td>\n<td>高</td>\n</tr>\n<tr>\n<td><strong>弁当箱詰め</strong></td>\n<td>パン袋・エネルギーバー・ぶどう・容器を順次詰める（2分以上）</td>\n<td><strong>100%</strong></td>\n</tr>\n<tr>\n<td>スペリングボードゲーム</td>\n<td>物体認識→アルファベットタイル配置</td>\n<td>高（手描きスケッチ4/6正解）</td>\n</tr>\n<tr>\n<td>カードゲーム</td>\n<td>カードの配付・持つ・出す・折るの4段階</td>\n<td>高</td>\n</tr>\n<tr>\n<td>スナップエンドウ</td>\n<td>金属トング使用（両腕協調）</td>\n<td>高</td>\n</tr>\n<tr>\n<td>ナッツのサラダ</td>\n<td>スプーン使用（背の高いコンテナからすくう）</td>\n<td>高</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Fig. 23（p.17）参照: 専門化後の成功率（平均79%）</p>\n</blockquote>\n<p><strong>重要な発見</strong>:\n- ゼロから訓練した場合（事前学習なし）: <strong>全タスクで0%成功率</strong>\n- π₀ reimplementやMulti-task diffusionも同じデータでfine-tuningしても劣る\n- → 強力な汎化ベースモデル＋多様な行動データの事前学習が特化の前提条件</p>\n<hr />"
       },
       {
         "index": 10,
         "title": "推論強化と高度な汎化",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch10.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch10.mp3",
         "markdown": "<h2>推論強化と高度な汎化</h2>\n<p>Gemini Robotics-ERの推論能力を低レベル行動に統合する実験:</p>\n<p>行動データを再ラベリング: 身体的推論能力（軌跡理解・生成）に近い形式へ変換</p>\n<p>評価カテゴリ（すべて訓練分布外）:\n- <strong>単一ステップ推論</strong>: 属性・アフォーダンスで間接的にオブジェクトを指定\n  - 例: \"ボトムライトのマウスをマッチングパイル（色合わせ）へ\"\n- <strong>意味的汎化</strong>: 未見の意味概念への対応\n  - 例: \"日本の魚料理をランチボックスへ\"→寿司を選択\n- <strong>空間理解</strong>: 未見の空間言語への対応\n  - 例: \"最小のコーラ缶を詰める\"→ミニ缶を選択</p>\n<blockquote>\n<p>📊 Fig. 24（p.18）参照: 推論強化版 vs 通常版の成功率比較</p>\n</blockquote>\n<p>推論強化版が全カテゴリで大幅に成功率向上。さらに中間ステップとして<strong>キーポイント軌跡を出力</strong>し解釈可能性も向上。</p>\n<blockquote>\n<p>📊 Fig. 25（p.18）参照: チェーン・オブ・ソートとしてのキーポイント軌跡可視化</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 11,
         "title": "新タスクへの素早い適応",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch11.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch11.mp3",
         "markdown": "<h2>新タスクへの素早い適応</h2>\n<p>長時間タスクから8つのサブタスクを選び、デモ数を変えてfine-tuning:</p>\n<blockquote>\n<p>📊 Fig. 26（p.19）参照: デモ数と成功率の関係</p>\n</blockquote>\n<p>主な結果:\n- <strong>7/8タスクで100デモ以下で70%以上の成功率</strong>\n- デモ収集コスト: 15分〜1時間（タスク難易度による）\n- 2タスクは100%成功率を達成</p>\n<p>ベースラインとの比較:\n- 易しいタスク（\"Pour lettuce\"）ではベースラインも効率的に学習\n- 困難タスク（\"Origami fox first fold\", 弁当箱系）ではベースラインが少数デモで失敗</p>\n<p>→ 強力なVLMバックボーン＋多様な行動データ事前学習が少数ショット適応の鍵</p>\n<hr />"
       },
       {
         "index": 12,
         "title": "新ロボット形態への転移",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch12.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch12.mp3",
         "markdown": "<h2>新ロボット形態への転移</h2>\n<p>ALOHA 2で訓練したGemini Roboticsを少数データで別形態に適応させる予備実験:</p>\n<p>対象プラットフォーム:\n- <strong>双腕Frankaロボット</strong>: 平行グリッパー装備\n- <strong>Apollo（Apptronik）</strong>: フルサイズヒューマノイド、5指の器用な手</p>\n<blockquote>\n<p>📊 Fig. 27（p.20）参照: 2種類のロボット形態での実験タスク例</p>\n</blockquote>\n<p><strong>双腕Frankaの結果</strong>:\n- 平均成功率 <strong>63%</strong>（シングルタスク拡散ポリシーと同等かそれ以上）</p>\n<blockquote>\n<p>📊 Fig. 28（p.20）参照: 汎化テスト（視覚擾乱・初期条件変化・物体形状変化）</p>\n</blockquote>\n<ul>\n<li><strong>視覚擾乱・初期条件・物体形状変化</strong>に対してもシングルタスク拡散ベースラインを大幅に上回る</li>\n<li>→ 汎化能力が異なる形態でも保持される</li>\n</ul>\n<hr />"
       },
       {
         "index": 13,
         "title": "安全性への取り組み",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch13.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch13.mp3",
         "markdown": "<h2>安全性への取り組み</h2>\n<p>2種類の安全性問題を対処:</p>\n<h3>1. コンテンツ安全性</h3>\n<ul>\n<li>Geminiの既存安全学習（ヘイトスピーチ・個人情報等）をGemini Roboticsが継承</li>\n<li>Gemini Robotics-ERで新しい出力モダリティ（ポインティング）に対する安全性訓練を追加</li>\n<li><strong>偏見を誘発するポインティングクエリ拒否率: 96%</strong>（ベースライン20%）</li>\n</ul>\n<h3>2. 意味的行動安全性</h3>\n<ul>\n<li>非構造化環境での物理的安全制約の遵守</li>\n<li>例: 熱いストーブにぬいぐるみを置かない・ワイングラスを直立で運ぶ</li>\n<li><strong>ASIMOVデータセット</strong>（同時公開）を活用してfine-tuning</li>\n<li>実世界の負傷報告（NEISS）から生成したテストケース</li>\n<li>Constitutional AI手法で性能改善</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 29（p.21）参照: 安全性評価結果（Gemini 2.0 FlashとGemini Robotics-ERが同等の高性能）</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 14,
         "title": "まとめと今後の課題",
         "videoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch14.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020_ch14.mp3",
         "markdown": "<h2>まとめと今後の課題</h2>\n<p><strong>4つの貢献</strong>:\n1. <strong>ERQAベンチマーク</strong>（オープンソース公開）\n2. <strong>Gemini Robotics-ER</strong>: 空間理解・軌跡予測・把持予測に優れたVLM\n3. <strong>Gemini Robotics</strong>: 50Hzリアルタイム制御、多様なタスク・形態への汎化\n4. <strong>安全性フレームワーク</strong>: コンテンツ安全性＋意味的行動安全性</p>\n<p><strong>現在の限界</strong>:\n- 長時間ビデオでの空間関係グラウンディングに課題\n- 数値予測（点・ボックス）の精度が細かい制御には不十分な場合がある\n- 推論と精密な器用さを同時に要求するタスクに課題</p>\n<p><strong>今後の課題</strong>:\n- シミュレーションを使った視覚多様性・接触豊富なデータ生成技術の開発\n- 少数データでの新形態適応\n- ゼロショットクロス形態転移の実現</p>\n<hr />"
       }
     ],
@@ -380,84 +400,98 @@
         "index": 1,
         "title": "研究の背景と課題",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch01.mp3",
         "markdown": "<h2>研究の背景と課題</h2>\n<ul>\n<li><strong>現状の問題</strong>: 身体的知能の研究はタスクごとの専門モデルが主流</li>\n<li>操作モデル・ナビゲーションモデルが別々に開発</li>\n<li>異なるタスク・環境・ロボット形態への汎化が困難</li>\n<li><strong>根本的な疑問</strong>: これらの異質な身体的意思決定問題を1つのモデルで統一できるか?</li>\n</ul>\n<p><strong>共通計算構造の発見</strong>:\n- 操作・ナビゲーション・軌跡予測は表面的に異なる\n- しかし全タスクに共通: 視覚観測＋言語指示＋形態制約 → 将来の行動/軌跡を予測</p>\n<p><strong>提案</strong>: Qwen-VLA — 単一のVLAモデルで異質な身体的意思決定を統一</p>\n<p>主な結果（Qwen-VLA-Instruct）:\n- LIBERO: <strong>97.9%</strong>\n- Simpler-WidowX: <strong>73.7%</strong>\n- RoboTwin-Easy/Hard: <strong>86.1% / 87.2%</strong>\n- R2R ナビゲーション: OSR <strong>69.0%</strong>\n- 実世界ALOHA OOD: <strong>76.9%</strong></p>\n<hr />"
       },
       {
         "index": 2,
         "title": "統一モデルの定式化",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch02.mp3",
         "markdown": "<h2>統一モデルの定式化</h2>\n<p>すべてのタスクを単一の条件付き予測問題として定式化:</p>\n<p>$$p_\\theta\\bigl(y_{t:t+H-1} \\mid o_t, x, e, z\\bigr)$$</p>\n<p>各記号の意味:\n- $o_t$: 時刻$t$の視覚コンテキスト（画像・動画・履歴）\n- $x$: タスク指示（言語）\n- $e$: 現在のロボット形態の説明（テキスト）\n- $z$: タスクファミリー識別子\n- $y_{t:t+H-1}$: 予測水平線$H$にわたる目標シーケンス</p>\n<p><strong>統一アクション空間</strong>:\n- 操作タスク: 将来のロボット行動（エンドエフェクタ位置など）\n- ナビゲーション: ナビゲーション決定/ウェイポイント\n- 軌跡中心タスク（自動運転など）: 連続座標空間での将来の軌跡\n- 自我視点データ: 人間の手首/手の動作軌跡</p>\n<blockquote>\n<p>📊 なし（数式による定式化）</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 3,
         "title": "モデルアーキテクチャ",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch03.mp3",
         "markdown": "<h2>モデルアーキテクチャ</h2>\n<p>Qwen-VLAは2つのコンポーネントで構成:</p>\n<h3>視覚言語バックボーン: Qwen3.5-4B</h3>\n<ul>\n<li>ViTで生成した視覚トークンをテキストトークン列に直接インターリーブ</li>\n<li><strong>ハイブリッドアテンション</strong>: 大半の層はゲート線形アテンション、定期的な層でグループクエリソフトマックスアテンション</li>\n<li>長いマルチモーダル列の効率的エンコードと全精度グローバル推論を両立</li>\n</ul>\n<h3>アクションエキスパート（DiTベース）</h3>\n<ul>\n<li><strong>16 DiTブロック</strong>: 各70.8M パラメータ（合計1.13B）</li>\n<li>全体のアクションエキスパートパラメータ数: 約<strong>11.5億</strong></li>\n<li>DiTブロック: 1.13B</li>\n<li>アクション投影MLP: 4.9M</li>\n<li>VLM状態変換層: 3.9M</li>\n<li>タイムステップ埋め込み: 2.8M</li>\n<li>出力AdaLNモジュレーション: 4.7M</li>\n<li>VLM隠れ状態とノイズ付きアクションチャンクを連結してジョイントセルフアテンション処理</li>\n<li><strong>フローマッチング目的関数</strong>で学習。推論時は少数のオイラー積分ステップで低遅延制御</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 2（論文）参照: モデルアーキテクチャ概観（バックボーン＋アクションエキスパート）</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 4,
         "title": "エンボディメント対応プロンプト",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch04.mp3",
         "markdown": "<h2>エンボディメント対応プロンプト</h2>\n<p>複数ロボット形態を単一モデルで扱うための重要な仕組み:</p>\n<p>各学習サンプルに<strong>ロボット固有のテキストプロンプト</strong>を前置:</p>\n<pre><code>The robot is {robot_tag} with {single arm / dual arms}\n[, waist][, and mobile base].\nThe control frequency is {FPS} Hz.\nPlease predict the next {chunk_size} control actions\nto execute the following task: {ori_instruction}.\n</code></pre>\n<ul>\n<li><code>robot_tag</code>, オプション修飾子（waist, mobile base）: 形態ごとに設定</li>\n<li><code>FPS</code>, <code>chunk_size</code>: データセットの制御周波数・予測水平線を反映</li>\n</ul>\n<p><strong>意義</strong>:\n- アーキテクチャを変えることなく異なる制御モード・アクション次元・時間水平線を扱える\n- 形態固有の出力ヘッドが不要: 単一のDiTパラメータセットが全制御モードを処理\n- 推論時はプロンプトのみを変更するだけで新形態に対応</p>\n<blockquote>\n<p>📊 Table 2（論文）参照: 事前学習コーパスが対象とする代表的なロボット形態</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 5,
         "title": "統一アクション表現と学習目標",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch05.mp3",
         "markdown": "<h2>統一アクション表現と学習目標</h2>\n<h3>統一アクションテンソル</h3>\n<p>$\\mathbf{Y} \\in \\mathbb{R}^{H \\times K}$ — 固定の予測水平線$H$と固定チャンネル次元$K$</p>\n<ul>\n<li>制御信号は$c \\leq K$チャンネルを使用。残りは0パディング</li>\n<li>有効チャンネルを記録するバイナリマスク: $\\mathbf{M} \\in \\{0,1\\}^{H \\times K}$</li>\n</ul>\n<h3>アクション正規化</h3>\n<p>各データセット$k$の各次元$d$に対してパーセンタイル統計（1%・99%）を使って正規化:</p>\n<p>$$\\tilde{a}_d = 2 \\cdot \\frac{a_d - q^k_{01}}{q^k_{99} - q^k_{01}} - 1$$</p>\n<ul>\n<li>結果を$[-1, 1]$にクリッピング</li>\n<li>形態間のスケール差を除去しつつ各ソース内の相対的な動作構造を保持</li>\n</ul>\n<h3>フローマッチング損失</h3>\n<p>チャンネルマスク付きの2レベル平均化:</p>\n<p>チャンネル$k$ごとの損失:</p>\n<p>$$\\ell_k = \\frac{\\displaystyle\\sum_{h=1}^{H} M_{h,k} \\left\\| \\bigl(v_\\theta(\\mathbf{Y}_\\tau, \\tau \\mid o_{1:t}, x, e, z) - (\\mathbf{Y}_1 - \\mathbf{Y}_0)\\bigr)_{h,k} \\right\\|_2^2}{\\displaystyle\\sum_{h=1}^{H} M_{h,k}}$$</p>\n<p>全アクション損失（$c$個の有効チャンネルの平均）:</p>\n<p>$$\\mathcal{L}_{\\text{act}} = \\mathbb{E}_{\\tau, \\mathbf{Y}_0, \\mathbf{Y}_1}\\!\\left[\\frac{1}{c}\\sum_{k=0}^{c-1}\\ell_k\\right]$$</p>\n<ul>\n<li>線形内挿: $\\mathbf{Y}_\\tau = (1-\\tau)\\mathbf{Y}_0 + \\tau\\mathbf{Y}_1$（$\\tau \\in [0,1]$）</li>\n<li>パディングされた位置は完全に勾配から除外</li>\n<li>各制御次元が形態に関わらず等しく勾配に貢献</li>\n</ul>\n<hr />"
       },
       {
         "index": 6,
         "title": "4段階学習レシピ",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch06.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch06.mp3",
         "markdown": "<h2>4段階学習レシピ</h2>\n<p>大脳と小脳の役割分担に似た2モジュール間の非対称な初期状態をどう克服するか:\n- バックボーン: 大規模プレトレーニング済みで強力な表現を持つ\n- DiTアクションデコーダ: ランダム初期化</p>\n<h3>圧縮・解凍の視点</h3>\n<p>言語指示「赤いカップを取ってください」 → 数トークン（圧縮された意図）\n対応する行動軌跡 → 数千の高次元ジョイント位置値（高次元）</p>\n<p>T2A（Text-to-Action）はこの<strong>次元ギャップを埋める構造的な解凍問題</strong>として捉える。</p>\n<h3>4ステージ</h3>\n<table>\n<thead>\n<tr>\n<th>ステージ</th>\n<th>名前</th>\n<th>内容</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>I</td>\n<td>T2A</td>\n<td>VLMを固定。DiTのみ言語＋行動（画像なし）で訓練</td>\n</tr>\n<tr>\n<td>II</td>\n<td>CPT（継続事前学習）</td>\n<td>両モジュールを解凍。異質な全データ混合で訓練（シミュ＋実機）</td>\n</tr>\n<tr>\n<td>III</td>\n<td>SFT（教師あり微調整）</td>\n<td>2並列トラック: 多タスク汎用SFT + 実機ローカルテレオペレーションデータ</td>\n</tr>\n<tr>\n<td>IV</td>\n<td>RL（強化学習）</td>\n<td>SFTチェックポイントからPPOでタスク成功報酬を最適化</td>\n</tr>\n</tbody>\n</table>\n<hr />"
       },
       {
         "index": 7,
         "title": "大規模ロボット操作データ",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch07.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch07.mp3",
         "markdown": "<h2>大規模ロボット操作データ</h2>\n<p>事前学習コーパスの<strong>74.2%</strong>がロボット操作軌跡:</p>\n<h3>公開データセット（10,000時間以上）</h3>\n<ul>\n<li>RobotSet, Galaxea, AgiBot World, RoboCOIN, RoboMIND V1/V2</li>\n<li>RDT-1B, DROID, BridgeData V2, RH20T, RT-1, BC-Z など</li>\n</ul>\n<p>カバー範囲: テーブルトップ操作・モバイル操作・両腕操作・5指器用操作・野外タスク</p>\n<h3>自社データ（合計の約20%）</h3>\n<ul>\n<li>独自に収集した1,000時間以上の実ロボット軌跡</li>\n<li>スケーラブルなシミュレーションパイプライン（RoboInF）で生成した<strong>8M以上の合成シミュレーション軌跡</strong>（合計の3.7%）</li>\n</ul>\n<blockquote>\n<p>📊 Table 1（論文）参照: 事前学習データ混合の構成と重みサンプリング</p>\n</blockquote>\n<h3>シミュレーションパイプラインの概要</h3>\n<ul>\n<li>IsaacLab環境 + cuRoboの衝突回避プランニング</li>\n<li>20シーン×10オブジェクト配置 = 200基本シーン</li>\n<li>450操作タスク（短期・長期水平線）</li>\n<li>各タスクに300成功軌跡（照明・カメラポーズ・背景・テクスチャなど多様化）</li>\n<li>359,848の完全成功軌跡（サブタスクセグメントを含む）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3（論文）参照: 合成シミュレーションパイプライン概観</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 8,
         "title": "自我視点・合成・ナビゲーションデータ",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch08.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch08.mp3",
         "markdown": "<h2>自我視点・合成・ナビゲーションデータ</h2>\n<h3>自我視点の人間データ（6.0%）</h3>\n<p>ロボットのテレオペレーションより<strong>豊富かつスケーラブルな操作経験源</strong>:</p>\n<ul>\n<li>Ego4D / EPIC-KITCHENS（VITRA処理済み）</li>\n<li>EgoDex: Apple Vision Pro使用, 829時間, 194多様な卓上タスク</li>\n<li>EgoVerse: 1,300時間以上, 1,965タスク</li>\n<li>Xperience: 同期された深度・手/体のモーションキャプチャ</li>\n</ul>\n<p>アクション表現: SE(3)手首変換（6次元×2手）＋<strong>主成分固有把持（10次元×2手、計32次元）</strong></p>\n<h3>ナビゲーションデータ（7.5%）</h3>\n<p>長期水平線軌跡＋豊富な視覚情報:\n- 指示追従ナビゲーション（4.3%）: 移動プリミティブ＋テキストランドマーク\n- 物体探索（2.3%）: 大規模屋内環境での物体発見\n- 目標追跡（1.0%）: 移動ターゲットの追従</p>\n<h3>視覚言語データ（8.5%）</h3>\n<p>意味的グラウンディング・細粒度指示追従・一般的視覚推論を強化:</p>\n<ul>\n<li><strong>細粒度身体的行動キャプション</strong>: 48,000個の動画-キャプションペア（13次元でアノテーション）</li>\n<li>行動プリミティブ・アクター識別・接触領域・源泉/目標位置・軌跡と向き・グリッパー状態</li>\n<li><strong>自動運転VQA</strong>（2.4%）: 時間的場面理解・周囲視野空間推論・言語グラウンド化局所化</li>\n<li><strong>2Dバウンディングボックスグラウンディング</strong>（2.5%）: 言語条件付き操作の前提となる空間理解</li>\n<li><strong>一般視覚言語データ</strong>（3.4%）: キャプション・VQA・OCR・空間関係予測など</li>\n</ul>\n<hr />"
       },
       {
         "index": 9,
         "title": "ポスト訓練：SFT と強化学習",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch09.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch09.mp3",
         "markdown": "<h2>ポスト訓練：SFT と強化学習</h2>\n<p>T2A+CPTで生成したQwen-VLA-Baseを精密化する2段階:</p>\n<h3>マルチタスクSFT</h3>\n<p>データ構成:\n1. 視覚言語サンプル（VQA・空間グラウンディング・行動キャプション）\n2. シミュレーション操作デモ（単腕・双腕・ヒューマノイド、チャンクサイズ16）\n3. VLNエピソード（ウェイポイントチャンク8）</p>\n<p>損失重み付け:\n- 視覚言語 次トークン予測: <strong>0.1</strong>\n- 操作・ナビゲーション行動: <strong>1.0</strong></p>\n<h3>強化学習（PPO）</h3>\n<p>模倣ベースのSFTではクローズドループタスク成功が直接最適化できない問題を解決。</p>\n<p><strong>PPOクリッピド代理目的関数</strong>:</p>\n<p>$$\\mathcal{L}^{\\text{actor}}(\\theta) = -\\mathbb{E}_t\\Big[\\min\\!\\Big(r_t(\\theta)\\hat{A}_t,\\;\\text{clip}(r_t(\\theta), 1{-}\\epsilon, 1{+}\\epsilon)\\hat{A}_t\\Big)\\Big]$$</p>\n<ul>\n<li>$r_t(\\theta) = \\pi_\\theta(a_t \\mid s_t) / \\pi_{\\theta_{\\text{old}}}(a_t \\mid s_t)$: 重要度比率</li>\n<li>$\\hat{A}_t$: GAE優位性推定（$\\gamma=0.99$, $\\lambda=0.95$）</li>\n<li>クリッピング閾値: $\\epsilon=0.2$</li>\n</ul>\n<p><strong>フローマッチングでのログ確率推定</strong>:\n- 決定論的確率流ODEに対応するSDEに変換（各オイラーステップにノイズを注入）\n- 遷移を明示的ガウシアンとして表現→解析的に対数確率を計算可能</p>\n<p><strong>RLインフラ</strong>:\n- 128個の並列環境インスタンス\n- アクションチャンク長H=16\n- 評価時温度: τ=0.6（シャープな行動分布）\n- 報酬: タスク成功/失敗の2値（0または1）\n- SimplerEnvのみでRL実施 → 他環境へのゼロショット転移をテスト</p>\n<hr />"
       },
       {
         "index": 10,
         "title": "シミュレーション操作実験",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch10.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch10.mp3",
         "markdown": "<h2>シミュレーション操作実験</h2>\n<p>4つのシミュレーション環境での包括的評価:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>設定</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>LIBERO</td>\n<td>単腕テーブルトップ（4分割: Spatial/Object/Goal/Long）</td>\n</tr>\n<tr>\n<td>Simpler-WidowX</td>\n<td>real-to-sim評価（WidowXアーム）</td>\n</tr>\n<tr>\n<td>RoboCasa-GR1</td>\n<td>両腕ヒューマノイド（24キッチンタスク）</td>\n</tr>\n<tr>\n<td>RoboTwin 2.0</td>\n<td>両腕50タスク（Easy/Hard）</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Table 4（論文）参照: ベースラインとの比較（Qwen-VLA-Instruct）</p>\n</blockquote>\n<p><strong>汎化モデルが専門化モデルを上回る</strong>:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>Qwen-VLA-Instruct</th>\n<th>最良の専門化モデル</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>LIBERO</td>\n<td><strong>97.9%</strong></td>\n<td>〜98%</td>\n</tr>\n<tr>\n<td>Simpler-WidowX</td>\n<td><strong>73.7%</strong></td>\n<td>StarVLA-OFT 64.6%</td>\n</tr>\n<tr>\n<td>RoboTwin-Easy</td>\n<td><strong>86.1%</strong></td>\n<td>ABot-M0 86.0%</td>\n</tr>\n<tr>\n<td>RoboTwin-Hard</td>\n<td><strong>87.2%</strong></td>\n<td>ABot-M0 85.0%</td>\n</tr>\n<tr>\n<td>RoboCasa-GR1</td>\n<td><strong>56.7%</strong></td>\n<td>Being-H0.5 53.3%</td>\n</tr>\n</tbody>\n</table>\n<p>事前学習の効果（BASEとInstruct比較）:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>Base</th>\n<th>Instruct</th>\n<th>改善幅</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>LIBERO</td>\n<td>90.8%</td>\n<td>97.9%</td>\n<td>+7.1pt</td>\n</tr>\n<tr>\n<td>Simpler-WidowX</td>\n<td>64.3%</td>\n<td>73.7%</td>\n<td>+9.4pt</td>\n</tr>\n<tr>\n<td>RoboTwin-Easy</td>\n<td>64.3%</td>\n<td>86.1%</td>\n<td>+21.8pt</td>\n</tr>\n<tr>\n<td>RoboTwin-Hard</td>\n<td>66.4%</td>\n<td>87.2%</td>\n<td>+20.8pt</td>\n</tr>\n</tbody>\n</table>\n<hr />"
       },
       {
         "index": 11,
         "title": "実世界実験",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch11.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch11.mp3",
         "markdown": "<h2>実世界実験</h2>\n<p>ALOHAロボット（双腕6-DoF + 3カメラ）でのリアル実験:</p>\n<p>2モデル比較:\n- Qwen-VLA-aloha <strong>w/o pretrain</strong>: ゼロから訓練\n- Qwen-VLA-aloha <strong>w/ pretrain</strong>: Qwen-VLA-Baseからfine-tuning</p>\n<h3>インドメイン結果（6タスクカテゴリ）</h3>\n<table>\n<thead>\n<tr>\n<th>タスク</th>\n<th>w/o pretrain</th>\n<th>w/ pretrain</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ピック＆プレース</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>テーブル清掃</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>ボウルスタッキング</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>ボウル＆物体配置</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>タオル折り</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>細粒度操作</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td><strong>平均</strong></td>\n<td><strong>48.5%</strong></td>\n<td><strong>83.6%</strong></td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Table 5（論文）参照: インドメイン詳細結果</p>\n</blockquote>\n<h3>OOD結果（5汎化設定）</h3>\n<table>\n<thead>\n<tr>\n<th>汎化設定</th>\n<th>w/ pretrain</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>カラー汎化</td>\n<td>高</td>\n</tr>\n<tr>\n<td>インスタンス汎化</td>\n<td>高</td>\n</tr>\n<tr>\n<td>位置汎化</td>\n<td>高</td>\n</tr>\n<tr>\n<td>背景汎化</td>\n<td><strong>80.8%</strong></td>\n</tr>\n<tr>\n<td>指示汎化</td>\n<td><strong>84.6%</strong></td>\n</tr>\n<tr>\n<td><strong>平均OOD</strong></td>\n<td><strong>76.9%</strong></td>\n</tr>\n</tbody>\n</table>\n<p>事前学習なし（48.5%→83.6%）とOODでの大幅な差（~40pt）が事前学習の価値を示す。</p>\n<blockquote>\n<p>📊 Table 6（論文）参照: OOD詳細結果</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 12,
         "title": "ナビゲーション実験",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch12.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch12.mp3",
         "markdown": "<h2>ナビゲーション実験</h2>\n<p>VLN-CE（連続環境での視覚言語ナビゲーション）での評価:</p>\n<p>テストセット: R2R Val-Unseen / RxR Val-Unseen</p>\n<blockquote>\n<p>📊 Table 7（論文）参照: ナビゲーション結果比較</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>R2R OSR</th>\n<th>R2R SR</th>\n<th>RxR SR</th>\n<th>RxR SPL</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>StreamVLN</td>\n<td>64.2</td>\n<td>56.9</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>Qwen-VLA-Instruct</strong></td>\n<td><strong>69.0</strong></td>\n<td><strong>57.5</strong></td>\n<td><strong>59.6</strong></td>\n<td><strong>47.8</strong></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>R2R Val-Unseen: Oracle Success Rate（OSR）で最良、SR 57.5%</li>\n<li>RxR Val-Unseen（より困難）: SR・SPL両方でベースラインをリード</li>\n<li>操作とナビゲーションのジョイント学習でどちらも維持</li>\n</ul>\n<hr />"
       },
       {
         "index": 13,
         "title": "アブレーション分析",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch13.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch13.mp3",
         "markdown": "<h2>アブレーション分析</h2>\n<p>各コンポーネントの寄与をSimplserEnvおよび実験で検証:</p>\n<p><strong>各学習ステージの貢献</strong>:\n1. T2A（テキスト-行動事前学習）: アクションデコーダに言語インデックス付き行動プリオルを確立\n2. CPT（継続事前学習）: ビジョングラウンディングの獲得、シミュと実機の両分布を統一\n3. SFT: 特定タスクへの精密なアライメント\n4. RL: タスク成功の直接最適化（特にOOD設定で貢献大）</p>\n<p><strong>エンボディメント対応プロンプトの重要性</strong>:\n- プロンプトなしで複数形態を学習 → 異なるロボット間での行動信号の混同が発生\n- プロンプトありで各形態が独立した制御セマンティクスを学習</p>\n<p><strong>データ多様性の影響</strong>:\n- 単一形態データのみで訓練 vs 異質な混合データで訓練\n- 混合データが操作・ナビゲーション両方のOOD汎化を大幅に改善</p>\n<hr />"
       },
       {
         "index": 14,
         "title": "まとめ",
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch14.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch14.mp3",
         "markdown": "<h2>まとめ</h2>\n<p><strong>4つの主要貢献</strong>:\n1. <strong>Qwen-VLA</strong>: 操作・ナビゲーション・自我視点データを共有アクション-軌跡空間で統一するVLAモデル\n2. <strong>大規模ジョイント事前学習</strong>: 異質なデータソース（操作・自我視点・合成・ナビ・VL）を横断する事前学習\n3. <strong>段階的学習レシピ</strong>: T2A→CPT→SFT→RLの4段階で離散言語トークンと連続行動軌跡のギャップを橋渡し\n4. <strong>包括的評価</strong>: 複数のシミュレーション・実世界・ナビゲーションベンチマークでの評価</p>\n<p><strong>主な発見</strong>:\n- 単一の汎化モデルが多くの専門化モデルを上回ることが可能\n- 大規模事前学習はインドメイン・OOD両方の性能向上に不可欠\n- 操作とナビゲーションのジョイント学習は互いに干渉しない\n- RLによる成功報酬最適化がOOD汎化を改善</p>\n<hr />"
       }
     ],
@@ -630,37 +664,43 @@
         "index": 1,
         "title": "トーリックコードTOR(k) ── 定義と保護空間",
         "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch01.mp4",
-        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch01.mp3"
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch01.mp3",
+        "markdown": "<h2>トーリックコードTOR(k) ── 定義と保護空間</h2>\n<h3>TOR(k)：トーラス上の格子符号</h3>\n<p>$k \\times k$ 正方格子をトーラス上に描き、各辺にスピン（量子ビット）を置く（合計 $n = 2k^2$ 量子ビット）。</p>\n<p>各頂点 $s$ と各面 $p$ に対してスタビライザー演算子を定義：</p>\n<p>$$A_s = \\prod_{j \\in \\text{star}(s)} \\sigma_j^x \\qquad B_p = \\prod_{j \\in \\text{boundary}(p)} \\sigma_j^z \\tag{1}$$</p>\n<ul>\n<li>$A_s$：頂点 $s$ に接する辺のパウリ $X$ 積</li>\n<li>$B_p$：面 $p$ の境界辺のパウリ $Z$ 積</li>\n<li>$A_s$ と $B_p$ は互いに可換（辺を 0 本または 2 本共有するため）</li>\n</ul>\n<h3>保護された部分空間 $\\mathcal{L}$</h3>\n<p>$$\\mathcal{L} = \\bigl\\{|\\xi\\rangle \\in \\mathcal{N} : A_s|\\xi\\rangle = |\\xi\\rangle,\\ B_p|\\xi\\rangle = |\\xi\\rangle \\text{ for all } s, p\\bigr\\} \\tag{2}$$</p>\n<ul>\n<li>$m = 2k^2 - 2$ 個の独立スタビライザーが存在（2つの積関係のため）</li>\n<li>$\\dim \\mathcal{L} = 2^{n-m} = 4$（2量子ビット分の情報を保護）</li>\n<li>非収縮的ループ演算子 $Z_1, Z_2, X_1, X_2$ が $\\mathcal{L}$ 上の完全な演算子代数を生成</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 1 参照（原論文）— トーラス上の正方格子</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 2,
         "title": "コードの誤り訂正能力とハミルトニアンH₀",
         "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch02.mp4",
-        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch02.mp3"
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch02.mp3",
+        "markdown": "<h2>コードの誤り訂正能力とハミルトニアンH₀</h2>\n<h3>ハミルトニアンによる物理的実現</h3>\n<p>$$H_0 = -\\sum_s A_s - \\sum_p B_p \\tag{4}$$</p>\n<ul>\n<li>基底状態 = 保護された部分空間 $\\mathcal{L}$（4重縮退）</li>\n<li>すべての励起状態はエネルギーギャップ $\\Delta E \\geq 2$ で分離</li>\n<li><strong>誤りは物理レベルで自動訂正</strong>: 冷却（熱浴との結合）によりノイズ誘起励起が抑制される</li>\n</ul>\n<h3>誤り訂正能力</h3>\n<ul>\n<li>最小誤りの重さ（距離）は $d = k$：格子の線形サイズ</li>\n<li>$k$ を大きくするほど多くのエラーを訂正できる（$k \\to \\infty$ で任意精度）</li>\n<li>論理的誤りには非収縮的ループ（長さ $k$ 以上）の演算子が必要 → 局所ノイズは論理情報を破壊できない</li>\n</ul>\n<h3>摂動安定性</h3>\n<p>局所摂動 $V$ に対するエネルギー分裂は：</p>\n<p>$$\\text{splitting} \\sim \\exp(-aL)$$</p>\n<ul>\n<li>$L$：格子の最小寸法</li>\n<li>$a$：虚波数（実効質量と励起ギャップから決まる定数）</li>\n<li>非収縮的ループを含まない局所摂動は保護部分空間を全く分裂させない</li>\n</ul>\n<hr />"
       },
       {
         "index": 3,
         "title": "アーベルアニオン ── 電荷と磁気渦の統計",
         "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch03.mp4",
-        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch03.mp3"
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch03.mp3",
+        "markdown": "<h2>アーベルアニオン ── 電荷と磁気渦の統計</h2>\n<h3>励起（粒子）の生成</h3>\n<p>文字列演算子（式5）による2粒子対の生成：</p>\n<p>$$S^z(t) = \\prod_{j \\in t} \\sigma_j^z \\qquad S^x(t') = \\prod_{j \\in t'} \\sigma_j^x \\tag{5}$$</p>\n<ul>\n<li>$z$型粒子（<strong>電荷</strong>）：頂点上に住む。$A_s = -1$ の制約を破る</li>\n<li>$x$型粒子（<strong>渦</strong>）：面の中心に住む。$B_p = -1$ の制約を破る</li>\n<li>粒子は必ず対（偶数個）で生成される（$\\prod_s A_s = 1$, $\\prod_p B_p = 1$ のため）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3 参照（原論文）— 文字列演算子と粒子の生成</p>\n</blockquote>\n<h3>アベリアンエニオン：ブレイディングの位相</h3>\n<p>$x$ 型粒子が $z$ 型粒子の周りを1周すると：</p>\n<p>$$|\\Psi_\\text{final}\\rangle = S^x(c)\\,S^z(t)\\,|\\psi^x(q)\\rangle = -|\\Psi_\\text{initial}\\rangle$$</p>\n<ul>\n<li>$S^x(c)$ と $S^z(t)$ が<strong>反可換</strong>であることから位相因子 $-1$ が生じる</li>\n<li>同種粒子（z-z または x-x）では位相変化なし</li>\n<li>これが<strong>エニオン</strong>（abelian anyon）の定義：ボソンでもフェルミオンでもない奇妙な統計</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4 参照（原論文）— x型粒子がz型粒子の周りを回る過程</p>\n</blockquote>\n<h3>量子ゲートへの応用と限界</h3>\n<ul>\n<li>$z$ 型粒子をトーラスの非収縮的ループ $c_{z1}, c_{z2}$ に沿って動かすと $Z_1, Z_2$ を実装</li>\n<li>しかし $\\sigma_z, \\sigma_x$ のみでは<strong>完全な量子ゲートの基底にならない</strong></li>\n<li>普遍量子計算にはより豊かな演算が必要 → 非アベリアンエニオンが必要</li>\n</ul>\n<hr />"
       },
       {
         "index": 4,
         "title": "量子二重体D(G) ── 非アーベルアニオンの代数的基盤",
         "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch04.mp4",
-        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch04.mp3"
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch04.mp3",
+        "markdown": "<h2>量子二重体D(G) ── 非アーベルアニオンの代数的基盤</h2>\n<h3>量子ダブル $\\mathcal{D}(G)$ のモデル</h3>\n<p>有限群 $G$ を使ったより一般的なモデル（Hopf 代数の構造）：</p>\n<p>$$\\mathcal{D}(G) = \\mathbb{C}[G] \\otimes \\mathbb{C}(G)$$</p>\n<ul>\n<li>$\\mathbb{C}[G]$：群代数（位置空間）</li>\n<li>$\\mathbb{C}(G)$：関数代数（運動量空間）</li>\n<li>両者を合わせた双交差積（bicrossed product）が量子ダブルを定義</li>\n</ul>\n<h3>粒子の型と表現論</h3>\n<ul>\n<li>各粒子は群 $G$ の<strong>共役類</strong> $C$ と<strong>既約表現</strong> $\\rho$（中心化群 $N_C$ の）の対 $(C, \\rho)$ で分類</li>\n<li>$G = \\mathbb{Z}_2 \\times \\mathbb{Z}_2$ の場合：トーリック符号の4種類の粒子（真空・電荷・渦・フェルミオン）を回収</li>\n<li>$n \\geq 3$ 個の粒子では<strong>隠れた量子自由度</strong>が出現：局所測定で知ることができない非局所情報</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 5 参照（原論文）— 量子ダブルのモジュラーテンソル圏</p>\n</blockquote>\n<hr />"
       },
       {
         "index": 5,
         "title": "リボン演算子とホップ代数 ── 粒子対の生成と代数構造",
         "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch05.mp4",
-        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch05.mp3"
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch05.mp3",
+        "markdown": "<h2>リボン演算子とホップ代数 ── 粒子対の生成と代数構造</h2>\n<h3>リボン演算子 $F^{(h,g)}$</h3>\n<p>格子上のリボン（面・辺の交互列）に沿った演算子：</p>\n<p>$$F^{(h,g)}(t) : \\text{リボン } t \\text{ の始端に型 } (h,g) \\text{ の粒子対を生成・移動}$$</p>\n<ul>\n<li>$h \\in G$：磁気電荷（辺の相）</li>\n<li>$g \\in G$：電気電荷（頂点の相）</li>\n<li><strong>リボン演算子の代数</strong>: $F^{(h,g)} \\cdot F^{(h',g')} = \\delta_{h,h'} F^{(h,gg')}$（部分的な積関係）</li>\n</ul>\n<h3>Hopf代数の構造</h3>\n<p>量子ダブル $\\mathcal{D}(G)$ はHopf代数：\n- <strong>積</strong>：$\\Delta(a) = a \\otimes a$（群代数）\n- <strong>余積</strong>：$\\epsilon(f) = f(e)$（$e$ は単位元）\n- <strong>アンティポード</strong>：$S(g) = g^{-1}$\n- <strong>R行列</strong>（普遍R元素）：$R = \\sum_{g \\in G} e_g \\otimes g$ がブレイディングを制御</p>\n<h3>粒子の生成・移動・消滅</h3>\n<p>リボン演算子は量子ダブルの表現空間で作用：\n- $n = 2$ 粒子：基底状態は1次元（粒子は単一量子数）\n- $n = 4$ 粒子：基底状態の次元は融合規則で決まる\n- 融合と分裂の規則：ペンタゴン等式・ヘキサゴン等式（コヒーレンス条件）</p>\n<hr />"
       },
       {
         "index": 6,
         "title": "ブレイディングと融合 ── Section 6の位相的演算子",
         "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch06.mp4",
-        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch06.mp3"
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch06.mp3",
+        "markdown": "<h2>ブレイディングと融合 ── Section 6の位相的演算子</h2>\n<h3>非アベリアンブレイディング</h3>\n<p>n個の粒子の状態が住む保護空間 $\\mathcal{M}_{d_1,\\ldots,d_n}$ の次元は粒子の型に依存：</p>\n<p>$$\\dim \\mathcal{M}_{d_1,\\ldots,d_n} = \\sum_{\\text{融合チャンネル}} N_{d_1 d_2}^{e} N_{e d_3}^{f} \\cdots$$</p>\n<ul>\n<li>粒子を互いに周回させる（ブレイディング）と $\\mathcal{M}$ 上の<strong>ユニタリ変換</strong>が実現される</li>\n<li>この変換が量子ゲートに対応する</li>\n<li><strong>耐故障性</strong>: ゲートの精度はブレイディングの位相幾何学的性質に依存し、局所的ノイズの影響を受けない</li>\n</ul>\n<h3>$S_5$ 群による普遍量子計算</h3>\n<p>5次対称群 $G = S_5$ を使うと：</p>\n<ul>\n<li>粒子の型 $d$ として特定の表現を選ぶと <strong>普遍量子計算</strong>が実現される</li>\n<li>ブレイディング群の表現が量子ゲートの完全な基底を生成</li>\n<li>融合による測定を加えることでBQP全体が計算可能</li>\n</ul>\n<h3>融合による測定</h3>\n<ul>\n<li>粒子を対で近づけると<strong>融合</strong>（消滅）が起こる</li>\n<li>融合結果を観測することが量子測定に対応する</li>\n<li>粒子の型（表現論的な分類）によって可能な融合チャンネルが決まる</li>\n</ul>\n<h3>まとめ：なぜ位相的量子計算が強力か</h3>\n<table>\n<thead>\n<tr>\n<th>特徴</th>\n<th>通常の量子計算</th>\n<th>位相的量子計算</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>誤り訂正</td>\n<td>能動的（アルゴリズム）</td>\n<td>受動的（物理的保護）</td>\n</tr>\n<tr>\n<td>ゲートの精度</td>\n<td>ハードウェアに依存</td>\n<td>位相不変量で保証</td>\n</tr>\n<tr>\n<td>閾値精度</td>\n<td>$\\sim 10^{-4}$ 必要</td>\n<td>不要（概念的に）</td>\n</tr>\n<tr>\n<td>実装の困難さ</td>\n<td>高精度制御が必要</td>\n<td>エニオンを扱える物質が必要</td>\n</tr>\n</tbody>\n</table>\n<hr />"
       }
     ]
   }

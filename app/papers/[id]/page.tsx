@@ -34,10 +34,9 @@ export default async function PaperPage({ params }: { params: Promise<{ id: stri
                 <audio controls style={{ width: "100%", marginTop: 8 }} src={ch.audioUrl} />
               )}
               {ch.markdown && (
-                <details style={{ marginTop: 12 }}>
-                  <summary>解説スライド（クリックで展開）</summary>
+                <div style={{ marginTop: 12 }}>
                   <MathSlide html={ch.markdown} />
-                </details>
+                </div>
               )}
             </section>
           ))}
