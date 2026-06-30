@@ -1,0 +1,460 @@
+[
+  {
+    "id": "1106.1445",
+    "title": "From Classical to Quantum Shannon Theory — Part II 解説",
+    "iaId": "paper-explain-1106-1445",
+    "iaUrl": "https://archive.org/details/paper-explain-1106-1445",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "量子状態とヒルベルト空間",
+        "videoUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch01.mp3",
+        "markdown": "<h2>量子状態とヒルベルト空間</h2>\n<h3>複素ヒルベルト空間</h3>\n<p>量子力学の舞台は <strong>複素ヒルベルト空間</strong> $\\mathcal{H}$。</p>\n<p>$$\\mathcal{H} = \\mathbb{C}^d, \\quad d = 2^n \\text{（n量子ビット）}$$</p>\n<p><strong>ディラック記法（ブラケット記法）:</strong>\n- ケット: $|\\psi\\rangle \\in \\mathcal{H}$（列ベクトル）\n- ブラ: $\\langle\\psi| = |\\psi\\rangle^\\dagger$（行ベクトル＝エルミート転置）\n- 内積: $\\langle\\phi|\\psi\\rangle \\in \\mathbb{C}$</p>\n<h3>純粋状態</h3>\n<p>規格化された状態ベクトル $|\\psi\\rangle$ で表される状態を<strong>純粋状態</strong>という。</p>\n<p>$$\\langle\\psi|\\psi\\rangle = 1$$</p>\n<p><strong>量子ビット（qubit）の例:</strong></p>\n<p>$$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle, \\quad |\\alpha|^2 + |\\beta|^2 = 1$$</p>\n<ul>\n<li>$|0\\rangle = \\begin{pmatrix}1\\\\0\\end{pmatrix}$, $|1\\rangle = \\begin{pmatrix}0\\\\1\\end{pmatrix}$（計算基底）</li>\n<li>$\\alpha, \\beta \\in \\mathbb{C}$: 複素確率振幅</li>\n<li>$|\\alpha|^2$: 0を測定する確率、$|\\beta|^2$: 1を測定する確率</li>\n</ul>\n<p><strong>ブロッホ球（Bloch sphere）:</strong></p>\n<p>$$|\\psi\\rangle = \\cos\\frac{\\theta}{2}|0\\rangle + e^{i\\varphi}\\sin\\frac{\\theta}{2}|1\\rangle$$</p>\n<blockquote>\n<p>📊 Fig. 3.1 参照（原論文）: ブロッホ球上の点として純粋な量子ビット状態を表す</p>\n</blockquote>\n<ul>\n<li>$\\theta \\in [0, \\pi]$: 極角（北極 = $|0\\rangle$、南極 = $|1\\rangle$）</li>\n<li>$\\varphi \\in [0, 2\\pi)$: 方位角</li>\n</ul>\n<h3>複合系とテンソル積</h3>\n<p>2つの量子系 A, B の複合系は<strong>テンソル積</strong>空間 $\\mathcal{H}_A \\otimes \\mathcal{H}_B$:</p>\n<p>$$|\\psi\\rangle_{AB} \\in \\mathcal{H}_A \\otimes \\mathcal{H}_B, \\quad \\dim(\\mathcal{H}_A \\otimes \\mathcal{H}_B) = d_A \\cdot d_B$$</p>\n<p><strong>積状態（product state）:</strong> $|\\psi\\rangle_{AB} = |\\phi\\rangle_A \\otimes |\\chi\\rangle_B$</p>\n<p><strong>もつれ状態（entangled state）:</strong> 積状態に書けない状態。例としてベル状態:</p>\n<p>$$|\\Phi^+\\rangle = \\frac{1}{\\sqrt{2}}(|00\\rangle + |11\\rangle)$$</p>\n<p>$|\\Phi^+\\rangle$ は $|\\phi\\rangle_A \\otimes |\\chi\\rangle_B$ の形に書けない。</p>\n<hr />"
+      },
+      {
+        "index": 2,
+        "title": "密度行列と混合状態",
+        "videoUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch02.mp3",
+        "markdown": "<h2>密度行列と混合状態</h2>\n<h3>密度演算子の定義</h3>\n<p><strong>密度演算子</strong>（密度行列）$\\rho$ は量子状態をより一般的に表す道具:</p>\n<p>$$\\rho = \\sum_i p_i |\\psi_i\\rangle\\langle\\psi_i|$$</p>\n<ul>\n<li>$p_i \\geq 0$: 確率（$\\sum_i p_i = 1$）</li>\n<li>$|\\psi_i\\rangle$: 純粋状態</li>\n</ul>\n<p><strong>純粋状態の場合:</strong> $\\rho = |\\psi\\rangle\\langle\\psi|$（射影演算子）</p>\n<h3>密度演算子の3条件</h3>\n<p>$\\rho$ が物理的な量子状態 ⟺ 以下の3条件:</p>\n<p>$$\\rho^\\dagger = \\rho \\quad\\text{（エルミート性）}$$\n$$\\rho \\geq 0 \\quad\\text{（半正定値性: すべての固有値} \\geq 0\\text{）}$$\n$$\\text{Tr}(\\rho) = 1 \\quad\\text{（トレース規格化）}$$</p>\n<h3>純粋状態と混合状態の判別</h3>\n<p><strong>純粋度（purity）:</strong>\n$$P(\\rho) = \\text{Tr}(\\rho^2), \\quad \\frac{1}{d} \\leq P(\\rho) \\leq 1$$</p>\n<ul>\n<li>$P(\\rho) = 1$ ⟺ 純粋状態（$\\rho = |\\psi\\rangle\\langle\\psi|$）</li>\n<li>$P(\\rho) < 1$ ⟺ 混合状態</li>\n</ul>\n<p><strong>量子ビットの密度行列（ブロッホ球表示）:</strong></p>\n<p>$$\\rho = \\frac{1}{2}(I + \\vec{r} \\cdot \\vec{\\sigma}), \\quad |\\vec{r}| \\leq 1$$</p>\n<ul>\n<li>$\\vec{r} = (r_x, r_y, r_z)$: ブロッホベクトル</li>\n<li>$\\vec{\\sigma} = (X, Y, Z)$: パウリ行列</li>\n<li>$|\\vec{r}| = 1$: 純粋状態、$|\\vec{r}| < 1$: 混合状態、$\\vec{r} = 0$: 最大混合状態 $I/2$</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4.2 参照（原論文）: ブロッホ球の内部が混合状態、球面が純粋状態</p>\n</blockquote>\n<h3>部分トレース（Partial Trace）</h3>\n<p>複合系 AB から一方の系 B を「忘れる」操作:</p>\n<p>$$\\rho_A = \\text{Tr}_B(\\rho_{AB}) = \\sum_j \\langle j|_B \\rho_{AB} |j\\rangle_B$$</p>\n<ul>\n<li>$\\{|j\\rangle_B\\}$: B の正規直交基底</li>\n<li>$\\rho_A$: A の<strong>周辺状態（marginal state）</strong></li>\n</ul>\n<p><strong>もつれ状態に部分トレースを取ると混合状態が生まれる:</strong></p>\n<p>$$\\rho_{AB} = |\\Phi^+\\rangle\\langle\\Phi^+|, \\quad \\rho_A = \\text{Tr}_B(\\rho_{AB}) = \\frac{I}{2} \\quad\\text{（最大混合状態）}$$</p>\n<h3>純粋化定理（Purification Theorem）</h3>\n<p>任意の混合状態 $\\rho_A$ に対し、補助系 B を追加すると純粋状態 $|\\psi\\rangle_{AB}$ が存在する:</p>\n<p>$$\\rho_A = \\text{Tr}_B(|\\psi\\rangle\\langle\\psi|_{AB})$$</p>\n<p><strong>スペクトル分解を使った構成:</strong> $\\rho_A = \\sum_i \\lambda_i |i\\rangle_A\\langle i|_A$ から:</p>\n<p>$$|\\psi\\rangle_{AB} = \\sum_i \\sqrt{\\lambda_i} |i\\rangle_A |i\\rangle_B$$</p>\n<p>純粋化はユニーク（補助系 B のユニタリ変換の自由度を除く）。</p>\n<hr />"
+      },
+      {
+        "index": 3,
+        "title": "量子測定：射影測定とPOVM",
+        "videoUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch03.mp3",
+        "markdown": "<h2>量子測定：射影測定とPOVM</h2>\n<h3>射影測定</h3>\n<p><strong>射影測定（Projective Measurement / von Neumann Measurement）:</strong></p>\n<p>射影演算子の集合 $\\{P_m\\}$:\n$$P_m P_{m'} = \\delta_{mm'} P_m, \\quad \\sum_m P_m = I, \\quad P_m^\\dagger = P_m = P_m^2$$</p>\n<p>測定結果 $m$ が得られる確率と測定後の状態:</p>\n<p>$$p(m) = \\text{Tr}(P_m \\rho), \\quad \\rho_m = \\frac{P_m \\rho P_m}{p(m)}$$</p>\n<p><strong>物理量の期待値:</strong></p>\n<p>$$\\langle M \\rangle = \\text{Tr}(M\\rho), \\quad M = \\sum_m m P_m \\quad\\text{（観測量のスペクトル分解）}$$</p>\n<blockquote>\n<p>📊 Fig. 5.1 参照（原論文）: 射影測定の概念図</p>\n</blockquote>\n<p><strong>例: 量子ビットの計算基底測定</strong></p>\n<p>$$P_0 = |0\\rangle\\langle 0|, \\quad P_1 = |1\\rangle\\langle 1|$$</p>\n<p>$$p(0) = \\langle 0|\\rho|0\\rangle = \\rho_{00}, \\quad p(1) = \\rho_{11}$$</p>\n<h3>POVM（正演算子値測度）</h3>\n<p>射影測定は「完全な測定」で、測定後に系が射影される。<strong>POVM</strong>（Positive Operator-Valued Measure）は測定結果の確率だけを記述するより一般的な枠組み:</p>\n<p>正半定値演算子の集合 $\\{E_m\\}$:\n$$E_m \\geq 0, \\quad \\sum_m E_m = I$$</p>\n<p>$$p(m|\\rho) = \\text{Tr}(E_m \\rho)$$</p>\n<p><strong>射影測定との違い:</strong>\n- 射影測定: $E_m = P_m$（射影演算子）、測定後の状態が定まる\n- POVM: $E_m$ は一般の正半定値演算子、測定後状態は指定不要\n- POVMは「確率のみ」を計算する — 測定後の状態を問わない場合に使う</p>\n<h3>クラウス演算子による測定（一般測定）</h3>\n<p>測定後の状態まで記述するには<strong>クラウス演算子</strong>（測定演算子）$\\{M_m\\}$ を使う:</p>\n<p>$$E_m = M_m^\\dagger M_m, \\quad \\sum_m M_m^\\dagger M_m = I$$</p>\n<p>$$p(m) = \\text{Tr}(M_m^\\dagger M_m \\rho) = \\text{Tr}(E_m \\rho)$$</p>\n<p>$$\\rho_m = \\frac{M_m \\rho M_m^\\dagger}{p(m)}$$</p>\n<p><strong>射影測定との関係:</strong> $M_m = P_m$（射影演算子）のとき射影測定に一致する。</p>\n<h3>ナイマルクの拡張定理（Naimark's Dilation Theorem）</h3>\n<p>任意の POVM $\\{E_m\\}$ on $\\mathcal{H}_A$ は、補助系 $\\mathcal{H}_B$ を追加した拡大空間上の射影測定として実現できる:</p>\n<p>$$p(m) = \\text{Tr}_{AB}(P_m \\cdot \\rho_A \\otimes |0\\rangle\\langle 0|_B)$$</p>\n<ul>\n<li>物理的に「POVM = 系を拡大してユニタリ変換 + 射影測定」</li>\n<li>量子情報処理のあらゆる「一般測定」はユニタリ + 射影測定で実装可能</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 4,
+        "title": "量子チャネルとクラウス表現",
+        "videoUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch04.mp3",
+        "markdown": "<h2>量子チャネルとクラウス表現</h2>\n<h3>量子チャネルの定義</h3>\n<p><strong>量子チャネル（quantum channel）</strong> は入力系 A から出力系 B への量子状態の写像:</p>\n<p>$$\\mathcal{N}: \\mathcal{L}(\\mathcal{H}_A) \\rightarrow \\mathcal{L}(\\mathcal{H}_B)$$</p>\n<p>（$\\mathcal{L}(\\mathcal{H})$ = $\\mathcal{H}$ 上の線形演算子の空間）</p>\n<p>物理的なチャネルであるための条件:\n1. <strong>線形性</strong>: $\\mathcal{N}(\\lambda\\rho_1 + \\mu\\rho_2) = \\lambda\\mathcal{N}(\\rho_1) + \\mu\\mathcal{N}(\\rho_2)$\n2. <strong>完全正値性（CP）</strong>: 任意の補助系 R に対し $(\\mathcal{I}_R \\otimes \\mathcal{N})$ が正値性を保つ\n3. <strong>トレース保存性（TP）</strong>: $\\text{Tr}(\\mathcal{N}(\\rho)) = \\text{Tr}(\\rho) = 1$</p>\n<p>CP + TP = <strong>CPTP 写像</strong> = 量子チャネル</p>\n<h3>クラウス表現定理</h3>\n<p><strong>定理（Kraus, 1983）:</strong> $\\mathcal{N}$ が CPTP ⟺ クラウス演算子 $\\{A_k\\}$ が存在して:</p>\n<p>$$\\mathcal{N}(\\rho) = \\sum_k A_k \\rho A_k^\\dagger$$</p>\n<p>$$\\sum_k A_k^\\dagger A_k = I \\quad\\text{（TP条件）}$$</p>\n<ul>\n<li>クラウス演算子 $A_k: \\mathcal{H}_A \\rightarrow \\mathcal{H}_B$（$d_A \\times d_B$ 行列）</li>\n<li>クラウス表現は一意ではない（ユニタリ変換の自由度がある）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 5.2 参照（原論文）: クラウス演算子による量子チャネルの図解</p>\n</blockquote>\n<p><strong>代表的なチャネルのクラウス表現:</strong></p>\n<p><strong>ビット反転チャネル（bit-flip channel）:</strong>\n$$\\mathcal{N}(\\rho) = (1-p)\\rho + p X\\rho X, \\quad A_0 = \\sqrt{1-p}\\,I,\\; A_1 = \\sqrt{p}\\,X$$</p>\n<p><strong>脱分極チャネル（depolarizing channel）:</strong>\n$$\\mathcal{N}(\\rho) = (1-p)\\rho + \\frac{p}{3}(X\\rho X + Y\\rho Y + Z\\rho Z)$$</p>\n<p><strong>振幅減衰チャネル（amplitude damping）:</strong>\n$$A_0 = \\begin{pmatrix}1&0\\\\0&\\sqrt{1-\\gamma}\\end{pmatrix},\\; A_1 = \\begin{pmatrix}0&\\sqrt{\\gamma}\\\\0&0\\end{pmatrix}$$</p>\n<h3>スタインスプリング拡張定理</h3>\n<p><strong>定理（Stinespring Dilation）:</strong> 任意の CPTP 写像 $\\mathcal{N}$ は環境系 E を追加した等長写像（ユニタリ $U_{AE}$）で表現できる:</p>\n<p>$$\\mathcal{N}(\\rho_A) = \\text{Tr}_E\\left(U_{AE}(\\rho_A \\otimes |0\\rangle\\langle 0|_E)U_{AE}^\\dagger\\right)$$</p>\n<ul>\n<li>「ノイズ = 環境とのもつれ」という直感的解釈</li>\n<li>クラウス表現のユニタリ的な起源を明示する</li>\n</ul>\n<h3>チョイ-ヤミョウコフスキー同型</h3>\n<p><strong>Choi-Jamiołkowski 同型:</strong> チャネル $\\mathcal{N}$ ↔ 密度行列（チョイ行列）$\\rho^{\\mathcal{N}}$</p>\n<p>$$\\rho^{\\mathcal{N}} = (\\mathcal{I}_R \\otimes \\mathcal{N})(|\\Phi^+\\rangle\\langle\\Phi^+|_{RA}), \\quad |\\Phi^+\\rangle = \\frac{1}{\\sqrt{d}}\\sum_i|ii\\rangle_{RA}$$</p>\n<ul>\n<li>$\\mathcal{N}$ が CPTP ⟺ $\\rho^{\\mathcal{N}} \\geq 0$（半正定値）かつ $\\text{Tr}_B(\\rho^{\\mathcal{N}}) = I_R/d$</li>\n<li>チャネルの性質をすべて行列の性質として解析できる</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 5,
+        "title": "Appendix A: 線形代数の基礎",
+        "videoUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445_ch05.mp3",
+        "markdown": "<h2>Appendix A: 線形代数の基礎</h2>\n<h3>ヒルベルト空間と内積</h3>\n<p>$d$ 次元複素ヒルベルト空間 $\\mathbb{C}^d$ の内積:</p>\n<p>$$\\langle\\phi|\\psi\\rangle = \\sum_{i=1}^d \\phi_i^* \\psi_i$$</p>\n<ul>\n<li>共役双線形性: $\\langle\\phi|\\psi\\rangle = \\overline{\\langle\\psi|\\psi\\rangle}$</li>\n<li>ノルム: $\\||\\psi\\rangle\\| = \\sqrt{\\langle\\psi|\\psi\\rangle} \\geq 0$</li>\n</ul>\n<h3>演算子とスペクトル定理</h3>\n<p><strong>エルミート演算子（自己随伴）:</strong> $A^\\dagger = A$</p>\n<ul>\n<li>固有値はすべて実数</li>\n<li>異なる固有値に対応する固有ベクトルは直交する</li>\n</ul>\n<p><strong>スペクトル定理:</strong> 任意のエルミート演算子 $A$ は:</p>\n<p>$$A = \\sum_i \\lambda_i |i\\rangle\\langle i|, \\quad A|i\\rangle = \\lambda_i|i\\rangle, \\quad \\{|i\\rangle\\}\\text{: 正規直交固有基底}$$</p>\n<p><strong>正規直交基底:</strong> $\\langle i|j\\rangle = \\delta_{ij}$, $\\sum_i |i\\rangle\\langle i| = I$（完全性関係）</p>\n<h3>トレースと行列関数</h3>\n<p>$$\\text{Tr}(A) = \\sum_i \\langle i|A|i\\rangle = \\sum_i A_{ii} \\quad\\text{（基底に依らない）}$$</p>\n<p><strong>性質:</strong>\n- $\\text{Tr}(AB) = \\text{Tr}(BA)$（巡回性）\n- $\\text{Tr}(A \\otimes B) = \\text{Tr}(A)\\text{Tr}(B)$</p>\n<p><strong>行列関数（スペクトル定理による）:</strong></p>\n<p>$$f(A) = \\sum_i f(\\lambda_i)|i\\rangle\\langle i|, \\quad A = \\sum_i \\lambda_i|i\\rangle\\langle i|$$</p>\n<p>例: $e^A = \\sum_i e^{\\lambda_i}|i\\rangle\\langle i|$, $\\ln\\rho = \\sum_i \\ln\\lambda_i|i\\rangle\\langle i|$</p>\n<h3>テンソル積の計算規則</h3>\n<p>$$|a\\rangle_A \\otimes |b\\rangle_B = |ab\\rangle_{AB}$$</p>\n<p>$$A \\otimes B: (A\\otimes B)(|a\\rangle\\otimes|b\\rangle) = (A|a\\rangle)\\otimes(B|b\\rangle)$$</p>\n<p>$(A \\otimes B)(C \\otimes D) = (AC) \\otimes (BD)$</p>\n<p>$(A \\otimes B)^\\dagger = A^\\dagger \\otimes B^\\dagger$</p>\n<h3>シュミット分解（Schmidt Decomposition）</h3>\n<p>任意の純粋双部系状態 $|\\psi\\rangle_{AB}$ は:</p>\n<p>$$|\\psi\\rangle_{AB} = \\sum_{i=1}^{r} \\sqrt{\\lambda_i} |i\\rangle_A|i'\\rangle_B$$</p>\n<ul>\n<li>$r$: シュミット数（Schmidt rank）</li>\n<li>$\\{|i\\rangle_A\\}$, $\\{|i'\\rangle_B\\}$: それぞれの局所正規直交基底</li>\n<li>$\\lambda_i > 0$, $\\sum_i \\lambda_i = 1$</li>\n<li>$r = 1$: 積状態、$r > 1$: もつれ状態</li>\n</ul>\n<p><strong>量子もつれの検出:</strong> シュミット数 $r > 1$ ⟺ もつれ状態</p>\n<hr />"
+      }
+    ],
+    "arxivUrl": "https://arxiv.org/abs/1106.1445"
+  },
+  {
+    "id": "1208.0928",
+    "title": "表面符号：大規模量子コンピュータへの実践的アプローチ",
+    "iaId": "lk-paper-1208-0928",
+    "iaUrl": "https://archive.org/details/lk-paper-1208-0928",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "§I-§II: 背景と量子ビットの基礎",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch01.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch01.mp3",
+        "markdown": "<h2>§I-§II: 背景と量子ビットの基礎</h2>\n<h3>§I. Background ── なぜ表面符号か</h3>\n<ul>\n<li>量子コンピュータは<strong>素因数分解</strong>（Shorのアルゴリズム）や<strong>データ検索</strong>（Groverアルゴリズム）で古典コンピュータを超えられる</li>\n<li>表面符号の起源：Kitaevの<strong>トーリック符号</strong>（トーラス面上の位相的符号）→ Bravyi, Kitaev, Freedman, Meyerが平面版（surface code）に発展</li>\n<li>Preskillらが「単一面でのエラー率最大<strong>3%</strong>」を示す → Raussendorfらが<strong>ブレイド変換</strong>による論理CNOTを発見</li>\n</ul>\n<p><strong>他の符号との比較（2D最近傍結合での閾値）:</strong></p>\n<table>\n<thead>\n<tr>\n<th>符号</th>\n<th>閾値</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Steane符号</td>\n<td>$\\approx 2 \\times 10^{-5}$</td>\n</tr>\n<tr>\n<td>Bacon-Shor符号</td>\n<td>$\\approx 2 \\times 10^{-5}$</td>\n</tr>\n<tr>\n<td><strong>表面符号</strong></td>\n<td><strong>$\\approx 0.57\\% \\sim 1\\%$</strong>（<strong>10万倍有利</strong>）</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>価格：物理量子ビット数は多い（最低13個で論理1個、実用には $10^3 \\sim 10^4$ 個）</li>\n</ul>\n<h3>§II. Introduction ── パウリ演算子と量子エラー</h3>\n<p>$$\n\\hat{X} = \\begin{pmatrix}0&1\\\\1&0\\end{pmatrix},\\quad\n\\hat{Z} = \\begin{pmatrix}1&0\\\\0&-1\\end{pmatrix},\\quad\n\\hat{Y} = \\hat{Z}\\hat{X} = \\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\n$$</p>\n<blockquote>\n<p>注意：この論文では $\\hat{Y} = \\hat{Z}\\hat{X}$（$i\\sigma_y$ではない。付録Aを参照）</p>\n</blockquote>\n<p><strong>反可換関係（エラー検出の核心）：</strong></p>\n<p>$$\\hat{X}\\hat{Z} = -\\hat{Z}\\hat{X}, \\quad \\hat{X}^2 = \\hat{Z}^2 = \\hat{I}$$</p>\n<p><strong>ユニバーサルゲートセット：</strong> $\\{\\hat{X}, \\hat{Z}, \\hat{H}, \\hat{S}, \\hat{T}, \\text{CNOT}\\}$</p>\n<p>$$\\hat{H} = \\frac{1}{\\sqrt{2}}\\begin{pmatrix}1&1\\\\1&-1\\end{pmatrix},\\quad\n\\hat{S} = \\begin{pmatrix}1&0\\\\0&i\\end{pmatrix},\\quad\n\\hat{T} = \\begin{pmatrix}1&0\\\\0&e^{i\\pi/4}\\end{pmatrix}$$</p>\n<p><strong>量子エラーのモデル：</strong>\n- ビット反転エラー $\\hat{X}$：$|g\\rangle \\leftrightarrow |e\\rangle$\n- 位相反転エラー $\\hat{Z}$：$\\alpha|g\\rangle + \\beta|e\\rangle \\to \\alpha|g\\rangle - \\beta|e\\rangle$\n- $\\hat{Y} = \\hat{Z}\\hat{X}$：両方同時\n- エラーは<strong>修正する必要はない</strong>——測定結果を古典的に補正するだけでよい</p>\n<hr />"
+      },
+      {
+        "index": 2,
+        "title": "§III-§IV: 表面符号と静止状態の測定サイクル",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch02.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch02.mp3",
+        "markdown": "<h2>§III-§IV: 表面符号と静止状態の測定サイクル</h2>\n<h3>§III. The Surface Code ── 2次元格子の配置</h3>\n<blockquote>\n<p>📊 Fig. 1 参照（原論文）</p>\n</blockquote>\n<p><strong>2種類の量子ビット：</strong></p>\n<table>\n<thead>\n<tr>\n<th>種別</th>\n<th>役割</th>\n<th>記号</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>データ量子ビット（data qubit）</td>\n<td>計算情報を保持</td>\n<td>白丸</td>\n</tr>\n<tr>\n<td>測定量子ビット（measure qubit）</td>\n<td>エラーを検出</td>\n<td>黒丸</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li><strong>measure-Zキュービット</strong>（緑）：隣接4データキュービットの $\\hat{Z}_a\\hat{Z}_b\\hat{Z}_c\\hat{Z}_d$ を測定</li>\n<li><strong>measure-Xキュービット</strong>（橙）：隣接4データキュービットの $\\hat{X}_a\\hat{X}_b\\hat{X}_c\\hat{X}_d$ を測定</li>\n<li>各データ量子ビットは2個のmeasure-Z と2個のmeasure-X に隣接</li>\n</ul>\n<h3>§IV. Quiescent State ── 静止状態と測定サイクル</h3>\n<p><strong>Zスタビライザー測定（measure-Zキュービット）の手順：</strong></p>\n<p>$$|g\\rangle \\xrightarrow{\\text{CNOT×4（データ→measure）}} \\text{射影測定} \\to Z_{abcd} = \\pm 1$$</p>\n<p><strong>Xスタビライザー測定（measure-Xキュービット）：</strong></p>\n<p>$$|g\\rangle \\xrightarrow{H} \\xrightarrow{\\text{CNOT×4（measure→データ）}} \\xrightarrow{H} \\text{射影測定} \\to X_{abcd} = \\pm 1$$</p>\n<p><strong>静止状態（quiescent state）の特徴：</strong>\n- 全スタビライザーの測定値 $Z_{abcd} = X_{abcd} = +1$（全プラケット「ゼロ」）\n- 測定サイクルを繰り返しても状態は変化しない\n- CNOTの順番（ジグザグ順）は<strong>誤り伝播を防ぐ</strong>ために重要</p>\n<p><strong>境界条件：</strong></p>\n<pre><code>X境界  Z境界\n ───────────\n|  X  Z  X  |  ← 上辺: Z境界（Zスタビライザーが境界に来る）\n|  Z  X  Z  |\n|  X  Z  X  |  ← 下辺: Z境界\n ───────────\n↑左辺: X境界   ↑右辺: X境界\n</code></pre>\n<hr />"
+      },
+      {
+        "index": 3,
+        "title": "§V-§VI: エラー検出と論理演算子",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch03.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch03.mp3",
+        "markdown": "<h2>§V-§VI: エラー検出と論理演算子</h2>\n<h3>§V. Single Qubit Errors ── 1量子ビットエラーの検出</h3>\n<p><strong>$\\hat{Z}_a$ エラーが起きたとき（位相反転）：</strong></p>\n<p>$$\\hat{X}_a\\hat{X}_b\\hat{X}_c\\hat{X}_d \\cdot \\hat{Z}_a|\\psi\\rangle = -X_{abcd}\\cdot\\hat{Z}_a|\\psi\\rangle$$</p>\n<p>→ 隣接2個のmeasure-Xキュービットの測定値が <strong>反転</strong>（$+1 \\to -1$）</p>\n<p><strong>$\\hat{X}_a$ エラーが起きたとき（ビット反転）：</strong></p>\n<p>$$\\hat{Z}_a\\hat{Z}_b\\hat{Z}_c\\hat{Z}_d \\cdot \\hat{X}_a|\\psi\\rangle = -Z_{abcd}\\cdot\\hat{X}_a|\\psi\\rangle$$</p>\n<p>→ 隣接2個のmeasure-Zキュービットの測定値が <strong>反転</strong></p>\n<blockquote>\n<p>📊 Fig. 2 参照（原論文）</p>\n</blockquote>\n<p><strong>エラー検出のまとめ：</strong>\n- $\\hat{Z}$ エラー（位相反転）→ <strong>Xスタビライザーが反応</strong>\n- $\\hat{X}$ エラー（ビット反転）→ <strong>Zスタビライザーが反応</strong>\n- $\\hat{Y} = \\hat{Z}\\hat{X}$ エラー → <strong>両方が反応</strong>\n- エラーが小さければ射影によって消去される（確率 $\\approx 1-\\epsilon^2$）</p>\n<h3>§VI. Logical Operators ── 論理演算子</h3>\n<blockquote>\n<p>📊 Fig. 3 参照（原論文）</p>\n</blockquote>\n<p><strong>X境界を結ぶ $\\hat{X}_L$ チェーン（$d=5$ の例）：</strong></p>\n<p>$$\\hat{X}_L = \\hat{X}_1\\hat{X}_2\\hat{X}_3\\hat{X}_4\\hat{X}_5$$</p>\n<p>全Zスタビライザーと可換 → 状態を壊さずに論理ビット反転</p>\n<p><strong>Z境界を結ぶ $\\hat{Z}_L$ チェーン：</strong></p>\n<p>$$\\hat{Z}_L = \\hat{Z}_6\\hat{Z}_7\\hat{Z}_3\\hat{Z}_8\\hat{Z}_9$$</p>\n<p><strong>反可換性（論理量子ビットの核心）：</strong></p>\n<p>$$\\hat{X}_L\\hat{Z}_L = -\\hat{Z}_L\\hat{X}_L$$</p>\n<p>→ 古典情報のコピーに対応する代わりに、位相空間での情報をエンコード</p>\n<p><strong>$\\hat{X}_L$ チェーンの変形：</strong></p>\n<p>$$\\hat{X}'_L = \\hat{X}_1\\hat{X}_{10}\\hat{X}_{11}\\hat{X}_{12}\\hat{X}_3\\hat{X}_4\\hat{X}_5 = X_{2,10,11,12} \\cdot \\hat{X}_L$$</p>\n<p>→ スタビライザーで変形しても論理的に同等（測定値の積で違いが吸収される）</p>\n<hr />"
+      },
+      {
+        "index": 4,
+        "title": "§VII: エラー検出とデコード",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch04.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch04.mp3",
+        "markdown": "<h2>§VII: エラー検出とデコード</h2>\n<h3>エラーの種類（§VII）</h3>\n<blockquote>\n<p>📊 Fig. 4, 5 参照（原論文）</p>\n</blockquote>\n<p>シミュレーションで考慮するエラー：\n1. <strong>データ量子ビットの $\\hat{I} \\to \\hat{X}, \\hat{Y}, \\hat{Z}$</strong>：各 $p/3$ の確率\n2. <strong>初期化エラー</strong>：$|g\\rangle$ の代わりに $|e\\rangle$ に初期化（確率 $p$）\n3. <strong>アダマールエラー</strong>：$\\hat{H}$ に加えて $\\hat{X}, \\hat{Y}, \\hat{Z}$（各 $p/3$）\n4. <strong>測定エラー</strong>：誤った値を報告（確率 $p$）\n5. <strong>CNOTエラー</strong>：15種の2量子ビットエラー（各 $p/15$）</p>\n<h3>閾値と論理エラー率のスケーリング</h3>\n<p><strong>論理エラー率のスケーリング（$p < p_{\\rm th}$ のとき）：</strong></p>\n<p>$$P_L \\approx 0.03 \\left(\\frac{p}{p_{\\rm th}}\\right)^{d_e}, \\quad d_e = \\left\\lceil\\frac{d+1}{2}\\right\\rceil$$</p>\n<p>$$p_{\\rm th} \\approx 0.57\\% \\quad (\\text{この論文の実装では})$$</p>\n<table>\n<thead>\n<tr>\n<th>距離 $d$</th>\n<th>$d_e$</th>\n<th>$p=0.1\\%$ での $P_L$</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>5</td>\n<td>3</td>\n<td>$\\sim 3\\times 10^{-5}$</td>\n</tr>\n<tr>\n<td>25</td>\n<td>13</td>\n<td>$\\sim 10^{-28}$</td>\n</tr>\n<tr>\n<td>55</td>\n<td>28</td>\n<td>$< 10^{-60}$</td>\n</tr>\n</tbody>\n</table>\n<h3>最小重みパーフェクトマッチング（Edmondsアルゴリズム）</h3>\n<p>$$\\text{エラーチェーンを空間-時間の3次元グラフとして表現}$$</p>\n<ul>\n<li>シンドローム変化点（-1になったプラケット）をノードとする</li>\n<li>ノード間を結ぶ最短パスを「最もありそうなエラーチェーン」と推定</li>\n<li>計算コスト：$O(n^3)$（$n$ = エラー検出点数）</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 5,
+        "title": "§VIII-§IX: 論理量子ビットの生成とパウリフレーム",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch05.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch05.mp3",
+        "markdown": "<h2>§VIII-§IX: 論理量子ビットの生成とパウリフレーム</h2>\n<h3>§VIII. Creating Logical Qubits ── 欠陥（穴）による論理量子ビット</h3>\n<blockquote>\n<p>📊 Fig. 9, 10, 11 参照（原論文）</p>\n</blockquote>\n<p><strong>Z-cut欠陥（Z-cut hole）：</strong>\n- measure-Zキュービットを1個停止 → X境界の穴が内部に生まれる</p>\n<p>$$\\hat{X}_L = \\hat{X}_1\\hat{X}_2\\hat{X}_3 \\quad (\\text{外側X境界から穴のX境界へのチェーン})$$</p>\n<p>$$\\hat{Z}_L = \\hat{Z}_3\\hat{Z}_4\\hat{Z}_5\\hat{Z}_6 \\quad (\\text{穴を囲むループ})$$</p>\n<p>$$\\hat{X}_L\\hat{Z}_L = -\\hat{Z}_L\\hat{X}_L \\quad (\\text{data qubit 3を共有→反可換})$$</p>\n<p><strong>X-cut欠陥（X-cut hole）：</strong>\n- measure-Xキュービットを停止 → Z境界の穴</p>\n<p><strong>2穴で1論理量子ビット（double-cut qubit）：</strong></p>\n<p>$$\\hat{X}_L = \\hat{X}_1\\hat{X}_2\\hat{X}_3 \\quad (\\text{2穴をつなぐチェーン})$$\n$$\\hat{Z}_L = \\text{いずれかの穴を囲むループ}$$</p>\n<p>距離 $d$：$\\hat{X}_L$ チェーンの長さ（穴の間隔）と $\\hat{Z}_L$ ループの長さの<strong>小さい方</strong></p>\n<h3>§IX. Software-Implemented $\\hat{Z}_L$ and $\\hat{X}_L$ ── パウリフレーム</h3>\n<ul>\n<li>表面符号では <strong>$\\hat{X}_L, \\hat{Z}_L$ を直接実行しない</strong></li>\n<li>測定結果のビットをソフトウェア（パウリフレーム）で追跡</li>\n<li>例：$Z_{abcd} = -1$ の測定 → フレームに $\\hat{X}_L$ を記録 → 後続の測定結果を自動補正</li>\n<li>これにより<strong>物理的な操作コストなし</strong>でパウリ補正を実現</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 6,
+        "title": "§X-§XII: 初期化・測定と大きな論理量子ビット",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch06.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch06.mp3",
+        "markdown": "<h2>§X-§XII: 初期化・測定と大きな論理量子ビット</h2>\n<h3>§X. Logical Qubit Initialization and Measurement</h3>\n<p><strong>Easy初期化（欠陥の種類と同じ基底）：</strong></p>\n<table>\n<thead>\n<tr>\n<th>量子ビット</th>\n<th>Easy初期化</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>X-cut qubit</td>\n<td>$\\hat{X}_L$ 固有状態（$|+_L\\rangle$ または $|-_L\\rangle$）</td>\n</tr>\n<tr>\n<td>Z-cut qubit</td>\n<td>$\\hat{Z}_L$ 固有状態（$|g_L\\rangle$ または $|e_L\\rangle$）</td>\n</tr>\n</tbody>\n</table>\n<p>→ 穴を作る直前のスタビライザー測定値から初期状態が決まる</p>\n<p><strong>Difficult初期化（逆基底）：</strong>\n- Xスタビライザーの帯（strip）を停止 → 孤立データ量子ビットを $\\hat{Z}$ 測定 → $|g\\rangle$ にセット → スタビライザー復元</p>\n<h3>§XI. Errors During Stabilizer Measurement</h3>\n<ul>\n<li>スタビライザー測定の<strong>誤りは時間方向にも伝播</strong>する</li>\n<li>時空間3次元（水平方向2D + 時間方向）でエラーチェーンを追跡</li>\n<li>測定値の変化を時空間グラフでマッチングして訂正</li>\n</ul>\n<h3>§XII. Larger Logical Qubits ── 大きな論理量子ビット</h3>\n<blockquote>\n<p>📊 Fig. 11, 16 参照（原論文）</p>\n</blockquote>\n<p><strong>穴のサイズと距離 $d$ の関係：</strong></p>\n<ul>\n<li>最小欠陥（1スタビライザー停止）：$d = 3$（$\\hat{X}_L = 3$ 量子ビット、$\\hat{Z}_L = 4$ 量子ビット）</li>\n<li>5スタビライザー停止：$\\hat{Z}_L = 8$ 量子ビット → $d = 8$（穴の間隔を調整）</li>\n<li>$d$ を2倍にすると物理量子ビット数は4倍、論理エラー率は指数的に改善</li>\n</ul>\n<p>$$P_L \\sim p^{d_e}, \\quad n_{\\rm phys} \\approx 2d^2 \\quad (\\text{1論理量子ビットあたり})$$</p>\n<hr />"
+      },
+      {
+        "index": 7,
+        "title": "§XIII-§XIV: 論理量子ビットの移動とブレイド変換",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch07.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch07.mp3",
+        "markdown": "<h2>§XIII-§XIV: 論理量子ビットの移動とブレイド変換</h2>\n<h3>§XIII. Moving Qubits ── 欠陥の移動</h3>\n<blockquote>\n<p>📊 Fig. 17, 18 参照（原論文）</p>\n</blockquote>\n<p><strong>欠陥移動の原理（ハイゼンベルク描像）：</strong>\n- 波動関数でなく演算子を変換：$\\hat{A} \\to \\hat{U}^\\dagger\\hat{A}\\hat{U}$\n- 欠陥を1セル移動 → $\\hat{X}_L$ と $\\hat{Z}_L$ を対応して更新</p>\n<p><strong>1セル移動の手順：</strong>\n1. 隣のスタビライザーを停止（穴を拡張）\n2. 孤立データ量子ビットを $\\hat{X}$ または $\\hat{Z}$ で測定\n3. 元のスタビライザーを再起動（穴を縮小）\n4. $d$ サイクル待機（時間方向のエラーマッチングのため）</p>\n<p><strong>マルチセル移動：</strong> 長い切り込みを1ステップで実行 → 同じ $1 + d$ サイクルで長距離移動可能</p>\n<h3>§XIV. The Braiding Transformation ── 論理 CNOT</h3>\n<blockquote>\n<p>📊 Fig. 19, 20, 21, 22 参照（原論文）</p>\n</blockquote>\n<p><strong>ブレイドの概念：</strong>\n- Qubit 1の片方の穴を、Qubit 2の2つの穴の<strong>間を通るように</strong>周回移動させる\n- 経路が閉ループを描く → <strong>論理 CNOT</strong></p>\n<p><strong>2量子ビットブレイドの変換（$\\hat{X}_{L1}, \\hat{Z}_{L1}, \\hat{X}_{L2}, \\hat{Z}_{L2}$）：</strong></p>\n<table>\n<thead>\n<tr>\n<th>演算子</th>\n<th>ブレイド後</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$\\hat{X}_{L1}$</td>\n<td>$\\hat{X}_{L1}\\hat{X}_{L2}$ （制御XがターゲットにXを掛ける）</td>\n</tr>\n<tr>\n<td>$\\hat{Z}_{L1}$</td>\n<td>$\\hat{Z}_{L1}$</td>\n</tr>\n<tr>\n<td>$\\hat{X}_{L2}$</td>\n<td>$\\hat{X}_{L2}$</td>\n</tr>\n<tr>\n<td>$\\hat{Z}_{L2}$</td>\n<td>$\\hat{Z}_{L1}\\hat{Z}_{L2}$</td>\n</tr>\n</tbody>\n</table>\n<p>→ これが論理 CNOT の変換規則と完全一致（Qubit 1 が制御、Qubit 2 が標的）</p>\n<p><strong>CNOTのコスト：</strong> $O(d^2)$ サイクル（ブレイドの周長 × 距離 $d$）</p>\n<hr />"
+      },
+      {
+        "index": 8,
+        "title": "§XV-§XVI: 1量子ビットゲート──HゲートとSL・TL演算子",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch08.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch08.mp3",
+        "markdown": "<h2>§XV-§XVI: 1量子ビットゲート──HゲートとSL・TL演算子</h2>\n<h3>§XV. The Hadamard Transformation</h3>\n<blockquote>\n<p>📊 Fig. 26, 27, 28 参照（原論文）</p>\n</blockquote>\n<p><strong>論理アダマールの実現：</strong>\n1. 論理量子ビットを囲む $\\hat{X}$ スタビライザーを停止 → 「パッチ」を孤立\n2. パッチ内の全データ量子ビットに物理 $\\hat{H}$ を適用\n3. SWAPでパッチを1セル分ずらす（格子アライメント復元）\n4. 穴を再作成して論理量子ビットを復元</p>\n<p>変換後：$\\hat{X}_L \\leftrightarrow \\hat{Z}_L$（アダマールの定義通り）</p>\n<p>$$\\hat{H}\\hat{X}\\hat{H} = \\hat{Z}, \\quad \\hat{H}\\hat{Z}\\hat{H} = \\hat{X}$$</p>\n<h3>§XVI. Single Qubit $\\hat{S}_L$ and $\\hat{T}_L$ Operators</h3>\n<p>$$\\hat{S}_L = \\begin{pmatrix}1&0\\\\0&i\\end{pmatrix},\\quad \\hat{T}_L = \\begin{pmatrix}1&0\\\\0&e^{i\\pi/4}\\end{pmatrix}$$</p>\n<p><strong>$\\hat{S}_L$ ゲートの実現（測定ベース）：</strong></p>\n<blockquote>\n<p>📊 Fig. 29 参照（原論文）</p>\n</blockquote>\n<p>アンシラ $|Y_L\\rangle = \\frac{|g_L\\rangle + i|e_L\\rangle}{\\sqrt{2}}$ を使って測定ベース操作</p>\n<p>$$|Y_L\\rangle \\otimes |\\psi_L\\rangle \\xrightarrow{\\text{CNOT}} \\xrightarrow{M_Z} \\hat{S}_L|\\psi_L\\rangle \\quad (M_Z = +1\\text{ のとき})$$</p>\n<p><strong>$\\hat{T}_L$ ゲート（マジック状態注入）：</strong></p>\n<blockquote>\n<p>📊 Fig. 30 参照（原論文）</p>\n</blockquote>\n<p>アンシラ（マジック状態）$|A_L\\rangle = \\hat{T}|+_L\\rangle = \\frac{|g_L\\rangle + e^{i\\pi/4}|e_L\\rangle}{\\sqrt{2}}$</p>\n<p>$$|A_L\\rangle \\otimes |\\psi_L\\rangle \\xrightarrow{\\text{CNOT}} \\xrightarrow{M_Z} \\begin{cases} \\hat{T}_L|\\psi_L\\rangle & (M_Z = +1)  \\\\ \\hat{X}_L\\hat{T}^\\dagger_L|\\psi_L\\rangle & (M_Z = -1) \\end{cases}$$</p>\n<p>$M_Z = -1$ のとき：$\\hat{S}_L\\hat{T}^\\dagger_L = \\hat{T}_L$ なので $\\hat{S}_L$ ゲートで変換して $\\hat{T}_L$ を得る</p>\n<p><strong>マジック状態蒸留（15-to-1プロトコル）：</strong></p>\n<p>低品質な $|A_L\\rangle$（エラー率 $p_{\\rm in}$）15個 → 高品質な $|A_L\\rangle$ 1個：</p>\n<p>$$p_{\\rm out} \\approx 35\\, p_{\\rm in}^3$$</p>\n<p>2段蒸留：$p_{\\rm in} = 0.5\\% \\to p_1 \\approx 4\\times 10^{-6} \\to p_2 \\approx 2\\times 10^{-15}$（十分）</p>\n<hr />"
+      },
+      {
+        "index": 9,
+        "title": "§XVII + 付録A-B: 物理実装とスタビライザー回路の詳細",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch09.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch09.mp3",
+        "markdown": "<h2>§XVII + 付録A-B: 物理実装とスタビライザー回路の詳細</h2>\n<h3>§XVII. Physical Implementations</h3>\n<blockquote>\n<p>📊 Fig. 17（superconducting実装の例）参照（原論文）</p>\n</blockquote>\n<p><strong>必要条件：</strong>\n- 単一量子ビットゲート忠実度 $> 99\\%$\n- 2量子ビットCNOT忠実度 $> 99\\%$\n- コヒーレンス時間 $\\geq 1\\,\\mu\\text{s}$（ゲート時間 10-100 ns の場合）\n- 物理量子ビット数：実用的には $\\sim 10^8$ 個以上\n- 古典制御のクロック：$\\sim 10^6 \\sim 10^7\\,\\text{Hz}$（表面符号サイクルに同期）</p>\n<p><strong>超伝導回路が最有力：</strong>\n- ゲート時間 10-100 ns（要件を満たす）\n- 2D格子の集積化が比較的容易\n- 課題：コヒーレンス時間・高速古典回路との統合</p>\n<p><strong>サイクル時間の目標：</strong> 200 ns（1サイクル = CNOT 4回 + 測定1回）</p>\n<h3>付録A. Notation（記号規約）</h3>\n<p>$$|g\\rangle = \\begin{pmatrix}1\\\\0\\end{pmatrix},\\quad |e\\rangle = \\begin{pmatrix}0\\\\1\\end{pmatrix}$$</p>\n<p>$$\\hat{X}|g\\rangle = |e\\rangle,\\quad \\hat{Z}|g\\rangle = +|g\\rangle,\\quad \\hat{Z}|e\\rangle = -|e\\rangle$$</p>\n<p>$$|+\\rangle = \\frac{|g\\rangle + |e\\rangle}{\\sqrt{2}},\\quad |-\\rangle = \\frac{|g\\rangle - |e\\rangle}{\\sqrt{2}}$$</p>\n<p>$$\\hat{Y} = \\hat{Z}\\hat{X} = \\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix} \\quad (\\text{注：}i\\sigma_y\\text{ではない})$$</p>\n<p><strong>可換関係（$i$なしの定義のため通常とずれる）：</strong>\n$$[\\hat{X},\\hat{Y}] = -2\\hat{Z},\\quad [\\hat{Y},\\hat{Z}] = -2\\hat{X},\\quad [\\hat{Z},\\hat{X}] = +2\\hat{Y}$$</p>\n<h3>付録B. $\\hat{Z}$ and $\\hat{X}$ Stabilizer Circuits</h3>\n<blockquote>\n<p>📊 Fig. 34 参照（原論文）</p>\n</blockquote>\n<p>2量子ビット簡略版（data qubit a, b + measure-Z + measure-X）：</p>\n<p><strong>Zスタビライザー回路（4ステップ）：</strong>\n1. measure-Z を $|g\\rangle$ に初期化\n2. data qubit a → measure-Z の CNOT\n3. data qubit b → measure-Z の CNOT\n4. measure-Z を射影測定 → $Z_{ab} = \\pm 1$</p>\n<p>→ データキュービットは $\\hat{Z}_a\\hat{Z}_b$ の固有状態に射影される</p>\n<p><strong>ベル状態一覧（Zスタビライザー測定後の状態）：</strong></p>\n<table>\n<thead>\n<tr>\n<th>$Z_{ab}$</th>\n<th>$X_{ab}$</th>\n<th>状態</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$+1$</td>\n<td>$+1$</td>\n<td>$|\\Phi^+\\rangle = \\frac{|gg\\rangle + |ee\\rangle}{\\sqrt{2}}$</td>\n</tr>\n<tr>\n<td>$+1$</td>\n<td>$-1$</td>\n<td>$|\\Phi^-\\rangle = \\frac{|gg\\rangle - |ee\\rangle}{\\sqrt{2}}$</td>\n</tr>\n<tr>\n<td>$-1$</td>\n<td>$+1$</td>\n<td>$|\\Psi^+\\rangle = \\frac{|ge\\rangle + |eg\\rangle}{\\sqrt{2}}$</td>\n</tr>\n<tr>\n<td>$-1$</td>\n<td>$-1$</td>\n<td>$|\\Psi^-\\rangle = \\frac{|ge\\rangle - |eg\\rangle}{\\sqrt{2}}$</td>\n</tr>\n</tbody>\n</table>\n<hr />"
+      },
+      {
+        "index": 10,
+        "title": "付録C-F: 初期化・測定・大型量子ビット・移動の詳細",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch10.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch10.mp3",
+        "markdown": "<h2>付録C-F: 初期化・測定・大型量子ビット・移動の詳細</h2>\n<h3>付録C. X-cut Qubit Initialization in $\\hat{Z}_L$ Basis（Difficult初期化）</h3>\n<blockquote>\n<p>📊 Fig. 14 参照（原論文）</p>\n</blockquote>\n<ol>\n<li>完全安定化アレイからスタート</li>\n<li>$\\hat{X}$ スタビライザーの帯（strip）を停止：帯の両端が穴の原型になる</li>\n<li>帯に隣接する $\\hat{Z}$ スタビライザーを4端子→3端子に削減</li>\n<li>孤立データ量子ビット（1, 2, 3番）を $\\hat{Z}$ 測定して1回記録</li>\n<li>$|g\\rangle$ にセット → $\\hat{Z}_L = \\hat{Z}_1\\hat{Z}_2\\hat{Z}_3 = +1$ の状態確定</li>\n<li>内部 $\\hat{X}$ スタビライザーと3端子 $\\hat{Z}$ を元に戻す</li>\n</ol>\n<p><strong>なぜ $d$ 回ではなく1回の測定でよいか：</strong>\n- 3端子 $\\hat{Z}$ 測定と後続の4端子測定の比較で<strong>時間方向の距離</strong>を確保できるため</p>\n<h3>付録D. Measuring an X-cut Qubit in $\\hat{Z}_L$ Basis（Difficult測定）</h3>\n<ol>\n<li>$\\hat{Z}_L$ チェーンが通る $\\hat{X}$ スタビライザーの帯を停止</li>\n<li>帯に隣接する $\\hat{Z}$ スタビライザーを3端子に削減</li>\n<li>孤立データ量子ビットを $\\hat{X}$ 測定（各 $X_i = \\pm 1$）</li>\n<li>$X_L = \\prod_i X_i$（論理 $\\hat{X}_L$ の測定値）</li>\n<li>データキュービットを $|g\\rangle$ にリセット → 論理量子ビット消滅</li>\n</ol>\n<h3>付録E. Making a Larger Qubit（大型欠陥の作り方）</h3>\n<blockquote>\n<p>📊 Fig. 16 参照（原論文）</p>\n</blockquote>\n<p>5スタビライザー停止（$\\hat{Z}_{s1}\\sim\\hat{Z}_{s4}$ と $\\hat{X}_{s1}$）による大型Z-cut qubit：</p>\n<ul>\n<li>$\\hat{Z}_L = \\hat{Z}_1\\hat{Z}_2\\hat{Z}_3\\hat{Z}_4\\hat{Z}_5\\hat{Z}_6\\hat{Z}_7\\hat{Z}_8$（8量子ビットのループ）</li>\n<li>初期値 $= \\prod_{k=1}^{4} Z_{sk}$（停止直前のスタビライザー測定値の積）</li>\n<li>4つの内部データ量子ビットは $\\hat{X}$ 測定でエラー追跡</li>\n</ul>\n<h3>付録F. One-Cell Qubit Move（1セル移動の詳細）</h3>\n<blockquote>\n<p>📊 Fig. 17 参照（原論文）</p>\n</blockquote>\n<p>Z-cut qubitを1セル移動する操作：</p>\n<p>$$\\hat{X}_L \\to \\hat{X}'_L = \\hat{X}_L \\cdot (\\text{隣のXスタビライザーから貰う})$$</p>\n<p>$$\\hat{Z}_L \\to \\hat{Z}'_L = \\hat{Z}_{sn} \\quad (\\text{新しい穴を囲む最小ループ})$$</p>\n<ul>\n<li>移動コスト：$1 + d$ サイクル（1サイクルで穴を移動、$d$ サイクル待機）</li>\n<li>孤立データ量子ビットの $\\hat{X}$ エラーは測定で消去、$\\hat{Z}$ エラーは3端子スタビライザーで追跡</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 11,
+        "title": "付録G-J: ブレイドと論理アダマール変換の詳細",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch11.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch11.mp3",
+        "markdown": "<h2>付録G-J: ブレイドと論理アダマール変換の詳細</h2>\n<h3>付録G. Multi-Cell Moves（マルチセル移動）</h3>\n<blockquote>\n<p>📊 Fig. 18 参照（原論文）</p>\n</blockquote>\n<ul>\n<li>長い切り込みを<strong>1ステップ</strong>で作成 → 穴を一気に長距離移動</li>\n<li>所要時間：$1 + d$ サイクル（単セル移動と同じ！）</li>\n<li>移動中に $\\hat{X}$ スタビライザーが「橋」をわたって更新される</li>\n</ul>\n<p>バイプロダクト演算子の符号追跡：</p>\n<p>$$\\hat{X}'_L = \\prod_i X_{si} \\cdot \\hat{X}_L \\quad (\\text{橋わたりで生じる符号})$$</p>\n<h3>付録H. Single Qubit Braid Transformation（1量子ビットブレイドの詳細）</h3>\n<blockquote>\n<p>📊 Fig. 19, 20 参照（原論文）</p>\n</blockquote>\n<p><strong>第1移動（8セル）後の演算子変換：</strong>\n$$\\hat{X}_L \\to \\hat{X}^e_L = \\hat{X}_{\\rm loop}\\cdot\\hat{X}_L, \\quad \\hat{Z}_L \\to \\hat{Z}^e_L = \\hat{Z}_{sn}\\cdot\\hat{Z}_L$$</p>\n<p><strong>第2移動（4セル、ループを閉じる）後：</strong>\n$$\\hat{X}''_L = X_{\\rm loop}\\cdot\\hat{X}_L \\quad (X_{\\rm loop} = \\text{囲まれたスタビライザー測定値の積})$$\n$$\\hat{Z}''_L = \\hat{Z}_L \\quad (\\text{ループが元に戻る})$$</p>\n<p>→ $\\hat{X}_L$ は符号だけ変わって実質同じ、$\\hat{Z}_L$ は不変</p>\n<h3>付録I. Two-Qubit Braid Transformation（2量子ビットブレイドの詳細）</h3>\n<blockquote>\n<p>📊 Fig. 21, 22, 23 参照（原論文）</p>\n</blockquote>\n<p><strong>内部にQubit 2の穴を含むブレイドの変換規則：</strong></p>\n<table>\n<thead>\n<tr>\n<th>初期演算子</th>\n<th>ブレイド後</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$\\hat{X}_{L1}$</td>\n<td>$\\hat{X}_{L1}\\hat{X}_{L2}$</td>\n</tr>\n<tr>\n<td>$\\hat{Z}_{L1}$</td>\n<td>$\\hat{Z}_{L1}$</td>\n</tr>\n<tr>\n<td>$\\hat{X}_{L2}$</td>\n<td>$\\hat{X}_{L2}$</td>\n</tr>\n<tr>\n<td>$\\hat{Z}_{L2}$</td>\n<td>$\\hat{Z}_{L1}\\hat{Z}_{L2}$</td>\n</tr>\n</tbody>\n</table>\n<p>→ CNOT変換（Qubit 1 = 制御、Qubit 2 = 標的）と一致する証明</p>\n<h3>付録J. Logical Hadamard Process（論理アダマール変換の詳細）</h3>\n<blockquote>\n<p>📊 Fig. 26, 27, 28 参照（原論文）</p>\n</blockquote>\n<p>$d=7$ のZ-cut qubitに対するHadamardの手順（各ステップの測定回数を明記）：</p>\n<ol>\n<li><strong>第1サイクル</strong>：論理量子ビット周囲の $\\hat{X}$ スタビライザーを停止、リングを形成。3端子 $\\hat{Z}$ 測定を3回実施（$d=7$ 専用）</li>\n<li><strong>第2サイクル</strong>：リングをモートに拡大（外側の $\\hat{X}$, $\\hat{Z}$ も停止）、孤立データ量子ビットを測定</li>\n<li><strong>物理Hadamard</strong>：パッチ内全データ量子ビットに $\\hat{H}$ を適用</li>\n<li><strong>SWAP操作</strong>：パッチを1セル分ずらして格子位置を合わせる</li>\n<li><strong>穴の再作成</strong>：新しい位置に Z-cut 穴を2個作成</li>\n<li><strong>帰還移動</strong>：穴を元の位置に移動（距離保護のため2ステップに分割）</li>\n</ol>\n<hr />"
+      },
+      {
+        "index": 12,
+        "title": "付録K-M: 短い量子ビット・蒸留回路・規模推計",
+        "videoUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch12.mp4",
+        "audioUrl": "https://archive.org/download/lk-paper-1208-0928/paper_1208.0928_ch12.mp3",
+        "markdown": "<h2>付録K-M: 短い量子ビット・蒸留回路・規模推計</h2>\n<h3>付録K. Short Qubits（短い量子ビット）</h3>\n<blockquote>\n<p>📊 Fig. 31 参照（原論文）</p>\n</blockquote>\n<p>マジック状態 $|A_L\\rangle$ の「状態注入」に使う特別な形状の論理量子ビット：</p>\n<ul>\n<li>短い量子ビット（short qubit）：細長い形状（$d_x \\times d_z$ で $d_x \\ll d_z$）</li>\n<li>小さな物理エラー率での初期注入に特化</li>\n<li>注入後すぐに蒸留回路へ渡す</li>\n<li>注入エラー率の目安：$p_I \\approx 0.5\\%$（物理エラー率 $p = 0.1\\%$ の場合）</li>\n</ul>\n<h3>付録L. $\\hat{S}_L$ and $\\hat{T}_L$ Distillation Sub-circuits</h3>\n<blockquote>\n<p>📊 Fig. 32, 33, 35 参照（原論文）</p>\n</blockquote>\n<p><strong>$\\hat{S}_L$ 蒸留サブ回路：</strong></p>\n<p>$$M'_Z = +1: \\quad |\\psi'\\rangle = \\hat{S}|\\psi\\rangle$$\n$$M'_Z = -1: \\quad |\\psi'\\rangle = \\hat{X}\\hat{Z}\\hat{S}|\\psi\\rangle \\xrightarrow{\\hat{X}\\hat{Z}\\text{補正}} \\hat{S}|\\psi\\rangle$$</p>\n<p><strong>$\\hat{T}^\\dagger_L$ 蒸留サブ回路（Table VIIを参照）：</strong></p>\n<p>入力状態が $\\hat{Z}, \\hat{X}, \\hat{Y}$ エラーを含む場合の測定結果と補正操作：</p>\n<p>$$p_{\\rm out} = 35 p_{\\rm in}^3 \\quad (\\text{15-to-1蒸留の精度スケーリング})$$</p>\n<p><strong>多段蒸留の数値例（$p_{\\rm in} = 0.5\\%$）：</strong>\n$$p_1 = 35 \\times (0.005)^3 \\approx 4.4 \\times 10^{-6}$$\n$$p_2 = 35 \\times (4.4 \\times 10^{-6})^3 \\approx 3 \\times 10^{-15}$$</p>\n<h3>付録M. Estimating the Time and Size of a Factoring Circuit</h3>\n<blockquote>\n<p>📊 Table I, Table VII 参照（原論文）</p>\n</blockquote>\n<p><strong>Shor のアルゴリズム（$N = 2000$ ビット）の資源推計：</strong></p>\n<p>$$\\text{冪乗剰余回路：} \\quad 40N^3 \\text{ 逐次 Toffoli ゲート}$$</p>\n<p>各 Toffoli ゲート = 7個の $\\hat{T}_L$ ゲート（3並列 + 1 + 3並列）</p>\n<p>$$\\text{総 }T_L\\text{ ゲート数} = 7 \\times 40N^3 = 280N^3 \\approx 2.2 \\times 10^{12}$$</p>\n<p><strong>実行時間：</strong> 各 $\\hat{T}_L$ を $t_M = 100\\,\\text{ns}$ で実行</p>\n<p>$$t_{\\rm total} = 120N^3 \\times t_M = 120 \\times (2000)^3 \\times 100\\,\\text{ns} \\approx 26.7\\,\\text{hours}$$</p>\n<p><strong>蒸留回路の規模（2段蒸留）：</strong></p>\n<table>\n<thead>\n<tr>\n<th>段</th>\n<th>入力状態数</th>\n<th>出力エラー率</th>\n<th>必要論理量子ビット</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>第1段</td>\n<td>15</td>\n<td>$\\approx 4\\times 10^{-6}$</td>\n<td>16</td>\n</tr>\n<tr>\n<td>第2段</td>\n<td>15</td>\n<td>$\\approx 3\\times 10^{-15}$</td>\n<td>16</td>\n</tr>\n</tbody>\n</table>\n<p>必要物理量子ビット総数（$d = 25$, $p = 10^{-3}$）：</p>\n<p>$$n_{\\rm total} \\approx 10^8 \\quad (\\text{著者の推計；蒸留ファクトリー込み})$$</p>\n<hr />"
+      }
+    ],
+    "arxivUrl": "https://arxiv.org/abs/1208.0928"
+  },
+  {
+    "id": "1511.04206",
+    "title": "量子アルゴリズム概観【Montanaro 2016 解説】",
+    "iaId": "paper-explain-1511-04206",
+    "iaUrl": "https://archive.org/details/paper-explain-1511-04206",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "量子アルゴリズムとは何か",
+        "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch01.mp3",
+        "markdown": "<h2>量子アルゴリズムとは何か</h2>\n<ul>\n<li>量子コンピュータは<strong>重ね合わせ・量子もつれ・干渉</strong>を利用して古典計算を超える</li>\n<li>量子優位性のある主要領域: 暗号解読・探索と最適化・量子シミュレーション・線形方程式系</li>\n</ul>\n<p>$n$ 量子ビットの状態空間は $2^n$ 次元:\n$$|\\psi\\rangle = \\sum_{x \\in \\{0,1\\}^n} \\alpha_x |x\\rangle, \\quad \\sum_x |\\alpha_x|^2 = 1$$</p>\n<ul>\n<li>$|\\psi\\rangle$: $n$ 量子ビットの純粋状態</li>\n<li>$\\alpha_x$: 基底 $|x\\rangle$ の確率振幅（複素数）</li>\n<li>測定確率: $|\\alpha_x|^2$</li>\n</ul>\n<p><strong>量子優位性の源泉:</strong>\n1. <strong>重ね合わせ</strong>: $n$ 量子ビットで $2^n$ の状態を同時表現\n2. <strong>量子もつれ</strong>: 複数量子ビット間の非古典的相関\n3. <strong>干渉</strong>: 正しい答えへの振幅を強め、誤りを打ち消す</p>\n<p><strong>計算複雑性による優位性の分類:</strong>\n- クエリ複雑性: オラクルへの問い合わせ回数\n- ゲート複雑性: 量子ゲートの総数（実行時間に近い）</p>"
+      },
+      {
+        "index": 2,
+        "title": "暗号解読：ショアのアルゴリズム",
+        "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch02.mp3",
+        "markdown": "<h2>暗号解読：ショアのアルゴリズム</h2>\n<ul>\n<li><strong>ショアのアルゴリズム（1994）</strong>: 整数の素因数分解を多項式時間で解く</li>\n<li>古典最速（数体篩法）: $e^{O(N^{1/3})}$（指数時間）</li>\n<li>量子（ショア）: $O((\\log N)^3)$（多項式時間）— <strong>指数的高速化</strong></li>\n</ul>\n<p>位数発見の核心:\n$$a^r \\equiv 1 \\pmod{N}, \\quad \\gcd\\!\\left(a^{r/2} \\pm 1, N\\right) = \\text{素因数}$$</p>\n<ul>\n<li>$N$: 分解したい整数、$a$: $N$ と互いに素なランダム整数</li>\n<li>量子フーリエ変換（QFT）で周期 $r$（位数）を効率よく取り出す</li>\n<li>$r$ が偶数のとき、$a^{r/2} \\pm 1$ と $N$ の最大公約数が因数</li>\n</ul>\n<p><strong>影響を受ける暗号:</strong>\n| 暗号 | 困難問題 | 量子への対処 |\n|------|---------|------------|\n| RSA | 素因数分解 | 破られる |\n| 楕円曲線暗号 | 離散対数 | 破られる |\n| AES | 総当たり（Grover二次加速） | 鍵長2倍で対応可 |</p>\n<p><strong>耐量子暗号（PQC）</strong>: NIST が 2024 年に格子ベース等の標準を確定</p>"
+      },
+      {
+        "index": 3,
+        "title": "探索と最適化：グローバーとその発展",
+        "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch03.mp3",
+        "markdown": "<h2>探索と最適化：グローバーとその発展</h2>\n<ul>\n<li><strong>グローバーのアルゴリズム（1996）</strong>: $N$ 件の非構造化探索を $O(\\sqrt{N})$ で解く（古典 $O(N)$）</li>\n<li>最適性証明: $\\Omega(\\sqrt{N})$ が量子クエリ複雑性の下限</li>\n</ul>\n<p>振幅増幅の1ステップ:\n$$|\\psi\\rangle \\xrightarrow{O} \\text{正解に位相反転} \\xrightarrow{D} \\text{平均周りに反転}$$</p>\n<ul>\n<li>正解の確率振幅を毎回 $O(1/\\sqrt{N})$ ずつ増幅</li>\n<li>約 $\\frac{\\pi}{4}\\sqrt{N}$ 回の反復で確率 $\\approx 1$</li>\n</ul>\n<p><strong>量子ウォーク（Quantum Walk）:</strong>\n- グラフ上の量子版ランダムウォーク\n- マルコフ連鎖のスペクトルギャップ $\\delta$ を二次改善: $\\delta_Q \\approx \\sqrt{\\delta_C}$\n- 三角形探索: 古典 $O(N^2)$ → 量子 $O(N^{4/3})$</p>\n<p><strong>QAOA（量子近似最適化アルゴリズム）:</strong>\n$$|\\gamma, \\beta\\rangle = \\prod_{p=1}^{P} e^{-i\\beta_p B} e^{-i\\gamma_p C} |+\\rangle^{\\otimes n}$$</p>\n<ul>\n<li>$C$: コスト演算子（目的関数）、$B$: ミキサー演算子</li>\n<li>NISQ デバイス向け変分アルゴリズム; 組み合わせ最適化に適用</li>\n</ul>"
+      },
+      {
+        "index": 4,
+        "title": "量子系のシミュレーション",
+        "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch04.mp3",
+        "markdown": "<h2>量子系のシミュレーション</h2>\n<ul>\n<li>ファインマン提案（1982）: 量子系のシミュレーションには量子コンピュータが自然</li>\n<li>$n$ 粒子系は $2^n$ 次元 → 古典では指数的メモリ・時間が必要</li>\n</ul>\n<p>ハミルトニアン時間発展（積公式/トロッター分解）:\n$$e^{-iHt} \\approx \\left(\\prod_k e^{-iH_k t/r}\\right)^r, \\quad H = \\sum_k H_k$$</p>\n<ul>\n<li>$H_k$: 各項のハミルトニアン（局所的・スパース）</li>\n<li>1次トロッター誤差 $O(t^2/r)$; 高次公式で精度向上</li>\n<li>必要ゲート数は時間 $t$ と精度 $\\epsilon$ に多項式</li>\n</ul>\n<p><strong>変分量子固有値ソルバー（VQE）:</strong>\n$$E_0 \\leq \\langle\\psi(\\theta)|H|\\psi(\\theta)\\rangle$$</p>\n<ul>\n<li>$|\\psi(\\theta)\\rangle$: パラメータ $\\theta$ の変分量子回路（アンザッツ）</li>\n<li>古典最適化で $\\theta$ を更新し基底エネルギー $E_0$ に接近</li>\n<li>NISQ デバイスで量子化学計算に使用</li>\n</ul>\n<p><strong>応用例:</strong>\n- FeMoCo（鉄モリブデンコファクター）: 窒素固定触媒の電子構造計算\n- 高温超伝導体・ペロブスカイト材料の設計\n- 創薬: タンパク質-薬分子相互作用のシミュレーション</p>"
+      },
+      {
+        "index": 5,
+        "title": "線形方程式系とNISQ時代",
+        "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch05.mp3",
+        "markdown": "<h2>線形方程式系とNISQ時代</h2>\n<p><strong>HHL アルゴリズム（Harrow-Hassidim-Lloyd 2009）:</strong></p>\n<p>$$Ax = b \\quad \\Rightarrow \\quad |x\\rangle \\propto A^{-1}|b\\rangle$$</p>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>計算量</th>\n<th>$N$ 依存性</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>古典（共役勾配法）</td>\n<td>$O(N\\kappa\\log(1/\\epsilon))$</td>\n<td>$N$ に比例</td>\n</tr>\n<tr>\n<td>量子（HHL）</td>\n<td>$O(\\kappa^2 \\log N / \\epsilon^2)$</td>\n<td>$\\log N$ — 指数的高速化</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>$\\kappa$: 条件数（最大/最小固有値比）</li>\n<li><strong>制約（細字条件）</strong>: 解を全て読み出すと $O(N)$ かかる</li>\n<li>有効な用途: 内積・期待値計算、量子系のアウトプット</li>\n</ul>\n<p><strong>NISQ 時代の現状:</strong>\n- 物理ゲートエラー率: 0.1〜1%（深い回路では誤差蓄積）\n- Google（2023）表面符号で「しきい値定理」を実証\n  - 物理量子ビット増加 → 論理エラー指数的減少を確認\n- 論理量子ビット1つに物理量子ビット数千が必要</p>\n<p><strong>量子優位性の厳密な実証は現在も進行中:</strong>\n- VQE/QAOA: NISQ デバイスで実行可能だが古典との差が不明確\n- 脱量子化（dequantization）: 量子機械学習の一部は古典でも同等と判明\n- 量子化学シミュレーションが「最初の実用的量子優位性」の最有力候補</p>\n<p><strong>近未来のロードマップ:</strong>\n- 2020年代後半: フォールトトレラント量子コンピュータの初期実証\n- 2030年代以降: 実用規模での量子化学・材料設計への応用</p>"
+      }
+    ],
+    "arxivUrl": "https://arxiv.org/abs/1511.04206"
+  },
+  {
+    "id": "1803.00745",
+    "title": "量子回路学習（Quantum Circuit Learning）",
+    "iaId": "paper-explain-1803-00745",
+    "iaUrl": "https://archive.org/details/paper-explain-1803-00745",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "導入：量子機械学習の夜明け",
+        "videoUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch01.mp3",
+        "markdown": "<h2>導入：量子機械学習の夜明け</h2>\n<h3>背景：なぜ量子コンピュータで機械学習か</h3>\n<ul>\n<li>2017〜2018年：機械学習ブームと量子コンピュータの実用化機運が重なった時代</li>\n<li>量子コンピュータは一部の問題で指数的高速化が可能（ショアのアルゴリズム等）</li>\n<li>量子物理・材料科学・創薬でも機械学習の応用が注目されていた</li>\n</ul>\n<h3>既存の量子機械学習の問題点</h3>\n<table>\n<thead>\n<tr>\n<th>手法</th>\n<th>原理</th>\n<th>欠点</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>HHLベース (Schuld et al., Rebentrost et al.)</td>\n<td>行列演算を量子で実行</td>\n<td><strong>高深度回路が必要</strong> → NISQ非現実的</td>\n</tr>\n<tr>\n<td>量子位相推定 (QPE)</td>\n<td>固有値を直接読み出し</td>\n<td><strong>長いコヒーレント発展</strong>が必要</td>\n</tr>\n</tbody>\n</table>\n<h3>本論文の提案：QCL（量子回路学習）</h3>\n<ul>\n<li><strong>低深度</strong>パラメータ付き量子回路を機械学習モデルとして用いる</li>\n<li>量子回路でデータ変換 → 古典コンピュータでパラメータを最適化するハイブリッド手法</li>\n<li>NISQデバイスで<strong>今すぐ実現可能</strong></li>\n</ul>\n<h3>関連手法との比較（論文 Fig. 1）</h3>\n<table>\n<thead>\n<tr>\n<th>手法</th>\n<th>回路の調整</th>\n<th>入力データ変換</th>\n<th>最適化対象</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>QRC（量子リザバー）</td>\n<td>なし（固定）</td>\n<td>なし</td>\n<td>出力の線形重み $\\boldsymbol{w}$</td>\n</tr>\n<tr>\n<td>QVE/QAOA</td>\n<td>θ を調整</td>\n<td>なし（重みに符号化）</td>\n<td>期待値 $\\boldsymbol{w}_{\\rm fixed}\\cdot\\langle\\boldsymbol{B}(\\boldsymbol{\\theta})\\rangle$</td>\n</tr>\n<tr>\n<td><strong>QCL（本論文）</strong></td>\n<td>θ を調整</td>\n<td><strong>量子回路</strong> $U(\\boldsymbol{x})$ で変換</td>\n<td>コスト関数 $L$</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Fig. 1 参照（原論文）— QCL・QRC・QVEの比較図</p>\n</blockquote>\n<hr />"
+      },
+      {
+        "index": 2,
+        "title": "QCLアルゴリズム：5ステップの詳細",
+        "videoUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch02.mp3",
+        "markdown": "<h2>QCLアルゴリズム：5ステップの詳細</h2>\n<h3>アルゴリズムの全体像</h3>\n<p>$N$ 量子ビット回路でのQCL手順：</p>\n<p>$$|\\psi_{\\rm out}(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\rangle = U(\\boldsymbol{\\theta})\\,|\\psi_{\\rm in}(\\boldsymbol{x}_i)\\rangle = U(\\boldsymbol{\\theta})\\,U(\\boldsymbol{x}_i)\\,|0\\rangle$$</p>\n<p>$$y(\\boldsymbol{x}_i, \\boldsymbol{\\theta}) \\equiv F\\!\\left(\\{\\langle B_j(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\rangle\\}\\right)$$</p>\n<ul>\n<li>$U(\\boldsymbol{x}_i)$：入力ゲート（データを量子状態にエンコード）</li>\n<li>$U(\\boldsymbol{\\theta})$：学習可能なパラメータ付きユニタリ</li>\n<li>$B_j \\in \\{I, X, Y, Z\\}^{\\otimes N}$：測定するパウリオブザーバブル</li>\n<li>$F$：出力関数（測定値から予測値を計算）</li>\n</ul>\n<h3>ステップ1：入力エンコーディング</h3>\n<p>$$|\\psi_{\\rm in}(\\boldsymbol{x}_i)\\rangle = U(\\boldsymbol{x}_i)\\,|0\\rangle$$</p>\n<ul>\n<li>古典データ $\\boldsymbol{x}_i$ を量子状態に変換</li>\n<li>例（論文の1次元デモ）：\n$$U_{\\rm in}(x) = \\prod_j R_j^Z(\\cos^{-1} x^2)\\,R_j^Y(\\sin^{-1} x)$$</li>\n<li>テンソル積構造が自動的に $x^N$ 次の多項式を含む状態を生成</li>\n</ul>\n<h3>ステップ2：パラメータ付きユニタリ変換</h3>\n<p>$$|\\psi_{\\rm out}\\rangle = U(\\boldsymbol{\\theta})\\,|\\psi_{\\rm in}\\rangle, \\quad U(\\boldsymbol{\\theta}) = \\prod_{j=1}^l U_j(\\theta_j)$$</p>\n<ul>\n<li>数値実験では1量子ビット任意回転 $U(\\theta_j^{(i)}) = R_j^X(\\theta_{j1}^{(i)})R_j^Z(\\theta_{j2}^{(i)})R_j^X(\\theta_{j3}^{(i)})$ を使用</li>\n<li>回路にはイジングハミルトニアンによる時間発展も含む（絡み合いを生成）</li>\n</ul>\n<h3>ステップ3：測定と出力</h3>\n<p>コスト関数（回帰問題）：</p>\n<p>$$L(\\boldsymbol{\\theta}) = \\sum_i \\|f(\\boldsymbol{x}_i) - y(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\|^2$$</p>\n<p>分類問題ではクロスエントロピーを使用：</p>\n<p>$$L = \\sum_i \\sum_{k \\in \\{0,1\\}} \\bigl(f(\\boldsymbol{x}_i)\\bigr)_k \\log y_{ik}$$</p>\n<ul>\n<li>$f(\\boldsymbol{x}_i)$：教師データ（正解ラベル）</li>\n<li>$y_i$：量子回路の出力</li>\n<li>コストを最小化するように $\\boldsymbol{\\theta}$ を反復更新</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 2 参照（原論文）— 数値実験で使用した量子回路の構造</p>\n</blockquote>\n<hr />"
+      },
+      {
+        "index": 3,
+        "title": "理論的基礎：関数近似能力と勾配計算",
+        "videoUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch03.mp3",
+        "markdown": "<h2>理論的基礎：関数近似能力と勾配計算</h2>\n<h3>テンソル積構造と関数近似</h3>\n<p>入力状態のテンソル積構造（$N$ 量子ビット）：</p>\n<p>$$\\rho_{\\rm in}(x) = \\frac{1}{2^N}\\bigotimes_{i=1}^N \\bigl[I + x X_i + \\sqrt{1-x^2}\\,Z_i\\bigr]$$</p>\n<ul>\n<li>$N$ 量子ビットが $x, x^2, \\ldots, x^N$ までの高次項を自動的に含む</li>\n<li>任意のユニタリ変換後の期待値は <strong>任意の $N$ 次多項式</strong>を表現できる</li>\n<li>解析関数であれば原理的に QCL で近似可能（量子版・普遍近似定理）</li>\n</ul>\n<h3>ユニタリ条件と量子優位性の可能性</h3>\n<ul>\n<li>出力は各行ベクトル $\\boldsymbol{u}_i$ のノルムがユニタリ条件で $\\|\\boldsymbol{u}_i\\| = 1$ に固定される</li>\n<li>量子回路は指数的に大きい特徴空間を多項式の回路サイズで活用できる</li>\n<li>QCLが表現できる関数を古典ニューラルネットで学習するには万能量子計算機の模倣が必要 → 古典的に非効率</li>\n</ul>\n<h3>勾配計算：パラメータシフト則の原形</h3>\n<p>パウリ積生成のゲート $U_j(\\theta_j) = \\exp(-i\\theta_j P_j/2)$ に対する勾配：</p>\n<p>$$\\frac{\\partial \\langle B\\rangle}{\\partial \\theta_j} = \\frac{\\langle B\\rangle_j^+ - \\langle B\\rangle_j^-}{2}$$</p>\n<p>$$\\langle B\\rangle_j^\\pm: \\theta_j \\text{ を } \\pm\\frac{\\pi}{2} \\text{ シフトしたときの期待値}$$</p>\n<ul>\n<li>$\\pm\\pi/2$ 回転を挿入した2つの回路を実行するだけで<strong>厳密な勾配</strong>が得られる</li>\n<li>量子ハードウェア上でそのまま実行可能（シミュレーション不要）</li>\n<li>Li et al. (2017) の制御パルス最適化と同様のアプローチ</li>\n<li>これが後の「<strong>パラメータシフト則</strong>」（Mitarai et al. 2019）の基礎</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 4,
+        "title": "数値実験：関数フィッティング",
+        "videoUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch04.mp3",
+        "markdown": "<h2>数値実験：関数フィッティング</h2>\n<h3>実験設定（共通）</h3>\n<ul>\n<li><strong>量子ビット数</strong>: $N = 6$、<strong>回路深さ</strong>: $D = 6$</li>\n<li>ハミルトニアン（完全結合横磁場イジング型、式4）：</li>\n</ul>\n<p>$$H = \\sum_{j=1}^N a_j X_j + \\sum_{j=1}^N \\sum_{k=1}^{j-1} J_{jk} Z_j Z_k$$</p>\n<ul>\n<li>$a_j$, $J_{jk}$ は $[-1,1]$ 上の一様乱数</li>\n<li>進化時間 $T = 10$、最適化は BFGS 法（SciPy）</li>\n<li>サンプリングノイズを模擬するガウスノイズを付加</li>\n</ul>\n<h3>1次元関数フィッティング（100サンプル）</h3>\n<p>対象関数：$f(x) = x^2,\\ e^x,\\ \\sin x,\\ |x|$</p>\n<ul>\n<li>入力エンコーディング: $U_{\\rm in}(x) = \\prod_j R_j^Z(\\cos^{-1} x^2) R_j^Y(\\sin^{-1} x)$</li>\n<li>出力: 第1量子ビットの $Z$ 期待値（定数 $a$ も同時最適化）</li>\n<li><strong>結果</strong>: $x^2$、$e^x$、$\\sin x$ はよく近似できた</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3 参照（原論文）— 各関数のフィッティング結果</p>\n</blockquote>\n<ul>\n<li>$|x|$ の近似精度は比較的低い：$x=0$ での非解析性（微分不連続）が原因</li>\n<li>改善策として Legendre 多項式などの異なる入力関数を使う可能性を論文は指摘</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 5,
+        "title": "数値実験：分類と多体ダイナミクス",
+        "videoUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_ch05.mp3",
+        "markdown": "<h2>数値実験：分類と多体ダイナミクス</h2>\n<h3>2次元分類タスク（200サンプル）</h3>\n<ul>\n<li>訓練データ: 2次元入力 $\\boldsymbol{x}_i = (x_{i,0}, x_{i,1})$、2クラス（100サンプル/クラス）</li>\n<li>教師: クラス0→$(1,0)$、クラス1→$(0,1)$</li>\n<li>出力: 第1・第2量子ビットの $Z$ 期待値をソフトマックス変換\n$$\\boldsymbol{y}_i = \\boldsymbol{F}\\!\\left(\\langle Z_1\\rangle, \\langle Z_2\\rangle\\right), \\quad F_k(\\boldsymbol{q}) = \\frac{e^{q_k}}{\\sum_i e^{q_i}}$$</li>\n<li>損失関数: クロスエントロピー</li>\n<li><strong>結果</strong>: 非線形な決定境界を正確に学習した</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4 参照（原論文）— 訓練データと最適化後の出力</p>\n</blockquote>\n<h3>量子多体ダイナミクスのフィッティング</h3>\n<p>10スピン完全結合横磁場イジング系のダイナミクスを6量子ビット回路で近似：</p>\n<ul>\n<li>教師データ: 10スピン系（$a_j$, $J_{jk}$ は回路とは独立の乱数）の $Z$ 期待値</li>\n<li>初期状態 $|0\\rangle^{\\otimes 10}$、過渡応答時間 $T_{\\rm transient} = 300$ を除いた $t \\in [300, 308]$</li>\n<li>$t$ を $x \\in [-1, 1]$ に線形マッピングして入力</li>\n<li><strong>学習対象</strong>: 最初の3スピンの $Z$ 期待値を6量子ビット回路の最初の3量子ビット出力で近似</li>\n<li><strong>結果</strong>: 6量子ビット回路（64次元）が10スピン系（1024次元）の3つのオブザーバブルを同時に再現</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 5 参照（原論文）— 多体ダイナミクスのフィッティング結果</p>\n</blockquote>\n<hr />"
+      }
+    ],
+    "arxivUrl": "https://arxiv.org/abs/1803.00745"
+  },
+  {
+    "id": "1907.11157",
+    "title": "量子誤り訂正入門（Quantum Error Correction: An Introductory Guide）",
+    "iaId": "paper-explain-1907-11157",
+    "iaUrl": "https://archive.org/details/paper-explain-1907-11157",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "量子誤り訂正の背景と量子エラーの性質",
+        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch06.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch06.mp3"
+      }
+    ],
+    "arxivUrl": "https://arxiv.org/abs/1907.11157"
+  },
+  {
+    "id": "2503.20020",
+    "title": "Gemini Robotics: AIをフィジカルな世界へ",
+    "iaId": "paper-explain-2503-20020",
+    "iaUrl": "https://archive.org/details/paper-explain-2503-20020",
+    "chapters": [],
+    "arxivUrl": "https://arxiv.org/abs/2503.20020",
+    "singleVideoUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020.mp4"
+  },
+  {
+    "id": "2605.30280",
+    "title": "Qwen-VLA: タスク・環境・ロボット形態を超えた統一VLA",
+    "iaId": "paper-explain-2605-30280",
+    "iaUrl": "https://archive.org/details/paper-explain-2605-30280",
+    "chapters": [],
+    "arxivUrl": "https://arxiv.org/abs/2605.30280",
+    "singleVideoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280.mp4"
+  },
+  {
+    "id": "chemrev.9b00489",
+    "title": "ニトロゲナーゼ補因子の生合成",
+    "iaId": "paper-explain-chemrev-9b00489",
+    "iaUrl": "https://archive.org/details/paper-explain-chemrev-9b00489",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "はじめに──ニトロゲナーゼ補因子生合成研究の枠組み",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch01.mp3",
+        "markdown": "<h2>はじめに──ニトロゲナーゼ補因子生合成研究の枠組み</h2>\n<h3>窒素固定の化学量論</h3>\n<p>$$\\text{N}_2 + 8\\text{H}^+ + 8e^- + 16\\text{ATP} \\xrightarrow{\\text{ニトロゲナーゼ}} 2\\text{NH}_3 + \\text{H}_2 + 16\\text{ADP} + 16P_i$$</p>\n<h3>Mo型ニトロゲナーゼの2成分タンパク質</h3>\n<table>\n<thead>\n<tr>\n<th>タンパク質</th>\n<th>遺伝子</th>\n<th>構造</th>\n<th>役割</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MoFeタンパク（ジニトロゲナーゼ）</td>\n<td>nifD, nifK</td>\n<td>α₂β₂</td>\n<td>N₂を直接結合・還元</td>\n</tr>\n<tr>\n<td>Feタンパク（ジニトロゲナーゼ還元酵素）</td>\n<td>nifH</td>\n<td>γ₂</td>\n<td>電子供与・ATP加水分解</td>\n</tr>\n</tbody>\n</table>\n<h3>3種類の金属クラスター</h3>\n<ul>\n<li><strong>[4Fe-4S]クラスター</strong>: Feタンパクに1個（電子供与体）</li>\n<li><strong>Pクラスター [8Fe-7S]</strong>: MoFeタンパクの各αβ半分に1個（電子中継）</li>\n<li><strong>FeMo-co [7Fe-9S-C-Mo]</strong>: MoFeタンパクの活性部位（基質還元）</li>\n</ul>\n<h3>生合成タンパク質の3機能グループ</h3>\n<ol>\n<li><strong>足場タンパク質</strong>: NifU・NifB・NifQ・NifEN（クラスター骨格の組み立て）</li>\n<li><strong>シャペロンタンパク質</strong>: NifX・NafY・NifM・NifW・NifZ（輸送・成熟化補助）</li>\n<li><strong>基質提供酵素</strong>: NifS・NifB・NifV（補因子原料の提供）</li>\n</ol>\n<h3>Pクラスターとfemo-coの組み込み経路の違い</h3>\n<ul>\n<li>Pクラスター → <strong>in situ 組み立て</strong>（最終位置でそのまま成熟）</li>\n<li>FeMo-co → <strong>外部組み立て後挿入</strong>（複数タンパク質が段階的に組み上げ→挿入）</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 2,
+        "title": "モリブデンニトロゲナーゼ複合体の立体構造",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch02.mp3",
+        "markdown": "<h2>モリブデンニトロゲナーゼ複合体の立体構造</h2>\n<h3>複合体の全体像</h3>\n<blockquote>\n<p>📊 Fig. 1 参照（原論文）</p>\n</blockquote>\n<ul>\n<li>MoFeタンパク質（α₂β₂）に2組のFeタンパク質ホモダイマー（γ₂）が結合した8サブユニット複合体</li>\n</ul>\n<h3>電子移動経路</h3>\n<p>$$[\\text{4Fe-4S}]_{\\text{Feタンパク}} \\xrightarrow{\\text{ATP}} \\text{P-cluster} \\xrightarrow{} \\text{FeMo-co} \\xrightarrow{} \\text{N}_2$$</p>\n<h3>FeMo-coの配位環境</h3>\n<p>$$\\text{FeMo-co} = [\\text{7Fe-9S-C-Mo}] + R\\text{-homocitrate}$$</p>\n<ul>\n<li>αCys275 → 末端FeをMoFeタンパクに固定</li>\n<li>αHis442 → Mo原子に配位</li>\n<li>Mo周辺: 親水性環境、水素結合ネットワーク</li>\n</ul>\n<h3>Pクラスターの酸化還元依存的構造変化</h3>\n<table>\n<thead>\n<tr>\n<th>酸化状態</th>\n<th>配位残基</th>\n<th>構造</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>酸化型</td>\n<td>6 Cys + βSer188</td>\n<td>[4Fe-4S] + 歪んだ[4Fe-3S]</td>\n</tr>\n<tr>\n<td>還元型</td>\n<td>6 Cys のみ</td>\n<td>2つの[4Fe-4S]が1S共有</td>\n</tr>\n</tbody>\n</table>\n<h3>Feタンパクの[4Fe-4S]クラスター</h3>\n<ul>\n<li>2サブユニットの界面に架橋位置</li>\n<li>Cys97とCys132が各サブユニットから対称配位</li>\n<li>P-ループ型ATPase：反対側にMgATP/MgADP結合部位</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 3,
+        "title": "ニトロゲナーゼ遺伝子群の組織と各タンパク質の機能",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch03.mp3",
+        "markdown": "<h2>ニトロゲナーゼ遺伝子群の組織と各タンパク質の機能</h2>\n<h3>A. vinelandii のnif遺伝子クラスター</h3>\n<blockquote>\n<p>📊 Fig. 2 参照（原論文）</p>\n</blockquote>\n<p><strong>主要クラスター</strong>（複製開始点から135〜163 kb下流）:\n- nifH・nifD・nifK + 32遺伝子、9転写ユニット</p>\n<p><strong>副次クラスター</strong>（5.16〜5.17 Mb 上流）:\n- nifB・fdxN・nifO・nifQ + nifLA調節オペロン + nafYX オペロン</p>\n<h3>主要遺伝子産物の機能</h3>\n<table>\n<thead>\n<tr>\n<th>遺伝子</th>\n<th>産物の機能</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>nifH</td>\n<td>Feタンパク質（ジニトロゲナーゼ還元酵素）</td>\n</tr>\n<tr>\n<td>nifD, nifK</td>\n<td>MoFeタンパク質αβサブユニット</td>\n</tr>\n<tr>\n<td>nifB</td>\n<td>FeMo-co生合成の第1コミットステップ</td>\n</tr>\n<tr>\n<td>nifE, nifN</td>\n<td>FeMo-co足場タンパク（NifEN複合体）</td>\n</tr>\n<tr>\n<td>nifU, nifS</td>\n<td>[Fe-S]クラスター前駆体合成</td>\n</tr>\n<tr>\n<td>nifV</td>\n<td>ホモクエン酸合成酵素</td>\n</tr>\n<tr>\n<td>nifM</td>\n<td>Feタンパク折り畳み補助（PPIase）</td>\n</tr>\n<tr>\n<td>nifW, nifZ, nafH</td>\n<td>MoFeタンパク成熟化補助</td>\n</tr>\n<tr>\n<td>nifX, nafY</td>\n<td>金属クラスターキャリー輸送</td>\n</tr>\n</tbody>\n</table>\n<h3>タンパク質量的バランス</h3>\n<ul>\n<li>FeMo-co生合成タンパク質は構造タンパク質の <strong>50〜100分の1</strong> の量</li>\n<li>触媒量の生合成複合体が大量の構造タンパク質を組み立てる</li>\n</ul>\n<h3>代替ニトロゲナーゼとの関係</h3>\n<ul>\n<li>V型（vnf遺伝子）・Fe-only型（anf遺伝子）にもnifB・nifU・nifS・nifV・nifM が必要</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 4,
+        "title": "単純な鉄硫黄クラスターの生合成──NifSとNifUの役割",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch04.mp3",
+        "markdown": "<h2>単純な鉄硫黄クラスターの生合成──NifSとNifUの役割</h2>\n<h3>NifSの反応（システインデスルフラーゼ）</h3>\n<p>$$\\text{L-Cys} \\xrightarrow{\\text{NifS (PLP)}} \\text{L-Ala} + \\text{S}^0 \\rightarrow [\\text{Fe-S cluster sulfur}]$$</p>\n<ul>\n<li>PLP依存性酵素、ホモダイマー（約88 kDa）</li>\n<li>L-システイン <strong>だけ</strong> に反応する厳格な基質特異性</li>\n<li>IscS（一般的[Fe-S]生合成のホモログ）との違い：機能交換不可</li>\n</ul>\n<h3>NifUの3ドメイン構造</h3>\n<table>\n<thead>\n<tr>\n<th>ドメイン</th>\n<th>機能</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>N末端ドメイン（NifU-N）</td>\n<td>一時的[2Fe-2S]担持→Feタンパク供給</td>\n</tr>\n<tr>\n<td>IscU様ドメイン</td>\n<td>NifBなどへの前駆体供給</td>\n</tr>\n<tr>\n<td>C末端ドメイン</td>\n<td>恒久的[4Fe-4S]保持</td>\n</tr>\n</tbody>\n</table>\n<h3>nifU/nifS欠損の影響</h3>\n<ul>\n<li>nifU欠損: Feタンパク活性が95%低下、MoFeタンパク活性75%低下</li>\n<li>nifU・nifS同時欠損: Feタンパク活性消失、MoFeタンパク活性90%以上低下</li>\n<li>FeMo-co添加でも活性化できない → Pクラスター前駆体も不足</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 5,
+        "title": "Feタンパク質の成熟と成熟化因子の相互作用",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch05.mp3",
+        "markdown": "<h2>Feタンパク質の成熟と成熟化因子の相互作用</h2>\n<h3>Feタンパク質の3つの役割</h3>\n<ol>\n<li><strong>ジニトロゲナーゼ還元酵素</strong>: 成熟[4Fe-4S]含有Feタンパクがe⁻供与</li>\n<li><strong>Pクラスター形成補助</strong>: MoFeタンパクとの複合体で機能</li>\n<li><strong>FeMo-co生合成</strong>: NifENとの複合体で機能</li>\n</ol>\n<h3>NifMの機能（PPIase型プロリルイソメラーゼ）</h3>\n<ul>\n<li>Feタンパクの <strong>Pro258</strong> がNifMの基質残基（C末端近傍に位置）</li>\n<li>K. pneumoniae: NifM欠損でFeタンパクの安定性と二量体化が損なわれる</li>\n<li>Pro258→Ser置換でNifM非依存型のFeタンパクになる</li>\n</ul>\n<h3>MoFeタンパク成熟の3段階</h3>\n<table>\n<thead>\n<tr>\n<th>段階</th>\n<th>クラスター状態</th>\n<th>取得方法</th>\n<th>FeMo-co添加で活性化?</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>P-cluster前駆体のみ</td>\n<td>nifH変異株</td>\n<td>不可（先にP-cluster成熟が必要）</td>\n</tr>\n<tr>\n<td>2</td>\n<td>P-cluster成熟・FeMo-co欠如</td>\n<td>nifB/E/N変異株</td>\n<td><strong>可能</strong></td>\n</tr>\n<tr>\n<td>3</td>\n<td>ホロMoFeタンパク（完全活性型）</td>\n<td>野生型</td>\n<td>—</td>\n</tr>\n</tbody>\n</table>\n<hr />"
+      },
+      {
+        "index": 6,
+        "title": "MoFeタンパク質Pクラスターの形成",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch06.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch06.mp3",
+        "markdown": "<h2>MoFeタンパク質Pクラスターの形成</h2>\n<h3>Pクラスター成熟に関わるタンパク質</h3>\n<table>\n<thead>\n<tr>\n<th>タンパク質</th>\n<th>必須性</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Feタンパク</td>\n<td><strong>確実に必須</strong></td>\n</tr>\n<tr>\n<td>NifZ, NifU, NifS, NifM, NifW, NafH</td>\n<td>関与するが厳密な必須性は未確定</td>\n</tr>\n</tbody>\n</table>\n<h3>Pクラスター前駆体の特性（ΔnifHアポMoFeタンパク）</h3>\n<ul>\n<li>S=1/2 EPRシグナル（g≈2領域）← [4Fe-4S]前駆体クラスター対</li>\n<li>FeMo-coとPクラスター自体のEPRシグナルは消失</li>\n<li>EXAFS・VT-MCDでEPR帰属を確認</li>\n</ul>\n<h3>Pクラスター成熟化のin vitro再現</h3>\n<ul>\n<li>ΔnifHアポMoFeタンパク + <strong>Feタンパク + DTH + MgATP</strong> で保温</li>\n<li>前駆体のEPRシグナル消失 → 成熟Pクラスターのシグナル出現</li>\n</ul>\n<h3>Pクラスター成熟が引き起こす構造変化</h3>\n<ol>\n<li>FeMo-co結合残基（αCys275）が溶媒に露出 → FeMo-co結合部位が形成</li>\n<li>SAXSでαβサブユニットが接近する大きな構造変化を確認</li>\n</ol>\n<hr />"
+      },
+      {
+        "index": 7,
+        "title": "FeMo-coの構造と生合成モデル全体像",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch07.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch07.mp3",
+        "markdown": "<h2>FeMo-coの構造と生合成モデル全体像</h2>\n<h3>FeMo-coの原子構造</h3>\n<p>$$\\text{FeMo-co} = [\\text{7Fe-9S-C-Mo}] + R\\text{-homocitrate}$$</p>\n<blockquote>\n<p>📊 Fig. 12 参照（原論文）</p>\n</blockquote>\n<ul>\n<li>[4Fe-3S]クラスターと[Mo-3Fe-3S]クラスターが3つのS原子で架橋</li>\n<li>中心原子C（炭化物）: 6個のFeが対称的に囲む三角柱構造</li>\n<li>一端をFeがキャップ、他端をMoがキャップ</li>\n</ul>\n<h3>中心炭素の確定（2011〜2014）</h3>\n<ul>\n<li>X線放射分光（XES）</li>\n<li>1 Å分解能結晶構造</li>\n<li>[methyl-¹⁴C]-SAMを使ったトレーサー実験</li>\n</ul>\n<h3>EPR特性</h3>\n<p>$$[\\text{4Fe-4S}]_{\\text{FeMo-co}}: S = 3/2, \\quad g_y=4.6, g_x=3.3, g_z=1.93$$</p>\n<h3>in vitro FeMo-co合成アッセイの種類</h3>\n<table>\n<thead>\n<tr>\n<th>アッセイ名</th>\n<th>出発原料</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>FeMo-co挿入</td>\n<td>精製FeMo-co</td>\n<td>最もシンプル</td>\n</tr>\n<tr>\n<td>NifEN依存</td>\n<td>VKクラスター含有NifEN</td>\n<td>MoとHCが必要</td>\n</tr>\n<tr>\n<td>NifB-co依存</td>\n<td>精製NifB-co</td>\n<td>アポNifENを使用</td>\n</tr>\n<tr>\n<td>NifB依存</td>\n<td>再構成NifB+SAM</td>\n<td>最も包括的</td>\n</tr>\n</tbody>\n</table>\n<h3>生合成の全体モデル（3ブランチ収束）</h3>\n<pre><code>NifU/NifS → [Fe-S]前駆体 ─┐\n                           ├─ NifB → NifB-co ─→ NifEN → FeMo-co → NafY → MoFeタンパク\nMo → NifQ ────────────────┤\n                           │\nNifV → homocitrate ────────┘\n</code></pre>\n<hr />"
+      },
+      {
+        "index": 8,
+        "title": "FeMo-co鉄硫黄コアの生合成──NifB-coの形成まで",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch08.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch08.mp3",
+        "markdown": "<h2>FeMo-co鉄硫黄コアの生合成──NifB-coの形成まで</h2>\n<h3>NifB-coの化学式と性質</h3>\n<p>$$\\text{NifB-co} = [\\text{8Fe-9S-C}] \\text{（反磁性、} S=0\\text{）}$$</p>\n<ul>\n<li>緑茶色溶液、400〜700 nmに広い吸収</li>\n<li>DTH還元型でEPR無音</li>\n<li>酸素感受性が極めて高い（半減期 &lt; 15秒）</li>\n<li>凍結融解に対して比較的安定</li>\n</ul>\n<h3>NifB-coの単離と特性決定の歴史</h3>\n<blockquote>\n<p>📊 Fig. 15 参照（原論文）</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>年</th>\n<th>マイルストーン</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1994</td>\n<td>K. pneumoniae nifN変異株膜から初単離</td>\n</tr>\n<tr>\n<td>2006</td>\n<td>NifX-NifB-co複合体発見・メスバウアー解析</td>\n</tr>\n<tr>\n<td>2019</td>\n<td>[8Fe-9S-C]構造の最終確定</td>\n</tr>\n</tbody>\n</table>\n<h3>NifB-coが全ニトロゲナーゼの共通前駆体</h3>\n<ul>\n<li>FeMo-co（Mo型）+ FeV-co（V型）+ FeFe-co（Fe-only型）すべての前駆体</li>\n<li>nifBはすべてのニトロゲナーゼに必要（遺伝学的確認済み）</li>\n</ul>\n<h3>メスバウアー解析によるFe原子数確定</h3>\n<ul>\n<li>NifX-NifB-co複合体の高磁場メスバウアー：8Fe原子クラスターと確定</li>\n<li>6FE：非局在化価電子、2Fe：局在化価電子（FeMo-coとの違い）</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 9,
+        "title": "NifBタンパク質の構造と触媒機能──ラジカルSAM反応",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch09.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch09.mp3",
+        "markdown": "<h2>NifBタンパク質の構造と触媒機能──ラジカルSAM反応</h2>\n<h3>NifBの3つのタンパク質アーキテクチャ</h3>\n<table>\n<thead>\n<tr>\n<th>型</th>\n<th>分子量</th>\n<th>ドメイン構成</th>\n<th>代表生物</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>単純型</td>\n<td>~35 kDa</td>\n<td>SAMドメインのみ</td>\n<td>アーキア（M. acetivorans等）</td>\n</tr>\n<tr>\n<td>2ドメイン型</td>\n<td>~50-55 kDa</td>\n<td>SAM + NifXドメイン</td>\n<td>K. pneumoniae、A. vinelandii</td>\n</tr>\n<tr>\n<td>融合型</td>\n<td>大型</td>\n<td>NifN + NifBドメイン</td>\n<td>一部のClostridia</td>\n</tr>\n</tbody>\n</table>\n<h3>NifBの3つの[4Fe-4S]クラスター</h3>\n<p>$$\\text{SAM-cluster (RS)} + \\text{K1} + \\text{K2} = \\text{合計3個の}[\\text{4Fe-4S}]$$</p>\n<blockquote>\n<p>📊 Fig. 18 参照（原論文）</p>\n</blockquote>\n<ul>\n<li>RS：AdoMetモチーフ（CxxxCxxC）で配位，SAMの第4Fe配位</li>\n<li>K1：混合Cys-His配位という珍しい配位様式</li>\n<li>K2：N結合なし</li>\n</ul>\n<h3>SAM由来炭化物挿入の証明</h3>\n<ul>\n<li>[methyl-¹⁴C]-SAM → NifB-coに¹⁴C組み込み → FeMo-coにも追跡</li>\n<li>[carboxyl-¹⁴C]-SAM → 組み込みなし → メチル基が炭素源</li>\n</ul>\n<h3>NifB-co形成の反応機構</h3>\n<blockquote>\n<p>📊 Fig. 19 参照（原論文）</p>\n</blockquote>\n<ol>\n<li>SAM1 → K2クラスターへのメチル基転移（SAH生成）</li>\n<li>SAM2の還元的開裂 → 5'-dA•ラジカル生成</li>\n<li>5'-dA•がメチル基からH引き抜き → 5'-dAH生成</li>\n<li>脱プロトン化 + 第9番目S挿入 → NifB-co [8Fe-9S-C]完成</li>\n</ol>\n<hr />"
+      },
+      {
+        "index": 10,
+        "title": "モリブデンの取り込み・貯蔵・NifQの役割",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch10.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch10.mp3",
+        "markdown": "<h2>モリブデンの取り込み・貯蔵・NifQの役割</h2>\n<h3>Moの生物利用可能形態と競合</h3>\n<p>$$\\text{主形態}: \\text{MoO}_4^{2-} \\text{（モリブデン酸イオン）}$$</p>\n<ul>\n<li>競合物: タングステン酸（WO4²⁻）── 100 nMでFeMo-co生合成を阻害</li>\n</ul>\n<h3>2段階のタングステン毒性防御</h3>\n<table>\n<thead>\n<tr>\n<th>段階</th>\n<th>機構</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1段階目</td>\n<td>シデロフォア産生量の相対的調節（Mo/W濃度に応答）</td>\n</tr>\n<tr>\n<td>2段階目</td>\n<td>W-カテコール複合体を膜輸送系が排除</td>\n</tr>\n</tbody>\n</table>\n<h3>MoのABC型輸送系（ModABC）</h3>\n<p>$$\\text{ModA（ペリプラズム結合タンパク）} \\to \\text{ModB（膜チャネル）} \\to \\text{ModC（ATPase）}$$</p>\n<h3>Mo貯蔵タンパク（MoSto）</h3>\n<p>$$\\text{MoSto}: \\alpha_3\\beta_3 \\text{ヘテロ六量体かご構造、最大120 Mo原子/ヘキサマー}$$</p>\n<ul>\n<li>Mo取り込み：MgATP依存的</li>\n<li>Mo放出：中性以上のpHでATP非依存的</li>\n</ul>\n<h3>NifQ: Moを[Fe-S]環境でFeMo-co合成に供給</h3>\n<p>$$[\\text{3Fe-4S}] \\xrightarrow{+\\text{Mo}} [\\text{Mo-3Fe-4S}] \\text{ + MoS}_2\\text{O}_2 \\text{ （両方がFeMo-co合成に関与）}$$</p>\n<blockquote>\n<p>📊 Fig. 21 参照（原論文）</p>\n</blockquote>\n<hr />"
+      },
+      {
+        "index": 11,
+        "title": "FeMo-co有機補基ホモクエン酸の発見",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch11.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch11.mp3",
+        "markdown": "<h2>FeMo-co有機補基ホモクエン酸の発見</h2>\n<h3>発見の背景（1977〜1989）</h3>\n<p>FeMo-coが純粋に無機と信じられた12年間の謎:\n- Fe chelatorに対する異常な抵抗性\n- 中性pHでの負電荷（無機組成では説明不可）\n- EXAFSでMoの第1配位圏に3S + 3N/Oを検出</p>\n<h3>Hoover &amp; Ludden (1989)の発見</h3>\n<ul>\n<li>ホモクエン酸がFeMo-coの不可欠な有機成分と確定</li>\n<li>後の結晶構造でC2ヒドロキシル基とカルボキシル基がMoに配位と確認</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 22 参照（原論文）</p>\n</blockquote>\n<h3>NifV遺伝子産物（ホモクエン酸シンターゼ）の発見</h3>\n<table>\n<thead>\n<tr>\n<th>nifV変異株の表現型</th>\n<th>意味</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>N₂還元できない</td>\n<td>ホモクエン酸がN₂選択性に必須</td>\n</tr>\n<tr>\n<td>H⁺・C₂H₂は還元できる</td>\n<td>触媒能力は部分的に保持</td>\n</tr>\n<tr>\n<td>FeMo-co欠損が原因</td>\n<td>FeMo-coが活性部位の実体</td>\n</tr>\n</tbody>\n</table>\n<h3>ホモクエン酸の立体特異性</h3>\n<ul>\n<li><strong>(R)-ホモクエン酸</strong> のみが機能（立体化学が厳格に重要）</li>\n<li>クエン酸による置換ではN₂還元活性が劇的に低下</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 12,
+        "title": "NifEN足場タンパク質──FeMo-co生合成の中心ノード",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch12.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch12.mp3",
+        "markdown": "<h2>NifEN足場タンパク質──FeMo-co生合成の中心ノード</h2>\n<h3>NifEN複合体の特性</h3>\n<p>$$\\text{NifEN}: \\alpha_2\\beta_2 \\approx 200 \\text{ kDa, 半減期 } <1 \\text{ min (空気中)}$$</p>\n<ul>\n<li>NifE配列: NifDと30〜35%同一性、55〜60%類似性</li>\n<li>NifN配列: NifKと25〜30%同一性、50〜55%類似性</li>\n<li>FeMo-co結合部位αCys275を含む保存Cys残基を共有</li>\n</ul>\n<h3>遺伝子重複による進化的起源</h3>\n<p>$$\\text{nifDKY領域} \\xleftrightarrow{\\text{遺伝子重複}} \\text{nifENX領域}$$</p>\n<h3>NifENに結合したFeMo-co中間体の最初の証拠</h3>\n<blockquote>\n<p>📊 Fig. 参照（原論文）</p>\n</blockquote>\n<p><strong>ネイティブゲル電気泳動での移動度差異</strong>:\n- ΔnifHDK株（CA12）NifEN: 速い移動（中間体結合）\n- ΔnifBΔnifDK株（DJ677）NifEN: 遅い移動（中間体なし）\n- DJ677 NifEN + 精製NifB-co → CA12型の移動度に変化</p>\n<h3>NifB-co → VKクラスター（NifEN結合型）</h3>\n<p>$$\\text{NifB-co} \\xrightarrow{\\text{NifENへ転送}} \\text{VK-cluster（VKはVinod Shahに因む）}$$</p>\n<ul>\n<li>原子組成は同じ[8Fe-9S-C]だがEPR特性が異なる</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 13,
+        "title": "Moとホモクエン酸のFeMo-coへの組み込み",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch13.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch13.mp3",
+        "markdown": "<h2>Moとホモクエン酸のFeMo-coへの組み込み</h2>\n<h3>「NifEN活性化」実験アプローチ</h3>\n<p>反応系からアポMoFeタンパクを除外:\n$$\\text{NifEN} + \\text{Feタンパク} + \\text{Mo} + \\text{HC} + \\text{MgATP} + \\text{DTH} \\rightarrow \\text{活性化NifEN}$$</p>\n<p><strong>活性化NifENの特性</strong>:\n- VKクラスターのIDS酸化型EPRシグナル消失\n- 1 mol Mo / mol NifEN組み込み\n- XAS/EXAFSでMo-[Fe-S]クラスター結合を確認</p>\n<h3>反応条件による中間体の違い</h3>\n<table>\n<thead>\n<tr>\n<th>DTH濃度</th>\n<th>生成物のEPR特性</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>低DTH</td>\n<td>FeMo-coとは異なるスピン状態</td>\n</tr>\n<tr>\n<td>20 mM DTH</td>\n<td>FeMo-coに近いEPR特性のクラスター</td>\n</tr>\n</tbody>\n</table>\n<h3>FeMo-co生合成でのFeタンパクの必須性</h3>\n<p>$$\\text{アポNifEN} + \\text{NifB-co} + \\text{NifX} + \\boxed{\\text{Feタンパク}} + \\text{アポMoFeタンパク} + \\text{MgATP} + \\text{Mo} + \\text{HC} + \\text{DTH}$$</p>\n<ul>\n<li>Feタンパク除去 → アポMoFeタンパクの活性化が起きない</li>\n</ul>\n<h3>論争点</h3>\n<table>\n<thead>\n<tr>\n<th>問題</th>\n<th>賛成証拠</th>\n<th>反対証拠</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Feタンパクのレドックス役割が必須</td>\n<td>電子移動欠損変異体でin vitro活性低下</td>\n<td>nifH変異株でin vivoFeMo-co合成が機能</td>\n</tr>\n<tr>\n<td>MgATP加水分解が必須</td>\n<td>一部アッセイで加水分解欠損型が不活性</td>\n<td>加水分解欠損型でin vivoおよびin vitro機能</td>\n</tr>\n</tbody>\n</table>\n<hr />"
+      },
+      {
+        "index": 14,
+        "title": "金属クラスターの輸送──NifXとNafY",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch14.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch14.mp3",
+        "markdown": "<h2>金属クラスターの輸送──NifXとNafY</h2>\n<h3>NifXの機能</h3>\n<p><strong>NifX</strong>: NifB → NifEN へのNifB-co輸送に関与</p>\n<table>\n<thead>\n<tr>\n<th>in vitro</th>\n<th>in vivo</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>FeMo-co合成を用量依存的に刺激</td>\n<td>通常条件では表現型なし</td>\n</tr>\n<tr>\n<td>高濃度では阻害</td>\n<td>Mo・Fe欠乏ストレス下で重要</td>\n</tr>\n</tbody>\n</table>\n<h3>NifXが結合できるクラスター</h3>\n<ul>\n<li>NifB-co（NifBから直接）</li>\n<li>VKクラスター（NifENから抽出）</li>\n<li>Mo含有前駆体（仮説段階）</li>\n</ul>\n<h3>NafYの2ドメイン構造</h3>\n<blockquote>\n<p>📊 Fig. 27 参照（原論文）</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>ドメイン</th>\n<th>残基数</th>\n<th>構造決定法</th>\n<th>機能</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>N末端ドメイン</td>\n<td>98残基</td>\n<td>NMR (PDB: 2KIC)</td>\n<td>タンパク-タンパク相互作用（SAM様）</td>\n</tr>\n<tr>\n<td>コアドメイン</td>\n<td>145残基</td>\n<td>X線結晶構造 (PDB: 1P90)</td>\n<td>FeMo-co結合（His121が必須）</td>\n</tr>\n</tbody>\n</table>\n<h3>FeMo-co輸送の流れ（現在のモデル）</h3>\n<pre><code>NifB-co → NifX → NifEN（VKクラスター形成）\n                    ↓ Mo + HC + Feタンパク + MgATP\n              FeMo-co（NifEN上で完成）\n                    ↓\n              NafY → MoFeタンパク（挿入）\n</code></pre>\n<hr />"
+      },
+      {
+        "index": 15,
+        "title": "総括──ニトロゲナーゼ補因子生合成の到達点と展望",
+        "videoUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch15.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-chemrev-9b00489/paper_chemrev.9b00489_ch15.mp3",
+        "markdown": "<h2>総括──ニトロゲナーゼ補因子生合成の到達点と展望</h2>\n<h3>FeMo-co生合成研究の到達点</h3>\n<ul>\n<li>FeMo-co生合成の全体経路の解明</li>\n<li>in vitroでの完全な再現（4タンパク+低分子）</li>\n<li>NifB-coの[8Fe-9S-C]構造の確定（2019年）</li>\n<li>中心炭化物の起源（SAMメチル基）の証明</li>\n</ul>\n<h3>未解決の主要問題</h3>\n<table>\n<thead>\n<tr>\n<th>問題</th>\n<th>現状</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>NifBの第9番目のS起源</td>\n<td>in vivo供与体不明</td>\n</tr>\n<tr>\n<td>2分子SAMが必要な理由</td>\n<td>SAM-clusterは1個なのに</td>\n</tr>\n<tr>\n<td>SAH &gt; 5'-dAHの謎</td>\n<td>メカニズム不完全</td>\n</tr>\n<tr>\n<td>FdxNの正確な役割</td>\n<td>仮説段階</td>\n</tr>\n<tr>\n<td>FeMo-co移動経路</td>\n<td>NifEN→MoFeタンパク間の詳細不明</td>\n</tr>\n</tbody>\n</table>\n<h3>ニトロゲナーゼ研究の波及効果</h3>\n<ol>\n<li><strong>[Fe-S]クラスター生物学の創出</strong>: NifU・NifSからIscU・IscSへ → 全生物に共通</li>\n<li><strong>スカフォールド概念の確立</strong>: NifENの足場機能 → ヒドロゲナーゼ等に応用</li>\n<li><strong>ラジカルSAM化学の深化</strong>: NifBからラジカルSAMスーパーファミリーへ</li>\n</ol>\n<h3>農業・工業への応用展望</h3>\n<p>$$\\text{FeMo-co機構解明} \\to \\text{常温常圧N}_2\\text{固定触媒設計} \\to \\text{ハーバー・ボッシュ法代替}$$</p>\n<ul>\n<li>植物への窒素固定能付与（共生系工学）</li>\n<li>微生物工場による持続可能な窒素肥料生産</li>\n</ul>\n<h3>参考ソース</h3>\n<ul>\n<li>Burén S, Jiménez-Vicente E, Echavarri-Erasun C, Rubio LM.<br />\n<em>Chem. Rev.</em> <strong>120</strong>, 4921–4968 (2020).<br />\n  DOI: 10.1021/acs.chemrev.9b00489</li>\n</ul>"
+      }
+    ]
+  },
+  {
+    "id": "ncomms5213",
+    "title": "フォトニック量子プロセッサ上の変分固有値ソルバー（VQE）",
+    "iaId": "paper-explain-ncomms5213",
+    "iaUrl": "https://archive.org/details/paper-explain-ncomms5213",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "導入：量子固有値問題と既存手法の限界",
+        "videoUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch01.mp3",
+        "markdown": "<h2>導入：量子固有値問題と既存手法の限界</h2>\n<h3>なぜ固有値問題が重要か</h3>\n<ul>\n<li>原子・分子の性質はシュレーディンガー方程式の固有値（エネルギー）を解くことで決まる</li>\n<li>系の規模が指数関数的に拡大 → 古典コンピュータでは2〜3原子以上は厳密解が困難</li>\n<li>量子化学以外でも、検索エンジン最適化・新材料設計・創薬にも固有値問題が現れる</li>\n</ul>\n<h3>既存の量子アプローチ：QPE（量子位相推定）の問題点</h3>\n<ul>\n<li>QPE（量子位相推定）は固有値を指数的高速で計算できる</li>\n<li>しかし精度 $p$ を得るためには $O(1/p)$ 回の $e^{-i\\mathcal{H}t}$ 演算が必要</li>\n<li>実用的な4×4行列でも最低12個のCNOTゲートが必要</li>\n<li>現在のデバイスでは数十〜数百ゲートが限界 → QPEは近未来には非現実的</li>\n</ul>\n<h3>本論文の提案：VQE（変分量子固有値ソルバー）</h3>\n<p>2つのアルゴリズムの組み合わせ：</p>\n<table>\n<thead>\n<tr>\n<th>アルゴリズム</th>\n<th>担当</th>\n<th>計算の場所</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Algorithm 1</strong>: 量子期待値推定</td>\n<td>$\\langle\\mathcal{H}\\rangle$ の計算</td>\n<td>量子プロセッサ（QPU）</td>\n</tr>\n<tr>\n<td><strong>Algorithm 2</strong>: 量子変分固有値ソルバー</td>\n<td>パラメータ最適化</td>\n<td>古典プロセッサ（CPU）</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>QPEの「長いコヒーレント発展」をなくし、<strong>短いコヒーレント発展を多数回繰り返す</strong>方式に変換</li>\n<li>今日・近未来の量子デバイスで実現可能</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 1 参照（原論文）— QPUとCPUのハイブリッドアーキテクチャ</p>\n</blockquote>\n<hr />"
+      },
+      {
+        "index": 2,
+        "title": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+        "videoUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch02.mp3",
+        "markdown": "<h2>Algorithm 1：ハミルトニアン期待値の効率的な計算</h2>\n<h3>ハミルトニアンのパウリ分解</h3>\n<p>任意のハミルトニアンはパウリ演算子の積の和として書ける（式1）：</p>\n<p>$$\\mathcal{H} = \\sum_{i\\alpha} h^i_\\alpha \\sigma_\\alpha^i + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta} \\sigma_\\alpha^i \\sigma_\\beta^j + \\cdots$$</p>\n<ul>\n<li>ローマ字インデックス $i, j$：演算子が作用する部分空間</li>\n<li>ギリシャ字インデックス $\\alpha, \\beta$：パウリ演算子の種類（$x, y, z$）</li>\n<li>係数 $h^i_\\alpha, h^{ij}_{\\alpha\\beta}$ は実数</li>\n</ul>\n<p>期待値の線形性により（式2）：</p>\n<p>$$\\langle\\mathcal{H}\\rangle = \\sum_{i\\alpha} h^i_\\alpha \\langle\\sigma_\\alpha^i\\rangle + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta} \\langle\\sigma_\\alpha^i \\sigma_\\beta^j\\rangle + \\cdots$$</p>\n<h3>なぜ量子コンピュータが効率的か</h3>\n<ul>\n<li>量子ハードウェアはパウリ積の期待値を一定時間で測定できる</li>\n<li>必要な繰り返し回数は $O(|h|^2/p^2)$（$p$ は精度）</li>\n<li><strong>コヒーレンス時間は $O(1)$（1回の測定で十分）</strong>：QPEの $O(1/p)$ と対照的</li>\n<li>指数的な量子優位性を保ちながら、コヒーレンス要件を劇的に削減</li>\n</ul>\n<h3>古典計算との比較</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>量子（このアルゴリズム）</th>\n<th>古典</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>状態保持</td>\n<td>$n$ 量子ビット</td>\n<td>$2^n$ 複素数</td>\n</tr>\n<tr>\n<td>期待値計算</td>\n<td>$O(|h|^2 M/p^2)$ 繰り返し</td>\n<td>$O(2^n)$ 浮動小数点演算</td>\n</tr>\n<tr>\n<td>規模依存</td>\n<td>多項式</td>\n<td>指数的</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>$n$ 量子ビットで $2^n \\times 2^n$ のハミルトニアン期待値を効率計算</li>\n<li>N-表現可能性問題（NP困難）が量子ハードウェアでは自然に回避される</li>\n</ul>\n<hr />"
+      },
+      {
+        "index": 3,
+        "title": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+        "videoUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch03.mp3",
+        "markdown": "<h2>Algorithm 2：変分最適化によるアンザッツ状態の準備</h2>\n<h3>変分原理の活用</h3>\n<p>レイリー・リッツ商の最小化（式3）：</p>\n<p>$$\\min_{|\\psi\\rangle} \\frac{\\langle\\psi|\\mathcal{H}|\\psi\\rangle}{\\langle\\psi|\\psi\\rangle}$$</p>\n<ul>\n<li>最小値を与える $|\\psi\\rangle$ が基底状態</li>\n<li>実験パラメータ $\\{\\theta_i\\}$ で $|\\psi(\\{\\theta_i\\})\\rangle$ を準備 → Algorithm 1 で期待値計算 → CPUで最小化</li>\n</ul>\n<h3>ユニタリ連結クラスター（UCC）アンザッツ（式4）</h3>\n<p>$$|\\Psi\\rangle = e^{T - T^\\dagger}|\\Phi\\rangle_{\\rm ref}$$</p>\n<ul>\n<li>$|\\Phi\\rangle_{\\rm ref}$：参照状態（通常はハートリー・フォック基底状態）</li>\n<li>$T = T_1 + T_2 + \\cdots + T_N$：クラスター演算子</li>\n<li>$T_1 = \\sum_{pr} t_p^r \\hat{a}_p^\\dagger \\hat{a}_r$（1粒子励起）</li>\n<li>$T_2 = \\sum_{pqrs} t_{pq}^{rs} \\hat{a}_p^\\dagger \\hat{a}_q^\\dagger \\hat{a}_r \\hat{a}_s$（2粒子励起）</li>\n<li>$(T - T^\\dagger)$ は反エルミート → $e^{T-T^\\dagger}$ はユニタリ</li>\n<li>古典コンピュータでは効率的アルゴリズムが知られていない → 量子優位性の具体例</li>\n</ul>\n<h3>アルゴリズムのループ</h3>\n<ol>\n<li>量子回路パラメータ $\\{\\theta_i^n\\}$ で状態 $|\\psi^n\\rangle$ を準備</li>\n<li>Algorithm 1 で $\\langle\\mathcal{H}\\rangle = f(\\{\\theta_i^n\\})$ を計算</li>\n<li>CPUの最小化アルゴリズム（Nelder-Mead 単体法）が次のパラメータ $\\{\\theta_i^{n+1}\\}$ を決定</li>\n<li>収束まで繰り返す</li>\n</ol>\n<blockquote>\n<p>📊 Fig. 2 参照（原論文）— 実験装置（フォトニックチップ）の模式図と写真</p>\n</blockquote>\n<hr />"
+      },
+      {
+        "index": 4,
+        "title": "実験実装：フォトニック量子回路",
+        "videoUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch04.mp3",
+        "markdown": "<h2>実験実装：フォトニック量子回路</h2>\n<h3>量子プロセッサの構成</h3>\n<ul>\n<li><strong>集積フォトニクス技術</strong>（ブリストル大学・O'Brienグループ）</li>\n<li>自発パラメトリック下方変換で光子対を生成、導波路に入射して $|00\\rangle$ を準備</li>\n<li>8個の電圧制御熱位相シフタ $\\phi_{1-8}$ と1個のCNOTゲートで任意の2量子ビット純粋状態を準備</li>\n<li>光子検出器 D1〜D4 の同時計数率をCPUへ送信</li>\n<li>平均統計忠実度 $F \\geq 99\\%$（Shadbolt et al. 2011）</li>\n</ul>\n<h3>実験対象：He-H+ の結合解離曲線</h3>\n<p>フルCI（完全配置間相互作用）ハミルトニアン（4次元 = 2量子ビット）（式5）：</p>\n<p>$$\\mathcal{H}(R) = \\sum_{i\\alpha} h^i_\\alpha(R) \\sigma_\\alpha^i + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta}(R) \\sigma_\\alpha^i \\sigma_\\beta^j$$</p>\n<ul>\n<li>係数は PSI3 計算化学パッケージで算出（最小基底 STO-3G）</li>\n<li>核間距離 $R$ をパラメータとして変化させ、各 $R$ での基底状態エネルギーを計算</li>\n<li>QPEによる同等計算では最低12 CNOTゲートが必要 → 本手法では <strong>1 CNOT</strong> のみ</li>\n</ul>\n<h3>QPEとの計算コスト比較</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>QPE</th>\n<th>このアルゴリズム</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>CNOT数</td>\n<td>≥ 12</td>\n<td><strong>1</strong></td>\n</tr>\n<tr>\n<td>コヒーレンス要件</td>\n<td>長時間（$O(1/p)$）</td>\n<td>短時間×多数回</td>\n</tr>\n<tr>\n<td>補助量子ビット</td>\n<td>必要</td>\n<td>不要</td>\n</tr>\n</tbody>\n</table>\n<hr />"
+      },
+      {
+        "index": 5,
+        "title": "実験結果：化学精度での基底状態エネルギー計算",
+        "videoUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch05.mp3",
+        "markdown": "<h2>実験結果：化学精度での基底状態エネルギー計算</h2>\n<h3>代表的な最適化実行（$R = 90$ pm）</h3>\n<ul>\n<li>Algorithm 2 を実行し、$\\langle\\mathcal{H}(R)\\rangle$ を最小化</li>\n<li>最適化は基底状態エネルギーに収束</li>\n<li>各ステップでのタングル（量子もつれの度合い）も追跡</li>\n<li>基底状態は小さいがゼロでないタングルを持つ（量子もつれが必要）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3 参照（原論文）— エネルギー収束と重なり積分の最適化過程</p>\n</blockquote>\n<h3>結合解離曲線（$R = 80〜100$ pm の79点）</h3>\n<p>測定された平衡結合距離と基底状態エネルギー：</p>\n<p>$$R_{\\rm eq} = 92.3 \\pm 0.1 \\text{ pm}, \\quad E_0 = -2.865 \\pm 0.008 \\text{ MJ/mol}$$</p>\n<ul>\n<li><strong>96%以上のデータ点が化学精度内</strong>（理論値との誤差 &lt; 化学精度）</li>\n<li>系統誤差 $\\varepsilon = 50$ KJ/mol を補正済み</li>\n<li>解の再現性：最適化終了後、実験パラメータから状態を効率的に再構築可能</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4 参照（原論文）— He-H+ の結合解離曲線</p>\n</blockquote>\n<h3>誤差の原因（付録：実験詳細）</h3>\n<table>\n<thead>\n<tr>\n<th>誤差の種類</th>\n<th>原因</th>\n<th>将来の改善法</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>統計誤差（$\\sigma \\approx 37$ KJ/mol）</td>\n<td>光子のポアソン統計</td>\n<td>測定回数増加で低減</td>\n</tr>\n<tr>\n<td>系統誤差（$\\varepsilon = 50$ KJ/mol）</td>\n<td>① 光源の不純度（高次光子数項）<br>② チップ設計誤差<br>③ 結合効率のアンバランス</td>\n<td>① 真の単一光子源<br>② 製造精度向上<br>③ ファイバー固定技術</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>平均同時計数率 2000〜4000 events/秒</li>\n<li>全解離曲線測定に約158時間（冷却サイクルが律速、デューティサイクル〜5%）</li>\n</ul>\n<hr />"
+      }
+    ]
+  },
+  {
+    "id": "quant-ph_9707021",
+    "title": "エニオンによる耐故障量子計算（Fault-tolerant quantum computation by anyons）",
+    "iaId": "paper-explain-quant-ph-9707021",
+    "iaUrl": "https://archive.org/details/paper-explain-quant-ph-9707021",
+    "chapters": [
+      {
+        "index": 1,
+        "title": "トーリックコードTOR(k) ── 定義と保護空間",
+        "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch01.mp3"
+      },
+      {
+        "index": 2,
+        "title": "コードの誤り訂正能力とハミルトニアンH₀",
+        "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch02.mp3"
+      },
+      {
+        "index": 3,
+        "title": "アーベルアニオン ── 電荷と磁気渦の統計",
+        "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch03.mp3"
+      },
+      {
+        "index": 4,
+        "title": "量子二重体D(G) ── 非アーベルアニオンの代数的基盤",
+        "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch04.mp3"
+      },
+      {
+        "index": 5,
+        "title": "リボン演算子とホップ代数 ── 粒子対の生成と代数構造",
+        "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch05.mp3"
+      },
+      {
+        "index": 6,
+        "title": "ブレイディングと融合 ── Section 6の位相的演算子",
+        "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch06.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch06.mp3"
+      }
+    ]
+  }
+]

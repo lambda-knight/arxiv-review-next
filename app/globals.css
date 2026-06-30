@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg: #0a0a0f;
+  --surface: #13131a;
+  --surface2: #1c1c26;
+  --border: #2a2a3a;
+  --accent: #7c6af7;
+  --accent2: #a78bfa;
+  --text: #e2e2f0;
+  --muted: #6b6b80;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+  min-height: 100vh;
+}
+
+a { color: var(--accent2); text-decoration: none; }
+a:hover { color: #fff; }
+
+video { border-radius: 8px; background: #000; }
+
+details > summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 6px 0;
+  list-style: none;
+}
+details > summary:hover { color: var(--text); }
+details[open] > summary { color: var(--accent2); }
+
+/* ── スライドコンテンツ（Markdown → HTML） ── */
+.slide-content h1, .slide-content h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 1.2em 0 0.5em;
+  color: var(--accent2);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+}
+.slide-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1em 0 0.4em;
+  color: var(--text);
+}
+.slide-content p {
+  margin: 0.6em 0;
+  line-height: 1.8;
+}
+.slide-content ul, .slide-content ol {
+  margin: 0.6em 0 0.6em 1.4em;
+  line-height: 1.8;
+}
+.slide-content li { margin: 0.2em 0; }
+.slide-content strong { color: var(--text); font-weight: 600; }
+.slide-content em { color: var(--accent2); }
+.slide-content code {
+  font-family: monospace;
+  font-size: 0.88em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--surface2);
+  color: #e879f9;
+}
+.slide-content pre {
+  background: var(--surface2);
+  border-radius: 6px;
+  padding: 12px;
+  overflow-x: auto;
+  margin: 0.8em 0;
+}
+.slide-content pre code { background: none; padding: 0; color: inherit; }
+.slide-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  font-size: 0.9rem;
+}
+.slide-content th, .slide-content td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+.slide-content th {
+  background: var(--surface2);
+  color: var(--accent2);
+  font-weight: 600;
+}
+.slide-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  margin: 0.8em 0;
+  color: var(--muted);
 }
