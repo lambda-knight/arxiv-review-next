@@ -49,13 +49,6 @@ export default async function PaperPage({ params }: { params: Promise<{ id: stri
         <video controls style={{ width: "100%" }} src={paper.singleVideoUrl} />
       )}
 
-      {/* 全体音声（章別動画がない場合、または章別音声が未アップロードの場合） */}
-      {paper.singleAudioUrl && (
-        <div style={{ marginTop: paper.chapters.length > 0 ? 32 : 12 }}>
-          <p style={{ fontSize: 13, color: "var(--muted)", marginBottom: 6 }}>🎧 ポッドキャスト音声（全体）</p>
-          <audio controls style={{ width: "100%" }} src={paper.singleAudioUrl} />
-        </div>
-      )}
     </div>
   );
 }

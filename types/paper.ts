@@ -15,5 +15,4 @@ export interface Paper {
   iaUrl: string;
   chapters: Chapter[];
   singleVideoUrl?: string;
-  singleAudioUrl?: string;
 }
