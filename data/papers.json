@@ -41,7 +41,8 @@
         "markdown": "<h2>Appendix A: 線形代数の基礎</h2>\n<h3>ヒルベルト空間と内積</h3>\n<p>$d$ 次元複素ヒルベルト空間 $\\mathbb{C}^d$ の内積:</p>\n<p>$$\\langle\\phi|\\psi\\rangle = \\sum_{i=1}^d \\phi_i^* \\psi_i$$</p>\n<ul>\n<li>共役双線形性: $\\langle\\phi|\\psi\\rangle = \\overline{\\langle\\psi|\\psi\\rangle}$</li>\n<li>ノルム: $\\||\\psi\\rangle\\| = \\sqrt{\\langle\\psi|\\psi\\rangle} \\geq 0$</li>\n</ul>\n<h3>演算子とスペクトル定理</h3>\n<p><strong>エルミート演算子（自己随伴）:</strong> $A^\\dagger = A$</p>\n<ul>\n<li>固有値はすべて実数</li>\n<li>異なる固有値に対応する固有ベクトルは直交する</li>\n</ul>\n<p><strong>スペクトル定理:</strong> 任意のエルミート演算子 $A$ は:</p>\n<p>$$A = \\sum_i \\lambda_i |i\\rangle\\langle i|, \\quad A|i\\rangle = \\lambda_i|i\\rangle, \\quad \\{|i\\rangle\\}\\text{: 正規直交固有基底}$$</p>\n<p><strong>正規直交基底:</strong> $\\langle i|j\\rangle = \\delta_{ij}$, $\\sum_i |i\\rangle\\langle i| = I$（完全性関係）</p>\n<h3>トレースと行列関数</h3>\n<p>$$\\text{Tr}(A) = \\sum_i \\langle i|A|i\\rangle = \\sum_i A_{ii} \\quad\\text{（基底に依らない）}$$</p>\n<p><strong>性質:</strong>\n- $\\text{Tr}(AB) = \\text{Tr}(BA)$（巡回性）\n- $\\text{Tr}(A \\otimes B) = \\text{Tr}(A)\\text{Tr}(B)$</p>\n<p><strong>行列関数（スペクトル定理による）:</strong></p>\n<p>$$f(A) = \\sum_i f(\\lambda_i)|i\\rangle\\langle i|, \\quad A = \\sum_i \\lambda_i|i\\rangle\\langle i|$$</p>\n<p>例: $e^A = \\sum_i e^{\\lambda_i}|i\\rangle\\langle i|$, $\\ln\\rho = \\sum_i \\ln\\lambda_i|i\\rangle\\langle i|$</p>\n<h3>テンソル積の計算規則</h3>\n<p>$$|a\\rangle_A \\otimes |b\\rangle_B = |ab\\rangle_{AB}$$</p>\n<p>$$A \\otimes B: (A\\otimes B)(|a\\rangle\\otimes|b\\rangle) = (A|a\\rangle)\\otimes(B|b\\rangle)$$</p>\n<p>$(A \\otimes B)(C \\otimes D) = (AC) \\otimes (BD)$</p>\n<p>$(A \\otimes B)^\\dagger = A^\\dagger \\otimes B^\\dagger$</p>\n<h3>シュミット分解（Schmidt Decomposition）</h3>\n<p>任意の純粋双部系状態 $|\\psi\\rangle_{AB}$ は:</p>\n<p>$$|\\psi\\rangle_{AB} = \\sum_{i=1}^{r} \\sqrt{\\lambda_i} |i\\rangle_A|i'\\rangle_B$$</p>\n<ul>\n<li>$r$: シュミット数（Schmidt rank）</li>\n<li>$\\{|i\\rangle_A\\}$, $\\{|i'\\rangle_B\\}$: それぞれの局所正規直交基底</li>\n<li>$\\lambda_i > 0$, $\\sum_i \\lambda_i = 1$</li>\n<li>$r = 1$: 積状態、$r > 1$: もつれ状態</li>\n</ul>\n<p><strong>量子もつれの検出:</strong> シュミット数 $r > 1$ ⟺ もつれ状態</p>\n<hr />"
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/1106.1445"
+    "arxivUrl": "https://arxiv.org/abs/1106.1445",
+    "singleAudioUrl": "https://archive.org/download/paper-explain-1106-1445/paper_1106.1445.m4a"
   },
   {
     "id": "1208.0928",
@@ -178,7 +179,8 @@
         "markdown": "<h2>線形方程式系とNISQ時代</h2>\n<p><strong>HHL アルゴリズム（Harrow-Hassidim-Lloyd 2009）:</strong></p>\n<p>$$Ax = b \\quad \\Rightarrow \\quad |x\\rangle \\propto A^{-1}|b\\rangle$$</p>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>計算量</th>\n<th>$N$ 依存性</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>古典（共役勾配法）</td>\n<td>$O(N\\kappa\\log(1/\\epsilon))$</td>\n<td>$N$ に比例</td>\n</tr>\n<tr>\n<td>量子（HHL）</td>\n<td>$O(\\kappa^2 \\log N / \\epsilon^2)$</td>\n<td>$\\log N$ — 指数的高速化</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>$\\kappa$: 条件数（最大/最小固有値比）</li>\n<li><strong>制約（細字条件）</strong>: 解を全て読み出すと $O(N)$ かかる</li>\n<li>有効な用途: 内積・期待値計算、量子系のアウトプット</li>\n</ul>\n<p><strong>NISQ 時代の現状:</strong>\n- 物理ゲートエラー率: 0.1〜1%（深い回路では誤差蓄積）\n- Google（2023）表面符号で「しきい値定理」を実証\n  - 物理量子ビット増加 → 論理エラー指数的減少を確認\n- 論理量子ビット1つに物理量子ビット数千が必要</p>\n<p><strong>量子優位性の厳密な実証は現在も進行中:</strong>\n- VQE/QAOA: NISQ デバイスで実行可能だが古典との差が不明確\n- 脱量子化（dequantization）: 量子機械学習の一部は古典でも同等と判明\n- 量子化学シミュレーションが「最初の実用的量子優位性」の最有力候補</p>\n<p><strong>近未来のロードマップ:</strong>\n- 2020年代後半: フォールトトレラント量子コンピュータの初期実証\n- 2030年代以降: 実用規模での量子化学・材料設計への応用</p>"
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/1511.04206"
+    "arxivUrl": "https://arxiv.org/abs/1511.04206",
+    "singleAudioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206.m4a"
   },
   {
     "id": "1803.00745",
@@ -222,7 +224,8 @@
         "markdown": "<h2>数値実験：分類と多体ダイナミクス</h2>\n<h3>2次元分類タスク（200サンプル）</h3>\n<ul>\n<li>訓練データ: 2次元入力 $\\boldsymbol{x}_i = (x_{i,0}, x_{i,1})$、2クラス（100サンプル/クラス）</li>\n<li>教師: クラス0→$(1,0)$、クラス1→$(0,1)$</li>\n<li>出力: 第1・第2量子ビットの $Z$ 期待値をソフトマックス変換\n$$\\boldsymbol{y}_i = \\boldsymbol{F}\\!\\left(\\langle Z_1\\rangle, \\langle Z_2\\rangle\\right), \\quad F_k(\\boldsymbol{q}) = \\frac{e^{q_k}}{\\sum_i e^{q_i}}$$</li>\n<li>損失関数: クロスエントロピー</li>\n<li><strong>結果</strong>: 非線形な決定境界を正確に学習した</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4 参照（原論文）— 訓練データと最適化後の出力</p>\n</blockquote>\n<h3>量子多体ダイナミクスのフィッティング</h3>\n<p>10スピン完全結合横磁場イジング系のダイナミクスを6量子ビット回路で近似：</p>\n<ul>\n<li>教師データ: 10スピン系（$a_j$, $J_{jk}$ は回路とは独立の乱数）の $Z$ 期待値</li>\n<li>初期状態 $|0\\rangle^{\\otimes 10}$、過渡応答時間 $T_{\\rm transient} = 300$ を除いた $t \\in [300, 308]$</li>\n<li>$t$ を $x \\in [-1, 1]$ に線形マッピングして入力</li>\n<li><strong>学習対象</strong>: 最初の3スピンの $Z$ 期待値を6量子ビット回路の最初の3量子ビット出力で近似</li>\n<li><strong>結果</strong>: 6量子ビット回路（64次元）が10スピン系（1024次元）の3つのオブザーバブルを同時に再現</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 5 参照（原論文）— 多体ダイナミクスのフィッティング結果</p>\n</blockquote>\n<hr />"
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/1803.00745"
+    "arxivUrl": "https://arxiv.org/abs/1803.00745",
+    "singleAudioUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745.m4a"
   },
   {
     "id": "1907.11157",
@@ -233,28 +236,33 @@
       {
         "index": 1,
         "title": "量子誤り訂正の背景と量子エラーの性質",
-        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch01.mp4"
+        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch01.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch01.m4a"
       },
       {
         "index": 2,
         "title": "量子冗長性とスタビライザー測定",
         "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch02.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch02.m4a",
         "markdown": "<h2>量子冗長性とスタビライザー測定</h2>\n<h3>2量子ビット符号：量子冗長性の原理</h3>\n<p>$$|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle \\xrightarrow{\\text{エンコード}} |\\psi\\rangle_L = \\alpha|00\\rangle + \\beta|11\\rangle \\tag{12}$$</p>\n<ul>\n<li>複製（クローン）ではなくもつれによる冗長性</li>\n<li>スタビライザー $Z_1Z_2$：両量子ビットがパリティを保つか検査</li>\n<li>$Z_1Z_2|\\psi\\rangle_L = |\\psi\\rangle_L$（誤りなし）→ 固有値 $+1$</li>\n<li>X誤りが発生 → 固有値 $-1$（シンドローム = 1）</li>\n</ul>\n<h3>3量子ビット反復符号 [[3,1,3]]</h3>\n<p>$|0\\rangle_L = |000\\rangle$、$|1\\rangle_L = |111\\rangle$</p>\n<p>スタビライザー：$\\mathcal{S} = \\langle Z_1Z_2,\\, Z_2Z_3 \\rangle$</p>\n<p>シンドロームによる誤り判定：</p>\n<table>\n<thead>\n<tr>\n<th>シンドローム $(s_1,s_2)$</th>\n<th>判定された誤り</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>$(0,0)$</td>\n<td>誤りなし</td>\n</tr>\n<tr>\n<td>$(1,0)$</td>\n<td>$X_1$（1番目の量子ビット）</td>\n</tr>\n<tr>\n<td>$(1,1)$</td>\n<td>$X_2$（2番目の量子ビット）</td>\n</tr>\n<tr>\n<td>$(0,1)$</td>\n<td>$X_3$（3番目の量子ビット）</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li><strong>シンドロームは元の状態を壊さない</strong>（スタビライザー測定の鍵）</li>\n</ul>\n<hr />"
       },
       {
         "index": 3,
         "title": "スタビライザー符号の一般理論とショア符号",
-        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch03.mp4"
+        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch03.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch03.m4a"
       },
       {
         "index": 4,
         "title": "表面符号──四サイクルから格子へ",
-        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch04.mp4"
+        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch04.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch04.m4a"
       },
       {
         "index": 5,
         "title": "実装の課題──復号・閾値・フォルトトレラント計算",
-        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch05.mp4"
+        "videoUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch05.mp4",
+        "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch05.m4a"
       },
       {
         "index": 6,
@@ -263,7 +271,8 @@
         "audioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157_ch06.mp3"
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/1907.11157"
+    "arxivUrl": "https://arxiv.org/abs/1907.11157",
+    "singleAudioUrl": "https://archive.org/download/paper-explain-1907-11157/paper_1907.11157.m4a"
   },
   {
     "id": "2503.20020",
@@ -356,7 +365,8 @@
         "markdown": "<h2>まとめと今後の課題</h2>\n<p><strong>4つの貢献</strong>:\n1. <strong>ERQAベンチマーク</strong>（オープンソース公開）\n2. <strong>Gemini Robotics-ER</strong>: 空間理解・軌跡予測・把持予測に優れたVLM\n3. <strong>Gemini Robotics</strong>: 50Hzリアルタイム制御、多様なタスク・形態への汎化\n4. <strong>安全性フレームワーク</strong>: コンテンツ安全性＋意味的行動安全性</p>\n<p><strong>現在の限界</strong>:\n- 長時間ビデオでの空間関係グラウンディングに課題\n- 数値予測（点・ボックス）の精度が細かい制御には不十分な場合がある\n- 推論と精密な器用さを同時に要求するタスクに課題</p>\n<p><strong>今後の課題</strong>:\n- シミュレーションを使った視覚多様性・接触豊富なデータ生成技術の開発\n- 少数データでの新形態適応\n- ゼロショットクロス形態転移の実現</p>\n<hr />"
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/2503.20020"
+    "arxivUrl": "https://arxiv.org/abs/2503.20020",
+    "singleAudioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020.mp3"
   },
   {
     "id": "2605.30280",
@@ -449,7 +459,8 @@
         "markdown": "<h2>まとめ</h2>\n<p><strong>4つの主要貢献</strong>:\n1. <strong>Qwen-VLA</strong>: 操作・ナビゲーション・自我視点データを共有アクション-軌跡空間で統一するVLAモデル\n2. <strong>大規模ジョイント事前学習</strong>: 異質なデータソース（操作・自我視点・合成・ナビ・VL）を横断する事前学習\n3. <strong>段階的学習レシピ</strong>: T2A→CPT→SFT→RLの4段階で離散言語トークンと連続行動軌跡のギャップを橋渡し\n4. <strong>包括的評価</strong>: 複数のシミュレーション・実世界・ナビゲーションベンチマークでの評価</p>\n<p><strong>主な発見</strong>:\n- 単一の汎化モデルが多くの専門化モデルを上回ることが可能\n- 大規模事前学習はインドメイン・OOD両方の性能向上に不可欠\n- 操作とナビゲーションのジョイント学習は互いに干渉しない\n- RLによる成功報酬最適化がOOD汎化を改善</p>\n<hr />"
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/2605.30280"
+    "arxivUrl": "https://arxiv.org/abs/2605.30280",
+    "singleAudioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280.mp3"
   },
   {
     "id": "chemrev.9b00489",
@@ -605,7 +616,8 @@
         "audioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_ch05.mp3",
         "markdown": "<h2>実験結果：化学精度での基底状態エネルギー計算</h2>\n<h3>代表的な最適化実行（$R = 90$ pm）</h3>\n<ul>\n<li>Algorithm 2 を実行し、$\\langle\\mathcal{H}(R)\\rangle$ を最小化</li>\n<li>最適化は基底状態エネルギーに収束</li>\n<li>各ステップでのタングル（量子もつれの度合い）も追跡</li>\n<li>基底状態は小さいがゼロでないタングルを持つ（量子もつれが必要）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3 参照（原論文）— エネルギー収束と重なり積分の最適化過程</p>\n</blockquote>\n<h3>結合解離曲線（$R = 80〜100$ pm の79点）</h3>\n<p>測定された平衡結合距離と基底状態エネルギー：</p>\n<p>$$R_{\\rm eq} = 92.3 \\pm 0.1 \\text{ pm}, \\quad E_0 = -2.865 \\pm 0.008 \\text{ MJ/mol}$$</p>\n<ul>\n<li><strong>96%以上のデータ点が化学精度内</strong>（理論値との誤差 &lt; 化学精度）</li>\n<li>系統誤差 $\\varepsilon = 50$ KJ/mol を補正済み</li>\n<li>解の再現性：最適化終了後、実験パラメータから状態を効率的に再構築可能</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4 参照（原論文）— He-H+ の結合解離曲線</p>\n</blockquote>\n<h3>誤差の原因（付録：実験詳細）</h3>\n<table>\n<thead>\n<tr>\n<th>誤差の種類</th>\n<th>原因</th>\n<th>将来の改善法</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>統計誤差（$\\sigma \\approx 37$ KJ/mol）</td>\n<td>光子のポアソン統計</td>\n<td>測定回数増加で低減</td>\n</tr>\n<tr>\n<td>系統誤差（$\\varepsilon = 50$ KJ/mol）</td>\n<td>① 光源の不純度（高次光子数項）<br>② チップ設計誤差<br>③ 結合効率のアンバランス</td>\n<td>① 真の単一光子源<br>② 製造精度向上<br>③ ファイバー固定技術</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>平均同時計数率 2000〜4000 events/秒</li>\n<li>全解離曲線測定に約158時間（冷却サイクルが律速、デューティサイクル〜5%）</li>\n</ul>\n<hr />"
       }
-    ]
+    ],
+    "singleAudioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213.m4a"
   },
   {
     "id": "quant-ph_9707021",
@@ -649,6 +661,7 @@
         "videoUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch06.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021_ch06.mp3"
       }
-    ]
+    ],
+    "singleAudioUrl": "https://archive.org/download/paper-explain-quant-ph-9707021/paper_quant-ph_9707021.m4a"
   }
 ]
