@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,9 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span style={{ fontSize: 11, fontFamily: "monospace", padding: "2px 8px", borderRadius: 4, background: "var(--accent)", color: "#fff" }}>
               arxiv-review
             </span>
-            <a href="/" style={{ fontSize: 14, fontWeight: 500, color: "var(--text)" }}>
+            <Link href="/" style={{ fontSize: 14, fontWeight: 500, color: "var(--text)" }}>
               論文解説動画
-            </a>
+            </Link>
           </div>
         </header>
 
