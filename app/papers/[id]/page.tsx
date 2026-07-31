@@ -1,6 +1,7 @@
 import papersData from "@/data/papers.json";
 import type { Paper } from "@/types/paper";
 import { MathSlide } from "./MathSlide";
+import { AnimatedPaper } from "./AnimatedPaper";
 
 const papers = papersData as Paper[];
 
@@ -21,6 +22,16 @@ export default async function PaperPage({ params }: { params: Promise<{ id: stri
 
   return (
     <div>
+      {paper.webAudioUrl && paper.timeline && (
+        <AnimatedPaper
+          paperId={paper.id}
+          title={paper.title}
+          audioUrl={paper.webAudioUrl}
+          markdownSource={paper.markdownSource}
+          timeline={paper.timeline}
+        />
+      )}
+
       {/* 章別動画 */}
       {paper.chapters.length > 0 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>

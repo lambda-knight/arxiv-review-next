@@ -15,4 +15,17 @@ export interface Paper {
   iaUrl: string;
   chapters: Chapter[];
   singleVideoUrl?: string;
+  webAudioUrl?: string;
+  markdownSource?: string;
+  timeline?: {
+    fps: number;
+    totalFrames: number;
+    cues: Array<{
+      speaker: "A" | "B";
+      text: string;
+      section: string;
+      startFrame: number;
+      endFrame: number;
+    }>;
+  };
 }

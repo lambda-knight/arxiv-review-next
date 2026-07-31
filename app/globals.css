@@ -23,6 +23,16 @@ a:hover { color: #fff; }
 
 video { border-radius: 8px; background: #000; }
 
+.remotion-adjuster { display:flex; flex-wrap:wrap; gap:7px; align-items:center; margin-top:10px; padding:10px; border:1px solid var(--border); border-radius:8px; background:var(--surface); }
+.remotion-adjuster button { padding:6px 9px; border:1px solid var(--border); border-radius:6px; background:var(--surface2); color:var(--text); cursor:pointer; font-size:12px; }
+.remotion-adjuster button:hover { border-color:var(--accent2); }
+.remotion-adjuster .adjuster-icon { position:relative; display:inline-grid; place-items:center; min-width:38px; height:36px; padding:5px 8px; font-size:16px; line-height:1; }
+.remotion-adjuster .adjuster-icon.is-active { border-color:var(--accent2); background:color-mix(in srgb, var(--accent2) 16%, var(--surface2)); }
+.remotion-adjuster .adjuster-icon::after { content:attr(data-tooltip); position:absolute; z-index:30; left:50%; bottom:calc(100% + 9px); translate:-50% 3px; width:max-content; max-width:240px; padding:7px 9px; border:1px solid var(--border); border-radius:6px; background:var(--text); color:var(--surface); font-size:11px; font-weight:500; line-height:1.4; white-space:normal; text-align:center; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .15s ease, translate .15s ease; box-shadow:0 4px 14px rgba(0,0,0,.22); }
+.remotion-adjuster .adjuster-icon:hover::after, .remotion-adjuster .adjuster-icon:focus-visible::after { opacity:1; visibility:visible; translate:-50% 0; }
+.remotion-adjuster .adjuster-icon:focus-visible { outline:2px solid var(--accent2); outline-offset:2px; }
+.remotion-adjuster > span { margin-left:auto; color:var(--muted); font-size:11px; }
+
 details > summary {
   cursor: pointer;
   color: var(--muted);
