@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Player, type PlayerRef } from "@remotion/player";
 import type { ChapterTimeline as EpisodeTimeline } from "@/types/paper";
 import { YukkuriWeb } from "./remotion/YukkuriWeb";
-import { YukkuriPrezi } from "./remotion/YukkuriPrezi";
 import type { TimingData } from "./remotion/types";
 
 type AnimationProps = {
@@ -93,7 +92,6 @@ export function AnimatedChapter(props: AnimationProps) {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const storageKey = `ai-qc-news:adjustment:${props.date}:${props.mode}`;
   const [adjustments, setAdjustments] = useState<Adjustments>(DEFAULT_ADJUSTMENTS);
-  const [viewMode, setViewMode] = useState<"normal" | "prezi">("normal");
   const sections = useMemo(
     () => [...new Set(timingData.segments.map((segment) => segment.sectionName))],
     [timingData.segments],
@@ -102,8 +100,6 @@ export function AnimatedChapter(props: AnimationProps) {
   useEffect(() => {
     const saved = window.localStorage.getItem(storageKey);
     if (saved) setAdjustments({ ...DEFAULT_ADJUSTMENTS, ...(JSON.parse(saved) as Partial<Adjustments>) });
-    const requested = new URLSearchParams(window.location.search).get("view");
-    if (requested === "prezi") setViewMode("prezi");
   }, [storageKey]);
 
   useEffect(() => {
@@ -212,13 +208,9 @@ export function AnimatedChapter(props: AnimationProps) {
     <div style={{ marginTop: 8 }}>
       <div ref={fullscreenRef} className={`animation-fullscreen-shell${isPseudoFullscreen ? " is-pseudo-fullscreen" : ""}`}>
       <button type="button" className="fullscreen-close" aria-label="全画面表示を終了" onClick={toggleFullscreen}>×</button>
-      <div className="view-mode-switch" role="group" aria-label="表示モード">
-        <button type="button" className={viewMode === "normal" ? "is-active" : ""} onClick={() => setViewMode("normal")}>通常</button>
-        <button type="button" className={viewMode === "prezi" ? "is-active" : ""} onClick={() => setViewMode("prezi")}>Prezi</button>
-      </div>
       <Player
         ref={playerRef}
-        component={viewMode === "prezi" ? YukkuriPrezi : YukkuriWeb}
+        component={YukkuriWeb}
         inputProps={{ timingData, audioUrl: props.audioUrl, ...adjustments }}
         durationInFrames={timingData.totalFrames}
         compositionWidth={1280}
