@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ChapterTimeline } from "@/types/paper";
 import { AnimatedChapter } from "./AnimatedChapter";
-import { InlineAudioButton } from "./InlineAudioButton";
 import { MathSlide } from "./MathSlide";
 
 type Props = {
@@ -18,21 +17,27 @@ type Props = {
 
 export function ChapterViewToggle(props: Props) {
   const [view, setView] = useState<"animation" | "markdown">("animation");
-  const eventBase = `paper-${props.paperId}-chapter-${props.chapterIndex}`;
-  const stopEvent = `${eventBase}:stop`;
-  const play = (next: "animation" | "markdown") => {
-    window.dispatchEvent(new Event(stopEvent));
-    setView(next);
-    window.dispatchEvent(new Event(`${eventBase}:play-${next}`));
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [timeSec, setTimeSec] = useState(0);
+  const toggleAudio = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audio.paused) await audio.play();
+    else audio.pause();
   };
 
   return (
     <div className="chapter-view-shell">
-      <div className="chapter-view-toggle" role="tablist" aria-label="章の表示方法">
-        <button type="button" role="tab" aria-selected={view === "animation"} className={view === "animation" ? "is-active" : ""} onClick={() => play("animation")}>▶ アニメーションで再生</button>
-        <button type="button" role="tab" aria-selected={view === "markdown"} className={view === "markdown" ? "is-active" : ""} onClick={() => play("markdown")}>▶ Markdownを見ながら再生</button>
+      <audio ref={audioRef} src={props.audioUrl} preload="metadata" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} onTimeUpdate={(event) => setTimeSec(event.currentTarget.currentTime)} onSeeking={(event) => setTimeSec(event.currentTarget.currentTime)} />
+      <button type="button" className="audio-play-button chapter-audio-button" onClick={toggleAudio} aria-pressed={playing}>
+        {playing ? "⏸ 音声を停止" : "▶ 音声を再生"}
+      </button>
+      <div className="chapter-view-toggle" role="tablist" aria-label="再生中の表示方法">
+        <button type="button" role="tab" aria-selected={view === "animation"} className={view === "animation" ? "is-active" : ""} onClick={() => setView("animation")}>アニメーション</button>
+        <button type="button" role="tab" aria-selected={view === "markdown"} className={view === "markdown" ? "is-active" : ""} onClick={() => setView("markdown")}>Markdown</button>
       </div>
-      <div hidden={view !== "animation"}>
+      {view === "animation" ? (
         <AnimatedChapter
           date={props.paperId}
           mode={`chapter-${props.chapterIndex}`}
@@ -40,17 +45,15 @@ export function ChapterViewToggle(props: Props) {
           audioUrl={props.audioUrl}
           markdownSource={props.markdownSource}
           timeline={props.timeline}
-          playEventName={`${eventBase}:play-animation`}
-          stopEventName={stopEvent}
           showPlayButton={false}
+          externalTimeSec={timeSec}
+          externalPlaying={playing}
         />
-      </div>
-      <div hidden={view !== "markdown"}>
+      ) : (
         <div className="markdown-listening-view">
-          <InlineAudioButton src={props.audioUrl} playEventName={`${eventBase}:play-markdown`} stopEventName={stopEvent} showButton={false} />
           <MathSlide html={props.markdownHtml} />
         </div>
-      </div>
+      )}
     </div>
   );
 }

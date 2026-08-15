@@ -44,6 +44,7 @@ a:hover { color: #fff; }
 .view-mode-switch button.is-active { color:#06111e; background:linear-gradient(135deg,#67e8f9,#a78bfa); }
 .view-mode-switch button:disabled { cursor:not-allowed; opacity:.4; }
 .chapter-view-shell { margin-top:8px; }
+.chapter-audio-button { width:100%; margin-bottom:8px; padding:10px 14px; }
 .chapter-view-toggle { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-bottom:8px; padding:4px; border:1px solid var(--border); border-radius:10px; background:var(--surface); }
 .chapter-view-toggle button { border:0; border-radius:7px; padding:9px 12px; background:transparent; color:var(--muted); font-weight:700; cursor:pointer; }
 .chapter-view-toggle button.is-active { background:linear-gradient(135deg,#67e8f9,#a78bfa); color:#06111e; }

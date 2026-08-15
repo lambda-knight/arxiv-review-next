@@ -17,6 +17,8 @@ type AnimationProps = {
   playEventName?: string;
   stopEventName?: string;
   showPlayButton?: boolean;
+  externalTimeSec?: number;
+  externalPlaying?: boolean;
 };
 
 type Adjustments = {
@@ -114,6 +116,16 @@ export function AnimatedChapter(props: AnimationProps) {
       if (props.stopEventName) window.removeEventListener(props.stopEventName, stop);
     };
   }, [props.playEventName, props.stopEventName]);
+
+  useEffect(() => {
+    if (props.externalTimeSec === undefined) return;
+    const player = playerRef.current;
+    if (!player) return;
+    const target = Math.min(timingData.totalFrames - 1, Math.round(props.externalTimeSec * timingData.fps));
+    player.seekTo(target);
+    if (props.externalPlaying) player.play();
+    else player.pause();
+  }, [props.externalTimeSec, props.externalPlaying, timingData.fps, timingData.totalFrames]);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -216,7 +228,7 @@ export function AnimatedChapter(props: AnimationProps) {
         className="paper-remotion-player"
         style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: 10, overflow: "hidden" }}
       />
-      <audio
+      {props.externalTimeSec === undefined && <audio
         ref={audioRef}
         playsInline
         preload="metadata"
@@ -226,7 +238,7 @@ export function AnimatedChapter(props: AnimationProps) {
         onTimeUpdate={syncPlayerToAudio}
         onSeeking={syncPlayerToAudio}
         onEnded={() => { setIsAudioPlaying(false); playerRef.current?.pause(); }}
-      />
+      />}
       </div>
       <div className="remotion-adjuster" role="toolbar" aria-label="表示と同期の調整">
         <IconButton icon="⛶" label="全画面表示を切り替え" onClick={toggleFullscreen} />
