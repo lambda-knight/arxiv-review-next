@@ -43,6 +43,17 @@ a:hover { color: #fff; }
 .view-mode-switch button { border:0; border-radius:6px; padding:6px 14px; color:#9ca3af; background:transparent; cursor:pointer; font-weight:700; }
 .view-mode-switch button.is-active { color:#06111e; background:linear-gradient(135deg,#67e8f9,#a78bfa); }
 .view-mode-switch button:disabled { cursor:not-allowed; opacity:.4; }
+.chapter-view-shell { margin-top:8px; }
+.chapter-view-toggle { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-bottom:8px; padding:4px; border:1px solid var(--border); border-radius:10px; background:var(--surface); }
+.chapter-view-toggle button { border:0; border-radius:7px; padding:9px 12px; background:transparent; color:var(--muted); font-weight:700; cursor:pointer; }
+.chapter-view-toggle button.is-active { background:linear-gradient(135deg,#67e8f9,#a78bfa); color:#06111e; }
+.markdown-listening-view { border:1px solid var(--border); border-radius:10px; padding:10px; background:var(--surface); }
+.animation-fullscreen-shell:fullscreen .view-mode-switch, .animation-fullscreen-shell.is-pseudo-fullscreen .view-mode-switch { display:none; }
+.animation-fullscreen-shell:fullscreen .paper-remotion-player, .animation-fullscreen-shell.is-pseudo-fullscreen .paper-remotion-player { width:min(100%,calc(100dvh * 16 / 9))!important; height:auto!important; max-height:100dvh; margin:auto; border-radius:0!important; }
+@media (orientation:landscape) and (max-height:600px) {
+  .animation-fullscreen-shell:fullscreen, .animation-fullscreen-shell.is-pseudo-fullscreen { padding:0; }
+  .animation-fullscreen-shell:fullscreen .fullscreen-close, .animation-fullscreen-shell.is-pseudo-fullscreen .fullscreen-close { width:34px; height:34px; top:4px; right:4px; font-size:22px; opacity:.72; }
+}
 .karaoke-subtitle { position:absolute; z-index:20; left:240px; right:280px; bottom:12px; box-sizing:border-box; padding:4px 20px; color:#fff; font-family:"Hiragino Sans","Noto Sans JP",sans-serif; font-size:34px; font-weight:700; line-height:1.5; text-align:center; text-shadow:2px 2px 0 #000,-2px -2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,0 3px 8px rgba(0,0,0,.9); }
 .karaoke-subtitle.multiline { font-size:28px; text-align:left; }
 .karaoke-subtitle i { color:#fff; font:inherit; font-style:normal; text-shadow:inherit; }

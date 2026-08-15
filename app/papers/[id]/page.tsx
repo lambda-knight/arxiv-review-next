@@ -1,8 +1,7 @@
 import papersData from "@/data/papers.json";
 import type { Paper } from "@/types/paper";
 import { MathSlide } from "./MathSlide";
-import { AnimatedChapter } from "./AnimatedChapter";
-import { InlineAudioButton } from "./InlineAudioButton";
+import { ChapterViewToggle } from "./ChapterViewToggle";
 
 const papers = papersData as Paper[];
 
@@ -32,30 +31,22 @@ export default async function PaperPage({ params }: { params: Promise<{ id: stri
                 第{ch.index}章: {ch.title}
               </h3>
               {ch.audioUrl && ch.timeline && ch.markdownSource ? (
-                <details className="web-content-fold">
-                  <summary>Webアニメーションを表示／隠す</summary>
-                  <AnimatedChapter
-                    date={paper.id}
-                    mode={`chapter-${ch.index}`}
-                    title={`${paper.title} — 第${ch.index}章`}
-                    audioUrl={ch.audioUrl}
-                    markdownSource={ch.markdownSource}
-                    timeline={ch.timeline}
-                  />
-                </details>
+                <ChapterViewToggle
+                  paperId={paper.id}
+                  chapterIndex={ch.index}
+                  title={`${paper.title} — 第${ch.index}章`}
+                  audioUrl={ch.audioUrl}
+                  markdownHtml={ch.markdown ?? ""}
+                  markdownSource={ch.markdownSource}
+                  timeline={ch.timeline}
+                />
               ) : (
                 <video controls style={{ width: "100%" }} src={ch.videoUrl} />
               )}
               {ch.audioUrl && !ch.timeline && (
                 <audio controls style={{ width: "100%", marginTop: 8 }} src={ch.audioUrl} />
               )}
-              {ch.markdown && (
-                <details className="web-content-fold markdown-fold" open>
-                  <summary>本文・数式を表示／隠す</summary>
-                  {ch.audioUrl && <InlineAudioButton src={ch.audioUrl} />}
-                  <MathSlide html={ch.markdown} />
-                </details>
-              )}
+              {ch.markdown && !(ch.audioUrl && ch.timeline && ch.markdownSource) && <MathSlide html={ch.markdown} />}
             </section>
           ))}
         </div>
