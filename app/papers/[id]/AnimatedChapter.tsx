@@ -14,6 +14,9 @@ type AnimationProps = {
   mode: string;
   markdownSource?: string;
   timeline: EpisodeTimeline;
+  playEventName?: string;
+  stopEventName?: string;
+  showPlayButton?: boolean;
 };
 
 type Adjustments = {
@@ -100,6 +103,17 @@ export function AnimatedChapter(props: AnimationProps) {
     const requested = new URLSearchParams(window.location.search).get("view");
     if (requested === "prezi") setViewMode("prezi");
   }, [storageKey]);
+
+  useEffect(() => {
+    const play = () => { void audioRef.current?.play(); };
+    const stop = () => audioRef.current?.pause();
+    if (props.playEventName) window.addEventListener(props.playEventName, play);
+    if (props.stopEventName) window.addEventListener(props.stopEventName, stop);
+    return () => {
+      if (props.playEventName) window.removeEventListener(props.playEventName, play);
+      if (props.stopEventName) window.removeEventListener(props.stopEventName, stop);
+    };
+  }, [props.playEventName, props.stopEventName]);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -235,9 +249,11 @@ export function AnimatedChapter(props: AnimationProps) {
       </div>
       <div style={{ marginTop: 8, display: "flex", justifyContent: "space-between", gap: 12, color: "var(--muted)", fontSize: 12 }}>
         <span>動画プレビュー共通画面・音声同期Web版</span>
-        <button type="button" className="audio-play-button" onClick={toggleAudio} aria-pressed={isAudioPlaying}>
-          {isAudioPlaying ? "⏸ アニメーションを停止" : "▶ アニメーションを再生"}
-        </button>
+        {props.showPlayButton !== false && (
+          <button type="button" className="audio-play-button" onClick={toggleAudio} aria-pressed={isAudioPlaying}>
+            {isAudioPlaying ? "⏸ アニメーションを停止" : "▶ アニメーションを再生"}
+          </button>
+        )}
       </div>
     </div>
   );
