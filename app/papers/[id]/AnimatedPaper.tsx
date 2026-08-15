@@ -82,6 +82,8 @@ function toTimingData(props: AnimationProps): TimingData {
 export function AnimatedPaper(props: AnimationProps) {
   const timingData = toTimingData(props);
   const playerRef = useRef<PlayerRef>(null);
+  const fullscreenRef = useRef<HTMLDivElement>(null);
+  const [isPseudoFullscreen, setIsPseudoFullscreen] = useState(false);
   const storageKey = `arxiv-review-next:adjustment:${props.paperId}`;
   const [adjustments, setAdjustments] = useState<Adjustments>(DEFAULT_ADJUSTMENTS);
   const sections = useMemo(
@@ -93,6 +95,29 @@ export function AnimatedPaper(props: AnimationProps) {
     const saved = window.localStorage.getItem(storageKey);
     if (saved) setAdjustments({ ...DEFAULT_ADJUSTMENTS, ...(JSON.parse(saved) as Partial<Adjustments>) });
   }, [storageKey]);
+
+  useEffect(() => {
+    if (!isPseudoFullscreen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [isPseudoFullscreen]);
+
+  const toggleFullscreen = async () => {
+    if (isPseudoFullscreen) {
+      setIsPseudoFullscreen(false);
+      return;
+    }
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
+      return;
+    }
+    try {
+      await fullscreenRef.current?.requestFullscreen();
+    } catch {
+      setIsPseudoFullscreen(true);
+    }
+  };
 
   const currentSection = () => {
     if (adjustments.manualSectionName) return adjustments.manualSectionName;
@@ -123,6 +148,8 @@ export function AnimatedPaper(props: AnimationProps) {
   };
   return (
     <div style={{ marginTop: 8 }}>
+      <div ref={fullscreenRef} className={`animation-fullscreen-shell${isPseudoFullscreen ? " is-pseudo-fullscreen" : ""}`}>
+      <button type="button" className="fullscreen-close" aria-label="全画面表示を終了" onClick={toggleFullscreen}>×</button>
       <Player
         ref={playerRef}
         component={YukkuriWeb}
@@ -134,7 +161,9 @@ export function AnimatedPaper(props: AnimationProps) {
         controls
         style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: 10, overflow: "hidden" }}
       />
+      </div>
       <div className="remotion-adjuster" role="toolbar" aria-label="表示と同期の調整">
+        <IconButton icon="⛶" label="全画面表示を切り替え" onClick={toggleFullscreen} />
         <IconButton icon="⏮" label="前の章を表示" onClick={() => moveSection(-1)} />
         <IconButton icon="⏭" label="次の章を表示" onClick={() => moveSection(1)} />
         <IconButton icon="🔄" label="表示する章を音声に追従" active={!adjustments.manualSectionName} onClick={() => setAdjustments((v) => ({ ...v, manualSectionName: undefined }))} />
