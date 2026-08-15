@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect, useRef, useState} from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
@@ -102,6 +102,15 @@ export const MarkdownPanel: React.FC<Props> = ({
   sectionEndIndex = totalSegments,
   scrollOffsetPx = 0,
 }) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [actualMaxScroll, setActualMaxScroll] = useState(0);
+  useLayoutEffect(() => {
+    const update = () => setActualMaxScroll(Math.max(0, (contentRef.current?.scrollHeight ?? PANEL_HEIGHT) - PANEL_HEIGHT + 40));
+    update();
+    const observer = new ResizeObserver(update);
+    if (contentRef.current) observer.observe(contentRef.current);
+    return () => observer.disconnect();
+  }, [markdown]);
   const calculatedScrollY = calcScrollY(
     markdown,
     currentSectionName,
@@ -110,7 +119,7 @@ export const MarkdownPanel: React.FC<Props> = ({
     sectionStartIndex,
     sectionEndIndex,
   );
-  const scrollY = Math.max(0, calculatedScrollY + scrollOffsetPx);
+  const scrollY = Math.max(0, Math.min(calculatedScrollY + scrollOffsetPx, actualMaxScroll));
 
   return (
     <div
@@ -124,7 +133,7 @@ export const MarkdownPanel: React.FC<Props> = ({
         fontFamily: '"Hiragino Sans", "Noto Sans JP", sans-serif',
       }}
     >
-      <div style={{ transform: `translateY(${-scrollY}px)` }}>
+      <div ref={contentRef} style={{ transform: `translateY(${-scrollY}px)` }}>
         <ReactMarkdown
           remarkPlugins={[remarkGfm, remarkMath]}
           rehypePlugins={[[rehypeKatex, { strict: false, trust: true, throwOnError: false }]]}
@@ -169,12 +178,12 @@ export const MarkdownPanel: React.FC<Props> = ({
               </table>
             ),
             th: ({ children }) => (
-              <th style={{ border: '1px solid #ccc', padding: '6px 12px', background: '#e8edf5', fontWeight: 600 }}>
+              <th style={{ border: '2px solid #16213e', padding: '6px 12px', background: '#c7d4e8', color: '#16213e', fontWeight: 700 }}>
                 {children}
               </th>
             ),
             td: ({ children }) => (
-              <td style={{ border: '1px solid #ccc', padding: '6px 12px' }}>{children}</td>
+              <td style={{ border: '2px solid #16213e', padding: '6px 12px', color: '#1a1a2e' }}>{children}</td>
             ),
           }}
         >

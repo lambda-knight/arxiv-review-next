@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCurrentFrame, Img } from 'remotion';
 
-const ASSET_ROOT = 'https://lambda-knight.github.io/arxiv-review-next';
+const ASSET_ROOT = 'https://lambda-knight.github.io/ai-qc-news';
 
 interface Props {
   character: 'A' | 'B';
@@ -29,7 +29,7 @@ export const CharacterFace: React.FC<Props> = ({
     ? `${ASSET_ROOT}/${mouthOpen ? (imageOpen ?? imageClose!) : imageClose!}`
     : isZundamon
       ? `${ASSET_ROOT}/${mouthOpen ? 'zundamon_open.png' : 'zundamon_close.png'}`
-      : `${ASSET_ROOT}/${mouthOpen ? 'metan_open.png' : 'metan.png'}`;
+      : `${ASSET_ROOT}/metan.png`;
 
   // ── アニメ的な動き ───────────────────────────────────────
   const t = frame / 30; // 秒
@@ -66,7 +66,7 @@ export const CharacterFace: React.FC<Props> = ({
     >
       <Img
         src={imgSrc}
-        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
       />
     </div>
   );
