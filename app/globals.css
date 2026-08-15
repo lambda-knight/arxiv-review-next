@@ -58,6 +58,9 @@ a:hover { color: #fff; }
 .katex-display { margin:1em 0; overflow-x:auto; overflow-y:hidden; }
 .slide-content .katex { color:#d1fae5; text-shadow:0 0 1px rgba(255,255,255,.45); }
 .slide-content .katex-display { color:#a7f3d0; padding:10px 16px; background:rgba(110,231,183,.08); border:1px solid rgba(110,231,183,.24); border-radius:6px; }
+.paper-remotion-player .katex { color:#102a43!important; font-size:1.22em; font-weight:700; opacity:1!important; visibility:visible!important; }
+.paper-remotion-player .katex-display { color:#102a43!important; margin:10px 0; padding:10px 14px; overflow-x:auto; overflow-y:hidden; background:#fff!important; border:2px solid #b8cbe0; border-radius:8px; opacity:1!important; visibility:visible!important; }
+.paper-remotion-player .katex-error { display:inline-block; color:#b91c1c!important; background:#fff1f2; border:1px solid #fda4af; border-radius:4px; padding:2px 5px; font-weight:700; }
 
 video { border-radius: 8px; background: #000; }
 
