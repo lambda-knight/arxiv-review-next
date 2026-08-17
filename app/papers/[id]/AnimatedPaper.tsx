@@ -159,6 +159,7 @@ export function AnimatedPaper(props: AnimationProps) {
         compositionHeight={720}
         fps={timingData.fps}
         controls
+        alwaysShowControls
         style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: 10, overflow: "hidden" }}
       />
       </div>
