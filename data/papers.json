@@ -8812,6 +8812,1029 @@
     "iaUrl": "https://archive.org/details/paper-explain-1803-00745",
     "chapters": [],
     "arxivUrl": "https://arxiv.org/abs/1803.00745",
+    "webAudioUrl": "https://archive.org/download/paper-explain-1803-00745/paper_1803.00745_web.m4a",
+    "markdownSource": "**Quantum Circuit Learning**  \nK. Mitarai, M. Negoro, M. Kitagawa（大阪大学）、K. Fujii（京都大学）  \n*Physical Review A* 98, 032309 (2018) — arXiv:1803.00745\n\n---\n\n## 導入：量子機械学習の夜明け\n\n### 背景：なぜ量子コンピュータで機械学習か\n\n- 2017〜2018年：機械学習ブームと量子コンピュータの実用化機運が重なった時代\n- 量子コンピュータは一部の問題で指数的高速化が可能（ショアのアルゴリズム等）\n- 量子物理・材料科学・創薬でも機械学習の応用が注目されていた\n\n### 既存の量子機械学習の問題点\n\n| 手法 | 原理 | 欠点 |\n|------|------|------|\n| HHLベース (Schuld et al., Rebentrost et al.) | 行列演算を量子で実行 | **高深度回路が必要** → NISQ非現実的 |\n| 量子位相推定 (QPE) | 固有値を直接読み出し | **長いコヒーレント発展**が必要 |\n\n### 本論文の提案：QCL（量子回路学習）\n\n- **低深度**パラメータ付き量子回路を機械学習モデルとして用いる\n- 量子回路でデータ変換 → 古典コンピュータでパラメータを最適化するハイブリッド手法\n- NISQデバイスで**今すぐ実現可能**\n\n### 関連手法との比較（論文 Fig. 1）\n\n| 手法 | 回路の調整 | 入力データ変換 | 最適化対象 |\n|------|-----------|--------------|-----------|\n| QRC（量子リザバー） | なし（固定） | なし | 出力の線形重み $\\boldsymbol{w}$ |\n| QVE/QAOA | θ を調整 | なし（重みに符号化） | 期待値 $\\boldsymbol{w}_{\\rm fixed}\\cdot\\langle\\boldsymbol{B}(\\boldsymbol{\\theta})\\rangle$ |\n| **QCL（本論文）** | θ を調整 | **量子回路** $U(\\boldsymbol{x})$ で変換 | コスト関数 $L$ |\n\n> 📊 Fig. 1 参照（原論文）— QCL・QRC・QVEの比較図\n\n---\n\n## QCLアルゴリズム：5ステップの詳細\n\n### アルゴリズムの全体像\n\n$N$ 量子ビット回路でのQCL手順：\n\n$$\n|\\psi_{\\rm out}(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\rangle = U(\\boldsymbol{\\theta})\\,|\\psi_{\\rm in}(\\boldsymbol{x}_i)\\rangle = U(\\boldsymbol{\\theta})\\,U(\\boldsymbol{x}_i)\\,|0\\rangle\n$$\n\n$$\ny(\\boldsymbol{x}_i, \\boldsymbol{\\theta}) \\equiv F\\!\\left(\\{\\langle B_j(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\rangle\\}\\right)\n$$\n\n- $U(\\boldsymbol{x}_i)$：入力ゲート（データを量子状態にエンコード）\n- $U(\\boldsymbol{\\theta})$：学習可能なパラメータ付きユニタリ\n- $B_j \\in \\{I, X, Y, Z\\}^{\\otimes N}$：測定するパウリオブザーバブル\n- $F$：出力関数（測定値から予測値を計算）\n\n### ステップ1：入力エンコーディング\n\n$$\n|\\psi_{\\rm in}(\\boldsymbol{x}_i)\\rangle = U(\\boldsymbol{x}_i)\\,|0\\rangle\n$$\n\n- 古典データ $\\boldsymbol{x}_i$ を量子状態に変換\n- 例（論文の1次元デモ）：\n$$\nU_{\\rm in}(x) = \\prod_j R_j^Z(\\cos^{-1} x^2)\\,R_j^Y(\\sin^{-1} x)\n$$\n- テンソル積構造が自動的に $x^N$ 次の多項式を含む状態を生成\n\n### ステップ2：パラメータ付きユニタリ変換\n\n$$\n|\\psi_{\\rm out}\\rangle = U(\\boldsymbol{\\theta})\\,|\\psi_{\\rm in}\\rangle, \\quad U(\\boldsymbol{\\theta}) = \\prod_{j=1}^l U_j(\\theta_j)\n$$\n\n- 数値実験では1量子ビット任意回転 $U(\\theta_j^{(i)}) = R_j^X(\\theta_{j1}^{(i)})R_j^Z(\\theta_{j2}^{(i)})R_j^X(\\theta_{j3}^{(i)})$ を使用\n- 回路にはイジングハミルトニアンによる時間発展も含む（絡み合いを生成）\n\n### ステップ3：測定と出力\n\nコスト関数（回帰問題）：\n\n$$\nL(\\boldsymbol{\\theta}) = \\sum_i \\|f(\\boldsymbol{x}_i) - y(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\|^2\n$$\n\n分類問題ではクロスエントロピーを使用：\n\n$$\nL = \\sum_i \\sum_{k \\in \\{0,1\\}} \\bigl(f(\\boldsymbol{x}_i)\\bigr)_k \\log y_{ik}\n$$\n\n- $f(\\boldsymbol{x}_i)$：教師データ（正解ラベル）\n- $y_i$：量子回路の出力\n- コストを最小化するように $\\boldsymbol{\\theta}$ を反復更新\n\n> 📊 Fig. 2 参照（原論文）— 数値実験で使用した量子回路の構造\n\n---\n\n## 理論的基礎：関数近似能力と勾配計算\n\n### テンソル積構造と関数近似\n\n入力状態のテンソル積構造（$N$ 量子ビット）：\n\n$$\n\\rho_{\\rm in}(x) = \\frac{1}{2^N}\\bigotimes_{i=1}^N \\bigl[I + x X_i + \\sqrt{1-x^2}\\,Z_i\\bigr]\n$$\n\n- $N$ 量子ビットが $x, x^2, \\ldots, x^N$ までの高次項を自動的に含む\n- 任意のユニタリ変換後の期待値は **任意の $N$ 次多項式**を表現できる\n- 解析関数であれば原理的に QCL で近似可能（量子版・普遍近似定理）\n\n### ユニタリ条件と量子優位性の可能性\n\n- 出力は各行ベクトル $\\boldsymbol{u}_i$ のノルムがユニタリ条件で $\\|\\boldsymbol{u}_i\\| = 1$ に固定される\n- 量子回路は指数的に大きい特徴空間を多項式の回路サイズで活用できる\n- QCLが表現できる関数を古典ニューラルネットで学習するには万能量子計算機の模倣が必要 → 古典的に非効率\n\n### 勾配計算：パラメータシフト則の原形\n\nパウリ積生成のゲート $U_j(\\theta_j) = \\exp(-i\\theta_j P_j/2)$ に対する勾配：\n\n$$\n\\frac{\\partial \\langle B\\rangle}{\\partial \\theta_j} = \\frac{\\langle B\\rangle_j^+ - \\langle B\\rangle_j^-}{2}\n$$\n\n$$\n\\langle B\\rangle_j^\\pm: \\theta_j \\text{ を } \\pm\\frac{\\pi}{2} \\text{ シフトしたときの期待値}\n$$\n\n- $\\pm\\pi/2$ 回転を挿入した2つの回路を実行するだけで**厳密な勾配**が得られる\n- 量子ハードウェア上でそのまま実行可能（シミュレーション不要）\n- Li et al. (2017) の制御パルス最適化と同様のアプローチ\n- これが後の「**パラメータシフト則**」（Mitarai et al. 2019）の基礎\n\n---\n\n## 数値実験：関数フィッティング\n\n### 実験設定（共通）\n\n- **量子ビット数**: $N = 6$、**回路深さ**: $D = 6$\n- ハミルトニアン（完全結合横磁場イジング型、式4）：\n\n$$\nH = \\sum_{j=1}^N a_j X_j + \\sum_{j=1}^N \\sum_{k=1}^{j-1} J_{jk} Z_j Z_k\n$$\n\n- $a_j$, $J_{jk}$ は $[-1,1]$ 上の一様乱数\n- 進化時間 $T = 10$、最適化は BFGS 法（SciPy）\n- サンプリングノイズを模擬するガウスノイズを付加\n\n### 1次元関数フィッティング（100サンプル）\n\n対象関数：$f(x) = x^2,\\ e^x,\\ \\sin x,\\ |x|$\n\n- 入力エンコーディング: $U_{\\rm in}(x) = \\prod_j R_j^Z(\\cos^{-1} x^2) R_j^Y(\\sin^{-1} x)$\n- 出力: 第1量子ビットの $Z$ 期待値（定数 $a$ も同時最適化）\n- **結果**: $x^2$、$e^x$、$\\sin x$ はよく近似できた\n\n> 📊 Fig. 3 参照（原論文）— 各関数のフィッティング結果\n\n- $|x|$ の近似精度は比較的低い：$x=0$ での非解析性（微分不連続）が原因\n- 改善策として Legendre 多項式などの異なる入力関数を使う可能性を論文は指摘\n\n---\n\n## 数値実験：分類と多体ダイナミクス\n\n### 2次元分類タスク（200サンプル）\n\n- 訓練データ: 2次元入力 $\\boldsymbol{x}_i = (x_{i,0}, x_{i,1})$、2クラス（100サンプル/クラス）\n- 教師: クラス0→$(1,0)$、クラス1→$(0,1)$\n- 出力: 第1・第2量子ビットの $Z$ 期待値をソフトマックス変換\n$$\n\\boldsymbol{y}_i = \\boldsymbol{F}\\!\\left(\\langle Z_1\\rangle, \\langle Z_2\\rangle\\right), \\quad F_k(\\boldsymbol{q}) = \\frac{e^{q_k}}{\\sum_i e^{q_i}}\n$$\n- 損失関数: クロスエントロピー\n- **結果**: 非線形な決定境界を正確に学習した\n\n> 📊 Fig. 4 参照（原論文）— 訓練データと最適化後の出力\n\n### 量子多体ダイナミクスのフィッティング\n\n10スピン完全結合横磁場イジング系のダイナミクスを6量子ビット回路で近似：\n\n- 教師データ: 10スピン系（$a_j$, $J_{jk}$ は回路とは独立の乱数）の $Z$ 期待値\n- 初期状態 $|0\\rangle^{\\otimes 10}$、過渡応答時間 $T_{\\rm transient} = 300$ を除いた $t \\in [300, 308]$\n- $t$ を $x \\in [-1, 1]$ に線形マッピングして入力\n- **学習対象**: 最初の3スピンの $Z$ 期待値を6量子ビット回路の最初の3量子ビット出力で近似\n- **結果**: 6量子ビット回路（64次元）が10スピン系（1024次元）の3つのオブザーバブルを同時に再現\n\n> 📊 Fig. 5 参照（原論文）— 多体ダイナミクスのフィッティング結果\n\n---\n\n## 付録A：ユニタリ性と過学習の回避\n\n### 実験設定\n\n- 3量子ビット回路、深さ $D = 3$\n- 入力ゲート: $U_{\\rm in} = \\prod_i R_i^Y(\\sin x)$\n- 利用される基底関数（9個）：\n$$\n\\bigl\\{x,\\ x^2,\\ x^3,\\ \\sqrt{1-x^2},\\ 1-x^2,\\ (1-x^2)^{3/2},\\ x\\sqrt{1-x^2},\\ x^2\\sqrt{1-x^2},\\ x(1-x^2)\\bigr\\}\n$$\n- 同じ基底を使った古典線形回帰と比較\n\n### ユニタリ条件が正則化として働く\n\nQCL では行ベクトルのノルムがユニタリ条件で制約：\n\n$$\n\\|\\boldsymbol{w}\\| = 1 \\quad \\text{（QCL）} \\quad \\text{vs.} \\quad \\|\\boldsymbol{w}\\| \\approx 134 \\sim 15800 \\quad \\text{（古典回帰）}\n$$\n\n- $0.5\\sin x$ フィッティング（ノイズ標準偏差 0.05）: 古典 $\\|\\boldsymbol{w}\\| \\approx 134$ でオーバーフィット\n- $x^2$ フィッティング（同条件）: 古典 $\\|\\boldsymbol{w}\\| \\approx 15800$ でオーバーフィット\n- QCL は両ケースでオーバーフィットせず汎化した\n\n> 📊 Fig. 6 参照（原論文）— QCL vs. 古典回帰のフィッティング比較\n\n古典機械学習ではリッジ回帰（L2正則化）を明示的に加える必要があるが、QCLでは量子ダイナミクスのユニタリ性が自然な正則化として機能する。\n\n---\n\n## まとめ\n\n- **QCL**（量子回路学習）: 低深度量子回路を機械学習モデルとして使うハイブリッド量子古典フレームワーク\n- 5ステップ: 入力エンコード → パラメータ付きユニタリ → パウリ測定 → コスト最小化 → 評価\n- **パラメータシフト則の原形**: $\\pm\\pi/2$ ずらした2回路の差分で勾配計算 → ハードウェアで実行可能\n- **数値実験**: $N=6$, $D=6$ 回路で関数近似・分類・多体ダイナミクス学習を実証\n- **ユニタリ性が暗黙の正則化**: 古典回帰 $\\|\\boldsymbol{w}\\|\\approx134〜15800$ に対し QCL では $\\|\\boldsymbol{w}\\|=1$ に自動制約\n- 量子機械学習研究の基礎を確立した論文\n\n---\n\n## 参考ソース\n\n- Mitarai, Negoro, Kitagawa, Fujii, *Physical Review A* 98, 032309 (2018). arXiv:1803.00745\n- Peruzzo et al., *Nature Communications* 5, 4213 (2014) — VQE（引用 [13]）\n- Fujii, Nakajima, *Physical Review Applied* 8, 024030 (2017) — 量子リザバー計算（引用 [20]）",
+    "timeline": {
+      "fps": 30,
+      "totalFrames": 25233,
+      "cues": [
+        {
+          "speaker": "A",
+          "text": "みんな、こんにちはなのだ！ずんだもんなのだ！",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 18,
+          "endFrame": 115
+        },
+        {
+          "speaker": "B",
+          "text": "四国めたんよ。今日は2018年発表の「量子回路学習」、略してQCLを徹底解説するわ。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 122,
+          "endFrame": 325
+        },
+        {
+          "speaker": "A",
+          "text": "大阪大学の御手洗さん、根来さん、北川さん、京都大学の藤井さんによる論文なのだな。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 333,
+          "endFrame": 534
+        },
+        {
+          "speaker": "B",
+          "text": "フィジカル・レビュー・エーに掲載された、量子機械学習の基礎を確立した論文よ。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 542,
+          "endFrame": 706
+        },
+        {
+          "speaker": "A",
+          "text": "2018年って量子コンピュータはどんな状況だったのだ？",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 714,
+          "endFrame": 830
+        },
+        {
+          "speaker": "B",
+          "text": "ちょうど機械学習ブームと、量子コンピュータの実機公開が重なった時代ね。IBMやグーグルが量子デバイスを少しずつ公開し始めていた。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 837,
+          "endFrame": 1089
+        },
+        {
+          "speaker": "A",
+          "text": "「量子コンピュータで機械学習を速くできるんじゃないか」という流れが生まれたのだな。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 1096,
+          "endFrame": 1253
+        },
+        {
+          "speaker": "B",
+          "text": "でも当時の量子機械学習には深刻な欠点があったの。「HHL（エイチ・エイチ・エル）アルゴリズム」ベースの手法がその代表ね。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 1261,
+          "endFrame": 1547
+        },
+        {
+          "speaker": "A",
+          "text": "量子コンピュータで線形方程式を速く解くアルゴリズムなのだな。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 1554,
+          "endFrame": 1679
+        },
+        {
+          "speaker": "B",
+          "text": "シュルトさんたちの量子サポートベクターマシンや、レベンストロスさんたちの量子主成分分析に応用されていたわ。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 1687,
+          "endFrame": 1878
+        },
+        {
+          "speaker": "A",
+          "text": "すごそうなのだ！でも欠点があるのだな。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 1886,
+          "endFrame": 1970
+        },
+        {
+          "speaker": "B",
+          "text": "致命的な欠点は「非常に深い量子回路が必要」なこと。量子位相推定というサブルーチンのせいで、ゲート数が膨大になる。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 1977,
+          "endFrame": 2223
+        },
+        {
+          "speaker": "A",
+          "text": "量子コンピュータって、深い回路は苦手なのだな。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 2230,
+          "endFrame": 2330
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。量子ビットには「デコヒーレンス」という問題がある。環境との相互作用で、時間とともに量子情報が失われていく。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 2338,
+          "endFrame": 2583
+        },
+        {
+          "speaker": "A",
+          "text": "ゲートが多ければ多いほど、その間にエラーが積み重なってしまうのだな。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 2590,
+          "endFrame": 2728
+        },
+        {
+          "speaker": "B",
+          "text": "これが「ニスク時代の壁」よ。ノイジー・インターメディエイト・スケール・クオンタム、つまり中規模でノイズのある現在の量子コンピュータの限界ね。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 2736,
+          "endFrame": 2986
+        },
+        {
+          "speaker": "A",
+          "text": "この論文はその壁をどう乗り越えるのだ？",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 2994,
+          "endFrame": 3077
+        },
+        {
+          "speaker": "B",
+          "text": "答えは「低深度回路で動く、まったく新しいアーキテクチャ」よ。それがQCL、量子回路学習（クオンタム・サーキット・ラーニング）。",
+          "section": "導入：量子機械学習の夜明け",
+          "startFrame": 3085,
+          "endFrame": 3377
+        },
+        {
+          "speaker": "A",
+          "text": "QCLって、具体的にどんな仕組みなのだ？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 3395,
+          "endFrame": 3496
+        },
+        {
+          "speaker": "B",
+          "text": "5つのステップで構成されているわ。順番に見ていきましょう。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 3504,
+          "endFrame": 3609
+        },
+        {
+          "speaker": "A",
+          "text": "ステップ1は何なのだ？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 3616,
+          "endFrame": 3670
+        },
+        {
+          "speaker": "B",
+          "text": "入力データを量子状態にエンコードすること。古典データxを、量子ビットを回転させることで量子状態に変換するの。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 3677,
+          "endFrame": 3899
+        },
+        {
+          "speaker": "A",
+          "text": "どうやって回転させるのだ？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 3907,
+          "endFrame": 3967
+        },
+        {
+          "speaker": "B",
+          "text": "例えば1次元の入力xだったら、全量子ビットにRZ(arccos(x²))とRY(arcsin(x))の2種類の回転を順番にかける。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 3974,
+          "endFrame": 4345
+        },
+        {
+          "speaker": "A",
+          "text": "なんでそんな複雑な回転を？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 4352,
+          "endFrame": 4419
+        },
+        {
+          "speaker": "B",
+          "text": "テンソル積構造がポイントよ。N個の量子ビットにこの回転を入れると、状態の中に自動的にx、x²、…、xのN乗まで含まれるの。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 4427,
+          "endFrame": 4702
+        },
+        {
+          "speaker": "A",
+          "text": "量子ビットを増やすほど高次の関数が使えるようになるのだな！",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 4709,
+          "endFrame": 4829
+        },
+        {
+          "speaker": "B",
+          "text": "正確にそうよ。ステップ2は「パラメータ付きユニタリ変換U(θ)」を適用すること。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 4837,
+          "endFrame": 5015
+        },
+        {
+          "speaker": "A",
+          "text": "θっていうのは学習パラメータなのだな。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 5022,
+          "endFrame": 5104
+        },
+        {
+          "speaker": "B",
+          "text": "そう。1量子ビット回転（3つの角度を使う任意回転）と、イジングハミルトニアンによる時間発展を組み合わせた回路よ。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 5111,
+          "endFrame": 5357
+        },
+        {
+          "speaker": "A",
+          "text": "イジングハミルトニアン？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 5365,
+          "endFrame": 5414
+        },
+        {
+          "speaker": "B",
+          "text": "画面の式を見て。H = ΣajXj + ΣjkJjkZjZk。全ての量子ビット対が相互作用する「完全結合横磁場イジングモデル」よ。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 5421,
+          "endFrame": 5780
+        },
+        {
+          "speaker": "A",
+          "text": "ajとJjkは乱数で決めるのだな。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 5787,
+          "endFrame": 5871
+        },
+        {
+          "speaker": "B",
+          "text": "論文ではマイナス1からプラス1の一様乱数ね。このハミルトニアンによる時間発展が量子ビット間の絡み合いを生成するの。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 5878,
+          "endFrame": 6099
+        },
+        {
+          "speaker": "A",
+          "text": "絡み合いが大事なのだな。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 6106,
+          "endFrame": 6159
+        },
+        {
+          "speaker": "B",
+          "text": "絡み合いがないと、高次の非線形関数が表現できないの。これが量子回路の「非線形性の源」ね。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 6166,
+          "endFrame": 6376
+        },
+        {
+          "speaker": "A",
+          "text": "ステップ3は何なのだ？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 6384,
+          "endFrame": 6437
+        },
+        {
+          "speaker": "B",
+          "text": "パウリ演算子の期待値を測定して、出力y(xi,θ)を計算すること。論文の数値実験ではZ演算子の期待値を使っているわ。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 6445,
+          "endFrame": 6732
+        },
+        {
+          "speaker": "A",
+          "text": "出力の式はどうなるのだ？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 6740,
+          "endFrame": 6800
+        },
+        {
+          "speaker": "B",
+          "text": "y(xi,θ) ≡ F({⟨Bj(xi,θ)⟩})。Fは出力関数で、例えば回帰問題なら恒等写像、分類問題ならソフトマックス関数を使う。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 6808,
+          "endFrame": 7169
+        },
+        {
+          "speaker": "A",
+          "text": "ステップ4は最適化なのだな。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 7177,
+          "endFrame": 7239
+        },
+        {
+          "speaker": "B",
+          "text": "そう。コスト関数L = Σi||f(xi) - yi||²を最小化するようにθを更新する。回帰問題には二乗コスト、分類問題にはクロスエントロピーね。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 7247,
+          "endFrame": 7597
+        },
+        {
+          "speaker": "A",
+          "text": "最後のステップ5は何なのだ？",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 7604,
+          "endFrame": 7668
+        },
+        {
+          "speaker": "B",
+          "text": "学習後のモデルを、訓練データとは別のテストデータで評価すること。汎化性能の確認ね。",
+          "section": "QCLアルゴリズム：5ステップの詳細",
+          "startFrame": 7676,
+          "endFrame": 7846
+        },
+        {
+          "speaker": "A",
+          "text": "QCLってどんな関数でも近似できるのだ？",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 7864,
+          "endFrame": 7959
+        },
+        {
+          "speaker": "B",
+          "text": "量子版・普遍近似定理とも言えることが証明できるの。量子ビット数が十分なら、任意の解析関数を近似できるわ。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 7966,
+          "endFrame": 8198
+        },
+        {
+          "speaker": "A",
+          "text": "どうして量子ビットを増やすと表現力が上がるのだ？",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 8205,
+          "endFrame": 8307
+        },
+        {
+          "speaker": "B",
+          "text": "テンソル積構造の効果よ。N量子ビットに入力xをエンコードすると、状態の中にxのN乗までの高次項が含まれる。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 8315,
+          "endFrame": 8550
+        },
+        {
+          "speaker": "A",
+          "text": "ということはN=6なら6次多項式まで使えるのだな。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 8558,
+          "endFrame": 8675
+        },
+        {
+          "speaker": "B",
+          "text": "それだけじゃないわ。x√(1-x²)のような混合項も含まれるから、実質的な表現力はさらに高いの。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 8683,
+          "endFrame": 8916
+        },
+        {
+          "speaker": "A",
+          "text": "量子優位性はあるのだ？",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 8924,
+          "endFrame": 8980
+        },
+        {
+          "speaker": "B",
+          "text": "可能性として2つ挙げられているわ。1つ目は、指数的に大きい特徴空間を多項式の回路サイズで活用できること。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 8987,
+          "endFrame": 9202
+        },
+        {
+          "speaker": "A",
+          "text": "古典コンピュータでは使えない特徴量が使えるのだな。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 9209,
+          "endFrame": 9315
+        },
+        {
+          "speaker": "B",
+          "text": "2つ目は、QCLの出力を古典ニューラルネットで学習するには万能量子計算を古典でシミュレートする必要がある、という議論ね。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 9323,
+          "endFrame": 9560
+        },
+        {
+          "speaker": "A",
+          "text": "でも明確な量子優位性の証明はまだないのだな。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 9568,
+          "endFrame": 9670
+        },
+        {
+          "speaker": "B",
+          "text": "2018年当時はそうよ。これは今も活発な研究分野ね。次は勾配計算の話をしましょう。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 9678,
+          "endFrame": 9870
+        },
+        {
+          "speaker": "A",
+          "text": "勾配をどうやって計算するのだ？",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 9878,
+          "endFrame": 9949
+        },
+        {
+          "speaker": "B",
+          "text": "パラメータシフト則の原形よ。画面の式を見て。∂⟨B⟩/∂θj = (⟨B⟩j+ - ⟨B⟩j-) / 2。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 9957,
+          "endFrame": 10219
+        },
+        {
+          "speaker": "A",
+          "text": "プラスとマイナスのBって何なのだ？",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 10226,
+          "endFrame": 10297
+        },
+        {
+          "speaker": "B",
+          "text": "θjをプラスπ/2だけずらしたとき、マイナスπ/2だけずらしたときの期待値よ。その差を2で割るだけで厳密な勾配が得られるの。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 10304,
+          "endFrame": 10546
+        },
+        {
+          "speaker": "A",
+          "text": "ずらすだけでいいのだな！むずかしくないのだ。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 10554,
+          "endFrame": 10641
+        },
+        {
+          "speaker": "B",
+          "text": "数値微分と違って「厳密な」勾配よ。しかもずらした回路をハードウェアで実行するだけでいい。シミュレーションは不要。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 10648,
+          "endFrame": 10869
+        },
+        {
+          "speaker": "A",
+          "text": "これが後の「パラメータシフト則」になったのだな。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 10876,
+          "endFrame": 10985
+        },
+        {
+          "speaker": "B",
+          "text": "2019年の御手洗さんたちのフォローアップ論文で体系化されたわ。この論文がその起点よ。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 10993,
+          "endFrame": 11155
+        },
+        {
+          "speaker": "A",
+          "text": "QRCやQVEとはどう違うのだ？",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 11162,
+          "endFrame": 11252
+        },
+        {
+          "speaker": "B",
+          "text": "QRC（量子リザバー計算）は回路パラメータを固定して、出力の線形重みだけを最適化する手法ね。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 11260,
+          "endFrame": 11472
+        },
+        {
+          "speaker": "A",
+          "text": "学習するのが出力の線形結合だけなのだな。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 11479,
+          "endFrame": 11579
+        },
+        {
+          "speaker": "B",
+          "text": "QVE（量子変分固有値ソルバー）はθを最適化するけど、入力ゲートU(x)がない。問題は重みベクトルとして符号化される。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 11586,
+          "endFrame": 11879
+        },
+        {
+          "speaker": "A",
+          "text": "QCLはU(x)で入力を変換して、U(θ)でパラメータを最適化する両方を組み合わせているのだな。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 11887,
+          "endFrame": 12167
+        },
+        {
+          "speaker": "B",
+          "text": "だからQCLはQRCとQVEを統合した、より一般的なフレームワークと言えるの。",
+          "section": "理論的基礎：関数近似能力と勾配計算",
+          "startFrame": 12174,
+          "endFrame": 12343
+        },
+        {
+          "speaker": "A",
+          "text": "数値実験の話をしてほしいのだ！",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 12361,
+          "endFrame": 12435
+        },
+        {
+          "speaker": "B",
+          "text": "全部で3つのデモがあるわ。まずは1次元関数のフィッティングね。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 12442,
+          "endFrame": 12556
+        },
+        {
+          "speaker": "A",
+          "text": "量子ビット数はいくつなのだ？",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 12564,
+          "endFrame": 12626
+        },
+        {
+          "speaker": "B",
+          "text": "N=6（6量子ビット）、D=6（深さ6）よ。ハミルトニアンは完全結合横磁場イジングモデルで、係数は一様乱数から決めた。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 12634,
+          "endFrame": 12946
+        },
+        {
+          "speaker": "A",
+          "text": "学習する関数は何なのだ？",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 12954,
+          "endFrame": 13020
+        },
+        {
+          "speaker": "B",
+          "text": "4つよ。x²（xの2乗）、eのx乗、サインx、そして絶対値|x|。訓練サンプルは各100個ね。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 13028,
+          "endFrame": 13253
+        },
+        {
+          "speaker": "A",
+          "text": "難しそうな関数もあるのだな。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 13260,
+          "endFrame": 13326
+        },
+        {
+          "speaker": "B",
+          "text": "入力エンコーディングは RZ(arccos(x²)) と RY(arcsin(x)) の積で各量子ビットに適用。出力は第1量子ビットのZ期待値を使って、定数aも同時に最適化するわ。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 13334,
+          "endFrame": 13817
+        },
+        {
+          "speaker": "A",
+          "text": "結果はどうだったのだ？",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 13825,
+          "endFrame": 13874
+        },
+        {
+          "speaker": "B",
+          "text": "x²、eのx乗、サインxはどれもよく近似できたの。量子回路が高次の非線形関数を学習できることが示された。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 13882,
+          "endFrame": 14119
+        },
+        {
+          "speaker": "A",
+          "text": "絶対値|x|はどうなのだ？",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 14127,
+          "endFrame": 14224
+        },
+        {
+          "speaker": "B",
+          "text": "絶対値は比較的精度が低かった。理由はx=0での微分が不連続、つまり非解析的な関数だから。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 14232,
+          "endFrame": 14451
+        },
+        {
+          "speaker": "A",
+          "text": "解析的でない関数は苦手なのだな。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 14458,
+          "endFrame": 14538
+        },
+        {
+          "speaker": "B",
+          "text": "論文では改善策として、Legendre多項式などの別の入力関数を使う可能性を指摘しているわ。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 14546,
+          "endFrame": 14761
+        },
+        {
+          "speaker": "A",
+          "text": "入力エンコーディングの設計が重要なのだな。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 14768,
+          "endFrame": 14861
+        },
+        {
+          "speaker": "B",
+          "text": "そう。入力関数の選択でQCLの表現力が変わってくるの。",
+          "section": "数値実験：関数フィッティング",
+          "startFrame": 14869,
+          "endFrame": 14997
+        },
+        {
+          "speaker": "A",
+          "text": "次のデモは何なのだ？",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 15015,
+          "endFrame": 15066
+        },
+        {
+          "speaker": "B",
+          "text": "2次元の2クラス分類よ。訓練データは合計200サンプル、各クラス100点ね。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 15073,
+          "endFrame": 15226
+        },
+        {
+          "speaker": "A",
+          "text": "非線形な境界を学習するのだな。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 15234,
+          "endFrame": 15310
+        },
+        {
+          "speaker": "B",
+          "text": "そう。入力は(x0, x1)の2次元ベクトル。入力エンコーディングで6量子ビットに展開して、第1・第2量子ビットのZ期待値をソフトマックス変換して出力するの。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 15318,
+          "endFrame": 15680
+        },
+        {
+          "speaker": "A",
+          "text": "ソフトマックスって確率に変換する関数なのだな。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 15687,
+          "endFrame": 15787
+        },
+        {
+          "speaker": "B",
+          "text": "Fk(q) = exp(qk) / Σi exp(qi)ね。各クラスへの所属確率として出力するの。損失関数はクロスエントロピー。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 15795,
+          "endFrame": 16155
+        },
+        {
+          "speaker": "A",
+          "text": "結果はどうなのだ？",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 16163,
+          "endFrame": 16207
+        },
+        {
+          "speaker": "B",
+          "text": "非線形な決定境界を正確に学習できたの。古典的なカーネル法と違って、QCLは指数的に大きい基底関数を直接使えるという優位性が示されたわ。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 16214,
+          "endFrame": 16514
+        },
+        {
+          "speaker": "A",
+          "text": "3番目のデモが一番難しそうなのだな。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 16521,
+          "endFrame": 16608
+        },
+        {
+          "speaker": "B",
+          "text": "量子多体ダイナミクスのフィッティングね。10スピン完全結合横磁場イジング系の時間発展を、わずか6量子ビット回路で再現するの。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 16616,
+          "endFrame": 16857
+        },
+        {
+          "speaker": "A",
+          "text": "10スピンを6量子ビットで？ 圧縮しているのだな。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 16865,
+          "endFrame": 16974
+        },
+        {
+          "speaker": "B",
+          "text": "10スピン系のヒルベルト空間は2の10乗=1024次元。6量子ビットは2の6乗=64次元。それで一部の情報を近似するの。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 16981,
+          "endFrame": 17254
+        },
+        {
+          "speaker": "A",
+          "text": "先生データはどうやって作ったのだ？",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 17261,
+          "endFrame": 17338
+        },
+        {
+          "speaker": "B",
+          "text": "回路のハミルトニアンとは独立の乱数係数でもう1つのイジング系を作って、|0⟩の10テンソル積から時間発展させる。過渡期（時刻0〜300）を捨てて、t∈[300,308]のダイナミクスを学習対象にした。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 17345,
+          "endFrame": 17795
+        },
+        {
+          "speaker": "A",
+          "text": "なんで最初の部分を捨てるのだ？",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 17802,
+          "endFrame": 17870
+        },
+        {
+          "speaker": "B",
+          "text": "初期状態の影響が大きい過渡期を除いて、系が「統計的定常状態」に近い部分を学習するためよ。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 17877,
+          "endFrame": 18084
+        },
+        {
+          "speaker": "A",
+          "text": "学習する量は何なのだ？",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 18091,
+          "endFrame": 18151
+        },
+        {
+          "speaker": "B",
+          "text": "10スピン系のうち最初の3スピンのZ期待値を、6量子ビット回路の最初の3量子ビットの出力で近似するの。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 18159,
+          "endFrame": 18358
+        },
+        {
+          "speaker": "A",
+          "text": "結果はどうだったのだ？",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 18365,
+          "endFrame": 18415
+        },
+        {
+          "speaker": "B",
+          "text": "6量子ビット回路が3つのオブザーバブルを同時にうまく再現できたの。これは「量子系のデータを量子回路で学習する」ことの実用的な可能性を示したわ。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 18422,
+          "endFrame": 18701
+        },
+        {
+          "speaker": "A",
+          "text": "未知のハミルトニアンを持つ実験系にも応用できそうなのだな。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 18709,
+          "endFrame": 18826
+        },
+        {
+          "speaker": "B",
+          "text": "論文でもそう指摘しているわ。出力をxで微分することでハミルトニアンの情報を抽出できる可能性も示唆されているの。",
+          "section": "数値実験：分類と多体ダイナミクス",
+          "startFrame": 18834,
+          "endFrame": 19042
+        },
+        {
+          "speaker": "A",
+          "text": "付録Aって何の話なのだ？",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 19060,
+          "endFrame": 19125
+        },
+        {
+          "speaker": "B",
+          "text": "「ユニタリ性が過学習を防ぐ」という理論的洞察よ。QCLの面白い特性の1つね。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 19132,
+          "endFrame": 19305
+        },
+        {
+          "speaker": "A",
+          "text": "過学習ってニューラルネットワークでよく問題になるやつなのだな。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 19312,
+          "endFrame": 19429
+        },
+        {
+          "speaker": "B",
+          "text": "そう。訓練データには完璧に合うのに、未知のデータには全然使えない状態ね。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 19437,
+          "endFrame": 19591
+        },
+        {
+          "speaker": "A",
+          "text": "QCLはなぜ過学習しにくいのだ？",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 19598,
+          "endFrame": 19680
+        },
+        {
+          "speaker": "B",
+          "text": "量子ダイナミクスがユニタリ、つまりU†U=Iという制約を満たすから。この制約が行ベクトルのノルムを1に固定するの。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 19687,
+          "endFrame": 19937
+        },
+        {
+          "speaker": "A",
+          "text": "ノルムが1というのは、重みベクトルの大きさが1ということなのだな。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 19945,
+          "endFrame": 20079
+        },
+        {
+          "speaker": "B",
+          "text": "そう。古典の線形回帰では制約がないから、重みが際限なく大きくなって過学習することがある。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 20087,
+          "endFrame": 20266
+        },
+        {
+          "speaker": "A",
+          "text": "論文では実験で確かめたのだな。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 20274,
+          "endFrame": 20344
+        },
+        {
+          "speaker": "B",
+          "text": "3量子ビット回路（深さD=3）を使って、同じ9つの基底関数を使ったQCLと古典線形回帰を比較したの。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 20352,
+          "endFrame": 20540
+        },
+        {
+          "speaker": "A",
+          "text": "基底関数って何なのだ？",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 20548,
+          "endFrame": 20604
+        },
+        {
+          "speaker": "B",
+          "text": "x、x²、x³のような多項式と、√(1-x²)などのルート項の組み合わせ、合計9個よ。入力Uin=ΠiRiY(sin x)を使うと自動的に使われる関数セット。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 20612,
+          "endFrame": 21056
+        },
+        {
+          "speaker": "A",
+          "text": "比較の結果はどうなのだ？",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 21064,
+          "endFrame": 21120
+        },
+        {
+          "speaker": "B",
+          "text": "0.5 sin xにノイズを加えたデータのフィッティングでは、古典回帰の重みノルムが約134になって過学習した。QCLは適度に誤差を受け入れて汎化したの。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 21127,
+          "endFrame": 21453
+        },
+        {
+          "speaker": "A",
+          "text": "数字が全然違うのだな。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 21461,
+          "endFrame": 21517
+        },
+        {
+          "speaker": "B",
+          "text": "x²のフィッティングではさらに顕著で、古典回帰のノルムは約15800になった。QCLのノルムはユニタリ条件で1に固定されているのに。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 21524,
+          "endFrame": 21799
+        },
+        {
+          "speaker": "A",
+          "text": "15800対1か！桁が全然違うのだな。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 21806,
+          "endFrame": 21923
+        },
+        {
+          "speaker": "B",
+          "text": "これが「ユニタリ性が暗黙の正則化として機能する」という意味ね。古典機械学習ではリッジ回帰（L2正則化）を明示的に加える必要があるけど、QCLでは量子力学の法則が自然にそれをやってくれる。",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 21930,
+          "endFrame": 22287
+        },
+        {
+          "speaker": "A",
+          "text": "物理法則がそのまま正則化になっているのだな。すごい考え方なのだ！",
+          "section": "付録A：ユニタリ性と過学習の回避",
+          "startFrame": 22295,
+          "endFrame": 22442
+        },
+        {
+          "speaker": "B",
+          "text": "では今日のポイントをまとめるわ。",
+          "section": "まとめ",
+          "startFrame": 22460,
+          "endFrame": 22513
+        },
+        {
+          "speaker": "A",
+          "text": "QCLって結局どんな手法なのだ？",
+          "section": "まとめ",
+          "startFrame": 22520,
+          "endFrame": 22602
+        },
+        {
+          "speaker": "B",
+          "text": "低深度のパラメータ付き量子回路を機械学習モデルとして使う、量子古典ハイブリッドフレームワークよ。",
+          "section": "まとめ",
+          "startFrame": 22609,
+          "endFrame": 22788
+        },
+        {
+          "speaker": "A",
+          "text": "NISQデバイスで動くのが特徴なのだな。",
+          "section": "まとめ",
+          "startFrame": 22795,
+          "endFrame": 22872
+        },
+        {
+          "speaker": "B",
+          "text": "5ステップ: 入力エンコード → パラメータ付きユニタリ → パウリ測定 → コスト最小化 → 評価。",
+          "section": "まとめ",
+          "startFrame": 22879,
+          "endFrame": 23069
+        },
+        {
+          "speaker": "A",
+          "text": "勾配計算はプラスマイナスπ/2のシフトで厳密にできるのだな。",
+          "section": "まとめ",
+          "startFrame": 23076,
+          "endFrame": 23213
+        },
+        {
+          "speaker": "B",
+          "text": "それがパラメータシフト則の原形ね。ハードウェアで直接実行できる。",
+          "section": "まとめ",
+          "startFrame": 23220,
+          "endFrame": 23345
+        },
+        {
+          "speaker": "A",
+          "text": "数値実験では何が示されたのだ？",
+          "section": "まとめ",
+          "startFrame": 23352,
+          "endFrame": 23430
+        },
+        {
+          "speaker": "B",
+          "text": "N=6、D=6の回路で、関数近似・2分類・10スピン多体ダイナミクス学習の3つを実証したわ。",
+          "section": "まとめ",
+          "startFrame": 23438,
+          "endFrame": 23687
+        },
+        {
+          "speaker": "A",
+          "text": "ユニタリ性が過学習を防ぐのも面白いのだな。",
+          "section": "まとめ",
+          "startFrame": 23694,
+          "endFrame": 23792
+        },
+        {
+          "speaker": "B",
+          "text": "古典回帰のノルムが134や15800になる一方、QCLは1に固定。量子力学の法則が自然な正則化になっているの。",
+          "section": "まとめ",
+          "startFrame": 23799,
+          "endFrame": 24063
+        },
+        {
+          "speaker": "A",
+          "text": "2018年の論文だけど、今も参照され続けているのだな。",
+          "section": "まとめ",
+          "startFrame": 24071,
+          "endFrame": 24208
+        },
+        {
+          "speaker": "B",
+          "text": "パラメータシフト則、変分量子固有値ソルバー、量子カーネル法など、後続の多くの研究の基礎になった歴史的論文よ。",
+          "section": "まとめ",
+          "startFrame": 24215,
+          "endFrame": 24447
+        },
+        {
+          "speaker": "A",
+          "text": "バレンプラトー問題というのも出てきたのだな。",
+          "section": "まとめ",
+          "startFrame": 24455,
+          "endFrame": 24538
+        },
+        {
+          "speaker": "B",
+          "text": "量子ビット数が増えると勾配が指数的に小さくなって最適化が難しくなる問題ね。QCLの発表後に大きな研究テーマになったわ。",
+          "section": "まとめ",
+          "startFrame": 24545,
+          "endFrame": 24794
+        },
+        {
+          "speaker": "A",
+          "text": "課題もたくさんあるのだな。",
+          "section": "まとめ",
+          "startFrame": 24801,
+          "endFrame": 24852
+        },
+        {
+          "speaker": "B",
+          "text": "QCLが開いた問いは今も活発に研究されているわ。NISQデバイスで実用的な量子優位性を示せるか、それが最大の課題ね。今日も最後まで聞いてくれてありがとう！",
+          "section": "まとめ",
+          "startFrame": 24860,
+          "endFrame": 25167
+        },
+        {
+          "speaker": "A",
+          "text": "また次の論文でも会うのだ！",
+          "section": "まとめ",
+          "startFrame": 25174,
+          "endFrame": 25233
+        }
+      ]
+    },
     "markdown": "<p><strong>Quantum Circuit Learning</strong><br />\nK. Mitarai, M. Negoro, M. Kitagawa（大阪大学）、K. Fujii（京都大学）<br />\n<em>Physical Review A</em> 98, 032309 (2018) — arXiv:1803.00745</p>\n<hr />\n<h2>導入：量子機械学習の夜明け</h2>\n<h3>背景：なぜ量子コンピュータで機械学習か</h3>\n<ul>\n<li>2017〜2018年：機械学習ブームと量子コンピュータの実用化機運が重なった時代</li>\n<li>量子コンピュータは一部の問題で指数的高速化が可能（ショアのアルゴリズム等）</li>\n<li>量子物理・材料科学・創薬でも機械学習の応用が注目されていた</li>\n</ul>\n<h3>既存の量子機械学習の問題点</h3>\n<table>\n<thead>\n<tr>\n<th>手法</th>\n<th>原理</th>\n<th>欠点</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>HHLベース (Schuld et al., Rebentrost et al.)</td>\n<td>行列演算を量子で実行</td>\n<td><strong>高深度回路が必要</strong> → NISQ非現実的</td>\n</tr>\n<tr>\n<td>量子位相推定 (QPE)</td>\n<td>固有値を直接読み出し</td>\n<td><strong>長いコヒーレント発展</strong>が必要</td>\n</tr>\n</tbody>\n</table>\n<h3>本論文の提案：QCL（量子回路学習）</h3>\n<ul>\n<li><strong>低深度</strong>パラメータ付き量子回路を機械学習モデルとして用いる</li>\n<li>量子回路でデータ変換 → 古典コンピュータでパラメータを最適化するハイブリッド手法</li>\n<li>NISQデバイスで<strong>今すぐ実現可能</strong></li>\n</ul>\n<h3>関連手法との比較（論文 Fig. 1）</h3>\n<table>\n<thead>\n<tr>\n<th>手法</th>\n<th>回路の調整</th>\n<th>入力データ変換</th>\n<th>最適化対象</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>QRC（量子リザバー）</td>\n<td>なし（固定）</td>\n<td>なし</td>\n<td>出力の線形重み $\\boldsymbol{w}$</td>\n</tr>\n<tr>\n<td>QVE/QAOA</td>\n<td>θ を調整</td>\n<td>なし（重みに符号化）</td>\n<td>期待値 $\\boldsymbol{w}_{\\rm fixed}\\cdot\\langle\\boldsymbol{B}(\\boldsymbol{\\theta})\\rangle$</td>\n</tr>\n<tr>\n<td><strong>QCL（本論文）</strong></td>\n<td>θ を調整</td>\n<td><strong>量子回路</strong> $U(\\boldsymbol{x})$ で変換</td>\n<td>コスト関数 $L$</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Fig. 1 参照（原論文）— QCL・QRC・QVEの比較図</p>\n</blockquote>\n<hr />\n<h2>QCLアルゴリズム：5ステップの詳細</h2>\n<h3>アルゴリズムの全体像</h3>\n<p>$N$ 量子ビット回路でのQCL手順：</p>\n<p>$$|\\psi_{\\rm out}(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\rangle = U(\\boldsymbol{\\theta})\\,|\\psi_{\\rm in}(\\boldsymbol{x}_i)\\rangle = U(\\boldsymbol{\\theta})\\,U(\\boldsymbol{x}_i)\\,|0\\rangle$$</p>\n<p>$$y(\\boldsymbol{x}_i, \\boldsymbol{\\theta}) \\equiv F\\!\\left(\\{\\langle B_j(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\rangle\\}\\right)$$</p>\n<ul>\n<li>$U(\\boldsymbol{x}_i)$：入力ゲート（データを量子状態にエンコード）</li>\n<li>$U(\\boldsymbol{\\theta})$：学習可能なパラメータ付きユニタリ</li>\n<li>$B_j \\in \\{I, X, Y, Z\\}^{\\otimes N}$：測定するパウリオブザーバブル</li>\n<li>$F$：出力関数（測定値から予測値を計算）</li>\n</ul>\n<h3>ステップ1：入力エンコーディング</h3>\n<p>$$|\\psi_{\\rm in}(\\boldsymbol{x}_i)\\rangle = U(\\boldsymbol{x}_i)\\,|0\\rangle$$</p>\n<ul>\n<li>古典データ $\\boldsymbol{x}_i$ を量子状態に変換</li>\n<li>例（論文の1次元デモ）：\n$$U_{\\rm in}(x) = \\prod_j R_j^Z(\\cos^{-1} x^2)\\,R_j^Y(\\sin^{-1} x)$$</li>\n<li>テンソル積構造が自動的に $x^N$ 次の多項式を含む状態を生成</li>\n</ul>\n<h3>ステップ2：パラメータ付きユニタリ変換</h3>\n<p>$$|\\psi_{\\rm out}\\rangle = U(\\boldsymbol{\\theta})\\,|\\psi_{\\rm in}\\rangle, \\quad U(\\boldsymbol{\\theta}) = \\prod_{j=1}^l U_j(\\theta_j)$$</p>\n<ul>\n<li>数値実験では1量子ビット任意回転 $U(\\theta_j^{(i)}) = R_j^X(\\theta_{j1}^{(i)})R_j^Z(\\theta_{j2}^{(i)})R_j^X(\\theta_{j3}^{(i)})$ を使用</li>\n<li>回路にはイジングハミルトニアンによる時間発展も含む（絡み合いを生成）</li>\n</ul>\n<h3>ステップ3：測定と出力</h3>\n<p>コスト関数（回帰問題）：</p>\n<p>$$L(\\boldsymbol{\\theta}) = \\sum_i \\|f(\\boldsymbol{x}_i) - y(\\boldsymbol{x}_i, \\boldsymbol{\\theta})\\|^2$$</p>\n<p>分類問題ではクロスエントロピーを使用：</p>\n<p>$$L = \\sum_i \\sum_{k \\in \\{0,1\\}} \\bigl(f(\\boldsymbol{x}_i)\\bigr)_k \\log y_{ik}$$</p>\n<ul>\n<li>$f(\\boldsymbol{x}_i)$：教師データ（正解ラベル）</li>\n<li>$y_i$：量子回路の出力</li>\n<li>コストを最小化するように $\\boldsymbol{\\theta}$ を反復更新</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 2 参照（原論文）— 数値実験で使用した量子回路の構造</p>\n</blockquote>\n<hr />\n<h2>理論的基礎：関数近似能力と勾配計算</h2>\n<h3>テンソル積構造と関数近似</h3>\n<p>入力状態のテンソル積構造（$N$ 量子ビット）：</p>\n<p>$$\\rho_{\\rm in}(x) = \\frac{1}{2^N}\\bigotimes_{i=1}^N \\bigl[I + x X_i + \\sqrt{1-x^2}\\,Z_i\\bigr]$$</p>\n<ul>\n<li>$N$ 量子ビットが $x, x^2, \\ldots, x^N$ までの高次項を自動的に含む</li>\n<li>任意のユニタリ変換後の期待値は <strong>任意の $N$ 次多項式</strong>を表現できる</li>\n<li>解析関数であれば原理的に QCL で近似可能（量子版・普遍近似定理）</li>\n</ul>\n<h3>ユニタリ条件と量子優位性の可能性</h3>\n<ul>\n<li>出力は各行ベクトル $\\boldsymbol{u}_i$ のノルムがユニタリ条件で $\\|\\boldsymbol{u}_i\\| = 1$ に固定される</li>\n<li>量子回路は指数的に大きい特徴空間を多項式の回路サイズで活用できる</li>\n<li>QCLが表現できる関数を古典ニューラルネットで学習するには万能量子計算機の模倣が必要 → 古典的に非効率</li>\n</ul>\n<h3>勾配計算：パラメータシフト則の原形</h3>\n<p>パウリ積生成のゲート $U_j(\\theta_j) = \\exp(-i\\theta_j P_j/2)$ に対する勾配：</p>\n<p>$$\\frac{\\partial \\langle B\\rangle}{\\partial \\theta_j} = \\frac{\\langle B\\rangle_j^+ - \\langle B\\rangle_j^-}{2}$$</p>\n<p>$$\\langle B\\rangle_j^\\pm: \\theta_j \\text{ を } \\pm\\frac{\\pi}{2} \\text{ シフトしたときの期待値}$$</p>\n<ul>\n<li>$\\pm\\pi/2$ 回転を挿入した2つの回路を実行するだけで<strong>厳密な勾配</strong>が得られる</li>\n<li>量子ハードウェア上でそのまま実行可能（シミュレーション不要）</li>\n<li>Li et al. (2017) の制御パルス最適化と同様のアプローチ</li>\n<li>これが後の「<strong>パラメータシフト則</strong>」（Mitarai et al. 2019）の基礎</li>\n</ul>\n<hr />\n<h2>数値実験：関数フィッティング</h2>\n<h3>実験設定（共通）</h3>\n<ul>\n<li><strong>量子ビット数</strong>: $N = 6$、<strong>回路深さ</strong>: $D = 6$</li>\n<li>ハミルトニアン（完全結合横磁場イジング型、式4）：</li>\n</ul>\n<p>$$H = \\sum_{j=1}^N a_j X_j + \\sum_{j=1}^N \\sum_{k=1}^{j-1} J_{jk} Z_j Z_k$$</p>\n<ul>\n<li>$a_j$, $J_{jk}$ は $[-1,1]$ 上の一様乱数</li>\n<li>進化時間 $T = 10$、最適化は BFGS 法（SciPy）</li>\n<li>サンプリングノイズを模擬するガウスノイズを付加</li>\n</ul>\n<h3>1次元関数フィッティング（100サンプル）</h3>\n<p>対象関数：$f(x) = x^2,\\ e^x,\\ \\sin x,\\ |x|$</p>\n<ul>\n<li>入力エンコーディング: $U_{\\rm in}(x) = \\prod_j R_j^Z(\\cos^{-1} x^2) R_j^Y(\\sin^{-1} x)$</li>\n<li>出力: 第1量子ビットの $Z$ 期待値（定数 $a$ も同時最適化）</li>\n<li><strong>結果</strong>: $x^2$、$e^x$、$\\sin x$ はよく近似できた</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3 参照（原論文）— 各関数のフィッティング結果</p>\n</blockquote>\n<ul>\n<li>$|x|$ の近似精度は比較的低い：$x=0$ での非解析性（微分不連続）が原因</li>\n<li>改善策として Legendre 多項式などの異なる入力関数を使う可能性を論文は指摘</li>\n</ul>\n<hr />\n<h2>数値実験：分類と多体ダイナミクス</h2>\n<h3>2次元分類タスク（200サンプル）</h3>\n<ul>\n<li>訓練データ: 2次元入力 $\\boldsymbol{x}_i = (x_{i,0}, x_{i,1})$、2クラス（100サンプル/クラス）</li>\n<li>教師: クラス0→$(1,0)$、クラス1→$(0,1)$</li>\n<li>出力: 第1・第2量子ビットの $Z$ 期待値をソフトマックス変換\n$$\\boldsymbol{y}_i = \\boldsymbol{F}\\!\\left(\\langle Z_1\\rangle, \\langle Z_2\\rangle\\right), \\quad F_k(\\boldsymbol{q}) = \\frac{e^{q_k}}{\\sum_i e^{q_i}}$$</li>\n<li>損失関数: クロスエントロピー</li>\n<li><strong>結果</strong>: 非線形な決定境界を正確に学習した</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4 参照（原論文）— 訓練データと最適化後の出力</p>\n</blockquote>\n<h3>量子多体ダイナミクスのフィッティング</h3>\n<p>10スピン完全結合横磁場イジング系のダイナミクスを6量子ビット回路で近似：</p>\n<ul>\n<li>教師データ: 10スピン系（$a_j$, $J_{jk}$ は回路とは独立の乱数）の $Z$ 期待値</li>\n<li>初期状態 $|0\\rangle^{\\otimes 10}$、過渡応答時間 $T_{\\rm transient} = 300$ を除いた $t \\in [300, 308]$</li>\n<li>$t$ を $x \\in [-1, 1]$ に線形マッピングして入力</li>\n<li><strong>学習対象</strong>: 最初の3スピンの $Z$ 期待値を6量子ビット回路の最初の3量子ビット出力で近似</li>\n<li><strong>結果</strong>: 6量子ビット回路（64次元）が10スピン系（1024次元）の3つのオブザーバブルを同時に再現</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 5 参照（原論文）— 多体ダイナミクスのフィッティング結果</p>\n</blockquote>\n<hr />\n<h2>付録A：ユニタリ性と過学習の回避</h2>\n<h3>実験設定</h3>\n<ul>\n<li>3量子ビット回路、深さ $D = 3$</li>\n<li>入力ゲート: $U_{\\rm in} = \\prod_i R_i^Y(\\sin x)$</li>\n<li>利用される基底関数（9個）：\n$$\\bigl\\{x,\\ x^2,\\ x^3,\\ \\sqrt{1-x^2},\\ 1-x^2,\\ (1-x^2)^{3/2},\\ x\\sqrt{1-x^2},\\ x^2\\sqrt{1-x^2},\\ x(1-x^2)\\bigr\\}$$</li>\n<li>同じ基底を使った古典線形回帰と比較</li>\n</ul>\n<h3>ユニタリ条件が正則化として働く</h3>\n<p>QCL では行ベクトルのノルムがユニタリ条件で制約：</p>\n<p>$$\\|\\boldsymbol{w}\\| = 1 \\quad \\text{（QCL）} \\quad \\text{vs.} \\quad \\|\\boldsymbol{w}\\| \\approx 134 \\sim 15800 \\quad \\text{（古典回帰）}$$</p>\n<ul>\n<li>$0.5\\sin x$ フィッティング（ノイズ標準偏差 0.05）: 古典 $\\|\\boldsymbol{w}\\| \\approx 134$ でオーバーフィット</li>\n<li>$x^2$ フィッティング（同条件）: 古典 $\\|\\boldsymbol{w}\\| \\approx 15800$ でオーバーフィット</li>\n<li>QCL は両ケースでオーバーフィットせず汎化した</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 6 参照（原論文）— QCL vs. 古典回帰のフィッティング比較</p>\n</blockquote>\n<p>古典機械学習ではリッジ回帰（L2正則化）を明示的に加える必要があるが、QCLでは量子ダイナミクスのユニタリ性が自然な正則化として機能する。</p>\n<hr />\n<h2>まとめ</h2>\n<ul>\n<li><strong>QCL</strong>（量子回路学習）: 低深度量子回路を機械学習モデルとして使うハイブリッド量子古典フレームワーク</li>\n<li>5ステップ: 入力エンコード → パラメータ付きユニタリ → パウリ測定 → コスト最小化 → 評価</li>\n<li><strong>パラメータシフト則の原形</strong>: $\\pm\\pi/2$ ずらした2回路の差分で勾配計算 → ハードウェアで実行可能</li>\n<li><strong>数値実験</strong>: $N=6$, $D=6$ 回路で関数近似・分類・多体ダイナミクス学習を実証</li>\n<li><strong>ユニタリ性が暗黙の正則化</strong>: 古典回帰 $\\|\\boldsymbol{w}\\|\\approx134〜15800$ に対し QCL では $\\|\\boldsymbol{w}\\|=1$ に自動制約</li>\n<li>量子機械学習研究の基礎を確立した論文</li>\n</ul>\n<hr />\n<h2>参考ソース</h2>\n<ul>\n<li>Mitarai, Negoro, Kitagawa, Fujii, <em>Physical Review A</em> 98, 032309 (2018). arXiv:1803.00745</li>\n<li>Peruzzo et al., <em>Nature Communications</em> 5, 4213 (2014) — VQE（引用 [13]）</li>\n<li>Fujii, Nakajima, <em>Physical Review Applied</em> 8, 024030 (2017) — 量子リザバー計算（引用 [20]）</li>\n</ul>"
   },
   {
