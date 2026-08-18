@@ -28047,7 +28047,114 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch02.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch02.mp3",
         "markdown": "<h2>統一モデルの定式化</h2>\n<p>すべてのタスクを単一の条件付き予測問題として定式化:</p>\n<p>$$\np_\\theta\\bigl(y_{t:t+H-1} \\mid o_t, x, e, z\\bigr)\n$$</p>\n<p>各記号の意味:\n- $o_t$: 時刻$t$の視覚コンテキスト（画像・動画・履歴）\n- $x$: タスク指示（言語）\n- $e$: 現在のロボット形態の説明（テキスト）\n- $z$: タスクファミリー識別子\n- $y_{t:t+H-1}$: 予測水平線$H$にわたる目標シーケンス</p>\n<p><strong>統一アクション空間</strong>:\n- 操作タスク: 将来のロボット行動（エンドエフェクタ位置など）\n- ナビゲーション: ナビゲーション決定/ウェイポイント\n- 軌跡中心タスク（自動運転など）: 連続座標空間での将来の軌跡\n- 自我視点データ: 人間の手首/手の動作軌跡</p>\n<blockquote>\n<p>📊 なし（数式による定式化）</p>\n</blockquote>\n<hr />",
-        "markdownSource": "## 統一モデルの定式化\n\nすべてのタスクを単一の条件付き予測問題として定式化:\n\n$$\np_\\theta\\bigl(y_{t:t+H-1} \\mid o_t, x, e, z\\bigr)\n$$\n\n各記号の意味:\n- $o_t$: 時刻$t$の視覚コンテキスト（画像・動画・履歴）\n- $x$: タスク指示（言語）\n- $e$: 現在のロボット形態の説明（テキスト）\n- $z$: タスクファミリー識別子\n- $y_{t:t+H-1}$: 予測水平線$H$にわたる目標シーケンス\n\n**統一アクション空間**:\n- 操作タスク: 将来のロボット行動（エンドエフェクタ位置など）\n- ナビゲーション: ナビゲーション決定/ウェイポイント\n- 軌跡中心タスク（自動運転など）: 連続座標空間での将来の軌跡\n- 自我視点データ: 人間の手首/手の動作軌跡\n\n> 📊 なし（数式による定式化）\n\n---"
+        "markdownSource": "## 統一モデルの定式化\n\nすべてのタスクを単一の条件付き予測問題として定式化:\n\n$$\np_\\theta\\bigl(y_{t:t+H-1} \\mid o_t, x, e, z\\bigr)\n$$\n\n各記号の意味:\n- $o_t$: 時刻$t$の視覚コンテキスト（画像・動画・履歴）\n- $x$: タスク指示（言語）\n- $e$: 現在のロボット形態の説明（テキスト）\n- $z$: タスクファミリー識別子\n- $y_{t:t+H-1}$: 予測水平線$H$にわたる目標シーケンス\n\n**統一アクション空間**:\n- 操作タスク: 将来のロボット行動（エンドエフェクタ位置など）\n- ナビゲーション: ナビゲーション決定/ウェイポイント\n- 軌跡中心タスク（自動運転など）: 連続座標空間での将来の軌跡\n- 自我視点データ: 人間の手首/手の動作軌跡\n\n> 📊 なし（数式による定式化）\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2483,
+          "audioDurationSec": 82.751333,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "数式が出てくるのだ！どんな式なのだ？",
+              "section": "統一モデルの定式化",
+              "startFrame": 18,
+              "endFrame": 102
+            },
+            {
+              "speaker": "B",
+              "text": "すべてのタスクを単一の条件付き予測問題として定式化しているの。画面の式を見て。",
+              "section": "統一モデルの定式化",
+              "startFrame": 110,
+              "endFrame": 267
+            },
+            {
+              "speaker": "A",
+              "text": "えっと、pシータ、yのt からt+H-1、縦棒の右側にいろいろあるのだな。",
+              "section": "統一モデルの定式化",
+              "startFrame": 275,
+              "endFrame": 507
+            },
+            {
+              "speaker": "B",
+              "text": "読み解くわ。pシータはモデルのパラメータシータで表される確率分布よ。縦棒の右側が条件、左側が予測する内容ね。",
+              "section": "統一モデルの定式化",
+              "startFrame": 514,
+              "endFrame": 754
+            },
+            {
+              "speaker": "A",
+              "text": "条件を1つずつ教えてほしいのだ。",
+              "section": "統一モデルの定式化",
+              "startFrame": 761,
+              "endFrame": 835
+            },
+            {
+              "speaker": "B",
+              "text": "まずoのtは時刻tの視覚コンテキスト。カメラから見た画像や動画ね。xはタスク指示の言語、「赤いカップを掴んで」とかそういう文章よ。",
+              "section": "統一モデルの定式化",
+              "startFrame": 843,
+              "endFrame": 1109
+            },
+            {
+              "speaker": "A",
+              "text": "eとzは何なのだ？",
+              "section": "統一モデルの定式化",
+              "startFrame": 1116,
+              "endFrame": 1167
+            },
+            {
+              "speaker": "B",
+              "text": "eは現在のロボット形態の説明。「私は単腕ロボットで制御周波数は10Hzです」みたいなテキストね。zはタスクファミリー識別子で、これが操作なのかナビゲーションなのかを示すわ。",
+              "section": "統一モデルの定式化",
+              "startFrame": 1174,
+              "endFrame": 1518
+            },
+            {
+              "speaker": "A",
+              "text": "予測する内容は？",
+              "section": "統一モデルの定式化",
+              "startFrame": 1525,
+              "endFrame": 1571
+            },
+            {
+              "speaker": "B",
+              "text": "yのtからt+H-1は予測水平線H分の目標シーケンスよ。操作タスクなら将来の腕の位置、ナビゲーションなら次に向かう方向、自動運転なら走るルートの座標ね。",
+              "section": "統一モデルの定式化",
+              "startFrame": 1579,
+              "endFrame": 1916
+            },
+            {
+              "speaker": "A",
+              "text": "同じ数式でいろんなタスクが表せるのだな。",
+              "section": "統一モデルの定式化",
+              "startFrame": 1923,
+              "endFrame": 2010
+            },
+            {
+              "speaker": "B",
+              "text": "これが「統一」の本質よ。タスクが違っても数学的な構造は同じ。だから1つのモデルで学習できるの。",
+              "section": "統一モデルの定式化",
+              "startFrame": 2018,
+              "endFrame": 2224
+            },
+            {
+              "speaker": "A",
+              "text": "天才的なアイデアなのだ！",
+              "section": "統一モデルの定式化",
+              "startFrame": 2232,
+              "endFrame": 2287
+            },
+            {
+              "speaker": "B",
+              "text": "シンプルさが強みね。複雑な設計より、根本的な共通性を見抜くことが重要という良い例だわ。",
+              "section": "統一モデルの定式化",
+              "startFrame": 2294,
+              "endFrame": 2483
+            }
+          ]
+        }
       },
       {
         "index": 3,
@@ -28055,7 +28162,121 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch03.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch03.mp3",
         "markdown": "<h2>モデルアーキテクチャ</h2>\n<p>Qwen-VLAは2つのコンポーネントで構成:</p>\n<h3>視覚言語バックボーン: Qwen3.5-4B</h3>\n<ul>\n<li>ViTで生成した視覚トークンをテキストトークン列に直接インターリーブ</li>\n<li><strong>ハイブリッドアテンション</strong>: 大半の層はゲート線形アテンション、定期的な層でグループクエリソフトマックスアテンション</li>\n<li>長いマルチモーダル列の効率的エンコードと全精度グローバル推論を両立</li>\n</ul>\n<h3>アクションエキスパート（DiTベース）</h3>\n<ul>\n<li><strong>16 DiTブロック</strong>: 各70.8M パラメータ（合計1.13B）</li>\n<li>全体のアクションエキスパートパラメータ数: 約<strong>11.5億</strong></li>\n<li>DiTブロック: 1.13B</li>\n<li>アクション投影MLP: 4.9M</li>\n<li>VLM状態変換層: 3.9M</li>\n<li>タイムステップ埋め込み: 2.8M</li>\n<li>出力AdaLNモジュレーション: 4.7M</li>\n<li>VLM隠れ状態とノイズ付きアクションチャンクを連結してジョイントセルフアテンション処理</li>\n<li><strong>フローマッチング目的関数</strong>で学習。推論時は少数のオイラー積分ステップで低遅延制御</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 2（論文）参照: モデルアーキテクチャ概観（バックボーン＋アクションエキスパート）</p>\n</blockquote>\n<hr />",
-        "markdownSource": "## モデルアーキテクチャ\n\nQwen-VLAは2つのコンポーネントで構成:\n\n### 視覚言語バックボーン: Qwen3.5-4B\n- ViTで生成した視覚トークンをテキストトークン列に直接インターリーブ\n- **ハイブリッドアテンション**: 大半の層はゲート線形アテンション、定期的な層でグループクエリソフトマックスアテンション\n- 長いマルチモーダル列の効率的エンコードと全精度グローバル推論を両立\n\n### アクションエキスパート（DiTベース）\n- **16 DiTブロック**: 各70.8M パラメータ（合計1.13B）\n- 全体のアクションエキスパートパラメータ数: 約**11.5億**\n  - DiTブロック: 1.13B\n  - アクション投影MLP: 4.9M\n  - VLM状態変換層: 3.9M\n  - タイムステップ埋め込み: 2.8M\n  - 出力AdaLNモジュレーション: 4.7M\n- VLM隠れ状態とノイズ付きアクションチャンクを連結してジョイントセルフアテンション処理\n- **フローマッチング目的関数**で学習。推論時は少数のオイラー積分ステップで低遅延制御\n\n> 📊 Fig. 2（論文）参照: モデルアーキテクチャ概観（バックボーン＋アクションエキスパート）\n\n---"
+        "markdownSource": "## モデルアーキテクチャ\n\nQwen-VLAは2つのコンポーネントで構成:\n\n### 視覚言語バックボーン: Qwen3.5-4B\n- ViTで生成した視覚トークンをテキストトークン列に直接インターリーブ\n- **ハイブリッドアテンション**: 大半の層はゲート線形アテンション、定期的な層でグループクエリソフトマックスアテンション\n- 長いマルチモーダル列の効率的エンコードと全精度グローバル推論を両立\n\n### アクションエキスパート（DiTベース）\n- **16 DiTブロック**: 各70.8M パラメータ（合計1.13B）\n- 全体のアクションエキスパートパラメータ数: 約**11.5億**\n  - DiTブロック: 1.13B\n  - アクション投影MLP: 4.9M\n  - VLM状態変換層: 3.9M\n  - タイムステップ埋め込み: 2.8M\n  - 出力AdaLNモジュレーション: 4.7M\n- VLM隠れ状態とノイズ付きアクションチャンクを連結してジョイントセルフアテンション処理\n- **フローマッチング目的関数**で学習。推論時は少数のオイラー積分ステップで低遅延制御\n\n> 📊 Fig. 2（論文）参照: モデルアーキテクチャ概観（バックボーン＋アクションエキスパート）\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2727,
+          "audioDurationSec": 90.894667,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "モデルはどんな構造になっているのだ？",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 18,
+              "endFrame": 94
+            },
+            {
+              "speaker": "B",
+              "text": "2つのコンポーネントよ。視覚言語バックボーンのQwen3.5-4Bと、アクションエキスパートと呼ばれるDiTベースのデコーダね。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 101,
+              "endFrame": 350
+            },
+            {
+              "speaker": "A",
+              "text": "Qwen3.5-4Bってどんなモデルなのだ？",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 357,
+              "endFrame": 474
+            },
+            {
+              "speaker": "B",
+              "text": "40億パラメータのQwenシリーズのモデルよ。画像のViTで作った視覚トークンをテキストトークン列に直接混ぜ込む設計ね。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 481,
+              "endFrame": 721
+            },
+            {
+              "speaker": "A",
+              "text": "ハイブリッドアテンションってなんなのだ？",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 728,
+              "endFrame": 797
+            },
+            {
+              "speaker": "B",
+              "text": "計算コストを下げながら性能を保つ工夫よ。ほとんどの層は「ゲート線形アテンション」という効率的な手法を使って、一部の層だけ正確な「グループクエリソフトマックスアテンション」を使うの。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 805,
+              "endFrame": 1166
+            },
+            {
+              "speaker": "A",
+              "text": "長い入力を効率的に処理できるのだな。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 1173,
+              "endFrame": 1259
+            },
+            {
+              "speaker": "B",
+              "text": "そう。ロボットは複数カメラの映像を同時に見るから、入力が長くなりがちなの。効率性が重要なのよ。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 1267,
+              "endFrame": 1471
+            },
+            {
+              "speaker": "A",
+              "text": "アクションエキスパートって何をするのだ？",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 1478,
+              "endFrame": 1554
+            },
+            {
+              "speaker": "B",
+              "text": "16個のDiTブロックで構成されていて、パラメータが合計で約11.5億個あるわ。VLMからの情報と「ノイズを加えた行動」を受け取って、最終的な行動を生成するの。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 1562,
+              "endFrame": 1918
+            },
+            {
+              "speaker": "A",
+              "text": "ノイズを加えた行動って不思議なのだ。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 1925,
+              "endFrame": 1999
+            },
+            {
+              "speaker": "B",
+              "text": "拡散モデルの考え方ね。ランダムノイズから徐々にノイズを除いて綺麗な行動を生成するの。「フローマッチング」という手法で学習するわ。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 2007,
+              "endFrame": 2259
+            },
+            {
+              "speaker": "A",
+              "text": "VLMの情報とアクションデコーダがどう連携するのだ？",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 2266,
+              "endFrame": 2383
+            },
+            {
+              "speaker": "B",
+              "text": "VLMの隠れ状態とノイズ付きアクションチャンクを連結して、ジョイントセルフアテンションで処理するの。言語理解と行動生成が密に統合されているわ。",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 2391,
+              "endFrame": 2654
+            },
+            {
+              "speaker": "A",
+              "text": "複雑だけどよくできているのだな！",
+              "section": "モデルアーキテクチャ",
+              "startFrame": 2662,
+              "endFrame": 2727
+            }
+          ]
+        }
       },
       {
         "index": 4,
@@ -28063,7 +28284,100 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch04.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch04.mp3",
         "markdown": "<h2>エンボディメント対応プロンプト</h2>\n<p>複数ロボット形態を単一モデルで扱うための重要な仕組み:</p>\n<p>各学習サンプルに<strong>ロボット固有のテキストプロンプト</strong>を前置:</p>\n<pre><code>The robot is {robot_tag} with {single arm / dual arms}\n[, waist][, and mobile base].\nThe control frequency is {FPS} Hz.\nPlease predict the next {chunk_size} control actions\nto execute the following task: {ori_instruction}.\n</code></pre>\n<ul>\n<li><code>robot_tag</code>, オプション修飾子（waist, mobile base）: 形態ごとに設定</li>\n<li><code>FPS</code>, <code>chunk_size</code>: データセットの制御周波数・予測水平線を反映</li>\n</ul>\n<p><strong>意義</strong>:\n- アーキテクチャを変えることなく異なる制御モード・アクション次元・時間水平線を扱える\n- 形態固有の出力ヘッドが不要: 単一のDiTパラメータセットが全制御モードを処理\n- 推論時はプロンプトのみを変更するだけで新形態に対応</p>\n<blockquote>\n<p>📊 Table 2（論文）参照: 事前学習コーパスが対象とする代表的なロボット形態</p>\n</blockquote>\n<hr />",
-        "markdownSource": "## エンボディメント対応プロンプト\n\n複数ロボット形態を単一モデルで扱うための重要な仕組み:\n\n各学習サンプルに**ロボット固有のテキストプロンプト**を前置:\n\n```\nThe robot is {robot_tag} with {single arm / dual arms}\n[, waist][, and mobile base].\nThe control frequency is {FPS} Hz.\nPlease predict the next {chunk_size} control actions\nto execute the following task: {ori_instruction}.\n```\n\n- `robot_tag`, オプション修飾子（waist, mobile base）: 形態ごとに設定\n- `FPS`, `chunk_size`: データセットの制御周波数・予測水平線を反映\n\n**意義**:\n- アーキテクチャを変えることなく異なる制御モード・アクション次元・時間水平線を扱える\n- 形態固有の出力ヘッドが不要: 単一のDiTパラメータセットが全制御モードを処理\n- 推論時はプロンプトのみを変更するだけで新形態に対応\n\n> 📊 Table 2（論文）参照: 事前学習コーパスが対象とする代表的なロボット形態\n\n---"
+        "markdownSource": "## エンボディメント対応プロンプト\n\n複数ロボット形態を単一モデルで扱うための重要な仕組み:\n\n各学習サンプルに**ロボット固有のテキストプロンプト**を前置:\n\n```\nThe robot is {robot_tag} with {single arm / dual arms}\n[, waist][, and mobile base].\nThe control frequency is {FPS} Hz.\nPlease predict the next {chunk_size} control actions\nto execute the following task: {ori_instruction}.\n```\n\n- `robot_tag`, オプション修飾子（waist, mobile base）: 形態ごとに設定\n- `FPS`, `chunk_size`: データセットの制御周波数・予測水平線を反映\n\n**意義**:\n- アーキテクチャを変えることなく異なる制御モード・アクション次元・時間水平線を扱える\n- 形態固有の出力ヘッドが不要: 単一のDiTパラメータセットが全制御モードを処理\n- 推論時はプロンプトのみを変更するだけで新形態に対応\n\n> 📊 Table 2（論文）参照: 事前学習コーパスが対象とする代表的なロボット形態\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2275,
+          "audioDurationSec": 75.83,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "エンボディメント対応プロンプトって何が新しいのだ？",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 18,
+              "endFrame": 123
+            },
+            {
+              "speaker": "B",
+              "text": "異なるロボット形態を1つのモデルで扱うための巧妙な仕組みよ。アーキテクチャを変えずに、テキストプロンプトだけで対応するの。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 131,
+              "endFrame": 351
+            },
+            {
+              "speaker": "A",
+              "text": "テキストでロボットの種類を伝えるのだな！",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 358,
+              "endFrame": 437
+            },
+            {
+              "speaker": "B",
+              "text": "各学習サンプルの前に「ロボットはシングルアームで、腰あり、モバイルベースなし。制御周波数10Hz。次の16アクションを予測して」みたいなプロンプトを付けるの。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 444,
+              "endFrame": 767
+            },
+            {
+              "speaker": "A",
+              "text": "それで違うロボットを区別できるのだ？",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 774,
+              "endFrame": 851
+            },
+            {
+              "speaker": "B",
+              "text": "できるのよ。ロボットタグと修飾子で形態を指定して、制御周波数やアクションチャンクサイズも含める。これだけで異なる制御モード・次元・時間水平線が扱えるわ。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 858,
+              "endFrame": 1173
+            },
+            {
+              "speaker": "A",
+              "text": "アーキテクチャを変えなくていいのが便利なのだな。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 1181,
+              "endFrame": 1266
+            },
+            {
+              "speaker": "B",
+              "text": "形態固有の出力ヘッドが不要になるの。1セットのDiTパラメータですべての制御モードを処理できるから、新しいロボットへの対応がプロンプト変更だけで済むわ。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 1274,
+              "endFrame": 1559
+            },
+            {
+              "speaker": "A",
+              "text": "でも混乱しないのだ？シングルアームの行動とヒューマノイドの行動を混同しそうなのだ。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 1567,
+              "endFrame": 1739
+            },
+            {
+              "speaker": "B",
+              "text": "プロンプトがあることで各形態が独立した制御セマンティクスを学習できるの。後のアブレーション実験でも確認されているわ。プロンプトなしだと行動信号が混同してしまう結果が出ているのよ。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 1746,
+              "endFrame": 2071
+            },
+            {
+              "speaker": "A",
+              "text": "プロンプトエンジニアリングの力なのだな！",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 2079,
+              "endFrame": 2158
+            },
+            {
+              "speaker": "B",
+              "text": "ロボット学習にプロンプト設計を持ち込んだのが面白い貢献ね。",
+              "section": "エンボディメント対応プロンプト",
+              "startFrame": 2165,
+              "endFrame": 2275
+            }
+          ]
+        }
       },
       {
         "index": 5,
@@ -28071,7 +28385,107 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch05.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch05.mp3",
         "markdown": "<h2>統一アクション表現と学習目標</h2>\n<h3>統一アクションテンソル</h3>\n<p>$\\mathbf{Y} \\in \\mathbb{R}^{H \\times K}$ — 固定の予測水平線$H$と固定チャンネル次元$K$</p>\n<ul>\n<li>制御信号は$c \\leq K$チャンネルを使用。残りは0パディング</li>\n<li>有効チャンネルを記録するバイナリマスク: $\\mathbf{M} \\in \\{0,1\\}^{H \\times K}$</li>\n</ul>\n<h3>アクション正規化</h3>\n<p>各データセット$k$の各次元$d$に対してパーセンタイル統計（1%・99%）を使って正規化:</p>\n<p>$$\n\\tilde{a}_d = 2 \\cdot \\frac{a_d - q^k_{01}}{q^k_{99} - q^k_{01}} - 1\n$$</p>\n<ul>\n<li>結果を$[-1, 1]$にクリッピング</li>\n<li>形態間のスケール差を除去しつつ各ソース内の相対的な動作構造を保持</li>\n</ul>\n<h3>フローマッチング損失</h3>\n<p>チャンネルマスク付きの2レベル平均化:</p>\n<p>チャンネル$k$ごとの損失:</p>\n<p>$$\n\\ell_k = \\frac{\\displaystyle\\sum_{h=1}^{H} M_{h,k} \\left\\| \\bigl(v_\\theta(\\mathbf{Y}_\\tau, \\tau \\mid o_{1:t}, x, e, z) - (\\mathbf{Y}_1 - \\mathbf{Y}_0)\\bigr)_{h,k} \\right\\|_2^2}{\\displaystyle\\sum_{h=1}^{H} M_{h,k}}\n$$</p>\n<p>全アクション損失（$c$個の有効チャンネルの平均）:</p>\n<p>$$\n\\mathcal{L}_{\\text{act}} = \\mathbb{E}_{\\tau, \\mathbf{Y}_0, \\mathbf{Y}_1}\\!\\left[\\frac{1}{c}\\sum_{k=0}^{c-1}\\ell_k\\right]\n$$</p>\n<ul>\n<li>線形内挿: $\\mathbf{Y}_\\tau = (1-\\tau)\\mathbf{Y}_0 + \\tau\\mathbf{Y}_1$（$\\tau \\in [0,1]$）</li>\n<li>パディングされた位置は完全に勾配から除外</li>\n<li>各制御次元が形態に関わらず等しく勾配に貢献</li>\n</ul>\n<hr />",
-        "markdownSource": "## 統一アクション表現と学習目標\n\n### 統一アクションテンソル\n\n$\\mathbf{Y} \\in \\mathbb{R}^{H \\times K}$ — 固定の予測水平線$H$と固定チャンネル次元$K$\n\n- 制御信号は$c \\leq K$チャンネルを使用。残りは0パディング\n- 有効チャンネルを記録するバイナリマスク: $\\mathbf{M} \\in \\{0,1\\}^{H \\times K}$\n\n### アクション正規化\n\n各データセット$k$の各次元$d$に対してパーセンタイル統計（1%・99%）を使って正規化:\n\n$$\n\\tilde{a}_d = 2 \\cdot \\frac{a_d - q^k_{01}}{q^k_{99} - q^k_{01}} - 1\n$$\n\n- 結果を$[-1, 1]$にクリッピング\n- 形態間のスケール差を除去しつつ各ソース内の相対的な動作構造を保持\n\n### フローマッチング損失\n\nチャンネルマスク付きの2レベル平均化:\n\nチャンネル$k$ごとの損失:\n\n$$\n\\ell_k = \\frac{\\displaystyle\\sum_{h=1}^{H} M_{h,k} \\left\\| \\bigl(v_\\theta(\\mathbf{Y}_\\tau, \\tau \\mid o_{1:t}, x, e, z) - (\\mathbf{Y}_1 - \\mathbf{Y}_0)\\bigr)_{h,k} \\right\\|_2^2}{\\displaystyle\\sum_{h=1}^{H} M_{h,k}}\n$$\n\n全アクション損失（$c$個の有効チャンネルの平均）:\n\n$$\n\\mathcal{L}_{\\text{act}} = \\mathbb{E}_{\\tau, \\mathbf{Y}_0, \\mathbf{Y}_1}\\!\\left[\\frac{1}{c}\\sum_{k=0}^{c-1}\\ell_k\\right]\n$$\n\n- 線形内挿: $\\mathbf{Y}_\\tau = (1-\\tau)\\mathbf{Y}_0 + \\tau\\mathbf{Y}_1$（$\\tau \\in [0,1]$）\n- パディングされた位置は完全に勾配から除外\n- 各制御次元が形態に関わらず等しく勾配に貢献\n\n---"
+        "markdownSource": "## 統一アクション表現と学習目標\n\n### 統一アクションテンソル\n\n$\\mathbf{Y} \\in \\mathbb{R}^{H \\times K}$ — 固定の予測水平線$H$と固定チャンネル次元$K$\n\n- 制御信号は$c \\leq K$チャンネルを使用。残りは0パディング\n- 有効チャンネルを記録するバイナリマスク: $\\mathbf{M} \\in \\{0,1\\}^{H \\times K}$\n\n### アクション正規化\n\n各データセット$k$の各次元$d$に対してパーセンタイル統計（1%・99%）を使って正規化:\n\n$$\n\\tilde{a}_d = 2 \\cdot \\frac{a_d - q^k_{01}}{q^k_{99} - q^k_{01}} - 1\n$$\n\n- 結果を$[-1, 1]$にクリッピング\n- 形態間のスケール差を除去しつつ各ソース内の相対的な動作構造を保持\n\n### フローマッチング損失\n\nチャンネルマスク付きの2レベル平均化:\n\nチャンネル$k$ごとの損失:\n\n$$\n\\ell_k = \\frac{\\displaystyle\\sum_{h=1}^{H} M_{h,k} \\left\\| \\bigl(v_\\theta(\\mathbf{Y}_\\tau, \\tau \\mid o_{1:t}, x, e, z) - (\\mathbf{Y}_1 - \\mathbf{Y}_0)\\bigr)_{h,k} \\right\\|_2^2}{\\displaystyle\\sum_{h=1}^{H} M_{h,k}}\n$$\n\n全アクション損失（$c$個の有効チャンネルの平均）:\n\n$$\n\\mathcal{L}_{\\text{act}} = \\mathbb{E}_{\\tau, \\mathbf{Y}_0, \\mathbf{Y}_1}\\!\\left[\\frac{1}{c}\\sum_{k=0}^{c-1}\\ell_k\\right]\n$$\n\n- 線形内挿: $\\mathbf{Y}_\\tau = (1-\\tau)\\mathbf{Y}_0 + \\tau\\mathbf{Y}_1$（$\\tau \\in [0,1]$）\n- パディングされた位置は完全に勾配から除外\n- 各制御次元が形態に関わらず等しく勾配に貢献\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2304,
+          "audioDurationSec": 76.816,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "数学的な部分を解説してほしいのだ！",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 18,
+              "endFrame": 102
+            },
+            {
+              "speaker": "B",
+              "text": "まず統一アクションテンソルYの説明から。Y は固定の水平線H行×固定チャンネル数K列の行列よ。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 109,
+              "endFrame": 333
+            },
+            {
+              "speaker": "A",
+              "text": "Hは何ステップ先を予測するかで、Kは行動の次元数なのだな。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 341,
+              "endFrame": 484
+            },
+            {
+              "speaker": "B",
+              "text": "その通り。でもロボットによって使う次元数cはK以下で、残りはゼロで埋めるの。どのチャンネルが有効かを記録するバイナリマスクMも使うわ。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 492,
+              "endFrame": 746
+            },
+            {
+              "speaker": "A",
+              "text": "スケールの正規化式も見てほしいのだ。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 753,
+              "endFrame": 827
+            },
+            {
+              "speaker": "B",
+              "text": "画面のチルデ付きのaの式ね。各データセットとチャンネルごとに1パーセンタイルと99パーセンタイルを使って行動を正規化してマイナス1からプラス1に収めるの。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 834,
+              "endFrame": 1112
+            },
+            {
+              "speaker": "A",
+              "text": "なぜパーセンタイルを使うのだ？",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 1119,
+              "endFrame": 1183
+            },
+            {
+              "speaker": "B",
+              "text": "外れ値に強いからよ。平均と分散で正規化すると外れ値の影響を受けやすいけど、パーセンタイルは頑健ね。ロボットのデータは時々変な値が入るから重要なの。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 1191,
+              "endFrame": 1507
+            },
+            {
+              "speaker": "A",
+              "text": "フローマッチング損失は難しそうなのだ。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 1514,
+              "endFrame": 1596
+            },
+            {
+              "speaker": "B",
+              "text": "本質を言うと、モデルが予測したベクトル場と理想のベクトル場の差を最小化するの。マスクMがついているから有効なチャンネルだけで損失を計算するわ。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 1604,
+              "endFrame": 1868
+            },
+            {
+              "speaker": "A",
+              "text": "ゼロパディングの部分は無視されるのだな。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 1875,
+              "endFrame": 1949
+            },
+            {
+              "speaker": "B",
+              "text": "正確にはゼロパディング部分は勾配から完全に除外されるの。これで各制御次元が形態に関わらず等しくモデルの学習に貢献できるわ。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 1956,
+              "endFrame": 2202
+            },
+            {
+              "speaker": "A",
+              "text": "公平に全部のロボットを学習するためなのだな。",
+              "section": "統一アクション表現と学習目標",
+              "startFrame": 2209,
+              "endFrame": 2304
+            }
+          ]
+        }
       },
       {
         "index": 6,
@@ -28079,7 +28493,128 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch06.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch06.mp3",
         "markdown": "<h2>4段階学習レシピ</h2>\n<p>大脳と小脳の役割分担に似た2モジュール間の非対称な初期状態をどう克服するか:\n- バックボーン: 大規模プレトレーニング済みで強力な表現を持つ\n- DiTアクションデコーダ: ランダム初期化</p>\n<h3>圧縮・解凍の視点</h3>\n<p>言語指示「赤いカップを取ってください」 → 数トークン（圧縮された意図）\n対応する行動軌跡 → 数千の高次元ジョイント位置値（高次元）</p>\n<p>T2A（Text-to-Action）はこの<strong>次元ギャップを埋める構造的な解凍問題</strong>として捉える。</p>\n<h3>4ステージ</h3>\n<table>\n<thead>\n<tr>\n<th>ステージ</th>\n<th>名前</th>\n<th>内容</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>I</td>\n<td>T2A</td>\n<td>VLMを固定。DiTのみ言語＋行動（画像なし）で訓練</td>\n</tr>\n<tr>\n<td>II</td>\n<td>CPT（継続事前学習）</td>\n<td>両モジュールを解凍。異質な全データ混合で訓練（シミュ＋実機）</td>\n</tr>\n<tr>\n<td>III</td>\n<td>SFT（教師あり微調整）</td>\n<td>2並列トラック: 多タスク汎用SFT + 実機ローカルテレオペレーションデータ</td>\n</tr>\n<tr>\n<td>IV</td>\n<td>RL（強化学習）</td>\n<td>SFTチェックポイントからPPOでタスク成功報酬を最適化</td>\n</tr>\n</tbody>\n</table>\n<hr />",
-        "markdownSource": "## 4段階学習レシピ\n\n大脳と小脳の役割分担に似た2モジュール間の非対称な初期状態をどう克服するか:\n- バックボーン: 大規模プレトレーニング済みで強力な表現を持つ\n- DiTアクションデコーダ: ランダム初期化\n\n### 圧縮・解凍の視点\n\n言語指示「赤いカップを取ってください」 → 数トークン（圧縮された意図）\n対応する行動軌跡 → 数千の高次元ジョイント位置値（高次元）\n\nT2A（Text-to-Action）はこの**次元ギャップを埋める構造的な解凍問題**として捉える。\n\n### 4ステージ\n\n| ステージ | 名前 | 内容 |\n|---|---|---|\n| I | T2A | VLMを固定。DiTのみ言語＋行動（画像なし）で訓練 |\n| II | CPT（継続事前学習） | 両モジュールを解凍。異質な全データ混合で訓練（シミュ＋実機） |\n| III | SFT（教師あり微調整） | 2並列トラック: 多タスク汎用SFT + 実機ローカルテレオペレーションデータ |\n| IV | RL（強化学習） | SFTチェックポイントからPPOでタスク成功報酬を最適化 |\n\n---"
+        "markdownSource": "## 4段階学習レシピ\n\n大脳と小脳の役割分担に似た2モジュール間の非対称な初期状態をどう克服するか:\n- バックボーン: 大規模プレトレーニング済みで強力な表現を持つ\n- DiTアクションデコーダ: ランダム初期化\n\n### 圧縮・解凍の視点\n\n言語指示「赤いカップを取ってください」 → 数トークン（圧縮された意図）\n対応する行動軌跡 → 数千の高次元ジョイント位置値（高次元）\n\nT2A（Text-to-Action）はこの**次元ギャップを埋める構造的な解凍問題**として捉える。\n\n### 4ステージ\n\n| ステージ | 名前 | 内容 |\n|---|---|---|\n| I | T2A | VLMを固定。DiTのみ言語＋行動（画像なし）で訓練 |\n| II | CPT（継続事前学習） | 両モジュールを解凍。異質な全データ混合で訓練（シミュ＋実機） |\n| III | SFT（教師あり微調整） | 2並列トラック: 多タスク汎用SFT + 実機ローカルテレオペレーションデータ |\n| IV | RL（強化学習） | SFTチェックポイントからPPOでタスク成功報酬を最適化 |\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 3148,
+          "audioDurationSec": 104.926,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "4段階って多いのだな。なぜそんなに複雑なのだ？",
+              "section": "4段階学習レシピ",
+              "startFrame": 18,
+              "endFrame": 131
+            },
+            {
+              "speaker": "B",
+              "text": "バックボーンとアクションデコーダの「非対称性」という問題があるからよ。",
+              "section": "4段階学習レシピ",
+              "startFrame": 138,
+              "endFrame": 268
+            },
+            {
+              "speaker": "A",
+              "text": "どんな非対称性なのだ？",
+              "section": "4段階学習レシピ",
+              "startFrame": 275,
+              "endFrame": 331
+            },
+            {
+              "speaker": "B",
+              "text": "バックボーンのQwen3.5-4Bは大規模なプレトレーニング済みで強力な表現を持っているの。でもDiTアクションデコーダはランダム初期化。ゼロからスタートなのよ。",
+              "section": "4段階学習レシピ",
+              "startFrame": 338,
+              "endFrame": 648
+            },
+            {
+              "speaker": "A",
+              "text": "強い先輩と新入りが一緒に仕事するみたいなのだ。",
+              "section": "4段階学習レシピ",
+              "startFrame": 656,
+              "endFrame": 757
+            },
+            {
+              "speaker": "B",
+              "text": "良いたとえね。そしてもう1つの問題が次元ギャップ。「赤いカップを取って」という指示は数トークンで表せるけど、対応する行動軌跡は数千の高次元の数値になるの。",
+              "section": "4段階学習レシピ",
+              "startFrame": 764,
+              "endFrame": 1064
+            },
+            {
+              "speaker": "A",
+              "text": "言葉は短いのに動作はなぜこんなに長いのだ？",
+              "section": "4段階学習レシピ",
+              "startFrame": 1071,
+              "endFrame": 1169
+            },
+            {
+              "speaker": "B",
+              "text": "ロボットの関節が1ミリ動くのにも座標が必要で、それが100ミリ秒分あったりするのよ。この「言語→行動の構造的解凍問題」を4段階で解決するの。",
+              "section": "4段階学習レシピ",
+              "startFrame": 1176,
+              "endFrame": 1480
+            },
+            {
+              "speaker": "A",
+              "text": "第1段階のT2Aは？",
+              "section": "4段階学習レシピ",
+              "startFrame": 1488,
+              "endFrame": 1557
+            },
+            {
+              "speaker": "B",
+              "text": "Text-to-Action。バックボーンを固定してDiTだけを訓練するの。画像なしで言語と行動だけ。まずデコーダに言語インデックス付きの行動パターンを覚えさせるわ。",
+              "section": "4段階学習レシピ",
+              "startFrame": 1565,
+              "endFrame": 1880
+            },
+            {
+              "speaker": "A",
+              "text": "第2段階のCPTは？",
+              "section": "4段階学習レシピ",
+              "startFrame": 1888,
+              "endFrame": 1951
+            },
+            {
+              "speaker": "B",
+              "text": "Continual Pre-Training、継続事前学習よ。両モジュールを解放して、すべてのデータ混合で訓練するの。シミュレーションと実機の両方のデータを統合するわ。",
+              "section": "4段階学習レシピ",
+              "startFrame": 1958,
+              "endFrame": 2369
+            },
+            {
+              "speaker": "A",
+              "text": "第3段階のSFTは？",
+              "section": "4段階学習レシピ",
+              "startFrame": 2376,
+              "endFrame": 2442
+            },
+            {
+              "speaker": "B",
+              "text": "教師あり微調整ね。2並列トラックを走らせて、多タスク汎用SFTと実機のテレオペレーションデータへの特化を同時に行うの。",
+              "section": "4段階学習レシピ",
+              "startFrame": 2450,
+              "endFrame": 2685
+            },
+            {
+              "speaker": "A",
+              "text": "第4段階のRLが一番すごいのだ？",
+              "section": "4段階学習レシピ",
+              "startFrame": 2692,
+              "endFrame": 2782
+            },
+            {
+              "speaker": "B",
+              "text": "強化学習よ。模倣学習だけではクローズドループでの成功が直接最適化できないという問題を解決するためにPPOというアルゴリズムを使うの。タスク成功か失敗かの2値報酬で学習するわ。",
+              "section": "4段階学習レシピ",
+              "startFrame": 2789,
+              "endFrame": 3148
+            }
+          ]
+        }
       },
       {
         "index": 7,
@@ -28087,7 +28622,100 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch07.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch07.mp3",
         "markdown": "<h2>大規模ロボット操作データ</h2>\n<p>事前学習コーパスの<strong>74.2%</strong>がロボット操作軌跡:</p>\n<h3>公開データセット（10,000時間以上）</h3>\n<ul>\n<li>RobotSet, Galaxea, AgiBot World, RoboCOIN, RoboMIND V1/V2</li>\n<li>RDT-1B, DROID, BridgeData V2, RH20T, RT-1, BC-Z など</li>\n</ul>\n<p>カバー範囲: テーブルトップ操作・モバイル操作・両腕操作・5指器用操作・野外タスク</p>\n<h3>自社データ（合計の約20%）</h3>\n<ul>\n<li>独自に収集した1,000時間以上の実ロボット軌跡</li>\n<li>スケーラブルなシミュレーションパイプライン（RoboInF）で生成した<strong>8M以上の合成シミュレーション軌跡</strong>（合計の3.7%）</li>\n</ul>\n<blockquote>\n<p>📊 Table 1（論文）参照: 事前学習データ混合の構成と重みサンプリング</p>\n</blockquote>\n<h3>シミュレーションパイプラインの概要</h3>\n<ul>\n<li>IsaacLab環境 + cuRoboの衝突回避プランニング</li>\n<li>20シーン×10オブジェクト配置 = 200基本シーン</li>\n<li>450操作タスク（短期・長期水平線）</li>\n<li>各タスクに300成功軌跡（照明・カメラポーズ・背景・テクスチャなど多様化）</li>\n<li>359,848の完全成功軌跡（サブタスクセグメントを含む）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3（論文）参照: 合成シミュレーションパイプライン概観</p>\n</blockquote>\n<hr />",
-        "markdownSource": "## 大規模ロボット操作データ\n\n事前学習コーパスの**74.2%**がロボット操作軌跡:\n\n### 公開データセット（10,000時間以上）\n- RobotSet, Galaxea, AgiBot World, RoboCOIN, RoboMIND V1/V2\n- RDT-1B, DROID, BridgeData V2, RH20T, RT-1, BC-Z など\n\nカバー範囲: テーブルトップ操作・モバイル操作・両腕操作・5指器用操作・野外タスク\n\n### 自社データ（合計の約20%）\n- 独自に収集した1,000時間以上の実ロボット軌跡\n- スケーラブルなシミュレーションパイプライン（RoboInF）で生成した**8M以上の合成シミュレーション軌跡**（合計の3.7%）\n\n> 📊 Table 1（論文）参照: 事前学習データ混合の構成と重みサンプリング\n\n### シミュレーションパイプラインの概要\n- IsaacLab環境 + cuRoboの衝突回避プランニング\n- 20シーン×10オブジェクト配置 = 200基本シーン\n- 450操作タスク（短期・長期水平線）\n- 各タスクに300成功軌跡（照明・カメラポーズ・背景・テクスチャなど多様化）\n- 359,848の完全成功軌跡（サブタスクセグメントを含む）\n\n> 📊 Fig. 3（論文）参照: 合成シミュレーションパイプライン概観\n\n---"
+        "markdownSource": "## 大規模ロボット操作データ\n\n事前学習コーパスの**74.2%**がロボット操作軌跡:\n\n### 公開データセット（10,000時間以上）\n- RobotSet, Galaxea, AgiBot World, RoboCOIN, RoboMIND V1/V2\n- RDT-1B, DROID, BridgeData V2, RH20T, RT-1, BC-Z など\n\nカバー範囲: テーブルトップ操作・モバイル操作・両腕操作・5指器用操作・野外タスク\n\n### 自社データ（合計の約20%）\n- 独自に収集した1,000時間以上の実ロボット軌跡\n- スケーラブルなシミュレーションパイプライン（RoboInF）で生成した**8M以上の合成シミュレーション軌跡**（合計の3.7%）\n\n> 📊 Table 1（論文）参照: 事前学習データ混合の構成と重みサンプリング\n\n### シミュレーションパイプラインの概要\n- IsaacLab環境 + cuRoboの衝突回避プランニング\n- 20シーン×10オブジェクト配置 = 200基本シーン\n- 450操作タスク（短期・長期水平線）\n- 各タスクに300成功軌跡（照明・カメラポーズ・背景・テクスチャなど多様化）\n- 359,848の完全成功軌跡（サブタスクセグメントを含む）\n\n> 📊 Fig. 3（論文）参照: 合成シミュレーションパイプライン概観\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2769,
+          "audioDurationSec": 92.288667,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "どんなデータで訓練するのだ？",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 18,
+              "endFrame": 79
+            },
+            {
+              "speaker": "B",
+              "text": "事前学習コーパスの74.2%がロボット操作軌跡よ。公開データセットと自社データの組み合わせね。",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 87,
+              "endFrame": 283
+            },
+            {
+              "speaker": "A",
+              "text": "公開データってどんなものがあるのだ？",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 290,
+              "endFrame": 365
+            },
+            {
+              "speaker": "B",
+              "text": "RobotSet・Galaxea・AgiBot World・RoboCOIN・RoboMIND・RDT-1B・DROID・BridgeData V2・RH20T・RT-1・BC-Zなど、多数あるわ。合計1万時間以上ね。",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 373,
+              "endFrame": 1053
+            },
+            {
+              "speaker": "A",
+              "text": "1万時間！すごい量なのだ。",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 1060,
+              "endFrame": 1130
+            },
+            {
+              "speaker": "B",
+              "text": "テーブルトップ操作・モバイル操作・両腕操作・5指器用操作・野外タスクと幅広くカバーしているわ。多様なロボット形態のデータが重要なの。",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 1137,
+              "endFrame": 1421
+            },
+            {
+              "speaker": "A",
+              "text": "自社データはどうやって集めたのだ？",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 1428,
+              "endFrame": 1499
+            },
+            {
+              "speaker": "B",
+              "text": "独自に1000時間以上の実ロボット軌跡を収集したのと、RoboInFというシミュレーションパイプラインで8百万以上の合成軌跡を生成したわ。",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 1507,
+              "endFrame": 1776
+            },
+            {
+              "speaker": "A",
+              "text": "シミュレーションパイプラインって何をするのだ？",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 1784,
+              "endFrame": 1866
+            },
+            {
+              "speaker": "B",
+              "text": "IsaacLabという物理エンジンで20シーン×10物体配置の200の基本シーンを作って、450の操作タスクを定義するの。各タスクに300の成功軌跡を生成して、照明・カメラ位置・背景・テクスチャを多様化するわ。",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 1873,
+              "endFrame": 2334
+            },
+            {
+              "speaker": "A",
+              "text": "合計359,848の完全成功軌跡なのだな！",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 2341,
+              "endFrame": 2488
+            },
+            {
+              "speaker": "B",
+              "text": "シミュレーションデータで視覚的多様性を大量に確保できるの。実機での収集コストを大幅に削減しつつ、汎化に必要なバリエーションを得られるのが強みよ。",
+              "section": "大規模ロボット操作データ",
+              "startFrame": 2495,
+              "endFrame": 2769
+            }
+          ]
+        }
       },
       {
         "index": 8,
@@ -28095,7 +28723,100 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch08.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch08.mp3",
         "markdown": "<h2>自我視点・合成・ナビゲーションデータ</h2>\n<h3>自我視点の人間データ（6.0%）</h3>\n<p>ロボットのテレオペレーションより<strong>豊富かつスケーラブルな操作経験源</strong>:</p>\n<ul>\n<li>Ego4D / EPIC-KITCHENS（VITRA処理済み）</li>\n<li>EgoDex: Apple Vision Pro使用, 829時間, 194多様な卓上タスク</li>\n<li>EgoVerse: 1,300時間以上, 1,965タスク</li>\n<li>Xperience: 同期された深度・手/体のモーションキャプチャ</li>\n</ul>\n<p>アクション表現: SE(3)手首変換（6次元×2手）＋<strong>主成分固有把持（10次元×2手、計32次元）</strong></p>\n<h3>ナビゲーションデータ（7.5%）</h3>\n<p>長期水平線軌跡＋豊富な視覚情報:\n- 指示追従ナビゲーション（4.3%）: 移動プリミティブ＋テキストランドマーク\n- 物体探索（2.3%）: 大規模屋内環境での物体発見\n- 目標追跡（1.0%）: 移動ターゲットの追従</p>\n<h3>視覚言語データ（8.5%）</h3>\n<p>意味的グラウンディング・細粒度指示追従・一般的視覚推論を強化:</p>\n<ul>\n<li><strong>細粒度身体的行動キャプション</strong>: 48,000個の動画-キャプションペア（13次元でアノテーション）</li>\n<li>行動プリミティブ・アクター識別・接触領域・源泉/目標位置・軌跡と向き・グリッパー状態</li>\n<li><strong>自動運転VQA</strong>（2.4%）: 時間的場面理解・周囲視野空間推論・言語グラウンド化局所化</li>\n<li><strong>2Dバウンディングボックスグラウンディング</strong>（2.5%）: 言語条件付き操作の前提となる空間理解</li>\n<li><strong>一般視覚言語データ</strong>（3.4%）: キャプション・VQA・OCR・空間関係予測など</li>\n</ul>\n<hr />",
-        "markdownSource": "## 自我視点・合成・ナビゲーションデータ\n\n### 自我視点の人間データ（6.0%）\n\nロボットのテレオペレーションより**豊富かつスケーラブルな操作経験源**:\n\n- Ego4D / EPIC-KITCHENS（VITRA処理済み）\n- EgoDex: Apple Vision Pro使用, 829時間, 194多様な卓上タスク\n- EgoVerse: 1,300時間以上, 1,965タスク\n- Xperience: 同期された深度・手/体のモーションキャプチャ\n\nアクション表現: SE(3)手首変換（6次元×2手）＋**主成分固有把持（10次元×2手、計32次元）**\n\n### ナビゲーションデータ（7.5%）\n\n長期水平線軌跡＋豊富な視覚情報:\n- 指示追従ナビゲーション（4.3%）: 移動プリミティブ＋テキストランドマーク\n- 物体探索（2.3%）: 大規模屋内環境での物体発見\n- 目標追跡（1.0%）: 移動ターゲットの追従\n\n### 視覚言語データ（8.5%）\n\n意味的グラウンディング・細粒度指示追従・一般的視覚推論を強化:\n\n- **細粒度身体的行動キャプション**: 48,000個の動画-キャプションペア（13次元でアノテーション）\n  - 行動プリミティブ・アクター識別・接触領域・源泉/目標位置・軌跡と向き・グリッパー状態\n- **自動運転VQA**（2.4%）: 時間的場面理解・周囲視野空間推論・言語グラウンド化局所化\n- **2Dバウンディングボックスグラウンディング**（2.5%）: 言語条件付き操作の前提となる空間理解\n- **一般視覚言語データ**（3.4%）: キャプション・VQA・OCR・空間関係予測など\n\n---"
+        "markdownSource": "## 自我視点・合成・ナビゲーションデータ\n\n### 自我視点の人間データ（6.0%）\n\nロボットのテレオペレーションより**豊富かつスケーラブルな操作経験源**:\n\n- Ego4D / EPIC-KITCHENS（VITRA処理済み）\n- EgoDex: Apple Vision Pro使用, 829時間, 194多様な卓上タスク\n- EgoVerse: 1,300時間以上, 1,965タスク\n- Xperience: 同期された深度・手/体のモーションキャプチャ\n\nアクション表現: SE(3)手首変換（6次元×2手）＋**主成分固有把持（10次元×2手、計32次元）**\n\n### ナビゲーションデータ（7.5%）\n\n長期水平線軌跡＋豊富な視覚情報:\n- 指示追従ナビゲーション（4.3%）: 移動プリミティブ＋テキストランドマーク\n- 物体探索（2.3%）: 大規模屋内環境での物体発見\n- 目標追跡（1.0%）: 移動ターゲットの追従\n\n### 視覚言語データ（8.5%）\n\n意味的グラウンディング・細粒度指示追従・一般的視覚推論を強化:\n\n- **細粒度身体的行動キャプション**: 48,000個の動画-キャプションペア（13次元でアノテーション）\n  - 行動プリミティブ・アクター識別・接触領域・源泉/目標位置・軌跡と向き・グリッパー状態\n- **自動運転VQA**（2.4%）: 時間的場面理解・周囲視野空間推論・言語グラウンド化局所化\n- **2Dバウンディングボックスグラウンディング**（2.5%）: 言語条件付き操作の前提となる空間理解\n- **一般視覚言語データ**（3.4%）: キャプション・VQA・OCR・空間関係予測など\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2700,
+          "audioDurationSec": 90.006,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "ロボット以外のデータも使うのだな？",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 18,
+              "endFrame": 90
+            },
+            {
+              "speaker": "B",
+              "text": "それが面白いポイントよ。自我視点の人間データを使うの。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 97,
+              "endFrame": 203
+            },
+            {
+              "speaker": "A",
+              "text": "人間の動画をロボット学習に使うのだ？",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 211,
+              "endFrame": 299
+            },
+            {
+              "speaker": "B",
+              "text": "ロボットのテレオペレーションより豊富でスケーラブルな操作経験源なのよ。Ego4DやEPIC-KITCHENSという有名なデータセット、EgoDexはApple Vision Proで収集した829時間のデータを使っているわ。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 307,
+              "endFrame": 801
+            },
+            {
+              "speaker": "A",
+              "text": "Apple Vision Proで！手の動きを3Dで正確にとれるのだな。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 809,
+              "endFrame": 983
+            },
+            {
+              "speaker": "B",
+              "text": "EgoVerseという1300時間以上1965タスクのデータセットも使うの。アクション表現はSE(3)の手首変換という6次元変換×2手と、主成分固有把持という10次元×2手の合計32次元ね。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 991,
+              "endFrame": 1445
+            },
+            {
+              "speaker": "A",
+              "text": "ナビゲーションデータも7.5%使うのだな。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 1452,
+              "endFrame": 1549
+            },
+            {
+              "speaker": "B",
+              "text": "指示追従ナビゲーション・物体探索・目標追跡の3種類よ。操作とは全然違うタスクだけど、同じモデルで学習させることでどちらも向上するの。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 1556,
+              "endFrame": 1844
+            },
+            {
+              "speaker": "A",
+              "text": "なんで一緒に学習すると良くなるのだ？",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 1851,
+              "endFrame": 1932
+            },
+            {
+              "speaker": "B",
+              "text": "長期的な計画立案と空間推論という能力を、ナビゲーションデータが強化するからね。操作の精密さとナビゲーションの計画性が互いに補い合うの。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 1940,
+              "endFrame": 2214
+            },
+            {
+              "speaker": "A",
+              "text": "視覚言語データも8.5%使うのだな。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 2221,
+              "endFrame": 2317
+            },
+            {
+              "speaker": "B",
+              "text": "行動キャプション・自動運転VQA・バウンディングボックスグラウンディング・一般視覚言語データよ。意味的理解と言語グラウンディングを強化するの。48000個の動画キャプションペアは13次元でアノテーションされているわ。",
+              "section": "自我視点・合成・ナビゲーションデータ",
+              "startFrame": 2324,
+              "endFrame": 2700
+            }
+          ]
+        }
       },
       {
         "index": 9,
@@ -28103,7 +28824,100 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch09.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch09.mp3",
         "markdown": "<h2>ポスト訓練：SFT と強化学習</h2>\n<p>T2A+CPTで生成したQwen-VLA-Baseを精密化する2段階:</p>\n<h3>マルチタスクSFT</h3>\n<p>データ構成:\n1. 視覚言語サンプル（VQA・空間グラウンディング・行動キャプション）\n2. シミュレーション操作デモ（単腕・双腕・ヒューマノイド、チャンクサイズ16）\n3. VLNエピソード（ウェイポイントチャンク8）</p>\n<p>損失重み付け:\n- 視覚言語 次トークン予測: <strong>0.1</strong>\n- 操作・ナビゲーション行動: <strong>1.0</strong></p>\n<h3>強化学習（PPO）</h3>\n<p>模倣ベースのSFTではクローズドループタスク成功が直接最適化できない問題を解決。</p>\n<p><strong>PPOクリッピド代理目的関数</strong>:</p>\n<p>$$\n\\mathcal{L}^{\\text{actor}}(\\theta) = -\\mathbb{E}_t\\Big[\\min\\!\\Big(r_t(\\theta)\\hat{A}_t,\\;\\text{clip}(r_t(\\theta), 1{-}\\epsilon, 1{+}\\epsilon)\\hat{A}_t\\Big)\\Big]\n$$</p>\n<ul>\n<li>$r_t(\\theta) = \\pi_\\theta(a_t \\mid s_t) / \\pi_{\\theta_{\\text{old}}}(a_t \\mid s_t)$: 重要度比率</li>\n<li>$\\hat{A}_t$: GAE優位性推定（$\\gamma=0.99$, $\\lambda=0.95$）</li>\n<li>クリッピング閾値: $\\epsilon=0.2$</li>\n</ul>\n<p><strong>フローマッチングでのログ確率推定</strong>:\n- 決定論的確率流ODEに対応するSDEに変換（各オイラーステップにノイズを注入）\n- 遷移を明示的ガウシアンとして表現→解析的に対数確率を計算可能</p>\n<p><strong>RLインフラ</strong>:\n- 128個の並列環境インスタンス\n- アクションチャンク長H=16\n- 評価時温度: τ=0.6（シャープな行動分布）\n- 報酬: タスク成功/失敗の2値（0または1）\n- SimplerEnvのみでRL実施 → 他環境へのゼロショット転移をテスト</p>\n<hr />",
-        "markdownSource": "## ポスト訓練：SFT と強化学習\n\nT2A+CPTで生成したQwen-VLA-Baseを精密化する2段階:\n\n### マルチタスクSFT\n\nデータ構成:\n1. 視覚言語サンプル（VQA・空間グラウンディング・行動キャプション）\n2. シミュレーション操作デモ（単腕・双腕・ヒューマノイド、チャンクサイズ16）\n3. VLNエピソード（ウェイポイントチャンク8）\n\n損失重み付け:\n- 視覚言語 次トークン予測: **0.1**\n- 操作・ナビゲーション行動: **1.0**\n\n### 強化学習（PPO）\n\n模倣ベースのSFTではクローズドループタスク成功が直接最適化できない問題を解決。\n\n**PPOクリッピド代理目的関数**:\n\n$$\n\\mathcal{L}^{\\text{actor}}(\\theta) = -\\mathbb{E}_t\\Big[\\min\\!\\Big(r_t(\\theta)\\hat{A}_t,\\;\\text{clip}(r_t(\\theta), 1{-}\\epsilon, 1{+}\\epsilon)\\hat{A}_t\\Big)\\Big]\n$$\n\n- $r_t(\\theta) = \\pi_\\theta(a_t \\mid s_t) / \\pi_{\\theta_{\\text{old}}}(a_t \\mid s_t)$: 重要度比率\n- $\\hat{A}_t$: GAE優位性推定（$\\gamma=0.99$, $\\lambda=0.95$）\n- クリッピング閾値: $\\epsilon=0.2$\n\n**フローマッチングでのログ確率推定**:\n- 決定論的確率流ODEに対応するSDEに変換（各オイラーステップにノイズを注入）\n- 遷移を明示的ガウシアンとして表現→解析的に対数確率を計算可能\n\n**RLインフラ**:\n- 128個の並列環境インスタンス\n- アクションチャンク長H=16\n- 評価時温度: τ=0.6（シャープな行動分布）\n- 報酬: タスク成功/失敗の2値（0または1）\n- SimplerEnvのみでRL実施 → 他環境へのゼロショット転移をテスト\n\n---"
+        "markdownSource": "## ポスト訓練：SFT と強化学習\n\nT2A+CPTで生成したQwen-VLA-Baseを精密化する2段階:\n\n### マルチタスクSFT\n\nデータ構成:\n1. 視覚言語サンプル（VQA・空間グラウンディング・行動キャプション）\n2. シミュレーション操作デモ（単腕・双腕・ヒューマノイド、チャンクサイズ16）\n3. VLNエピソード（ウェイポイントチャンク8）\n\n損失重み付け:\n- 視覚言語 次トークン予測: **0.1**\n- 操作・ナビゲーション行動: **1.0**\n\n### 強化学習（PPO）\n\n模倣ベースのSFTではクローズドループタスク成功が直接最適化できない問題を解決。\n\n**PPOクリッピド代理目的関数**:\n\n$$\n\\mathcal{L}^{\\text{actor}}(\\theta) = -\\mathbb{E}_t\\Big[\\min\\!\\Big(r_t(\\theta)\\hat{A}_t,\\;\\text{clip}(r_t(\\theta), 1{-}\\epsilon, 1{+}\\epsilon)\\hat{A}_t\\Big)\\Big]\n$$\n\n- $r_t(\\theta) = \\pi_\\theta(a_t \\mid s_t) / \\pi_{\\theta_{\\text{old}}}(a_t \\mid s_t)$: 重要度比率\n- $\\hat{A}_t$: GAE優位性推定（$\\gamma=0.99$, $\\lambda=0.95$）\n- クリッピング閾値: $\\epsilon=0.2$\n\n**フローマッチングでのログ確率推定**:\n- 決定論的確率流ODEに対応するSDEに変換（各オイラーステップにノイズを注入）\n- 遷移を明示的ガウシアンとして表現→解析的に対数確率を計算可能\n\n**RLインフラ**:\n- 128個の並列環境インスタンス\n- アクションチャンク長H=16\n- 評価時温度: τ=0.6（シャープな行動分布）\n- 報酬: タスク成功/失敗の2値（0または1）\n- SimplerEnvのみでRL実施 → 他環境へのゼロショット転移をテスト\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2682,
+          "audioDurationSec": 89.387333,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "事前学習が終わったあとの学習も大変そうなのだ。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 18,
+              "endFrame": 123
+            },
+            {
+              "speaker": "B",
+              "text": "T2AとCPTで作ったQwen-VLA-Baseを精密化する2段階があるわ。まずマルチタスクSFT、次にRLね。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 131,
+              "endFrame": 416
+            },
+            {
+              "speaker": "A",
+              "text": "SFTでは何を学ぶのだ？",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 423,
+              "endFrame": 491
+            },
+            {
+              "speaker": "B",
+              "text": "視覚言語サンプル・シミュレーション操作デモ・VLNエピソードの3種類のデータを混ぜて学習するの。損失重みが面白くて、視覚言語の次トークン予測は0.1、操作とナビゲーションの行動は1.0よ。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 499,
+              "endFrame": 884
+            },
+            {
+              "speaker": "A",
+              "text": "行動の学習を10倍重視するのだな。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 892,
+              "endFrame": 973
+            },
+            {
+              "speaker": "B",
+              "text": "言語タスクより行動タスクを優先させるためね。事前学習で言語能力はすでに十分なので、特化させたい行動に重みを置くの。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 981,
+              "endFrame": 1213
+            },
+            {
+              "speaker": "A",
+              "text": "RLで強化学習をするのだが、なぜ必要なのだ？",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 1220,
+              "endFrame": 1336
+            },
+            {
+              "speaker": "B",
+              "text": "SFTは模倣学習だから、手本と似た行動を出力するように訓練するの。でも「実際にタスクを成功させること」と「手本に近い行動をすること」は微妙にずれる場合があるわ。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 1344,
+              "endFrame": 1701
+            },
+            {
+              "speaker": "A",
+              "text": "成功を直接目指す訓練のほうがいいのだな。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 1708,
+              "endFrame": 1800
+            },
+            {
+              "speaker": "B",
+              "text": "PPOというアルゴリズムを使って、タスク成功か失敗かの2値報酬で学習するの。フローマッチングでのログ確率推定という工夫もあって、拡散ベースのモデルでのRL適用を可能にしているわ。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 1808,
+              "endFrame": 2168
+            },
+            {
+              "speaker": "A",
+              "text": "PPOの式が出てくるのだな。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 2175,
+              "endFrame": 2240
+            },
+            {
+              "speaker": "B",
+              "text": "重要度比率rとクリッピングの式ね。過去の方策と新しい方策の差を制限しながら学習を安定させるの。128個の並列環境で訓練して、SimplerEnvで学習したものが他環境へゼロショット転移するのよ。",
+              "section": "ポスト訓練：SFT と強化学習",
+              "startFrame": 2247,
+              "endFrame": 2682
+            }
+          ]
+        }
       },
       {
         "index": 10,
@@ -28111,7 +28925,100 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch10.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch10.mp3",
         "markdown": "<h2>シミュレーション操作実験</h2>\n<p>4つのシミュレーション環境での包括的評価:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>設定</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>LIBERO</td>\n<td>単腕テーブルトップ（4分割: Spatial/Object/Goal/Long）</td>\n</tr>\n<tr>\n<td>Simpler-WidowX</td>\n<td>real-to-sim評価（WidowXアーム）</td>\n</tr>\n<tr>\n<td>RoboCasa-GR1</td>\n<td>両腕ヒューマノイド（24キッチンタスク）</td>\n</tr>\n<tr>\n<td>RoboTwin 2.0</td>\n<td>両腕50タスク（Easy/Hard）</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Table 4（論文）参照: ベースラインとの比較（Qwen-VLA-Instruct）</p>\n</blockquote>\n<p><strong>汎化モデルが専門化モデルを上回る</strong>:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>Qwen-VLA-Instruct</th>\n<th>最良の専門化モデル</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>LIBERO</td>\n<td><strong>97.9%</strong></td>\n<td>〜98%</td>\n</tr>\n<tr>\n<td>Simpler-WidowX</td>\n<td><strong>73.7%</strong></td>\n<td>StarVLA-OFT 64.6%</td>\n</tr>\n<tr>\n<td>RoboTwin-Easy</td>\n<td><strong>86.1%</strong></td>\n<td>ABot-M0 86.0%</td>\n</tr>\n<tr>\n<td>RoboTwin-Hard</td>\n<td><strong>87.2%</strong></td>\n<td>ABot-M0 85.0%</td>\n</tr>\n<tr>\n<td>RoboCasa-GR1</td>\n<td><strong>56.7%</strong></td>\n<td>Being-H0.5 53.3%</td>\n</tr>\n</tbody>\n</table>\n<p>事前学習の効果（BASEとInstruct比較）:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>Base</th>\n<th>Instruct</th>\n<th>改善幅</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>LIBERO</td>\n<td>90.8%</td>\n<td>97.9%</td>\n<td>+7.1pt</td>\n</tr>\n<tr>\n<td>Simpler-WidowX</td>\n<td>64.3%</td>\n<td>73.7%</td>\n<td>+9.4pt</td>\n</tr>\n<tr>\n<td>RoboTwin-Easy</td>\n<td>64.3%</td>\n<td>86.1%</td>\n<td>+21.8pt</td>\n</tr>\n<tr>\n<td>RoboTwin-Hard</td>\n<td>66.4%</td>\n<td>87.2%</td>\n<td>+20.8pt</td>\n</tr>\n</tbody>\n</table>\n<hr />",
-        "markdownSource": "## シミュレーション操作実験\n\n4つのシミュレーション環境での包括的評価:\n\n| ベンチマーク | 設定 |\n|---|---|\n| LIBERO | 単腕テーブルトップ（4分割: Spatial/Object/Goal/Long） |\n| Simpler-WidowX | real-to-sim評価（WidowXアーム） |\n| RoboCasa-GR1 | 両腕ヒューマノイド（24キッチンタスク） |\n| RoboTwin 2.0 | 両腕50タスク（Easy/Hard） |\n\n> 📊 Table 4（論文）参照: ベースラインとの比較（Qwen-VLA-Instruct）\n\n**汎化モデルが専門化モデルを上回る**:\n\n| ベンチマーク | Qwen-VLA-Instruct | 最良の専門化モデル |\n|---|---|---|\n| LIBERO | **97.9%** | 〜98% |\n| Simpler-WidowX | **73.7%** | StarVLA-OFT 64.6% |\n| RoboTwin-Easy | **86.1%** | ABot-M0 86.0% |\n| RoboTwin-Hard | **87.2%** | ABot-M0 85.0% |\n| RoboCasa-GR1 | **56.7%** | Being-H0.5 53.3% |\n\n事前学習の効果（BASEとInstruct比較）:\n\n| ベンチマーク | Base | Instruct | 改善幅 |\n|---|---|---|---|\n| LIBERO | 90.8% | 97.9% | +7.1pt |\n| Simpler-WidowX | 64.3% | 73.7% | +9.4pt |\n| RoboTwin-Easy | 64.3% | 86.1% | +21.8pt |\n| RoboTwin-Hard | 66.4% | 87.2% | +20.8pt |\n\n---"
+        "markdownSource": "## シミュレーション操作実験\n\n4つのシミュレーション環境での包括的評価:\n\n| ベンチマーク | 設定 |\n|---|---|\n| LIBERO | 単腕テーブルトップ（4分割: Spatial/Object/Goal/Long） |\n| Simpler-WidowX | real-to-sim評価（WidowXアーム） |\n| RoboCasa-GR1 | 両腕ヒューマノイド（24キッチンタスク） |\n| RoboTwin 2.0 | 両腕50タスク（Easy/Hard） |\n\n> 📊 Table 4（論文）参照: ベースラインとの比較（Qwen-VLA-Instruct）\n\n**汎化モデルが専門化モデルを上回る**:\n\n| ベンチマーク | Qwen-VLA-Instruct | 最良の専門化モデル |\n|---|---|---|\n| LIBERO | **97.9%** | 〜98% |\n| Simpler-WidowX | **73.7%** | StarVLA-OFT 64.6% |\n| RoboTwin-Easy | **86.1%** | ABot-M0 86.0% |\n| RoboTwin-Hard | **87.2%** | ABot-M0 85.0% |\n| RoboCasa-GR1 | **56.7%** | Being-H0.5 53.3% |\n\n事前学習の効果（BASEとInstruct比較）:\n\n| ベンチマーク | Base | Instruct | 改善幅 |\n|---|---|---|---|\n| LIBERO | 90.8% | 97.9% | +7.1pt |\n| Simpler-WidowX | 64.3% | 73.7% | +9.4pt |\n| RoboTwin-Easy | 64.3% | 86.1% | +21.8pt |\n| RoboTwin-Hard | 66.4% | 87.2% | +20.8pt |\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 3474,
+          "audioDurationSec": 115.787333,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "シミュレーションでの実験結果を見ていくのだ！",
+              "section": "シミュレーション操作実験",
+              "startFrame": 18,
+              "endFrame": 101
+            },
+            {
+              "speaker": "B",
+              "text": "4つのシミュレーション環境でテストしているわ。LIBERO・Simpler-WidowX・RoboCasa-GR1・RoboTwin 2.0ね。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 109,
+              "endFrame": 516
+            },
+            {
+              "speaker": "A",
+              "text": "LIBEROから教えてほしいのだ。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 523,
+              "endFrame": 611
+            },
+            {
+              "speaker": "B",
+              "text": "単腕テーブルトップ操作の標準的なベンチマークよ。Spatial・Object・Goal・Longの4分野があって、Qwen-VLA-Instructは97.9%を達成したわ。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 618,
+              "endFrame": 1071
+            },
+            {
+              "speaker": "A",
+              "text": "97.9%はほぼ完璧なのだな！",
+              "section": "シミュレーション操作実験",
+              "startFrame": 1078,
+              "endFrame": 1177
+            },
+            {
+              "speaker": "B",
+              "text": "Simpler-WidowXではreal-to-sim評価で73.7%。これは実機のパターンをシミュレーションで再現する難しいテストよ。最良の専門化モデルのStarVLA-OFTが64.6%なのを上回っているの。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 1184,
+              "endFrame": 1750
+            },
+            {
+              "speaker": "A",
+              "text": "専門化モデルより汎化モデルの方が強いのだ！",
+              "section": "シミュレーション操作実験",
+              "startFrame": 1757,
+              "endFrame": 1850
+            },
+            {
+              "speaker": "B",
+              "text": "RoboTwinでも同様の結果よ。Easy 86.1%・Hard 87.2%で最良の専門化モデルABot-M0の85〜86%を上回っているわ。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 1858,
+              "endFrame": 2308
+            },
+            {
+              "speaker": "A",
+              "text": "BaseとInstructの違いも見てほしいのだ。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 2315,
+              "endFrame": 2450
+            },
+            {
+              "speaker": "B",
+              "text": "事前学習の効果を示す重要な比較ね。LIBEROで90.8%→97.9%（+7.1pt）、Simpler-WidowXで64.3%→73.7%（+9.4pt）、RoboTwinで64.3%→86.1%（+21.8pt）と大きな改善があるわ。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 2458,
+              "endFrame": 3108
+            },
+            {
+              "speaker": "A",
+              "text": "RoboTwinで20ポイント以上の改善は凄いのだ！",
+              "section": "シミュレーション操作実験",
+              "startFrame": 3116,
+              "endFrame": 3257
+            },
+            {
+              "speaker": "B",
+              "text": "大規模事前学習の力ね。RLの効果も大きくて、特にOOD設定での性能向上に貢献しているの。",
+              "section": "シミュレーション操作実験",
+              "startFrame": 3265,
+              "endFrame": 3474
+            }
+          ]
+        }
       },
       {
         "index": 11,
@@ -28119,7 +29026,100 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch11.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch11.mp3",
         "markdown": "<h2>実世界実験</h2>\n<p>ALOHAロボット（双腕6-DoF + 3カメラ）でのリアル実験:</p>\n<p>2モデル比較:\n- Qwen-VLA-aloha <strong>w/o pretrain</strong>: ゼロから訓練\n- Qwen-VLA-aloha <strong>w/ pretrain</strong>: Qwen-VLA-Baseからfine-tuning</p>\n<h3>インドメイン結果（6タスクカテゴリ）</h3>\n<table>\n<thead>\n<tr>\n<th>タスク</th>\n<th>w/o pretrain</th>\n<th>w/ pretrain</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ピック＆プレース</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>テーブル清掃</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>ボウルスタッキング</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>ボウル＆物体配置</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>タオル折り</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td>細粒度操作</td>\n<td>低</td>\n<td>高</td>\n</tr>\n<tr>\n<td><strong>平均</strong></td>\n<td><strong>48.5%</strong></td>\n<td><strong>83.6%</strong></td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Table 5（論文）参照: インドメイン詳細結果</p>\n</blockquote>\n<h3>OOD結果（5汎化設定）</h3>\n<table>\n<thead>\n<tr>\n<th>汎化設定</th>\n<th>w/ pretrain</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>カラー汎化</td>\n<td>高</td>\n</tr>\n<tr>\n<td>インスタンス汎化</td>\n<td>高</td>\n</tr>\n<tr>\n<td>位置汎化</td>\n<td>高</td>\n</tr>\n<tr>\n<td>背景汎化</td>\n<td><strong>80.8%</strong></td>\n</tr>\n<tr>\n<td>指示汎化</td>\n<td><strong>84.6%</strong></td>\n</tr>\n<tr>\n<td><strong>平均OOD</strong></td>\n<td><strong>76.9%</strong></td>\n</tr>\n</tbody>\n</table>\n<p>事前学習なし（48.5%→83.6%）とOODでの大幅な差（~40pt）が事前学習の価値を示す。</p>\n<blockquote>\n<p>📊 Table 6（論文）参照: OOD詳細結果</p>\n</blockquote>\n<hr />",
-        "markdownSource": "## 実世界実験\n\nALOHAロボット（双腕6-DoF + 3カメラ）でのリアル実験:\n\n2モデル比較:\n- Qwen-VLA-aloha **w/o pretrain**: ゼロから訓練\n- Qwen-VLA-aloha **w/ pretrain**: Qwen-VLA-Baseからfine-tuning\n\n### インドメイン結果（6タスクカテゴリ）\n\n| タスク | w/o pretrain | w/ pretrain |\n|---|---|---|\n| ピック＆プレース | 低 | 高 |\n| テーブル清掃 | 低 | 高 |\n| ボウルスタッキング | 低 | 高 |\n| ボウル＆物体配置 | 低 | 高 |\n| タオル折り | 低 | 高 |\n| 細粒度操作 | 低 | 高 |\n| **平均** | **48.5%** | **83.6%** |\n\n> 📊 Table 5（論文）参照: インドメイン詳細結果\n\n### OOD結果（5汎化設定）\n\n| 汎化設定 | w/ pretrain |\n|---|---|\n| カラー汎化 | 高 |\n| インスタンス汎化 | 高 |\n| 位置汎化 | 高 |\n| 背景汎化 | **80.8%** |\n| 指示汎化 | **84.6%** |\n| **平均OOD** | **76.9%** |\n\n事前学習なし（48.5%→83.6%）とOODでの大幅な差（~40pt）が事前学習の価値を示す。\n\n> 📊 Table 6（論文）参照: OOD詳細結果\n\n---"
+        "markdownSource": "## 実世界実験\n\nALOHAロボット（双腕6-DoF + 3カメラ）でのリアル実験:\n\n2モデル比較:\n- Qwen-VLA-aloha **w/o pretrain**: ゼロから訓練\n- Qwen-VLA-aloha **w/ pretrain**: Qwen-VLA-Baseからfine-tuning\n\n### インドメイン結果（6タスクカテゴリ）\n\n| タスク | w/o pretrain | w/ pretrain |\n|---|---|---|\n| ピック＆プレース | 低 | 高 |\n| テーブル清掃 | 低 | 高 |\n| ボウルスタッキング | 低 | 高 |\n| ボウル＆物体配置 | 低 | 高 |\n| タオル折り | 低 | 高 |\n| 細粒度操作 | 低 | 高 |\n| **平均** | **48.5%** | **83.6%** |\n\n> 📊 Table 5（論文）参照: インドメイン詳細結果\n\n### OOD結果（5汎化設定）\n\n| 汎化設定 | w/ pretrain |\n|---|---|\n| カラー汎化 | 高 |\n| インスタンス汎化 | 高 |\n| 位置汎化 | 高 |\n| 背景汎化 | **80.8%** |\n| 指示汎化 | **84.6%** |\n| **平均OOD** | **76.9%** |\n\n事前学習なし（48.5%→83.6%）とOODでの大幅な差（~40pt）が事前学習の価値を示す。\n\n> 📊 Table 6（論文）参照: OOD詳細結果\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2216,
+          "audioDurationSec": 73.878,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "実際のロボットでの実験はどうなのだ？",
+              "section": "実世界実験",
+              "startFrame": 18,
+              "endFrame": 100
+            },
+            {
+              "speaker": "B",
+              "text": "ALOHAロボットという双腕の6自由度ロボットで実験したわ。3台のカメラがついているの。",
+              "section": "実世界実験",
+              "startFrame": 107,
+              "endFrame": 281
+            },
+            {
+              "speaker": "A",
+              "text": "どんな実験をしたのだ？",
+              "section": "実世界実験",
+              "startFrame": 288,
+              "endFrame": 340
+            },
+            {
+              "speaker": "B",
+              "text": "事前学習ありとなしの2つのモデルを比較しているの。インドメイン（訓練分布内）とOOD（分布外）の両方でテストしているわ。",
+              "section": "実世界実験",
+              "startFrame": 348,
+              "endFrame": 606
+            },
+            {
+              "speaker": "A",
+              "text": "インドメインの結果は？",
+              "section": "実世界実験",
+              "startFrame": 613,
+              "endFrame": 662
+            },
+            {
+              "speaker": "B",
+              "text": "6タスクカテゴリで、事前学習なしが48.5%なのに対して事前学習ありは83.6%よ。35ポイント以上の差ね。",
+              "section": "実世界実験",
+              "startFrame": 669,
+              "endFrame": 939
+            },
+            {
+              "speaker": "A",
+              "text": "事前学習がなければ半分しかできないのだな！",
+              "section": "実世界実験",
+              "startFrame": 947,
+              "endFrame": 1036
+            },
+            {
+              "speaker": "B",
+              "text": "しかもOODでは差がもっと大きいの。5種類の汎化設定でテストして、平均76.9%を達成したわ。事前学習なしではOODはほとんど対応できなかったの。",
+              "section": "実世界実験",
+              "startFrame": 1043,
+              "endFrame": 1360
+            },
+            {
+              "speaker": "A",
+              "text": "OODが76.9%ってすごいのだ。見たことのない状況でも7割以上！",
+              "section": "実世界実験",
+              "startFrame": 1368,
+              "endFrame": 1547
+            },
+            {
+              "speaker": "B",
+              "text": "背景汎化で80.8%・指示汎化で84.6%という結果も出ているわ。指示の言い換えにも対応できるの。",
+              "section": "実世界実験",
+              "startFrame": 1555,
+              "endFrame": 1790
+            },
+            {
+              "speaker": "A",
+              "text": "大規模事前学習が実世界汎化の鍵なのだな。",
+              "section": "実世界実験",
+              "startFrame": 1798,
+              "endFrame": 1900
+            },
+            {
+              "speaker": "B",
+              "text": "正確には事前学習の「多様性」が鍵ね。様々なロボット・タスク・視覚的バリエーションで訓練したことが、実際の環境での頑健性につながっているの。",
+              "section": "実世界実験",
+              "startFrame": 1907,
+              "endFrame": 2216
+            }
+          ]
+        }
       },
       {
         "index": 12,
@@ -28127,7 +29127,100 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch12.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch12.mp3",
         "markdown": "<h2>ナビゲーション実験</h2>\n<p>VLN-CE（連続環境での視覚言語ナビゲーション）での評価:</p>\n<p>テストセット: R2R Val-Unseen / RxR Val-Unseen</p>\n<blockquote>\n<p>📊 Table 7（論文）参照: ナビゲーション結果比較</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>R2R OSR</th>\n<th>R2R SR</th>\n<th>RxR SR</th>\n<th>RxR SPL</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>StreamVLN</td>\n<td>64.2</td>\n<td>56.9</td>\n<td>—</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>Qwen-VLA-Instruct</strong></td>\n<td><strong>69.0</strong></td>\n<td><strong>57.5</strong></td>\n<td><strong>59.6</strong></td>\n<td><strong>47.8</strong></td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>R2R Val-Unseen: Oracle Success Rate（OSR）で最良、SR 57.5%</li>\n<li>RxR Val-Unseen（より困難）: SR・SPL両方でベースラインをリード</li>\n<li>操作とナビゲーションのジョイント学習でどちらも維持</li>\n</ul>\n<hr />",
-        "markdownSource": "## ナビゲーション実験\n\nVLN-CE（連続環境での視覚言語ナビゲーション）での評価:\n\nテストセット: R2R Val-Unseen / RxR Val-Unseen\n\n> 📊 Table 7（論文）参照: ナビゲーション結果比較\n\n| モデル | R2R OSR | R2R SR | RxR SR | RxR SPL |\n|---|---|---|---|---|\n| StreamVLN | 64.2 | 56.9 | — | — |\n| **Qwen-VLA-Instruct** | **69.0** | **57.5** | **59.6** | **47.8** |\n\n- R2R Val-Unseen: Oracle Success Rate（OSR）で最良、SR 57.5%\n- RxR Val-Unseen（より困難）: SR・SPL両方でベースラインをリード\n- 操作とナビゲーションのジョイント学習でどちらも維持\n\n---"
+        "markdownSource": "## ナビゲーション実験\n\nVLN-CE（連続環境での視覚言語ナビゲーション）での評価:\n\nテストセット: R2R Val-Unseen / RxR Val-Unseen\n\n> 📊 Table 7（論文）参照: ナビゲーション結果比較\n\n| モデル | R2R OSR | R2R SR | RxR SR | RxR SPL |\n|---|---|---|---|---|\n| StreamVLN | 64.2 | 56.9 | — | — |\n| **Qwen-VLA-Instruct** | **69.0** | **57.5** | **59.6** | **47.8** |\n\n- R2R Val-Unseen: Oracle Success Rate（OSR）で最良、SR 57.5%\n- RxR Val-Unseen（より困難）: SR・SPL両方でベースラインをリード\n- 操作とナビゲーションのジョイント学習でどちらも維持\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2229,
+          "audioDurationSec": 74.294,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "ロボットが歩き回るナビゲーション実験の結果はどうなのだ？",
+              "section": "ナビゲーション実験",
+              "startFrame": 18,
+              "endFrame": 133
+            },
+            {
+              "speaker": "B",
+              "text": "VLN-CEという連続環境での視覚言語ナビゲーションベンチマークでテストしているわ。",
+              "section": "ナビゲーション実験",
+              "startFrame": 140,
+              "endFrame": 305
+            },
+            {
+              "speaker": "A",
+              "text": "VLNってどんな課題なのだ？",
+              "section": "ナビゲーション実験",
+              "startFrame": 312,
+              "endFrame": 381
+            },
+            {
+              "speaker": "B",
+              "text": "「部屋から出て、廊下を進んで、左の扉を開けた部屋に入って」みたいな自然言語の指示に従ってロボットが移動するタスクよ。",
+              "section": "ナビゲーション実験",
+              "startFrame": 388,
+              "endFrame": 612
+            },
+            {
+              "speaker": "A",
+              "text": "部屋の中を歩き回るのだな！",
+              "section": "ナビゲーション実験",
+              "startFrame": 620,
+              "endFrame": 679
+            },
+            {
+              "speaker": "B",
+              "text": "R2RとRxRという2つのベンチマークでテストしているの。Qwen-VLA-InstructはR2RのOSRで69.0%、成功率SR 57.5%を達成したわ。",
+              "section": "ナビゲーション実験",
+              "startFrame": 686,
+              "endFrame": 1144
+            },
+            {
+              "speaker": "A",
+              "text": "ライバルのStreamVLNは64.2%のOSRなのだな。",
+              "section": "ナビゲーション実験",
+              "startFrame": 1152,
+              "endFrame": 1326
+            },
+            {
+              "speaker": "B",
+              "text": "4.8ポイント差でQwen-VLAが上回っているの。RxRではより困難なナビゲーションでも良い結果を出しているわ。",
+              "section": "ナビゲーション実験",
+              "startFrame": 1334,
+              "endFrame": 1570
+            },
+            {
+              "speaker": "A",
+              "text": "操作とナビゲーションを一緒に学習しても干渉しないのだな。",
+              "section": "ナビゲーション実験",
+              "startFrame": 1578,
+              "endFrame": 1692
+            },
+            {
+              "speaker": "B",
+              "text": "それが重要な発見よ。「ジョイント学習は互いに邪魔しない」という結果が出ているの。むしろ相乗効果があって、どちらも単独学習より良い性能を示すわ。",
+              "section": "ナビゲーション実験",
+              "startFrame": 1699,
+              "endFrame": 1987
+            },
+            {
+              "speaker": "A",
+              "text": "異質なタスクの統一が本当に機能しているのだな！",
+              "section": "ナビゲーション実験",
+              "startFrame": 1994,
+              "endFrame": 2094
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。理論的な主張を実験で証明できた、重要な結果ね。",
+              "section": "ナビゲーション実験",
+              "startFrame": 2102,
+              "endFrame": 2229
+            }
+          ]
+        }
       },
       {
         "index": 13,
@@ -28135,7 +29228,86 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch13.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch13.mp3",
         "markdown": "<h2>アブレーション分析</h2>\n<p>各コンポーネントの寄与をSimplserEnvおよび実験で検証:</p>\n<p><strong>各学習ステージの貢献</strong>:\n1. T2A（テキスト-行動事前学習）: アクションデコーダに言語インデックス付き行動プリオルを確立\n2. CPT（継続事前学習）: ビジョングラウンディングの獲得、シミュと実機の両分布を統一\n3. SFT: 特定タスクへの精密なアライメント\n4. RL: タスク成功の直接最適化（特にOOD設定で貢献大）</p>\n<p><strong>エンボディメント対応プロンプトの重要性</strong>:\n- プロンプトなしで複数形態を学習 → 異なるロボット間での行動信号の混同が発生\n- プロンプトありで各形態が独立した制御セマンティクスを学習</p>\n<p><strong>データ多様性の影響</strong>:\n- 単一形態データのみで訓練 vs 異質な混合データで訓練\n- 混合データが操作・ナビゲーション両方のOOD汎化を大幅に改善</p>\n<hr />",
-        "markdownSource": "## アブレーション分析\n\n各コンポーネントの寄与をSimplserEnvおよび実験で検証:\n\n**各学習ステージの貢献**:\n1. T2A（テキスト-行動事前学習）: アクションデコーダに言語インデックス付き行動プリオルを確立\n2. CPT（継続事前学習）: ビジョングラウンディングの獲得、シミュと実機の両分布を統一\n3. SFT: 特定タスクへの精密なアライメント\n4. RL: タスク成功の直接最適化（特にOOD設定で貢献大）\n\n**エンボディメント対応プロンプトの重要性**:\n- プロンプトなしで複数形態を学習 → 異なるロボット間での行動信号の混同が発生\n- プロンプトありで各形態が独立した制御セマンティクスを学習\n\n**データ多様性の影響**:\n- 単一形態データのみで訓練 vs 異質な混合データで訓練\n- 混合データが操作・ナビゲーション両方のOOD汎化を大幅に改善\n\n---"
+        "markdownSource": "## アブレーション分析\n\n各コンポーネントの寄与をSimplserEnvおよび実験で検証:\n\n**各学習ステージの貢献**:\n1. T2A（テキスト-行動事前学習）: アクションデコーダに言語インデックス付き行動プリオルを確立\n2. CPT（継続事前学習）: ビジョングラウンディングの獲得、シミュと実機の両分布を統一\n3. SFT: 特定タスクへの精密なアライメント\n4. RL: タスク成功の直接最適化（特にOOD設定で貢献大）\n\n**エンボディメント対応プロンプトの重要性**:\n- プロンプトなしで複数形態を学習 → 異なるロボット間での行動信号の混同が発生\n- プロンプトありで各形態が独立した制御セマンティクスを学習\n\n**データ多様性の影響**:\n- 単一形態データのみで訓練 vs 異質な混合データで訓練\n- 混合データが操作・ナビゲーション両方のOOD汎化を大幅に改善\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 2099,
+          "audioDurationSec": 69.954,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "アブレーション分析って何をするのだ？",
+              "section": "アブレーション分析",
+              "startFrame": 18,
+              "endFrame": 94
+            },
+            {
+              "speaker": "B",
+              "text": "各コンポーネントを取り除いて性能がどう変わるかを見るの。「この部分が本当に大事なのか」を確認するわ。",
+              "section": "アブレーション分析",
+              "startFrame": 102,
+              "endFrame": 291
+            },
+            {
+              "speaker": "A",
+              "text": "4段階の学習それぞれの貢献が分かるのだな。",
+              "section": "アブレーション分析",
+              "startFrame": 299,
+              "endFrame": 397
+            },
+            {
+              "speaker": "B",
+              "text": "T2Aはアクションデコーダに言語インデックス付きの行動パターンを確立させる基礎。CPTはビジョングラウンディングの獲得とシミュ・実機両分布の統一に貢献。SFTで特定タスクへの精密なアライメントを達成して、RLで特にOOD設定での汎化が大きく向上するわ。",
+              "section": "アブレーション分析",
+              "startFrame": 404,
+              "endFrame": 915
+            },
+            {
+              "speaker": "A",
+              "text": "エンボディメントプロンプトの重要性も確認されたのだな。",
+              "section": "アブレーション分析",
+              "startFrame": 923,
+              "endFrame": 1031
+            },
+            {
+              "speaker": "B",
+              "text": "プロンプトなしで複数形態を学習すると、異なるロボット間で行動信号が混同してしまうことが分かったの。プロンプトが境界を作ることで各形態が独立して学習できるわ。",
+              "section": "アブレーション分析",
+              "startFrame": 1038,
+              "endFrame": 1353
+            },
+            {
+              "speaker": "A",
+              "text": "データの多様性の効果はどうなのだ？",
+              "section": "アブレーション分析",
+              "startFrame": 1361,
+              "endFrame": 1438
+            },
+            {
+              "speaker": "B",
+              "text": "単一形態データだけで訓練したモデルと、異質な混合データで訓練したモデルを比較すると、混合データが操作・ナビゲーション両方のOOD汎化を大幅に改善するの。",
+              "section": "アブレーション分析",
+              "startFrame": 1445,
+              "endFrame": 1758
+            },
+            {
+              "speaker": "A",
+              "text": "多様なデータが多様な対応力を生むのだな。",
+              "section": "アブレーション分析",
+              "startFrame": 1766,
+              "endFrame": 1851
+            },
+            {
+              "speaker": "B",
+              "text": "まさに。これが「スケーリング則」の一側面よ。データの量だけでなく多様性が汎化能力を決める、という重要な知見ね。",
+              "section": "アブレーション分析",
+              "startFrame": 1859,
+              "endFrame": 2099
+            }
+          ]
+        }
       },
       {
         "index": 14,
@@ -28143,10 +29315,1427 @@
         "videoUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch14.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_ch14.mp3",
         "markdown": "<h2>まとめ</h2>\n<p><strong>4つの主要貢献</strong>:\n1. <strong>Qwen-VLA</strong>: 操作・ナビゲーション・自我視点データを共有アクション-軌跡空間で統一するVLAモデル\n2. <strong>大規模ジョイント事前学習</strong>: 異質なデータソース（操作・自我視点・合成・ナビ・VL）を横断する事前学習\n3. <strong>段階的学習レシピ</strong>: T2A→CPT→SFT→RLの4段階で離散言語トークンと連続行動軌跡のギャップを橋渡し\n4. <strong>包括的評価</strong>: 複数のシミュレーション・実世界・ナビゲーションベンチマークでの評価</p>\n<p><strong>主な発見</strong>:\n- 単一の汎化モデルが多くの専門化モデルを上回ることが可能\n- 大規模事前学習はインドメイン・OOD両方の性能向上に不可欠\n- 操作とナビゲーションのジョイント学習は互いに干渉しない\n- RLによる成功報酬最適化がOOD汎化を改善</p>\n<hr />",
-        "markdownSource": "## まとめ\n\n**4つの主要貢献**:\n1. **Qwen-VLA**: 操作・ナビゲーション・自我視点データを共有アクション-軌跡空間で統一するVLAモデル\n2. **大規模ジョイント事前学習**: 異質なデータソース（操作・自我視点・合成・ナビ・VL）を横断する事前学習\n3. **段階的学習レシピ**: T2A→CPT→SFT→RLの4段階で離散言語トークンと連続行動軌跡のギャップを橋渡し\n4. **包括的評価**: 複数のシミュレーション・実世界・ナビゲーションベンチマークでの評価\n\n**主な発見**:\n- 単一の汎化モデルが多くの専門化モデルを上回ることが可能\n- 大規模事前学習はインドメイン・OOD両方の性能向上に不可欠\n- 操作とナビゲーションのジョイント学習は互いに干渉しない\n- RLによる成功報酬最適化がOOD汎化を改善\n\n---"
+        "markdownSource": "## まとめ\n\n**4つの主要貢献**:\n1. **Qwen-VLA**: 操作・ナビゲーション・自我視点データを共有アクション-軌跡空間で統一するVLAモデル\n2. **大規模ジョイント事前学習**: 異質なデータソース（操作・自我視点・合成・ナビ・VL）を横断する事前学習\n3. **段階的学習レシピ**: T2A→CPT→SFT→RLの4段階で離散言語トークンと連続行動軌跡のギャップを橋渡し\n4. **包括的評価**: 複数のシミュレーション・実世界・ナビゲーションベンチマークでの評価\n\n**主な発見**:\n- 単一の汎化モデルが多くの専門化モデルを上回ることが可能\n- 大規模事前学習はインドメイン・OOD両方の性能向上に不可欠\n- 操作とナビゲーションのジョイント学習は互いに干渉しない\n- RLによる成功報酬最適化がOOD汎化を改善\n\n---",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 3097,
+          "audioDurationSec": 103.240667,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "Qwen-VLAの研究をまとめてほしいのだ！",
+              "section": "まとめ",
+              "startFrame": 18,
+              "endFrame": 133
+            },
+            {
+              "speaker": "B",
+              "text": "4つの主要貢献から整理するわ。まず1つ目はQwen-VLAという統一モデル自体よ。操作・ナビゲーション・自我視点データを共有アクション軌跡空間で統一したの。",
+              "section": "まとめ",
+              "startFrame": 140,
+              "endFrame": 475
+            },
+            {
+              "speaker": "A",
+              "text": "2つ目は大規模ジョイント事前学習なのだな。",
+              "section": "まとめ",
+              "startFrame": 482,
+              "endFrame": 573
+            },
+            {
+              "speaker": "B",
+              "text": "操作・自我視点・合成・ナビゲーション・視覚言語という異質なデータソースを横断する事前学習ね。これが汎化能力の源泉よ。",
+              "section": "まとめ",
+              "startFrame": 580,
+              "endFrame": 840
+            },
+            {
+              "speaker": "A",
+              "text": "3つ目は4段階の学習レシピなのだ。",
+              "section": "まとめ",
+              "startFrame": 848,
+              "endFrame": 929
+            },
+            {
+              "speaker": "B",
+              "text": "T2A→CPT→SFT→RLの4段階で、離散言語トークンと連続行動軌跡のギャップを橋渡しするの。各段階に明確な役割があるわ。",
+              "section": "まとめ",
+              "startFrame": 936,
+              "endFrame": 1253
+            },
+            {
+              "speaker": "A",
+              "text": "4つ目は包括的な評価なのだな。",
+              "section": "まとめ",
+              "startFrame": 1261,
+              "endFrame": 1334
+            },
+            {
+              "speaker": "B",
+              "text": "シミュレーション・実世界・ナビゲーションと多様なベンチマークで評価しているの。主な発見は「単一の汎化モデルが多くの専門化モデルを上回ることが可能」ということね。",
+              "section": "まとめ",
+              "startFrame": 1342,
+              "endFrame": 1656
+            },
+            {
+              "speaker": "A",
+              "text": "専門化より統一の方が強いってこともあるのだな。",
+              "section": "まとめ",
+              "startFrame": 1664,
+              "endFrame": 1765
+            },
+            {
+              "speaker": "B",
+              "text": "必ずしもそうではないけど、十分なデータと訓練があれば統一モデルが専門モデルに匹敵・凌駕できると示したわ。",
+              "section": "まとめ",
+              "startFrame": 1772,
+              "endFrame": 1986
+            },
+            {
+              "speaker": "A",
+              "text": "操作とナビゲーションは干渉しないっていうのも重要なのだな。",
+              "section": "まとめ",
+              "startFrame": 1993,
+              "endFrame": 2107
+            },
+            {
+              "speaker": "B",
+              "text": "長い間「異なるタスクを1つのモデルで混ぜると性能が下がる」と思われてきたの。Qwen-VLAはそれが正しくないことを示したわ。",
+              "section": "まとめ",
+              "startFrame": 2115,
+              "endFrame": 2376
+            },
+            {
+              "speaker": "A",
+              "text": "これからロボットはどうなっていくのだろうなのだ？",
+              "section": "まとめ",
+              "startFrame": 2384,
+              "endFrame": 2471
+            },
+            {
+              "speaker": "B",
+              "text": "汎用VLAモデルの競争が激化するわ。GeminiもQwenも、どちらも「1つのモデルですべてのロボットを動かす」という方向に向かっているの。",
+              "section": "まとめ",
+              "startFrame": 2478,
+              "endFrame": 2736
+            },
+            {
+              "speaker": "A",
+              "text": "今日はとても勉強になったのだ！また論文で会うのだ！",
+              "section": "まとめ",
+              "startFrame": 2743,
+              "endFrame": 2851
+            },
+            {
+              "speaker": "B",
+              "text": "Qwen-VLA、身体的知能の統一という大きなビジョンに挑んだ意欲的な研究でした。また次の論文で会いましょう。",
+              "section": "まとめ",
+              "startFrame": 2858,
+              "endFrame": 3097
+            }
+          ]
+        }
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/2605.30280"
+    "arxivUrl": "https://arxiv.org/abs/2605.30280",
+    "webAudioUrl": "https://archive.org/download/paper-explain-2605-30280/paper_2605.30280_web.m4a",
+    "markdownSource": "**著者**: Qwen Team（Alibaba）  \n**公開**: 2025年5月  \n**arXiv**: 2605.30280  \n\n1つのモデルで操作・ナビゲーション・軌跡予測を統一。Qwen3.5-4BとDiTベースのアクションデコーダを組み合わせた大規模VLAモデル。\n\n---\n\n## 研究の背景と課題\n\n- **現状の問題**: 身体的知能の研究はタスクごとの専門モデルが主流\n  - 操作モデル・ナビゲーションモデルが別々に開発\n  - 異なるタスク・環境・ロボット形態への汎化が困難\n- **根本的な疑問**: これらの異質な身体的意思決定問題を1つのモデルで統一できるか?\n\n**共通計算構造の発見**:\n- 操作・ナビゲーション・軌跡予測は表面的に異なる\n- しかし全タスクに共通: 視覚観測＋言語指示＋形態制約 → 将来の行動/軌跡を予測\n\n**提案**: Qwen-VLA — 単一のVLAモデルで異質な身体的意思決定を統一\n\n主な結果（Qwen-VLA-Instruct）:\n- LIBERO: **97.9%**\n- Simpler-WidowX: **73.7%**\n- RoboTwin-Easy/Hard: **86.1% / 87.2%**\n- R2R ナビゲーション: OSR **69.0%**\n- 実世界ALOHA OOD: **76.9%**\n\n---\n\n## 統一モデルの定式化\n\nすべてのタスクを単一の条件付き予測問題として定式化:\n\n$$\np_\\theta\\bigl(y_{t:t+H-1} \\mid o_t, x, e, z\\bigr)\n$$\n\n各記号の意味:\n- $o_t$: 時刻$t$の視覚コンテキスト（画像・動画・履歴）\n- $x$: タスク指示（言語）\n- $e$: 現在のロボット形態の説明（テキスト）\n- $z$: タスクファミリー識別子\n- $y_{t:t+H-1}$: 予測水平線$H$にわたる目標シーケンス\n\n**統一アクション空間**:\n- 操作タスク: 将来のロボット行動（エンドエフェクタ位置など）\n- ナビゲーション: ナビゲーション決定/ウェイポイント\n- 軌跡中心タスク（自動運転など）: 連続座標空間での将来の軌跡\n- 自我視点データ: 人間の手首/手の動作軌跡\n\n> 📊 なし（数式による定式化）\n\n---\n\n## モデルアーキテクチャ\n\nQwen-VLAは2つのコンポーネントで構成:\n\n### 視覚言語バックボーン: Qwen3.5-4B\n- ViTで生成した視覚トークンをテキストトークン列に直接インターリーブ\n- **ハイブリッドアテンション**: 大半の層はゲート線形アテンション、定期的な層でグループクエリソフトマックスアテンション\n- 長いマルチモーダル列の効率的エンコードと全精度グローバル推論を両立\n\n### アクションエキスパート（DiTベース）\n- **16 DiTブロック**: 各70.8M パラメータ（合計1.13B）\n- 全体のアクションエキスパートパラメータ数: 約**11.5億**\n  - DiTブロック: 1.13B\n  - アクション投影MLP: 4.9M\n  - VLM状態変換層: 3.9M\n  - タイムステップ埋め込み: 2.8M\n  - 出力AdaLNモジュレーション: 4.7M\n- VLM隠れ状態とノイズ付きアクションチャンクを連結してジョイントセルフアテンション処理\n- **フローマッチング目的関数**で学習。推論時は少数のオイラー積分ステップで低遅延制御\n\n> 📊 Fig. 2（論文）参照: モデルアーキテクチャ概観（バックボーン＋アクションエキスパート）\n\n---\n\n## エンボディメント対応プロンプト\n\n複数ロボット形態を単一モデルで扱うための重要な仕組み:\n\n各学習サンプルに**ロボット固有のテキストプロンプト**を前置:\n\n```\nThe robot is {robot_tag} with {single arm / dual arms}\n[, waist][, and mobile base].\nThe control frequency is {FPS} Hz.\nPlease predict the next {chunk_size} control actions\nto execute the following task: {ori_instruction}.\n```\n\n- `robot_tag`, オプション修飾子（waist, mobile base）: 形態ごとに設定\n- `FPS`, `chunk_size`: データセットの制御周波数・予測水平線を反映\n\n**意義**:\n- アーキテクチャを変えることなく異なる制御モード・アクション次元・時間水平線を扱える\n- 形態固有の出力ヘッドが不要: 単一のDiTパラメータセットが全制御モードを処理\n- 推論時はプロンプトのみを変更するだけで新形態に対応\n\n> 📊 Table 2（論文）参照: 事前学習コーパスが対象とする代表的なロボット形態\n\n---\n\n## 統一アクション表現と学習目標\n\n### 統一アクションテンソル\n\n$\\mathbf{Y} \\in \\mathbb{R}^{H \\times K}$ — 固定の予測水平線$H$と固定チャンネル次元$K$\n\n- 制御信号は$c \\leq K$チャンネルを使用。残りは0パディング\n- 有効チャンネルを記録するバイナリマスク: $\\mathbf{M} \\in \\{0,1\\}^{H \\times K}$\n\n### アクション正規化\n\n各データセット$k$の各次元$d$に対してパーセンタイル統計（1%・99%）を使って正規化:\n\n$$\n\\tilde{a}_d = 2 \\cdot \\frac{a_d - q^k_{01}}{q^k_{99} - q^k_{01}} - 1\n$$\n\n- 結果を$[-1, 1]$にクリッピング\n- 形態間のスケール差を除去しつつ各ソース内の相対的な動作構造を保持\n\n### フローマッチング損失\n\nチャンネルマスク付きの2レベル平均化:\n\nチャンネル$k$ごとの損失:\n\n$$\n\\ell_k = \\frac{\\displaystyle\\sum_{h=1}^{H} M_{h,k} \\left\\| \\bigl(v_\\theta(\\mathbf{Y}_\\tau, \\tau \\mid o_{1:t}, x, e, z) - (\\mathbf{Y}_1 - \\mathbf{Y}_0)\\bigr)_{h,k} \\right\\|_2^2}{\\displaystyle\\sum_{h=1}^{H} M_{h,k}}\n$$\n\n全アクション損失（$c$個の有効チャンネルの平均）:\n\n$$\n\\mathcal{L}_{\\text{act}} = \\mathbb{E}_{\\tau, \\mathbf{Y}_0, \\mathbf{Y}_1}\\!\\left[\\frac{1}{c}\\sum_{k=0}^{c-1}\\ell_k\\right]\n$$\n\n- 線形内挿: $\\mathbf{Y}_\\tau = (1-\\tau)\\mathbf{Y}_0 + \\tau\\mathbf{Y}_1$（$\\tau \\in [0,1]$）\n- パディングされた位置は完全に勾配から除外\n- 各制御次元が形態に関わらず等しく勾配に貢献\n\n---\n\n## 4段階学習レシピ\n\n大脳と小脳の役割分担に似た2モジュール間の非対称な初期状態をどう克服するか:\n- バックボーン: 大規模プレトレーニング済みで強力な表現を持つ\n- DiTアクションデコーダ: ランダム初期化\n\n### 圧縮・解凍の視点\n\n言語指示「赤いカップを取ってください」 → 数トークン（圧縮された意図）\n対応する行動軌跡 → 数千の高次元ジョイント位置値（高次元）\n\nT2A（Text-to-Action）はこの**次元ギャップを埋める構造的な解凍問題**として捉える。\n\n### 4ステージ\n\n| ステージ | 名前 | 内容 |\n|---|---|---|\n| I | T2A | VLMを固定。DiTのみ言語＋行動（画像なし）で訓練 |\n| II | CPT（継続事前学習） | 両モジュールを解凍。異質な全データ混合で訓練（シミュ＋実機） |\n| III | SFT（教師あり微調整） | 2並列トラック: 多タスク汎用SFT + 実機ローカルテレオペレーションデータ |\n| IV | RL（強化学習） | SFTチェックポイントからPPOでタスク成功報酬を最適化 |\n\n---\n\n## 大規模ロボット操作データ\n\n事前学習コーパスの**74.2%**がロボット操作軌跡:\n\n### 公開データセット（10,000時間以上）\n- RobotSet, Galaxea, AgiBot World, RoboCOIN, RoboMIND V1/V2\n- RDT-1B, DROID, BridgeData V2, RH20T, RT-1, BC-Z など\n\nカバー範囲: テーブルトップ操作・モバイル操作・両腕操作・5指器用操作・野外タスク\n\n### 自社データ（合計の約20%）\n- 独自に収集した1,000時間以上の実ロボット軌跡\n- スケーラブルなシミュレーションパイプライン（RoboInF）で生成した**8M以上の合成シミュレーション軌跡**（合計の3.7%）\n\n> 📊 Table 1（論文）参照: 事前学習データ混合の構成と重みサンプリング\n\n### シミュレーションパイプラインの概要\n- IsaacLab環境 + cuRoboの衝突回避プランニング\n- 20シーン×10オブジェクト配置 = 200基本シーン\n- 450操作タスク（短期・長期水平線）\n- 各タスクに300成功軌跡（照明・カメラポーズ・背景・テクスチャなど多様化）\n- 359,848の完全成功軌跡（サブタスクセグメントを含む）\n\n> 📊 Fig. 3（論文）参照: 合成シミュレーションパイプライン概観\n\n---\n\n## 自我視点・合成・ナビゲーションデータ\n\n### 自我視点の人間データ（6.0%）\n\nロボットのテレオペレーションより**豊富かつスケーラブルな操作経験源**:\n\n- Ego4D / EPIC-KITCHENS（VITRA処理済み）\n- EgoDex: Apple Vision Pro使用, 829時間, 194多様な卓上タスク\n- EgoVerse: 1,300時間以上, 1,965タスク\n- Xperience: 同期された深度・手/体のモーションキャプチャ\n\nアクション表現: SE(3)手首変換（6次元×2手）＋**主成分固有把持（10次元×2手、計32次元）**\n\n### ナビゲーションデータ（7.5%）\n\n長期水平線軌跡＋豊富な視覚情報:\n- 指示追従ナビゲーション（4.3%）: 移動プリミティブ＋テキストランドマーク\n- 物体探索（2.3%）: 大規模屋内環境での物体発見\n- 目標追跡（1.0%）: 移動ターゲットの追従\n\n### 視覚言語データ（8.5%）\n\n意味的グラウンディング・細粒度指示追従・一般的視覚推論を強化:\n\n- **細粒度身体的行動キャプション**: 48,000個の動画-キャプションペア（13次元でアノテーション）\n  - 行動プリミティブ・アクター識別・接触領域・源泉/目標位置・軌跡と向き・グリッパー状態\n- **自動運転VQA**（2.4%）: 時間的場面理解・周囲視野空間推論・言語グラウンド化局所化\n- **2Dバウンディングボックスグラウンディング**（2.5%）: 言語条件付き操作の前提となる空間理解\n- **一般視覚言語データ**（3.4%）: キャプション・VQA・OCR・空間関係予測など\n\n---\n\n## ポスト訓練：SFT と強化学習\n\nT2A+CPTで生成したQwen-VLA-Baseを精密化する2段階:\n\n### マルチタスクSFT\n\nデータ構成:\n1. 視覚言語サンプル（VQA・空間グラウンディング・行動キャプション）\n2. シミュレーション操作デモ（単腕・双腕・ヒューマノイド、チャンクサイズ16）\n3. VLNエピソード（ウェイポイントチャンク8）\n\n損失重み付け:\n- 視覚言語 次トークン予測: **0.1**\n- 操作・ナビゲーション行動: **1.0**\n\n### 強化学習（PPO）\n\n模倣ベースのSFTではクローズドループタスク成功が直接最適化できない問題を解決。\n\n**PPOクリッピド代理目的関数**:\n\n$$\n\\mathcal{L}^{\\text{actor}}(\\theta) = -\\mathbb{E}_t\\Big[\\min\\!\\Big(r_t(\\theta)\\hat{A}_t,\\;\\text{clip}(r_t(\\theta), 1{-}\\epsilon, 1{+}\\epsilon)\\hat{A}_t\\Big)\\Big]\n$$\n\n- $r_t(\\theta) = \\pi_\\theta(a_t \\mid s_t) / \\pi_{\\theta_{\\text{old}}}(a_t \\mid s_t)$: 重要度比率\n- $\\hat{A}_t$: GAE優位性推定（$\\gamma=0.99$, $\\lambda=0.95$）\n- クリッピング閾値: $\\epsilon=0.2$\n\n**フローマッチングでのログ確率推定**:\n- 決定論的確率流ODEに対応するSDEに変換（各オイラーステップにノイズを注入）\n- 遷移を明示的ガウシアンとして表現→解析的に対数確率を計算可能\n\n**RLインフラ**:\n- 128個の並列環境インスタンス\n- アクションチャンク長H=16\n- 評価時温度: τ=0.6（シャープな行動分布）\n- 報酬: タスク成功/失敗の2値（0または1）\n- SimplerEnvのみでRL実施 → 他環境へのゼロショット転移をテスト\n\n---\n\n## シミュレーション操作実験\n\n4つのシミュレーション環境での包括的評価:\n\n| ベンチマーク | 設定 |\n|---|---|\n| LIBERO | 単腕テーブルトップ（4分割: Spatial/Object/Goal/Long） |\n| Simpler-WidowX | real-to-sim評価（WidowXアーム） |\n| RoboCasa-GR1 | 両腕ヒューマノイド（24キッチンタスク） |\n| RoboTwin 2.0 | 両腕50タスク（Easy/Hard） |\n\n> 📊 Table 4（論文）参照: ベースラインとの比較（Qwen-VLA-Instruct）\n\n**汎化モデルが専門化モデルを上回る**:\n\n| ベンチマーク | Qwen-VLA-Instruct | 最良の専門化モデル |\n|---|---|---|\n| LIBERO | **97.9%** | 〜98% |\n| Simpler-WidowX | **73.7%** | StarVLA-OFT 64.6% |\n| RoboTwin-Easy | **86.1%** | ABot-M0 86.0% |\n| RoboTwin-Hard | **87.2%** | ABot-M0 85.0% |\n| RoboCasa-GR1 | **56.7%** | Being-H0.5 53.3% |\n\n事前学習の効果（BASEとInstruct比較）:\n\n| ベンチマーク | Base | Instruct | 改善幅 |\n|---|---|---|---|\n| LIBERO | 90.8% | 97.9% | +7.1pt |\n| Simpler-WidowX | 64.3% | 73.7% | +9.4pt |\n| RoboTwin-Easy | 64.3% | 86.1% | +21.8pt |\n| RoboTwin-Hard | 66.4% | 87.2% | +20.8pt |\n\n---\n\n## 実世界実験\n\nALOHAロボット（双腕6-DoF + 3カメラ）でのリアル実験:\n\n2モデル比較:\n- Qwen-VLA-aloha **w/o pretrain**: ゼロから訓練\n- Qwen-VLA-aloha **w/ pretrain**: Qwen-VLA-Baseからfine-tuning\n\n### インドメイン結果（6タスクカテゴリ）\n\n| タスク | w/o pretrain | w/ pretrain |\n|---|---|---|\n| ピック＆プレース | 低 | 高 |\n| テーブル清掃 | 低 | 高 |\n| ボウルスタッキング | 低 | 高 |\n| ボウル＆物体配置 | 低 | 高 |\n| タオル折り | 低 | 高 |\n| 細粒度操作 | 低 | 高 |\n| **平均** | **48.5%** | **83.6%** |\n\n> 📊 Table 5（論文）参照: インドメイン詳細結果\n\n### OOD結果（5汎化設定）\n\n| 汎化設定 | w/ pretrain |\n|---|---|\n| カラー汎化 | 高 |\n| インスタンス汎化 | 高 |\n| 位置汎化 | 高 |\n| 背景汎化 | **80.8%** |\n| 指示汎化 | **84.6%** |\n| **平均OOD** | **76.9%** |\n\n事前学習なし（48.5%→83.6%）とOODでの大幅な差（~40pt）が事前学習の価値を示す。\n\n> 📊 Table 6（論文）参照: OOD詳細結果\n\n---\n\n## ナビゲーション実験\n\nVLN-CE（連続環境での視覚言語ナビゲーション）での評価:\n\nテストセット: R2R Val-Unseen / RxR Val-Unseen\n\n> 📊 Table 7（論文）参照: ナビゲーション結果比較\n\n| モデル | R2R OSR | R2R SR | RxR SR | RxR SPL |\n|---|---|---|---|---|\n| StreamVLN | 64.2 | 56.9 | — | — |\n| **Qwen-VLA-Instruct** | **69.0** | **57.5** | **59.6** | **47.8** |\n\n- R2R Val-Unseen: Oracle Success Rate（OSR）で最良、SR 57.5%\n- RxR Val-Unseen（より困難）: SR・SPL両方でベースラインをリード\n- 操作とナビゲーションのジョイント学習でどちらも維持\n\n---\n\n## アブレーション分析\n\n各コンポーネントの寄与をSimplserEnvおよび実験で検証:\n\n**各学習ステージの貢献**:\n1. T2A（テキスト-行動事前学習）: アクションデコーダに言語インデックス付き行動プリオルを確立\n2. CPT（継続事前学習）: ビジョングラウンディングの獲得、シミュと実機の両分布を統一\n3. SFT: 特定タスクへの精密なアライメント\n4. RL: タスク成功の直接最適化（特にOOD設定で貢献大）\n\n**エンボディメント対応プロンプトの重要性**:\n- プロンプトなしで複数形態を学習 → 異なるロボット間での行動信号の混同が発生\n- プロンプトありで各形態が独立した制御セマンティクスを学習\n\n**データ多様性の影響**:\n- 単一形態データのみで訓練 vs 異質な混合データで訓練\n- 混合データが操作・ナビゲーション両方のOOD汎化を大幅に改善\n\n---\n\n## まとめ\n\n**4つの主要貢献**:\n1. **Qwen-VLA**: 操作・ナビゲーション・自我視点データを共有アクション-軌跡空間で統一するVLAモデル\n2. **大規模ジョイント事前学習**: 異質なデータソース（操作・自我視点・合成・ナビ・VL）を横断する事前学習\n3. **段階的学習レシピ**: T2A→CPT→SFT→RLの4段階で離散言語トークンと連続行動軌跡のギャップを橋渡し\n4. **包括的評価**: 複数のシミュレーション・実世界・ナビゲーションベンチマークでの評価\n\n**主な発見**:\n- 単一の汎化モデルが多くの専門化モデルを上回ることが可能\n- 大規模事前学習はインドメイン・OOD両方の性能向上に不可欠\n- 操作とナビゲーションのジョイント学習は互いに干渉しない\n- RLによる成功報酬最適化がOOD汎化を改善\n\n---\n\n## 参考ソース\n\n- arXiv: https://arxiv.org/abs/2605.30280",
+    "timeline": {
+      "fps": 30,
+      "totalFrames": 37207,
+      "cues": [
+        {
+          "speaker": "A",
+          "text": "Qwen-VLAってどんな研究なのだ？",
+          "section": "研究の背景と課題",
+          "startFrame": 18,
+          "endFrame": 124
+        },
+        {
+          "speaker": "B",
+          "text": "アリババのQwenチームが2025年5月に発表した、1つのモデルで操作・ナビゲーション・軌跡予測をすべて行うVLAモデルよ。",
+          "section": "研究の背景と課題",
+          "startFrame": 131,
+          "endFrame": 384
+        },
+        {
+          "speaker": "A",
+          "text": "今まではどうしていたのだ？",
+          "section": "研究の背景と課題",
+          "startFrame": 391,
+          "endFrame": 445
+        },
+        {
+          "speaker": "B",
+          "text": "身体的知能の研究はタスクごとに専門モデルを作るのが主流だったの。操作専用モデル、ナビゲーション専用モデルという具合にね。",
+          "section": "研究の背景と課題",
+          "startFrame": 453,
+          "endFrame": 689
+        },
+        {
+          "speaker": "A",
+          "text": "それの何が問題なのだ？",
+          "section": "研究の背景と課題",
+          "startFrame": 696,
+          "endFrame": 753
+        },
+        {
+          "speaker": "B",
+          "text": "異なるタスク・環境・ロボット形態への汎化が困難なのよ。毎回新しいモデルを一から作らないといけない。コストがかかるし、知識の共有もできないわ。",
+          "section": "研究の背景と課題",
+          "startFrame": 760,
+          "endFrame": 1052
+        },
+        {
+          "speaker": "A",
+          "text": "じゃあQwen-VLAはどうするのだ？",
+          "section": "研究の背景と課題",
+          "startFrame": 1059,
+          "endFrame": 1152
+        },
+        {
+          "speaker": "B",
+          "text": "重要な気づきがあるの。操作・ナビゲーション・軌跡予測は表面的には全然違うように見えるけど、実は共通の計算構造を持っている、というの。",
+          "section": "研究の背景と課題",
+          "startFrame": 1160,
+          "endFrame": 1453
+        },
+        {
+          "speaker": "A",
+          "text": "共通構造ってなんなのだ？",
+          "section": "研究の背景と課題",
+          "startFrame": 1460,
+          "endFrame": 1522
+        },
+        {
+          "speaker": "B",
+          "text": "すべてのタスクが「視覚観測＋言語指示＋形態制約→将来の行動や軌跡を予測」という同じ枠組みで表せるの。",
+          "section": "研究の背景と課題",
+          "startFrame": 1529,
+          "endFrame": 1757
+        },
+        {
+          "speaker": "A",
+          "text": "共通化できるのだな！",
+          "section": "研究の背景と課題",
+          "startFrame": 1764,
+          "endFrame": 1810
+        },
+        {
+          "speaker": "B",
+          "text": "そこでQwen-VLAは単一のVLAモデルでこれらを統一することを目指したわ。結果は驚くべきもので、LIBEROベンチマークで97.9%、RoboTwinで87.2%、実世界のOODタスクで76.9%を達成しているの。",
+          "section": "研究の背景と課題",
+          "startFrame": 1817,
+          "endFrame": 2376
+        },
+        {
+          "speaker": "A",
+          "text": "OODって見たことのない状況でのテストなのだ？",
+          "section": "研究の背景と課題",
+          "startFrame": 2383,
+          "endFrame": 2481
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。訓練分布外ね。76.9%というのは訓練していない状況でも7割以上の成功率ということで、汎化能力の高さを示しているわ。",
+          "section": "研究の背景と課題",
+          "startFrame": 2489,
+          "endFrame": 2776
+        },
+        {
+          "speaker": "A",
+          "text": "1つのモデルでいろんなロボットが動くのは便利なのだ！",
+          "section": "研究の背景と課題",
+          "startFrame": 2783,
+          "endFrame": 2883
+        },
+        {
+          "speaker": "B",
+          "text": "まさに。それがQwen-VLAの核心的な価値よ。",
+          "section": "研究の背景と課題",
+          "startFrame": 2890,
+          "endFrame": 3004
+        },
+        {
+          "speaker": "A",
+          "text": "数式が出てくるのだ！どんな式なのだ？",
+          "section": "統一モデルの定式化",
+          "startFrame": 3022,
+          "endFrame": 3106
+        },
+        {
+          "speaker": "B",
+          "text": "すべてのタスクを単一の条件付き予測問題として定式化しているの。画面の式を見て。",
+          "section": "統一モデルの定式化",
+          "startFrame": 3114,
+          "endFrame": 3271
+        },
+        {
+          "speaker": "A",
+          "text": "えっと、pシータ、yのt からt+H-1、縦棒の右側にいろいろあるのだな。",
+          "section": "統一モデルの定式化",
+          "startFrame": 3279,
+          "endFrame": 3511
+        },
+        {
+          "speaker": "B",
+          "text": "読み解くわ。pシータはモデルのパラメータシータで表される確率分布よ。縦棒の右側が条件、左側が予測する内容ね。",
+          "section": "統一モデルの定式化",
+          "startFrame": 3518,
+          "endFrame": 3758
+        },
+        {
+          "speaker": "A",
+          "text": "条件を1つずつ教えてほしいのだ。",
+          "section": "統一モデルの定式化",
+          "startFrame": 3765,
+          "endFrame": 3839
+        },
+        {
+          "speaker": "B",
+          "text": "まずoのtは時刻tの視覚コンテキスト。カメラから見た画像や動画ね。xはタスク指示の言語、「赤いカップを掴んで」とかそういう文章よ。",
+          "section": "統一モデルの定式化",
+          "startFrame": 3847,
+          "endFrame": 4113
+        },
+        {
+          "speaker": "A",
+          "text": "eとzは何なのだ？",
+          "section": "統一モデルの定式化",
+          "startFrame": 4120,
+          "endFrame": 4171
+        },
+        {
+          "speaker": "B",
+          "text": "eは現在のロボット形態の説明。「私は単腕ロボットで制御周波数は10Hzです」みたいなテキストね。zはタスクファミリー識別子で、これが操作なのかナビゲーションなのかを示すわ。",
+          "section": "統一モデルの定式化",
+          "startFrame": 4178,
+          "endFrame": 4522
+        },
+        {
+          "speaker": "A",
+          "text": "予測する内容は？",
+          "section": "統一モデルの定式化",
+          "startFrame": 4529,
+          "endFrame": 4575
+        },
+        {
+          "speaker": "B",
+          "text": "yのtからt+H-1は予測水平線H分の目標シーケンスよ。操作タスクなら将来の腕の位置、ナビゲーションなら次に向かう方向、自動運転なら走るルートの座標ね。",
+          "section": "統一モデルの定式化",
+          "startFrame": 4583,
+          "endFrame": 4920
+        },
+        {
+          "speaker": "A",
+          "text": "同じ数式でいろんなタスクが表せるのだな。",
+          "section": "統一モデルの定式化",
+          "startFrame": 4927,
+          "endFrame": 5014
+        },
+        {
+          "speaker": "B",
+          "text": "これが「統一」の本質よ。タスクが違っても数学的な構造は同じ。だから1つのモデルで学習できるの。",
+          "section": "統一モデルの定式化",
+          "startFrame": 5022,
+          "endFrame": 5228
+        },
+        {
+          "speaker": "A",
+          "text": "天才的なアイデアなのだ！",
+          "section": "統一モデルの定式化",
+          "startFrame": 5236,
+          "endFrame": 5291
+        },
+        {
+          "speaker": "B",
+          "text": "シンプルさが強みね。複雑な設計より、根本的な共通性を見抜くことが重要という良い例だわ。",
+          "section": "統一モデルの定式化",
+          "startFrame": 5298,
+          "endFrame": 5487
+        },
+        {
+          "speaker": "A",
+          "text": "モデルはどんな構造になっているのだ？",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 5505,
+          "endFrame": 5581
+        },
+        {
+          "speaker": "B",
+          "text": "2つのコンポーネントよ。視覚言語バックボーンのQwen3.5-4Bと、アクションエキスパートと呼ばれるDiTベースのデコーダね。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 5588,
+          "endFrame": 5837
+        },
+        {
+          "speaker": "A",
+          "text": "Qwen3.5-4Bってどんなモデルなのだ？",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 5844,
+          "endFrame": 5961
+        },
+        {
+          "speaker": "B",
+          "text": "40億パラメータのQwenシリーズのモデルよ。画像のViTで作った視覚トークンをテキストトークン列に直接混ぜ込む設計ね。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 5968,
+          "endFrame": 6208
+        },
+        {
+          "speaker": "A",
+          "text": "ハイブリッドアテンションってなんなのだ？",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 6215,
+          "endFrame": 6284
+        },
+        {
+          "speaker": "B",
+          "text": "計算コストを下げながら性能を保つ工夫よ。ほとんどの層は「ゲート線形アテンション」という効率的な手法を使って、一部の層だけ正確な「グループクエリソフトマックスアテンション」を使うの。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 6292,
+          "endFrame": 6653
+        },
+        {
+          "speaker": "A",
+          "text": "長い入力を効率的に処理できるのだな。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 6660,
+          "endFrame": 6746
+        },
+        {
+          "speaker": "B",
+          "text": "そう。ロボットは複数カメラの映像を同時に見るから、入力が長くなりがちなの。効率性が重要なのよ。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 6754,
+          "endFrame": 6958
+        },
+        {
+          "speaker": "A",
+          "text": "アクションエキスパートって何をするのだ？",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 6965,
+          "endFrame": 7041
+        },
+        {
+          "speaker": "B",
+          "text": "16個のDiTブロックで構成されていて、パラメータが合計で約11.5億個あるわ。VLMからの情報と「ノイズを加えた行動」を受け取って、最終的な行動を生成するの。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 7049,
+          "endFrame": 7405
+        },
+        {
+          "speaker": "A",
+          "text": "ノイズを加えた行動って不思議なのだ。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 7412,
+          "endFrame": 7486
+        },
+        {
+          "speaker": "B",
+          "text": "拡散モデルの考え方ね。ランダムノイズから徐々にノイズを除いて綺麗な行動を生成するの。「フローマッチング」という手法で学習するわ。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 7494,
+          "endFrame": 7746
+        },
+        {
+          "speaker": "A",
+          "text": "VLMの情報とアクションデコーダがどう連携するのだ？",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 7753,
+          "endFrame": 7870
+        },
+        {
+          "speaker": "B",
+          "text": "VLMの隠れ状態とノイズ付きアクションチャンクを連結して、ジョイントセルフアテンションで処理するの。言語理解と行動生成が密に統合されているわ。",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 7878,
+          "endFrame": 8141
+        },
+        {
+          "speaker": "A",
+          "text": "複雑だけどよくできているのだな！",
+          "section": "モデルアーキテクチャ",
+          "startFrame": 8149,
+          "endFrame": 8214
+        },
+        {
+          "speaker": "A",
+          "text": "エンボディメント対応プロンプトって何が新しいのだ？",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 8232,
+          "endFrame": 8337
+        },
+        {
+          "speaker": "B",
+          "text": "異なるロボット形態を1つのモデルで扱うための巧妙な仕組みよ。アーキテクチャを変えずに、テキストプロンプトだけで対応するの。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 8345,
+          "endFrame": 8565
+        },
+        {
+          "speaker": "A",
+          "text": "テキストでロボットの種類を伝えるのだな！",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 8572,
+          "endFrame": 8651
+        },
+        {
+          "speaker": "B",
+          "text": "各学習サンプルの前に「ロボットはシングルアームで、腰あり、モバイルベースなし。制御周波数10Hz。次の16アクションを予測して」みたいなプロンプトを付けるの。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 8658,
+          "endFrame": 8981
+        },
+        {
+          "speaker": "A",
+          "text": "それで違うロボットを区別できるのだ？",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 8988,
+          "endFrame": 9065
+        },
+        {
+          "speaker": "B",
+          "text": "できるのよ。ロボットタグと修飾子で形態を指定して、制御周波数やアクションチャンクサイズも含める。これだけで異なる制御モード・次元・時間水平線が扱えるわ。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 9072,
+          "endFrame": 9387
+        },
+        {
+          "speaker": "A",
+          "text": "アーキテクチャを変えなくていいのが便利なのだな。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 9395,
+          "endFrame": 9480
+        },
+        {
+          "speaker": "B",
+          "text": "形態固有の出力ヘッドが不要になるの。1セットのDiTパラメータですべての制御モードを処理できるから、新しいロボットへの対応がプロンプト変更だけで済むわ。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 9488,
+          "endFrame": 9773
+        },
+        {
+          "speaker": "A",
+          "text": "でも混乱しないのだ？シングルアームの行動とヒューマノイドの行動を混同しそうなのだ。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 9781,
+          "endFrame": 9953
+        },
+        {
+          "speaker": "B",
+          "text": "プロンプトがあることで各形態が独立した制御セマンティクスを学習できるの。後のアブレーション実験でも確認されているわ。プロンプトなしだと行動信号が混同してしまう結果が出ているのよ。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 9960,
+          "endFrame": 10285
+        },
+        {
+          "speaker": "A",
+          "text": "プロンプトエンジニアリングの力なのだな！",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 10293,
+          "endFrame": 10372
+        },
+        {
+          "speaker": "B",
+          "text": "ロボット学習にプロンプト設計を持ち込んだのが面白い貢献ね。",
+          "section": "エンボディメント対応プロンプト",
+          "startFrame": 10379,
+          "endFrame": 10489
+        },
+        {
+          "speaker": "A",
+          "text": "数学的な部分を解説してほしいのだ！",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 10507,
+          "endFrame": 10591
+        },
+        {
+          "speaker": "B",
+          "text": "まず統一アクションテンソルYの説明から。Y は固定の水平線H行×固定チャンネル数K列の行列よ。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 10598,
+          "endFrame": 10822
+        },
+        {
+          "speaker": "A",
+          "text": "Hは何ステップ先を予測するかで、Kは行動の次元数なのだな。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 10830,
+          "endFrame": 10973
+        },
+        {
+          "speaker": "B",
+          "text": "その通り。でもロボットによって使う次元数cはK以下で、残りはゼロで埋めるの。どのチャンネルが有効かを記録するバイナリマスクMも使うわ。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 10981,
+          "endFrame": 11235
+        },
+        {
+          "speaker": "A",
+          "text": "スケールの正規化式も見てほしいのだ。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 11242,
+          "endFrame": 11316
+        },
+        {
+          "speaker": "B",
+          "text": "画面のチルデ付きのaの式ね。各データセットとチャンネルごとに1パーセンタイルと99パーセンタイルを使って行動を正規化してマイナス1からプラス1に収めるの。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 11323,
+          "endFrame": 11601
+        },
+        {
+          "speaker": "A",
+          "text": "なぜパーセンタイルを使うのだ？",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 11608,
+          "endFrame": 11672
+        },
+        {
+          "speaker": "B",
+          "text": "外れ値に強いからよ。平均と分散で正規化すると外れ値の影響を受けやすいけど、パーセンタイルは頑健ね。ロボットのデータは時々変な値が入るから重要なの。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 11680,
+          "endFrame": 11996
+        },
+        {
+          "speaker": "A",
+          "text": "フローマッチング損失は難しそうなのだ。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 12003,
+          "endFrame": 12085
+        },
+        {
+          "speaker": "B",
+          "text": "本質を言うと、モデルが予測したベクトル場と理想のベクトル場の差を最小化するの。マスクMがついているから有効なチャンネルだけで損失を計算するわ。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 12093,
+          "endFrame": 12357
+        },
+        {
+          "speaker": "A",
+          "text": "ゼロパディングの部分は無視されるのだな。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 12364,
+          "endFrame": 12438
+        },
+        {
+          "speaker": "B",
+          "text": "正確にはゼロパディング部分は勾配から完全に除外されるの。これで各制御次元が形態に関わらず等しくモデルの学習に貢献できるわ。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 12445,
+          "endFrame": 12691
+        },
+        {
+          "speaker": "A",
+          "text": "公平に全部のロボットを学習するためなのだな。",
+          "section": "統一アクション表現と学習目標",
+          "startFrame": 12698,
+          "endFrame": 12793
+        },
+        {
+          "speaker": "A",
+          "text": "4段階って多いのだな。なぜそんなに複雑なのだ？",
+          "section": "4段階学習レシピ",
+          "startFrame": 12811,
+          "endFrame": 12924
+        },
+        {
+          "speaker": "B",
+          "text": "バックボーンとアクションデコーダの「非対称性」という問題があるからよ。",
+          "section": "4段階学習レシピ",
+          "startFrame": 12931,
+          "endFrame": 13061
+        },
+        {
+          "speaker": "A",
+          "text": "どんな非対称性なのだ？",
+          "section": "4段階学習レシピ",
+          "startFrame": 13068,
+          "endFrame": 13124
+        },
+        {
+          "speaker": "B",
+          "text": "バックボーンのQwen3.5-4Bは大規模なプレトレーニング済みで強力な表現を持っているの。でもDiTアクションデコーダはランダム初期化。ゼロからスタートなのよ。",
+          "section": "4段階学習レシピ",
+          "startFrame": 13131,
+          "endFrame": 13441
+        },
+        {
+          "speaker": "A",
+          "text": "強い先輩と新入りが一緒に仕事するみたいなのだ。",
+          "section": "4段階学習レシピ",
+          "startFrame": 13449,
+          "endFrame": 13550
+        },
+        {
+          "speaker": "B",
+          "text": "良いたとえね。そしてもう1つの問題が次元ギャップ。「赤いカップを取って」という指示は数トークンで表せるけど、対応する行動軌跡は数千の高次元の数値になるの。",
+          "section": "4段階学習レシピ",
+          "startFrame": 13557,
+          "endFrame": 13857
+        },
+        {
+          "speaker": "A",
+          "text": "言葉は短いのに動作はなぜこんなに長いのだ？",
+          "section": "4段階学習レシピ",
+          "startFrame": 13864,
+          "endFrame": 13962
+        },
+        {
+          "speaker": "B",
+          "text": "ロボットの関節が1ミリ動くのにも座標が必要で、それが100ミリ秒分あったりするのよ。この「言語→行動の構造的解凍問題」を4段階で解決するの。",
+          "section": "4段階学習レシピ",
+          "startFrame": 13969,
+          "endFrame": 14273
+        },
+        {
+          "speaker": "A",
+          "text": "第1段階のT2Aは？",
+          "section": "4段階学習レシピ",
+          "startFrame": 14281,
+          "endFrame": 14350
+        },
+        {
+          "speaker": "B",
+          "text": "Text-to-Action。バックボーンを固定してDiTだけを訓練するの。画像なしで言語と行動だけ。まずデコーダに言語インデックス付きの行動パターンを覚えさせるわ。",
+          "section": "4段階学習レシピ",
+          "startFrame": 14358,
+          "endFrame": 14673
+        },
+        {
+          "speaker": "A",
+          "text": "第2段階のCPTは？",
+          "section": "4段階学習レシピ",
+          "startFrame": 14681,
+          "endFrame": 14744
+        },
+        {
+          "speaker": "B",
+          "text": "Continual Pre-Training、継続事前学習よ。両モジュールを解放して、すべてのデータ混合で訓練するの。シミュレーションと実機の両方のデータを統合するわ。",
+          "section": "4段階学習レシピ",
+          "startFrame": 14751,
+          "endFrame": 15162
+        },
+        {
+          "speaker": "A",
+          "text": "第3段階のSFTは？",
+          "section": "4段階学習レシピ",
+          "startFrame": 15169,
+          "endFrame": 15235
+        },
+        {
+          "speaker": "B",
+          "text": "教師あり微調整ね。2並列トラックを走らせて、多タスク汎用SFTと実機のテレオペレーションデータへの特化を同時に行うの。",
+          "section": "4段階学習レシピ",
+          "startFrame": 15243,
+          "endFrame": 15478
+        },
+        {
+          "speaker": "A",
+          "text": "第4段階のRLが一番すごいのだ？",
+          "section": "4段階学習レシピ",
+          "startFrame": 15485,
+          "endFrame": 15575
+        },
+        {
+          "speaker": "B",
+          "text": "強化学習よ。模倣学習だけではクローズドループでの成功が直接最適化できないという問題を解決するためにPPOというアルゴリズムを使うの。タスク成功か失敗かの2値報酬で学習するわ。",
+          "section": "4段階学習レシピ",
+          "startFrame": 15582,
+          "endFrame": 15941
+        },
+        {
+          "speaker": "A",
+          "text": "どんなデータで訓練するのだ？",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 15959,
+          "endFrame": 16020
+        },
+        {
+          "speaker": "B",
+          "text": "事前学習コーパスの74.2%がロボット操作軌跡よ。公開データセットと自社データの組み合わせね。",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 16028,
+          "endFrame": 16224
+        },
+        {
+          "speaker": "A",
+          "text": "公開データってどんなものがあるのだ？",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 16231,
+          "endFrame": 16306
+        },
+        {
+          "speaker": "B",
+          "text": "RobotSet・Galaxea・AgiBot World・RoboCOIN・RoboMIND・RDT-1B・DROID・BridgeData V2・RH20T・RT-1・BC-Zなど、多数あるわ。合計1万時間以上ね。",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 16314,
+          "endFrame": 16994
+        },
+        {
+          "speaker": "A",
+          "text": "1万時間！すごい量なのだ。",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 17001,
+          "endFrame": 17071
+        },
+        {
+          "speaker": "B",
+          "text": "テーブルトップ操作・モバイル操作・両腕操作・5指器用操作・野外タスクと幅広くカバーしているわ。多様なロボット形態のデータが重要なの。",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 17078,
+          "endFrame": 17362
+        },
+        {
+          "speaker": "A",
+          "text": "自社データはどうやって集めたのだ？",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 17369,
+          "endFrame": 17440
+        },
+        {
+          "speaker": "B",
+          "text": "独自に1000時間以上の実ロボット軌跡を収集したのと、RoboInFというシミュレーションパイプラインで8百万以上の合成軌跡を生成したわ。",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 17448,
+          "endFrame": 17717
+        },
+        {
+          "speaker": "A",
+          "text": "シミュレーションパイプラインって何をするのだ？",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 17725,
+          "endFrame": 17807
+        },
+        {
+          "speaker": "B",
+          "text": "IsaacLabという物理エンジンで20シーン×10物体配置の200の基本シーンを作って、450の操作タスクを定義するの。各タスクに300の成功軌跡を生成して、照明・カメラ位置・背景・テクスチャを多様化するわ。",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 17814,
+          "endFrame": 18275
+        },
+        {
+          "speaker": "A",
+          "text": "合計359,848の完全成功軌跡なのだな！",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 18282,
+          "endFrame": 18429
+        },
+        {
+          "speaker": "B",
+          "text": "シミュレーションデータで視覚的多様性を大量に確保できるの。実機での収集コストを大幅に削減しつつ、汎化に必要なバリエーションを得られるのが強みよ。",
+          "section": "大規模ロボット操作データ",
+          "startFrame": 18436,
+          "endFrame": 18710
+        },
+        {
+          "speaker": "A",
+          "text": "ロボット以外のデータも使うのだな？",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 18728,
+          "endFrame": 18800
+        },
+        {
+          "speaker": "B",
+          "text": "それが面白いポイントよ。自我視点の人間データを使うの。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 18807,
+          "endFrame": 18913
+        },
+        {
+          "speaker": "A",
+          "text": "人間の動画をロボット学習に使うのだ？",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 18921,
+          "endFrame": 19009
+        },
+        {
+          "speaker": "B",
+          "text": "ロボットのテレオペレーションより豊富でスケーラブルな操作経験源なのよ。Ego4DやEPIC-KITCHENSという有名なデータセット、EgoDexはApple Vision Proで収集した829時間のデータを使っているわ。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 19017,
+          "endFrame": 19511
+        },
+        {
+          "speaker": "A",
+          "text": "Apple Vision Proで！手の動きを3Dで正確にとれるのだな。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 19519,
+          "endFrame": 19693
+        },
+        {
+          "speaker": "B",
+          "text": "EgoVerseという1300時間以上1965タスクのデータセットも使うの。アクション表現はSE(3)の手首変換という6次元変換×2手と、主成分固有把持という10次元×2手の合計32次元ね。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 19701,
+          "endFrame": 20155
+        },
+        {
+          "speaker": "A",
+          "text": "ナビゲーションデータも7.5%使うのだな。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 20162,
+          "endFrame": 20259
+        },
+        {
+          "speaker": "B",
+          "text": "指示追従ナビゲーション・物体探索・目標追跡の3種類よ。操作とは全然違うタスクだけど、同じモデルで学習させることでどちらも向上するの。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 20266,
+          "endFrame": 20554
+        },
+        {
+          "speaker": "A",
+          "text": "なんで一緒に学習すると良くなるのだ？",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 20561,
+          "endFrame": 20642
+        },
+        {
+          "speaker": "B",
+          "text": "長期的な計画立案と空間推論という能力を、ナビゲーションデータが強化するからね。操作の精密さとナビゲーションの計画性が互いに補い合うの。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 20650,
+          "endFrame": 20924
+        },
+        {
+          "speaker": "A",
+          "text": "視覚言語データも8.5%使うのだな。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 20931,
+          "endFrame": 21027
+        },
+        {
+          "speaker": "B",
+          "text": "行動キャプション・自動運転VQA・バウンディングボックスグラウンディング・一般視覚言語データよ。意味的理解と言語グラウンディングを強化するの。48000個の動画キャプションペアは13次元でアノテーションされているわ。",
+          "section": "自我視点・合成・ナビゲーションデータ",
+          "startFrame": 21034,
+          "endFrame": 21410
+        },
+        {
+          "speaker": "A",
+          "text": "事前学習が終わったあとの学習も大変そうなのだ。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 21428,
+          "endFrame": 21533
+        },
+        {
+          "speaker": "B",
+          "text": "T2AとCPTで作ったQwen-VLA-Baseを精密化する2段階があるわ。まずマルチタスクSFT、次にRLね。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 21541,
+          "endFrame": 21826
+        },
+        {
+          "speaker": "A",
+          "text": "SFTでは何を学ぶのだ？",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 21833,
+          "endFrame": 21901
+        },
+        {
+          "speaker": "B",
+          "text": "視覚言語サンプル・シミュレーション操作デモ・VLNエピソードの3種類のデータを混ぜて学習するの。損失重みが面白くて、視覚言語の次トークン予測は0.1、操作とナビゲーションの行動は1.0よ。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 21909,
+          "endFrame": 22294
+        },
+        {
+          "speaker": "A",
+          "text": "行動の学習を10倍重視するのだな。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 22302,
+          "endFrame": 22383
+        },
+        {
+          "speaker": "B",
+          "text": "言語タスクより行動タスクを優先させるためね。事前学習で言語能力はすでに十分なので、特化させたい行動に重みを置くの。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 22391,
+          "endFrame": 22623
+        },
+        {
+          "speaker": "A",
+          "text": "RLで強化学習をするのだが、なぜ必要なのだ？",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 22630,
+          "endFrame": 22746
+        },
+        {
+          "speaker": "B",
+          "text": "SFTは模倣学習だから、手本と似た行動を出力するように訓練するの。でも「実際にタスクを成功させること」と「手本に近い行動をすること」は微妙にずれる場合があるわ。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 22754,
+          "endFrame": 23111
+        },
+        {
+          "speaker": "A",
+          "text": "成功を直接目指す訓練のほうがいいのだな。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 23118,
+          "endFrame": 23210
+        },
+        {
+          "speaker": "B",
+          "text": "PPOというアルゴリズムを使って、タスク成功か失敗かの2値報酬で学習するの。フローマッチングでのログ確率推定という工夫もあって、拡散ベースのモデルでのRL適用を可能にしているわ。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 23218,
+          "endFrame": 23578
+        },
+        {
+          "speaker": "A",
+          "text": "PPOの式が出てくるのだな。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 23585,
+          "endFrame": 23650
+        },
+        {
+          "speaker": "B",
+          "text": "重要度比率rとクリッピングの式ね。過去の方策と新しい方策の差を制限しながら学習を安定させるの。128個の並列環境で訓練して、SimplerEnvで学習したものが他環境へゼロショット転移するのよ。",
+          "section": "ポスト訓練：SFT と強化学習",
+          "startFrame": 23657,
+          "endFrame": 24092
+        },
+        {
+          "speaker": "A",
+          "text": "シミュレーションでの実験結果を見ていくのだ！",
+          "section": "シミュレーション操作実験",
+          "startFrame": 24110,
+          "endFrame": 24193
+        },
+        {
+          "speaker": "B",
+          "text": "4つのシミュレーション環境でテストしているわ。LIBERO・Simpler-WidowX・RoboCasa-GR1・RoboTwin 2.0ね。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 24201,
+          "endFrame": 24608
+        },
+        {
+          "speaker": "A",
+          "text": "LIBEROから教えてほしいのだ。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 24615,
+          "endFrame": 24703
+        },
+        {
+          "speaker": "B",
+          "text": "単腕テーブルトップ操作の標準的なベンチマークよ。Spatial・Object・Goal・Longの4分野があって、Qwen-VLA-Instructは97.9%を達成したわ。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 24710,
+          "endFrame": 25163
+        },
+        {
+          "speaker": "A",
+          "text": "97.9%はほぼ完璧なのだな！",
+          "section": "シミュレーション操作実験",
+          "startFrame": 25170,
+          "endFrame": 25269
+        },
+        {
+          "speaker": "B",
+          "text": "Simpler-WidowXではreal-to-sim評価で73.7%。これは実機のパターンをシミュレーションで再現する難しいテストよ。最良の専門化モデルのStarVLA-OFTが64.6%なのを上回っているの。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 25276,
+          "endFrame": 25842
+        },
+        {
+          "speaker": "A",
+          "text": "専門化モデルより汎化モデルの方が強いのだ！",
+          "section": "シミュレーション操作実験",
+          "startFrame": 25849,
+          "endFrame": 25942
+        },
+        {
+          "speaker": "B",
+          "text": "RoboTwinでも同様の結果よ。Easy 86.1%・Hard 87.2%で最良の専門化モデルABot-M0の85〜86%を上回っているわ。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 25950,
+          "endFrame": 26400
+        },
+        {
+          "speaker": "A",
+          "text": "BaseとInstructの違いも見てほしいのだ。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 26407,
+          "endFrame": 26542
+        },
+        {
+          "speaker": "B",
+          "text": "事前学習の効果を示す重要な比較ね。LIBEROで90.8%→97.9%（+7.1pt）、Simpler-WidowXで64.3%→73.7%（+9.4pt）、RoboTwinで64.3%→86.1%（+21.8pt）と大きな改善があるわ。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 26550,
+          "endFrame": 27200
+        },
+        {
+          "speaker": "A",
+          "text": "RoboTwinで20ポイント以上の改善は凄いのだ！",
+          "section": "シミュレーション操作実験",
+          "startFrame": 27208,
+          "endFrame": 27349
+        },
+        {
+          "speaker": "B",
+          "text": "大規模事前学習の力ね。RLの効果も大きくて、特にOOD設定での性能向上に貢献しているの。",
+          "section": "シミュレーション操作実験",
+          "startFrame": 27357,
+          "endFrame": 27566
+        },
+        {
+          "speaker": "A",
+          "text": "実際のロボットでの実験はどうなのだ？",
+          "section": "実世界実験",
+          "startFrame": 27584,
+          "endFrame": 27666
+        },
+        {
+          "speaker": "B",
+          "text": "ALOHAロボットという双腕の6自由度ロボットで実験したわ。3台のカメラがついているの。",
+          "section": "実世界実験",
+          "startFrame": 27673,
+          "endFrame": 27847
+        },
+        {
+          "speaker": "A",
+          "text": "どんな実験をしたのだ？",
+          "section": "実世界実験",
+          "startFrame": 27854,
+          "endFrame": 27906
+        },
+        {
+          "speaker": "B",
+          "text": "事前学習ありとなしの2つのモデルを比較しているの。インドメイン（訓練分布内）とOOD（分布外）の両方でテストしているわ。",
+          "section": "実世界実験",
+          "startFrame": 27914,
+          "endFrame": 28172
+        },
+        {
+          "speaker": "A",
+          "text": "インドメインの結果は？",
+          "section": "実世界実験",
+          "startFrame": 28179,
+          "endFrame": 28228
+        },
+        {
+          "speaker": "B",
+          "text": "6タスクカテゴリで、事前学習なしが48.5%なのに対して事前学習ありは83.6%よ。35ポイント以上の差ね。",
+          "section": "実世界実験",
+          "startFrame": 28235,
+          "endFrame": 28505
+        },
+        {
+          "speaker": "A",
+          "text": "事前学習がなければ半分しかできないのだな！",
+          "section": "実世界実験",
+          "startFrame": 28513,
+          "endFrame": 28602
+        },
+        {
+          "speaker": "B",
+          "text": "しかもOODでは差がもっと大きいの。5種類の汎化設定でテストして、平均76.9%を達成したわ。事前学習なしではOODはほとんど対応できなかったの。",
+          "section": "実世界実験",
+          "startFrame": 28609,
+          "endFrame": 28926
+        },
+        {
+          "speaker": "A",
+          "text": "OODが76.9%ってすごいのだ。見たことのない状況でも7割以上！",
+          "section": "実世界実験",
+          "startFrame": 28934,
+          "endFrame": 29113
+        },
+        {
+          "speaker": "B",
+          "text": "背景汎化で80.8%・指示汎化で84.6%という結果も出ているわ。指示の言い換えにも対応できるの。",
+          "section": "実世界実験",
+          "startFrame": 29121,
+          "endFrame": 29356
+        },
+        {
+          "speaker": "A",
+          "text": "大規模事前学習が実世界汎化の鍵なのだな。",
+          "section": "実世界実験",
+          "startFrame": 29364,
+          "endFrame": 29466
+        },
+        {
+          "speaker": "B",
+          "text": "正確には事前学習の「多様性」が鍵ね。様々なロボット・タスク・視覚的バリエーションで訓練したことが、実際の環境での頑健性につながっているの。",
+          "section": "実世界実験",
+          "startFrame": 29473,
+          "endFrame": 29782
+        },
+        {
+          "speaker": "A",
+          "text": "ロボットが歩き回るナビゲーション実験の結果はどうなのだ？",
+          "section": "ナビゲーション実験",
+          "startFrame": 29800,
+          "endFrame": 29915
+        },
+        {
+          "speaker": "B",
+          "text": "VLN-CEという連続環境での視覚言語ナビゲーションベンチマークでテストしているわ。",
+          "section": "ナビゲーション実験",
+          "startFrame": 29922,
+          "endFrame": 30087
+        },
+        {
+          "speaker": "A",
+          "text": "VLNってどんな課題なのだ？",
+          "section": "ナビゲーション実験",
+          "startFrame": 30094,
+          "endFrame": 30163
+        },
+        {
+          "speaker": "B",
+          "text": "「部屋から出て、廊下を進んで、左の扉を開けた部屋に入って」みたいな自然言語の指示に従ってロボットが移動するタスクよ。",
+          "section": "ナビゲーション実験",
+          "startFrame": 30170,
+          "endFrame": 30394
+        },
+        {
+          "speaker": "A",
+          "text": "部屋の中を歩き回るのだな！",
+          "section": "ナビゲーション実験",
+          "startFrame": 30402,
+          "endFrame": 30461
+        },
+        {
+          "speaker": "B",
+          "text": "R2RとRxRという2つのベンチマークでテストしているの。Qwen-VLA-InstructはR2RのOSRで69.0%、成功率SR 57.5%を達成したわ。",
+          "section": "ナビゲーション実験",
+          "startFrame": 30468,
+          "endFrame": 30926
+        },
+        {
+          "speaker": "A",
+          "text": "ライバルのStreamVLNは64.2%のOSRなのだな。",
+          "section": "ナビゲーション実験",
+          "startFrame": 30934,
+          "endFrame": 31108
+        },
+        {
+          "speaker": "B",
+          "text": "4.8ポイント差でQwen-VLAが上回っているの。RxRではより困難なナビゲーションでも良い結果を出しているわ。",
+          "section": "ナビゲーション実験",
+          "startFrame": 31116,
+          "endFrame": 31352
+        },
+        {
+          "speaker": "A",
+          "text": "操作とナビゲーションを一緒に学習しても干渉しないのだな。",
+          "section": "ナビゲーション実験",
+          "startFrame": 31360,
+          "endFrame": 31474
+        },
+        {
+          "speaker": "B",
+          "text": "それが重要な発見よ。「ジョイント学習は互いに邪魔しない」という結果が出ているの。むしろ相乗効果があって、どちらも単独学習より良い性能を示すわ。",
+          "section": "ナビゲーション実験",
+          "startFrame": 31481,
+          "endFrame": 31769
+        },
+        {
+          "speaker": "A",
+          "text": "異質なタスクの統一が本当に機能しているのだな！",
+          "section": "ナビゲーション実験",
+          "startFrame": 31776,
+          "endFrame": 31876
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。理論的な主張を実験で証明できた、重要な結果ね。",
+          "section": "ナビゲーション実験",
+          "startFrame": 31884,
+          "endFrame": 32011
+        },
+        {
+          "speaker": "A",
+          "text": "アブレーション分析って何をするのだ？",
+          "section": "アブレーション分析",
+          "startFrame": 32029,
+          "endFrame": 32105
+        },
+        {
+          "speaker": "B",
+          "text": "各コンポーネントを取り除いて性能がどう変わるかを見るの。「この部分が本当に大事なのか」を確認するわ。",
+          "section": "アブレーション分析",
+          "startFrame": 32113,
+          "endFrame": 32302
+        },
+        {
+          "speaker": "A",
+          "text": "4段階の学習それぞれの貢献が分かるのだな。",
+          "section": "アブレーション分析",
+          "startFrame": 32310,
+          "endFrame": 32408
+        },
+        {
+          "speaker": "B",
+          "text": "T2Aはアクションデコーダに言語インデックス付きの行動パターンを確立させる基礎。CPTはビジョングラウンディングの獲得とシミュ・実機両分布の統一に貢献。SFTで特定タスクへの精密なアライメントを達成して、RLで特にOOD設定での汎化が大きく向上するわ。",
+          "section": "アブレーション分析",
+          "startFrame": 32415,
+          "endFrame": 32926
+        },
+        {
+          "speaker": "A",
+          "text": "エンボディメントプロンプトの重要性も確認されたのだな。",
+          "section": "アブレーション分析",
+          "startFrame": 32934,
+          "endFrame": 33042
+        },
+        {
+          "speaker": "B",
+          "text": "プロンプトなしで複数形態を学習すると、異なるロボット間で行動信号が混同してしまうことが分かったの。プロンプトが境界を作ることで各形態が独立して学習できるわ。",
+          "section": "アブレーション分析",
+          "startFrame": 33049,
+          "endFrame": 33364
+        },
+        {
+          "speaker": "A",
+          "text": "データの多様性の効果はどうなのだ？",
+          "section": "アブレーション分析",
+          "startFrame": 33372,
+          "endFrame": 33449
+        },
+        {
+          "speaker": "B",
+          "text": "単一形態データだけで訓練したモデルと、異質な混合データで訓練したモデルを比較すると、混合データが操作・ナビゲーション両方のOOD汎化を大幅に改善するの。",
+          "section": "アブレーション分析",
+          "startFrame": 33456,
+          "endFrame": 33769
+        },
+        {
+          "speaker": "A",
+          "text": "多様なデータが多様な対応力を生むのだな。",
+          "section": "アブレーション分析",
+          "startFrame": 33777,
+          "endFrame": 33862
+        },
+        {
+          "speaker": "B",
+          "text": "まさに。これが「スケーリング則」の一側面よ。データの量だけでなく多様性が汎化能力を決める、という重要な知見ね。",
+          "section": "アブレーション分析",
+          "startFrame": 33870,
+          "endFrame": 34110
+        },
+        {
+          "speaker": "A",
+          "text": "Qwen-VLAの研究をまとめてほしいのだ！",
+          "section": "まとめ",
+          "startFrame": 34128,
+          "endFrame": 34243
+        },
+        {
+          "speaker": "B",
+          "text": "4つの主要貢献から整理するわ。まず1つ目はQwen-VLAという統一モデル自体よ。操作・ナビゲーション・自我視点データを共有アクション軌跡空間で統一したの。",
+          "section": "まとめ",
+          "startFrame": 34250,
+          "endFrame": 34585
+        },
+        {
+          "speaker": "A",
+          "text": "2つ目は大規模ジョイント事前学習なのだな。",
+          "section": "まとめ",
+          "startFrame": 34592,
+          "endFrame": 34683
+        },
+        {
+          "speaker": "B",
+          "text": "操作・自我視点・合成・ナビゲーション・視覚言語という異質なデータソースを横断する事前学習ね。これが汎化能力の源泉よ。",
+          "section": "まとめ",
+          "startFrame": 34690,
+          "endFrame": 34950
+        },
+        {
+          "speaker": "A",
+          "text": "3つ目は4段階の学習レシピなのだ。",
+          "section": "まとめ",
+          "startFrame": 34958,
+          "endFrame": 35039
+        },
+        {
+          "speaker": "B",
+          "text": "T2A→CPT→SFT→RLの4段階で、離散言語トークンと連続行動軌跡のギャップを橋渡しするの。各段階に明確な役割があるわ。",
+          "section": "まとめ",
+          "startFrame": 35046,
+          "endFrame": 35363
+        },
+        {
+          "speaker": "A",
+          "text": "4つ目は包括的な評価なのだな。",
+          "section": "まとめ",
+          "startFrame": 35371,
+          "endFrame": 35444
+        },
+        {
+          "speaker": "B",
+          "text": "シミュレーション・実世界・ナビゲーションと多様なベンチマークで評価しているの。主な発見は「単一の汎化モデルが多くの専門化モデルを上回ることが可能」ということね。",
+          "section": "まとめ",
+          "startFrame": 35452,
+          "endFrame": 35766
+        },
+        {
+          "speaker": "A",
+          "text": "専門化より統一の方が強いってこともあるのだな。",
+          "section": "まとめ",
+          "startFrame": 35774,
+          "endFrame": 35875
+        },
+        {
+          "speaker": "B",
+          "text": "必ずしもそうではないけど、十分なデータと訓練があれば統一モデルが専門モデルに匹敵・凌駕できると示したわ。",
+          "section": "まとめ",
+          "startFrame": 35882,
+          "endFrame": 36096
+        },
+        {
+          "speaker": "A",
+          "text": "操作とナビゲーションは干渉しないっていうのも重要なのだな。",
+          "section": "まとめ",
+          "startFrame": 36103,
+          "endFrame": 36217
+        },
+        {
+          "speaker": "B",
+          "text": "長い間「異なるタスクを1つのモデルで混ぜると性能が下がる」と思われてきたの。Qwen-VLAはそれが正しくないことを示したわ。",
+          "section": "まとめ",
+          "startFrame": 36225,
+          "endFrame": 36486
+        },
+        {
+          "speaker": "A",
+          "text": "これからロボットはどうなっていくのだろうなのだ？",
+          "section": "まとめ",
+          "startFrame": 36494,
+          "endFrame": 36581
+        },
+        {
+          "speaker": "B",
+          "text": "汎用VLAモデルの競争が激化するわ。GeminiもQwenも、どちらも「1つのモデルですべてのロボットを動かす」という方向に向かっているの。",
+          "section": "まとめ",
+          "startFrame": 36588,
+          "endFrame": 36846
+        },
+        {
+          "speaker": "A",
+          "text": "今日はとても勉強になったのだ！また論文で会うのだ！",
+          "section": "まとめ",
+          "startFrame": 36853,
+          "endFrame": 36961
+        },
+        {
+          "speaker": "B",
+          "text": "Qwen-VLA、身体的知能の統一という大きなビジョンに挑んだ意欲的な研究でした。また次の論文で会いましょう。",
+          "section": "まとめ",
+          "startFrame": 36968,
+          "endFrame": 37207
+        }
+      ]
+    }
   },
   {
     "id": "chemrev.9b00489",
