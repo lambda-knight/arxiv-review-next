@@ -13,11 +13,6 @@ type AnimationProps = {
   mode: string;
   markdownSource?: string;
   timeline: EpisodeTimeline;
-  playEventName?: string;
-  stopEventName?: string;
-  showPlayButton?: boolean;
-  externalTimeSec?: number;
-  externalPlaying?: boolean;
 };
 
 type Adjustments = {
@@ -86,10 +81,8 @@ function toTimingData(props: AnimationProps): TimingData {
 export function AnimatedChapter(props: AnimationProps) {
   const timingData = toTimingData(props);
   const playerRef = useRef<PlayerRef>(null);
-  const audioRef = useRef<HTMLVideoElement>(null);
   const fullscreenRef = useRef<HTMLDivElement>(null);
   const [isPseudoFullscreen, setIsPseudoFullscreen] = useState(false);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const storageKey = `ai-qc-news:adjustment:${props.date}:${props.mode}`;
   const [adjustments, setAdjustments] = useState<Adjustments>(DEFAULT_ADJUSTMENTS);
   const sections = useMemo(
@@ -101,27 +94,6 @@ export function AnimatedChapter(props: AnimationProps) {
     const saved = window.localStorage.getItem(storageKey);
     if (saved) setAdjustments({ ...DEFAULT_ADJUSTMENTS, ...(JSON.parse(saved) as Partial<Adjustments>) });
   }, [storageKey]);
-
-  useEffect(() => {
-    const play = () => { void audioRef.current?.play(); };
-    const stop = () => audioRef.current?.pause();
-    if (props.playEventName) window.addEventListener(props.playEventName, play);
-    if (props.stopEventName) window.addEventListener(props.stopEventName, stop);
-    return () => {
-      if (props.playEventName) window.removeEventListener(props.playEventName, play);
-      if (props.stopEventName) window.removeEventListener(props.stopEventName, stop);
-    };
-  }, [props.playEventName, props.stopEventName]);
-
-  useEffect(() => {
-    if (props.externalTimeSec === undefined) return;
-    const player = playerRef.current;
-    if (!player) return;
-    const target = Math.min(timingData.totalFrames - 1, Math.round(props.externalTimeSec * timingData.fps));
-    player.seekTo(target);
-    if (props.externalPlaying) player.play();
-    else player.pause();
-  }, [props.externalTimeSec, props.externalPlaying, timingData.fps, timingData.totalFrames]);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -167,22 +139,6 @@ export function AnimatedChapter(props: AnimationProps) {
     link.click();
     URL.revokeObjectURL(url);
   };
-  const syncPlayerToAudio = () => {
-    const audio = audioRef.current;
-    const player = playerRef.current;
-    if (!audio || !player) return;
-    const target = Math.min(timingData.totalFrames - 1, Math.round(audio.currentTime * timingData.fps));
-    if (Math.abs(player.getCurrentFrame() - target) > 3) player.seekTo(target);
-  };
-  const toggleAudio = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (audio.paused) {
-      await audio.play();
-    } else {
-      audio.pause();
-    }
-  };
   const toggleFullscreen = async () => {
     if (isPseudoFullscreen) {
       setIsPseudoFullscreen(false);
@@ -216,21 +172,11 @@ export function AnimatedChapter(props: AnimationProps) {
         compositionWidth={1280}
         compositionHeight={720}
         fps={timingData.fps}
-        controls={false}
+        controls
+        alwaysShowControls
         className="paper-remotion-player"
         style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: 10, overflow: "hidden" }}
       />
-      {props.externalTimeSec === undefined && <audio
-        ref={audioRef}
-        playsInline
-        preload="metadata"
-        src={props.audioUrl}
-        onPlay={() => { setIsAudioPlaying(true); playerRef.current?.play(); }}
-        onPause={() => { setIsAudioPlaying(false); playerRef.current?.pause(); }}
-        onTimeUpdate={syncPlayerToAudio}
-        onSeeking={syncPlayerToAudio}
-        onEnded={() => { setIsAudioPlaying(false); playerRef.current?.pause(); }}
-      />}
       </div>
       <div className="remotion-adjuster" role="toolbar" aria-label="表示と同期の調整">
         <IconButton icon="⛶" label="全画面表示を切り替え" onClick={toggleFullscreen} />
@@ -253,11 +199,7 @@ export function AnimatedChapter(props: AnimationProps) {
       </div>
       <div style={{ marginTop: 8, display: "flex", justifyContent: "space-between", gap: 12, color: "var(--muted)", fontSize: 12 }}>
         <span>動画プレビュー共通画面・音声同期Web版</span>
-        {props.showPlayButton !== false && (
-          <button type="button" className="audio-play-button" onClick={toggleAudio} aria-pressed={isAudioPlaying}>
-            {isAudioPlaying ? "⏸ アニメーションを停止" : "▶ アニメーションを再生"}
-          </button>
-        )}
+        <a href={props.audioUrl}>音声ファイルを直接開く</a>
       </div>
     </div>
   );
