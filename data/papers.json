@@ -5767,7 +5767,408 @@
         "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch03.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch03.mp3",
         "markdown": "<h2>探索と最適化：グローバーとその発展</h2>\n<ul>\n<li><strong>グローバーのアルゴリズム（1996）</strong>: $N$ 件の非構造化探索を $O(\\sqrt{N})$ で解く（古典 $O(N)$）</li>\n<li>最適性証明: $\\Omega(\\sqrt{N})$ が量子クエリ複雑性の下限</li>\n</ul>\n<p>振幅増幅の1ステップ:\n$$\n|\\psi\\rangle \\xrightarrow{O} \\text{正解に位相反転} \\xrightarrow{D} \\text{平均周りに反転}\n$$</p>\n<ul>\n<li>正解の確率振幅を毎回 $O(1/\\sqrt{N})$ ずつ増幅</li>\n<li>約 $\\frac{\\pi}{4}\\sqrt{N}$ 回の反復で確率 $\\approx 1$</li>\n</ul>\n<p><strong>量子ウォーク（Quantum Walk）:</strong>\n- グラフ上の量子版ランダムウォーク\n- マルコフ連鎖のスペクトルギャップ $\\delta$ を二次改善: $\\delta_Q \\approx \\sqrt{\\delta_C}$\n- 三角形探索: 古典 $O(N^2)$ → 量子 $O(N^{4/3})$</p>\n<p><strong>QAOA（量子近似最適化アルゴリズム）:</strong>\n$$\n|\\gamma, \\beta\\rangle = \\prod_{p=1}^{P} e^{-i\\beta_p B} e^{-i\\gamma_p C} |+\\rangle^{\\otimes n}\n$$</p>\n<ul>\n<li>$C$: コスト演算子（目的関数）、$B$: ミキサー演算子</li>\n<li>NISQ デバイス向け変分アルゴリズム; 組み合わせ最適化に適用</li>\n</ul>",
-        "markdownSource": "## 探索と最適化：グローバーとその発展\n\n- **グローバーのアルゴリズム（1996）**: $N$ 件の非構造化探索を $O(\\sqrt{N})$ で解く（古典 $O(N)$）\n- 最適性証明: $\\Omega(\\sqrt{N})$ が量子クエリ複雑性の下限\n\n振幅増幅の1ステップ:\n$$\n|\\psi\\rangle \\xrightarrow{O} \\text{正解に位相反転} \\xrightarrow{D} \\text{平均周りに反転}\n$$\n\n- 正解の確率振幅を毎回 $O(1/\\sqrt{N})$ ずつ増幅\n- 約 $\\frac{\\pi}{4}\\sqrt{N}$ 回の反復で確率 $\\approx 1$\n\n**量子ウォーク（Quantum Walk）:**\n- グラフ上の量子版ランダムウォーク\n- マルコフ連鎖のスペクトルギャップ $\\delta$ を二次改善: $\\delta_Q \\approx \\sqrt{\\delta_C}$\n- 三角形探索: 古典 $O(N^2)$ → 量子 $O(N^{4/3})$\n\n**QAOA（量子近似最適化アルゴリズム）:**\n$$\n|\\gamma, \\beta\\rangle = \\prod_{p=1}^{P} e^{-i\\beta_p B} e^{-i\\gamma_p C} |+\\rangle^{\\otimes n}\n$$\n\n- $C$: コスト演算子（目的関数）、$B$: ミキサー演算子\n- NISQ デバイス向け変分アルゴリズム; 組み合わせ最適化に適用"
+        "markdownSource": "## 探索と最適化：グローバーとその発展\n\n- **グローバーのアルゴリズム（1996）**: $N$ 件の非構造化探索を $O(\\sqrt{N})$ で解く（古典 $O(N)$）\n- 最適性証明: $\\Omega(\\sqrt{N})$ が量子クエリ複雑性の下限\n\n振幅増幅の1ステップ:\n$$\n|\\psi\\rangle \\xrightarrow{O} \\text{正解に位相反転} \\xrightarrow{D} \\text{平均周りに反転}\n$$\n\n- 正解の確率振幅を毎回 $O(1/\\sqrt{N})$ ずつ増幅\n- 約 $\\frac{\\pi}{4}\\sqrt{N}$ 回の反復で確率 $\\approx 1$\n\n**量子ウォーク（Quantum Walk）:**\n- グラフ上の量子版ランダムウォーク\n- マルコフ連鎖のスペクトルギャップ $\\delta$ を二次改善: $\\delta_Q \\approx \\sqrt{\\delta_C}$\n- 三角形探索: 古典 $O(N^2)$ → 量子 $O(N^{4/3})$\n\n**QAOA（量子近似最適化アルゴリズム）:**\n$$\n|\\gamma, \\beta\\rangle = \\prod_{p=1}^{P} e^{-i\\beta_p B} e^{-i\\gamma_p C} |+\\rangle^{\\otimes n}\n$$\n\n- $C$: コスト演算子（目的関数）、$B$: ミキサー演算子\n- NISQ デバイス向け変分アルゴリズム; 組み合わせ最適化に適用",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 9078,
+          "audioDurationSec": 302.595333,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "グローバーのアルゴリズムって何をするのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 18,
+              "endFrame": 101
+            },
+            {
+              "speaker": "B",
+              "text": "N件のデータから目的のものを探す「非構造化探索」を高速化するアルゴリズムよ。ロブ・グローバーが1996年に発表したわ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 108,
+              "endFrame": 377
+            },
+            {
+              "speaker": "A",
+              "text": "電話帳から特定の人を探すみたいなのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 384,
+              "endFrame": 480
+            },
+            {
+              "speaker": "B",
+              "text": "似てるわ。ただし電話帳はあいうえお順に並んでいるから構造がある。グローバーが扱うのは完全にランダムな順番のデータベースね。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 487,
+              "endFrame": 714
+            },
+            {
+              "speaker": "A",
+              "text": "古典だと最悪N回調べないといけないのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 721,
+              "endFrame": 817
+            },
+            {
+              "speaker": "B",
+              "text": "そう。平均でN/2回の確認が必要。グローバーのアルゴリズムは約ルートN回で見つけられるの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 824,
+              "endFrame": 1020
+            },
+            {
+              "speaker": "A",
+              "text": "ルートNってどれくらい速いのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 1027,
+              "endFrame": 1094
+            },
+            {
+              "speaker": "B",
+              "text": "N=100万なら古典は50万回、グローバーは約1000回。N=1兆なら古典は5000億回、グローバーは約100万回よ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 1101,
+              "endFrame": 1370
+            },
+            {
+              "speaker": "A",
+              "text": "劇的に違うのだ！",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 1378,
+              "endFrame": 1421
+            },
+            {
+              "speaker": "B",
+              "text": "これを「二次加速」と呼ぶわ。ショアの指数加速と比べると控えめだけど、適用範囲がとても広いの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 1429,
+              "endFrame": 1619
+            },
+            {
+              "speaker": "A",
+              "text": "どんな仕組みなのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 1627,
+              "endFrame": 1669
+            },
+            {
+              "speaker": "B",
+              "text": "「振幅増幅」という技術よ。正解の候補に対応する確率振幅を繰り返し増幅し、不正解の振幅を打ち消す操作を繰り返すの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 1677,
+              "endFrame": 1940
+            },
+            {
+              "speaker": "A",
+              "text": "1回の操作で2つのステップがあるのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 1948,
+              "endFrame": 2033
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。まずオラクルが正解に位相マイナス1を掛けて「マーク」をつける。次にアダマール行列とパウリX行列を使った反転操作で振幅を移動させるの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 2041,
+              "endFrame": 2328
+            },
+            {
+              "speaker": "A",
+              "text": "それを何回繰り返すのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 2335,
+              "endFrame": 2396
+            },
+            {
+              "speaker": "B",
+              "text": "約パイ/4掛けるルートN回繰り返すと、正解の確率がほぼ1になるわ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 2404,
+              "endFrame": 2551
+            },
+            {
+              "speaker": "A",
+              "text": "パイ/4って円周率のパイなのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 2558,
+              "endFrame": 2649
+            },
+            {
+              "speaker": "B",
+              "text": "そう！確率が最大になるタイミングが幾何学的に決まっていて、角度の計算からパイ/4という美しい数が出てくるの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 2656,
+              "endFrame": 2881
+            },
+            {
+              "speaker": "A",
+              "text": "グローバーは最速なのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 2888,
+              "endFrame": 2945
+            },
+            {
+              "speaker": "B",
+              "text": "非構造化探索に関しては、ルートNのオーダーが量子コンピュータでの下限として厳密に証明されているわ。最適なアルゴリズムよ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 2952,
+              "endFrame": 3180
+            },
+            {
+              "speaker": "A",
+              "text": "振幅増幅を使うとグローバー以外にも応用できるのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 3187,
+              "endFrame": 3306
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。確率2分の1で答えを見つけるアルゴリズムなら何でも、振幅増幅で二次改善できるの。これを「振幅増幅の一般化定理」と呼ぶわ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 3314,
+              "endFrame": 3593
+            },
+            {
+              "speaker": "A",
+              "text": "量子ウォークって何なのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 3601,
+              "endFrame": 3655
+            },
+            {
+              "speaker": "B",
+              "text": "グラフの上を量子的にランダムウォークする技術ね。古典のランダムウォークと似ているけど、量子干渉によって広がり方が根本的に異なるの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 3663,
+              "endFrame": 3901
+            },
+            {
+              "speaker": "A",
+              "text": "どんなところが違うのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 3908,
+              "endFrame": 3961
+            },
+            {
+              "speaker": "B",
+              "text": "古典のランダムウォークはn歩でルートnの距離しか進めないけど、量子ウォークはnの距離まで広がれるの。二次加速よ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 3969,
+              "endFrame": 4177
+            },
+            {
+              "speaker": "A",
+              "text": "グラフ探索に使えるのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 4184,
+              "endFrame": 4244
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。マルコフ連鎖を使う古典アルゴリズムがあれば、それを量子化するとスペクトルギャップという量が二次改善されるの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 4252,
+              "endFrame": 4452
+            },
+            {
+              "speaker": "A",
+              "text": "スペクトルギャップって何なのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 4460,
+              "endFrame": 4521
+            },
+            {
+              "speaker": "B",
+              "text": "グラフの隣接行列の固有値の最大値と2番目の値の差よ。これが大きいほどランダムウォークが速く「混ざる」、つまり目標に近づく速さの指標なの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 4529,
+              "endFrame": 4810
+            },
+            {
+              "speaker": "A",
+              "text": "三角形探索って何なのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 4818,
+              "endFrame": 4887
+            },
+            {
+              "speaker": "B",
+              "text": "グラフの中に三角形（3頂点が全て繋がっているセット）があるかを調べる問題ね。古典はN頂点でNの2乗のクエリが必要よ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 4895,
+              "endFrame": 5148
+            },
+            {
+              "speaker": "A",
+              "text": "量子ウォークで速くなるのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 5156,
+              "endFrame": 5216
+            },
+            {
+              "speaker": "B",
+              "text": "Nの4/3乗程度に改善できるわ。量子ウォークの理論的成功例として有名で、量子ウォーク探索の教科書的な問題よ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 5223,
+              "endFrame": 5469
+            },
+            {
+              "speaker": "A",
+              "text": "QAOAって何なのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 5477,
+              "endFrame": 5539
+            },
+            {
+              "speaker": "B",
+              "text": "Quantum Approximate Optimization Algorithm、量子近似最適化アルゴリズムよ。キューエーオーエーと読むわ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 5546,
+              "endFrame": 5896
+            },
+            {
+              "speaker": "A",
+              "text": "何を最適化するのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 5903,
+              "endFrame": 5957
+            },
+            {
+              "speaker": "B",
+              "text": "組み合わせ最適化問題ね。旅行者問題・スケジューリング・ポートフォリオ最適化など、多くの実問題が当てはまるわ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 5965,
+              "endFrame": 6190
+            },
+            {
+              "speaker": "A",
+              "text": "古典コンピュータでも難しい問題なのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 6197,
+              "endFrame": 6283
+            },
+            {
+              "speaker": "B",
+              "text": "そう。NP困難と呼ばれるクラスの問題が多くて、最悪ケースでは古典でも指数時間かかるの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 6291,
+              "endFrame": 6473
+            },
+            {
+              "speaker": "A",
+              "text": "QAOAはそれを解けるのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 6481,
+              "endFrame": 6552
+            },
+            {
+              "speaker": "B",
+              "text": "正確には「近似解」を求めるアルゴリズムよ。最適解の保証はないけど、いい近似解を効率よく見つけることを目指しているの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 6559,
+              "endFrame": 6802
+            },
+            {
+              "speaker": "A",
+              "text": "どんな仕組みなのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 6809,
+              "endFrame": 6852
+            },
+            {
+              "speaker": "B",
+              "text": "コスト演算子とミキサー演算子を交互に適用して、良いコスト関数の値が得られる量子状態に向かって最適化するの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 6860,
+              "endFrame": 7068
+            },
+            {
+              "speaker": "A",
+              "text": "パラメータを古典コンピュータで調整するのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 7076,
+              "endFrame": 7167
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。これが変分量子アルゴリズムの特徴ね。量子回路で期待値を評価→古典で最適化→パラメータ更新→繰り返し、というループを回すの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 7174,
+              "endFrame": 7460
+            },
+            {
+              "speaker": "A",
+              "text": "NISKデバイス向けなのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 7468,
+              "endFrame": 7537
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。回路の深さが浅くても動くよう設計されているの。ただし古典との比較でどのくらいの優位性があるかは、現在も研究中のテーマよ。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 7544,
+              "endFrame": 7801
+            },
+            {
+              "speaker": "A",
+              "text": "量子アニーリングとどう違うのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 7808,
+              "endFrame": 7876
+            },
+            {
+              "speaker": "B",
+              "text": "量子アニーリングはD-Waveなどが実装している別のアプローチ。問題を磁石の系に対応させて基底状態（エネルギー最小）を見つけるの。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 7884,
+              "endFrame": 8153
+            },
+            {
+              "speaker": "A",
+              "text": "QAOAとどちらが優れているのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 8160,
+              "endFrame": 8245
+            },
+            {
+              "speaker": "B",
+              "text": "問題によって異なるわ。理論的な優位性の証明はまだ難しく、活発な研究分野ね。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 8252,
+              "endFrame": 8427
+            },
+            {
+              "speaker": "A",
+              "text": "探索と最適化はまとめると何が大事なのだ？",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 8435,
+              "endFrame": 8533
+            },
+            {
+              "speaker": "B",
+              "text": "グローバーの二次加速は理論的に最適で、振幅増幅という汎用技術の核心。量子ウォークもグラフ上の探索で有効。QAOAは近未来の応用候補ね。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 8540,
+              "endFrame": 8846
+            },
+            {
+              "speaker": "A",
+              "text": "次はシミュレーションなのだ！",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 8853,
+              "endFrame": 8905
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。量子コンピュータが最も早く実用的な優位性を発揮できると期待されている分野ね。",
+              "section": "探索と最適化：グローバーとその発展",
+              "startFrame": 8912,
+              "endFrame": 9078
+            }
+          ]
+        }
       },
       {
         "index": 4,
@@ -5775,7 +6176,324 @@
         "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch04.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch04.mp3",
         "markdown": "<h2>量子系のシミュレーション</h2>\n<ul>\n<li>ファインマン提案（1982）: 量子系のシミュレーションには量子コンピュータが自然</li>\n<li>$n$ 粒子系は $2^n$ 次元 → 古典では指数的メモリ・時間が必要</li>\n</ul>\n<p>ハミルトニアン時間発展（積公式/トロッター分解）:\n$$\ne^{-iHt} \\approx \\left(\\prod_k e^{-iH_k t/r}\\right)^r, \\quad H = \\sum_k H_k\n$$</p>\n<ul>\n<li>$H_k$: 各項のハミルトニアン（局所的・スパース）</li>\n<li>1次トロッター誤差 $O(t^2/r)$; 高次公式で精度向上</li>\n<li>必要ゲート数は時間 $t$ と精度 $\\epsilon$ に多項式</li>\n</ul>\n<p><strong>変分量子固有値ソルバー（VQE）:</strong>\n$$\nE_0 \\leq \\langle\\psi(\\theta)|H|\\psi(\\theta)\\rangle\n$$</p>\n<ul>\n<li>$|\\psi(\\theta)\\rangle$: パラメータ $\\theta$ の変分量子回路（アンザッツ）</li>\n<li>古典最適化で $\\theta$ を更新し基底エネルギー $E_0$ に接近</li>\n<li>NISQ デバイスで量子化学計算に使用</li>\n</ul>\n<p><strong>応用例:</strong>\n- FeMoCo（鉄モリブデンコファクター）: 窒素固定触媒の電子構造計算\n- 高温超伝導体・ペロブスカイト材料の設計\n- 創薬: タンパク質-薬分子相互作用のシミュレーション</p>",
-        "markdownSource": "## 量子系のシミュレーション\n\n- ファインマン提案（1982）: 量子系のシミュレーションには量子コンピュータが自然\n- $n$ 粒子系は $2^n$ 次元 → 古典では指数的メモリ・時間が必要\n\nハミルトニアン時間発展（積公式/トロッター分解）:\n$$\ne^{-iHt} \\approx \\left(\\prod_k e^{-iH_k t/r}\\right)^r, \\quad H = \\sum_k H_k\n$$\n\n- $H_k$: 各項のハミルトニアン（局所的・スパース）\n- 1次トロッター誤差 $O(t^2/r)$; 高次公式で精度向上\n- 必要ゲート数は時間 $t$ と精度 $\\epsilon$ に多項式\n\n**変分量子固有値ソルバー（VQE）:**\n$$\nE_0 \\leq \\langle\\psi(\\theta)|H|\\psi(\\theta)\\rangle\n$$\n\n- $|\\psi(\\theta)\\rangle$: パラメータ $\\theta$ の変分量子回路（アンザッツ）\n- 古典最適化で $\\theta$ を更新し基底エネルギー $E_0$ に接近\n- NISQ デバイスで量子化学計算に使用\n\n**応用例:**\n- FeMoCo（鉄モリブデンコファクター）: 窒素固定触媒の電子構造計算\n- 高温超伝導体・ペロブスカイト材料の設計\n- 創薬: タンパク質-薬分子相互作用のシミュレーション"
+        "markdownSource": "## 量子系のシミュレーション\n\n- ファインマン提案（1982）: 量子系のシミュレーションには量子コンピュータが自然\n- $n$ 粒子系は $2^n$ 次元 → 古典では指数的メモリ・時間が必要\n\nハミルトニアン時間発展（積公式/トロッター分解）:\n$$\ne^{-iHt} \\approx \\left(\\prod_k e^{-iH_k t/r}\\right)^r, \\quad H = \\sum_k H_k\n$$\n\n- $H_k$: 各項のハミルトニアン（局所的・スパース）\n- 1次トロッター誤差 $O(t^2/r)$; 高次公式で精度向上\n- 必要ゲート数は時間 $t$ と精度 $\\epsilon$ に多項式\n\n**変分量子固有値ソルバー（VQE）:**\n$$\nE_0 \\leq \\langle\\psi(\\theta)|H|\\psi(\\theta)\\rangle\n$$\n\n- $|\\psi(\\theta)\\rangle$: パラメータ $\\theta$ の変分量子回路（アンザッツ）\n- 古典最適化で $\\theta$ を更新し基底エネルギー $E_0$ に接近\n- NISQ デバイスで量子化学計算に使用\n\n**応用例:**\n- FeMoCo（鉄モリブデンコファクター）: 窒素固定触媒の電子構造計算\n- 高温超伝導体・ペロブスカイト材料の設計\n- 創薬: タンパク質-薬分子相互作用のシミュレーション",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 7913,
+          "audioDurationSec": 263.755333,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "量子系のシミュレーションって量子コンピュータで量子現象を再現するのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 18,
+              "endFrame": 158
+            },
+            {
+              "speaker": "B",
+              "text": "その通り。ファインマンが1982年に「量子系を古典コンピュータでシミュレートするのは非効率だ。量子コンピュータを使うべきだ」と提案したのが始まりよ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 165,
+              "endFrame": 463
+            },
+            {
+              "speaker": "A",
+              "text": "なんで古典コンピュータだと難しいのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 470,
+              "endFrame": 551
+            },
+            {
+              "speaker": "B",
+              "text": "n個の量子粒子の状態を記述するには2のn乗個の数が必要ね。50個の粒子で約1000兆個のデータになるわ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 559,
+              "endFrame": 759
+            },
+            {
+              "speaker": "A",
+              "text": "メモリが足りないのだ！",
+              "section": "量子系のシミュレーション",
+              "startFrame": 767,
+              "endFrame": 810
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。粒子数が増えるにつれてメモリが指数的に増える。でも量子コンピュータなら、n量子ビットでそのままn粒子系を表現できるの。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 818,
+              "endFrame": 1065
+            },
+            {
+              "speaker": "A",
+              "text": "ハミルトニアンシミュレーションって何なのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 1072,
+              "endFrame": 1150
+            },
+            {
+              "speaker": "B",
+              "text": "物理系のエネルギーを記述する演算子をハミルトニアンと呼ぶわ。その時間発展、つまり「この系が時間tだけ経過するとどうなるか」を量子コンピュータで計算するのよ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 1157,
+              "endFrame": 1461
+            },
+            {
+              "speaker": "A",
+              "text": "どんな系に使えるのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 1468,
+              "endFrame": 1522
+            },
+            {
+              "speaker": "B",
+              "text": "分子・材料の電子構造、素粒子の格子ゲージ理論、凝縮系物理のモデルなど。基本的に量子力学に従う系全般よ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 1529,
+              "endFrame": 1786
+            },
+            {
+              "speaker": "A",
+              "text": "計算の仕組みはどうなのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 1794,
+              "endFrame": 1855
+            },
+            {
+              "speaker": "B",
+              "text": "ハミルトニアンを小さな項の和に分解して、それぞれを量子ゲートで実装するの。「トロッター分解（積公式）」と呼ばれる手法ね。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 1862,
+              "endFrame": 2097
+            },
+            {
+              "speaker": "A",
+              "text": "トロッター分解って？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 2104,
+              "endFrame": 2152
+            },
+            {
+              "speaker": "B",
+              "text": "exp（A+B）≒exp（A）かけるexp（B）という近似を繰り返し使うの。1次近似から高次近似まで精度を上げられるわ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 2160,
+              "endFrame": 2394
+            },
+            {
+              "speaker": "A",
+              "text": "近似誤差はどれくらいなのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 2401,
+              "endFrame": 2462
+            },
+            {
+              "speaker": "B",
+              "text": "分割数を増やすほど精度が上がるわ。目標精度イプシロンに対して、必要な量子ゲート数は精度とシミュレーション時間に多項式で増えるの。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 2469,
+              "endFrame": 2713
+            },
+            {
+              "speaker": "A",
+              "text": "量子化学計算への応用が大きいのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 2720,
+              "endFrame": 2806
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。分子の電子エネルギー計算は「強相関電子系」と呼ばれる難問で、古典計算では原理的な限界があるの。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 2814,
+              "endFrame": 3050
+            },
+            {
+              "speaker": "A",
+              "text": "強相関電子系って？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 3058,
+              "endFrame": 3114
+            },
+            {
+              "speaker": "B",
+              "text": "電子同士の相互作用が無視できないくらい強い系のことよ。触媒・超伝導体・高温超伝導など重要な材料が多いけど、古典計算は非常に難しいの。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 3122,
+              "endFrame": 3420
+            },
+            {
+              "speaker": "A",
+              "text": "フェモコってよく聞くのだ",
+              "section": "量子系のシミュレーション",
+              "startFrame": 3427,
+              "endFrame": 3475
+            },
+            {
+              "speaker": "B",
+              "text": "鉄モリブデンコファクター（FeMoCo）は窒素固定酵素の活性部位ね。N2（窒素分子）をNH3（アンモニア）に変換する触媒で、農業の肥料生産に直結するの。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 3482,
+              "endFrame": 3802
+            },
+            {
+              "speaker": "A",
+              "text": "なぜ量子コンピュータが必要なのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 3809,
+              "endFrame": 3883
+            },
+            {
+              "speaker": "B",
+              "text": "FeMoCoは電子間の相関が非常に強く、古典計算では正確なエネルギー計算が難しいの。量子コンピュータなら自然に扱える可能性があるわ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 3890,
+              "endFrame": 4153
+            },
+            {
+              "speaker": "A",
+              "text": "VQEって何なのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 4161,
+              "endFrame": 4215
+            },
+            {
+              "speaker": "B",
+              "text": "Variational Quantum Eigensolver、変分量子固有値ソルバーの略でブイキューイーよ。ハミルトニアンの最小エネルギーを変分法で求める手法ね。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 4223,
+              "endFrame": 4625
+            },
+            {
+              "speaker": "A",
+              "text": "変分法って？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 4633,
+              "endFrame": 4675
+            },
+            {
+              "speaker": "B",
+              "text": "試行状態のパラメータを調整して、エネルギーの期待値を最小化するの。試行状態のエネルギーは必ず真の基底エネルギー以上なので、最小化すると近づいていけるわ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 4682,
+              "endFrame": 4985
+            },
+            {
+              "speaker": "A",
+              "text": "QAOAと同じ変分量子アルゴリズムなのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 4993,
+              "endFrame": 5098
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。どちらも量子回路のパラメータを古典コンピュータで最適化するの。VQEは化学・材料向け、QAOAは組み合わせ最適化向けね。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 5106,
+              "endFrame": 5382
+            },
+            {
+              "speaker": "A",
+              "text": "VQEはNISKデバイスで動くのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 5389,
+              "endFrame": 5485
+            },
+            {
+              "speaker": "B",
+              "text": "理論的にはそう設計されているわ。ただしノイズの影響でエラーが蓄積し、精度が落ちる問題があるの。現在改善研究が続いているわ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 5493,
+              "endFrame": 5750
+            },
+            {
+              "speaker": "A",
+              "text": "量子シミュレーションで何がわかると世界が変わるのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 5758,
+              "endFrame": 5859
+            },
+            {
+              "speaker": "B",
+              "text": "新材料の設計よ。高温超伝導体・有機太陽電池・触媒など、原子レベルで設計できれば性能を大幅に改善できる可能性があるわ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 5866,
+              "endFrame": 6148
+            },
+            {
+              "speaker": "A",
+              "text": "創薬にも使えるのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 6155,
+              "endFrame": 6209
+            },
+            {
+              "speaker": "B",
+              "text": "タンパク質と薬分子の相互作用をシミュレートして、より効果的な薬を設計できるかもしれないわ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 6216,
+              "endFrame": 6389
+            },
+            {
+              "speaker": "A",
+              "text": "FeMoCoの仕組みがわかれば農業が変わるのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 6396,
+              "endFrame": 6485
+            },
+            {
+              "speaker": "B",
+              "text": "FeMoCoの触媒機構が解明されれば、現在の高エネルギー消費なアンモニア合成法（ハーバー・ボッシュ法）を、常温常圧で動くプロセスに替えられる可能性があるの。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 6493,
+              "endFrame": 6815
+            },
+            {
+              "speaker": "A",
+              "text": "ハーバー・ボッシュ法ってどれくらいエネルギーを使うのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 6823,
+              "endFrame": 6938
+            },
+            {
+              "speaker": "B",
+              "text": "世界の総エネルギー消費の約1〜2%を使っているわ。改善できれば地球規模の省エネになるの。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 6945,
+              "endFrame": 7135
+            },
+            {
+              "speaker": "A",
+              "text": "どれくらいの規模の量子コンピュータが必要なのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 7143,
+              "endFrame": 7238
+            },
+            {
+              "speaker": "B",
+              "text": "FeMoCoの計算に必要な論理量子ビットは数百から数千規模という見積もりがあるわ。現在よりずっと大規模よ。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 7246,
+              "endFrame": 7440
+            },
+            {
+              "speaker": "A",
+              "text": "量子シミュレーションは最初の「実用的量子優位性」の候補なのだ？",
+              "section": "量子系のシミュレーション",
+              "startFrame": 7448,
+              "endFrame": 7600
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。この論文でも「量子コンピュータが最初に古典を超える分野はシミュレーション」と述べているわ。次は線形方程式系のアルゴリズムと近未来の展望を見ていきましょう。",
+              "section": "量子系のシミュレーション",
+              "startFrame": 7608,
+              "endFrame": 7913
+            }
+          ]
+        }
       },
       {
         "index": 5,
@@ -5783,10 +6501,2309 @@
         "videoUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch05.mp4",
         "audioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_ch05.mp3",
         "markdown": "<h2>線形方程式系とNISQ時代</h2>\n<p><strong>HHL アルゴリズム（Harrow-Hassidim-Lloyd 2009）:</strong></p>\n<p>$$\nAx = b \\quad \\Rightarrow \\quad |x\\rangle \\propto A^{-1}|b\\rangle\n$$</p>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>計算量</th>\n<th>$N$ 依存性</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>古典（共役勾配法）</td>\n<td>$O(N\\kappa\\log(1/\\epsilon))$</td>\n<td>$N$ に比例</td>\n</tr>\n<tr>\n<td>量子（HHL）</td>\n<td>$O(\\kappa^2 \\log N / \\epsilon^2)$</td>\n<td>$\\log N$ — 指数的高速化</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>$\\kappa$: 条件数（最大/最小固有値比）</li>\n<li><strong>制約（細字条件）</strong>: 解を全て読み出すと $O(N)$ かかる</li>\n<li>有効な用途: 内積・期待値計算、量子系のアウトプット</li>\n</ul>\n<p><strong>NISQ 時代の現状:</strong>\n- 物理ゲートエラー率: 0.1〜1%（深い回路では誤差蓄積）\n- Google（2023）表面符号で「しきい値定理」を実証\n  - 物理量子ビット増加 → 論理エラー指数的減少を確認\n- 論理量子ビット1つに物理量子ビット数千が必要</p>\n<p><strong>量子優位性の厳密な実証は現在も進行中:</strong>\n- VQE/QAOA: NISQ デバイスで実行可能だが古典との差が不明確\n- 脱量子化（dequantization）: 量子機械学習の一部は古典でも同等と判明\n- 量子化学シミュレーションが「最初の実用的量子優位性」の最有力候補</p>\n<p><strong>近未来のロードマップ:</strong>\n- 2020年代後半: フォールトトレラント量子コンピュータの初期実証\n- 2030年代以降: 実用規模での量子化学・材料設計への応用</p>",
-        "markdownSource": "## 線形方程式系とNISQ時代\n\n**HHL アルゴリズム（Harrow-Hassidim-Lloyd 2009）:**\n\n$$\nAx = b \\quad \\Rightarrow \\quad |x\\rangle \\propto A^{-1}|b\\rangle\n$$\n\n| | 計算量 | $N$ 依存性 |\n|--|------|-----------|\n| 古典（共役勾配法） | $O(N\\kappa\\log(1/\\epsilon))$ | $N$ に比例 |\n| 量子（HHL） | $O(\\kappa^2 \\log N / \\epsilon^2)$ | $\\log N$ — 指数的高速化 |\n\n- $\\kappa$: 条件数（最大/最小固有値比）\n- **制約（細字条件）**: 解を全て読み出すと $O(N)$ かかる\n- 有効な用途: 内積・期待値計算、量子系のアウトプット\n\n**NISQ 時代の現状:**\n- 物理ゲートエラー率: 0.1〜1%（深い回路では誤差蓄積）\n- Google（2023）表面符号で「しきい値定理」を実証\n  - 物理量子ビット増加 → 論理エラー指数的減少を確認\n- 論理量子ビット1つに物理量子ビット数千が必要\n\n**量子優位性の厳密な実証は現在も進行中:**\n- VQE/QAOA: NISQ デバイスで実行可能だが古典との差が不明確\n- 脱量子化（dequantization）: 量子機械学習の一部は古典でも同等と判明\n- 量子化学シミュレーションが「最初の実用的量子優位性」の最有力候補\n\n**近未来のロードマップ:**\n- 2020年代後半: フォールトトレラント量子コンピュータの初期実証\n- 2030年代以降: 実用規模での量子化学・材料設計への応用"
+        "markdownSource": "## 線形方程式系とNISQ時代\n\n**HHL アルゴリズム（Harrow-Hassidim-Lloyd 2009）:**\n\n$$\nAx = b \\quad \\Rightarrow \\quad |x\\rangle \\propto A^{-1}|b\\rangle\n$$\n\n| | 計算量 | $N$ 依存性 |\n|--|------|-----------|\n| 古典（共役勾配法） | $O(N\\kappa\\log(1/\\epsilon))$ | $N$ に比例 |\n| 量子（HHL） | $O(\\kappa^2 \\log N / \\epsilon^2)$ | $\\log N$ — 指数的高速化 |\n\n- $\\kappa$: 条件数（最大/最小固有値比）\n- **制約（細字条件）**: 解を全て読み出すと $O(N)$ かかる\n- 有効な用途: 内積・期待値計算、量子系のアウトプット\n\n**NISQ 時代の現状:**\n- 物理ゲートエラー率: 0.1〜1%（深い回路では誤差蓄積）\n- Google（2023）表面符号で「しきい値定理」を実証\n  - 物理量子ビット増加 → 論理エラー指数的減少を確認\n- 論理量子ビット1つに物理量子ビット数千が必要\n\n**量子優位性の厳密な実証は現在も進行中:**\n- VQE/QAOA: NISQ デバイスで実行可能だが古典との差が不明確\n- 脱量子化（dequantization）: 量子機械学習の一部は古典でも同等と判明\n- 量子化学シミュレーションが「最初の実用的量子優位性」の最有力候補\n\n**近未来のロードマップ:**\n- 2020年代後半: フォールトトレラント量子コンピュータの初期実証\n- 2030年代以降: 実用規模での量子化学・材料設計への応用",
+        "timeline": {
+          "version": 1,
+          "source": "tts_voicevox",
+          "fps": 30,
+          "totalFrames": 11087,
+          "audioDurationSec": 369.568667,
+          "cues": [
+            {
+              "speaker": "A",
+              "text": "線形方程式系って何なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 18,
+              "endFrame": 93
+            },
+            {
+              "speaker": "B",
+              "text": "Aかけるxはbという形の方程式ね。Aが行列、xとbがベクトル。N個の変数とN個の方程式をまとめた連立一次方程式よ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 100,
+              "endFrame": 380
+            },
+            {
+              "speaker": "A",
+              "text": "よく使う問題なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 388,
+              "endFrame": 439
+            },
+            {
+              "speaker": "B",
+              "text": "物理・工学・機械学習・金融モデリングと、あらゆる分野の計算の中心にある問題ね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 447,
+              "endFrame": 635
+            },
+            {
+              "speaker": "A",
+              "text": "HHLって誰のことなのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 643,
+              "endFrame": 715
+            },
+            {
+              "speaker": "B",
+              "text": "Harrow・Hassidim・Lloydという3人の研究者の頭文字よ。2009年に発表したアルゴリズムね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 722,
+              "endFrame": 1006
+            },
+            {
+              "speaker": "A",
+              "text": "どれくらい速いのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 1013,
+              "endFrame": 1059
+            },
+            {
+              "speaker": "B",
+              "text": "古典の共役勾配法はNかけるカッパかけるログ1/イプシロン程度の計算量。HHLはカッパの2乗かけるログNをイプシロンの2乗で割った程度で、Nに対して対数スケールになるの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 1066,
+              "endFrame": 1407
+            },
+            {
+              "speaker": "A",
+              "text": "カッパって何なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 1415,
+              "endFrame": 1462
+            },
+            {
+              "speaker": "B",
+              "text": "条件数カッパね。行列の最大固有値と最小固有値の比で、行列が「どれくらい扱いにくいか」を表す指標よ。カッパが大きいと問題が難しくなるの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 1469,
+              "endFrame": 1778
+            },
+            {
+              "speaker": "A",
+              "text": "対数って超速いのだ！",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 1785,
+              "endFrame": 1838
+            },
+            {
+              "speaker": "B",
+              "text": "N=100万なら古典は100万に比例するのに対し、HHLはログNで約20程度になるわ。理論上は指数的な高速化よ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 1845,
+              "endFrame": 2102
+            },
+            {
+              "speaker": "A",
+              "text": "仕組みはどうなってるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 2110,
+              "endFrame": 2162
+            },
+            {
+              "speaker": "B",
+              "text": "3つのステップよ。まず右辺bを量子状態にエンコードする。次に量子位相推定で行列Aの固有値を読み出す。最後に固有値の逆数を量子状態に乗じて、Aの逆行列を適用した状態を作るの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 2170,
+              "endFrame": 2564
+            },
+            {
+              "speaker": "A",
+              "text": "量子位相推定って何なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 2572,
+              "endFrame": 2639
+            },
+            {
+              "speaker": "B",
+              "text": "ユニタリ演算子の固有値の位相を推定するアルゴリズムよ。ショアのアルゴリズムにも使われている基本的な量子サブルーティンね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 2647,
+              "endFrame": 2863
+            },
+            {
+              "speaker": "A",
+              "text": "最後に解xを取り出すのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 2870,
+              "endFrame": 2941
+            },
+            {
+              "speaker": "B",
+              "text": "ここが重要な注意点ね。量子状態として|x>が得られるけど、これを古典的に全て読み出すには測定を何度も繰り返す必要があって、O(N)かかってしまうの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 2948,
+              "endFrame": 3298
+            },
+            {
+              "speaker": "A",
+              "text": "せっかく速く解いたのに読み出しが遅いのだ...",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 3306,
+              "endFrame": 3390
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。これがHHLの「細字条件」と呼ばれる制約の1つ。解xそのものが欲しい場合は、量子の利点がなくなってしまうの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 3398,
+              "endFrame": 3660
+            },
+            {
+              "speaker": "A",
+              "text": "じゃあどんな場合に使えるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 3667,
+              "endFrame": 3730
+            },
+            {
+              "speaker": "B",
+              "text": "解全体ではなく、解の内積や期待値だけが必要な場合よ。機械学習でのモデル評価や、物理シミュレーションでのエネルギー計算などに向いているの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 3738,
+              "endFrame": 4006
+            },
+            {
+              "speaker": "A",
+              "text": "状態準備も問題なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 4014,
+              "endFrame": 4075
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。入力データbを量子状態にエンコードする時間がO(N)かかることが多くて、これがボトルネックになりうるわ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 4083,
+              "endFrame": 4313
+            },
+            {
+              "speaker": "A",
+              "text": "量子ランダムアクセスメモリ（QRAM）が解決策になるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 4321,
+              "endFrame": 4420
+            },
+            {
+              "speaker": "B",
+              "text": "QRAMがあれば入力データを対数時間でロードできるわ。でも実用的なQRAMの実装はまだ大きな研究課題よ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 4427,
+              "endFrame": 4632
+            },
+            {
+              "speaker": "A",
+              "text": "脱量子化って何なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 4639,
+              "endFrame": 4694
+            },
+            {
+              "speaker": "B",
+              "text": "HHLを参考にして提案された量子機械学習アルゴリズムのいくつかが、古典でも同様に解けることが示されたの。「脱量子化（でくぉんたいぜーしょん）」と呼ばれるわ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 4701,
+              "endFrame": 5004
+            },
+            {
+              "speaker": "A",
+              "text": "量子コンピュータが不要になってしまうのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 5012,
+              "endFrame": 5094
+            },
+            {
+              "speaker": "B",
+              "text": "その問題の量子優位性は失われるわ。でも「本当に量子でしか解けない問題は何か」を明確にする上で重要な研究ね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 5101,
+              "endFrame": 5338
+            },
+            {
+              "speaker": "A",
+              "text": "NISKって改めて説明してほしいのだ",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 5345,
+              "endFrame": 5439
+            },
+            {
+              "speaker": "B",
+              "text": "Noisy Intermediate-Scale Quantum の略。50から数百量子ビット規模で、誤り訂正なしの現行量子コンピュータのことよ。プレスキルが2018年に命名したわ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 5446,
+              "endFrame": 5891
+            },
+            {
+              "speaker": "A",
+              "text": "誤り訂正がないとどんな問題があるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 5898,
+              "endFrame": 5990
+            },
+            {
+              "speaker": "B",
+              "text": "ゲートのエラーが蓄積して、深い回路では計算結果がノイズに埋もれてしまうの。現在の物理ゲートエラー率は約0.1%から1%程度よ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 5998,
+              "endFrame": 6276
+            },
+            {
+              "speaker": "A",
+              "text": "それって大きいのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 6284,
+              "endFrame": 6331
+            },
+            {
+              "speaker": "B",
+              "text": "1000ゲートの回路で全部正しい確率が0.999の1000乗で37%。2000ゲートでは14%になるわ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 6338,
+              "endFrame": 6564
+            },
+            {
+              "speaker": "A",
+              "text": "量子誤り訂正はどれくらい進んでいるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 6571,
+              "endFrame": 6668
+            },
+            {
+              "speaker": "B",
+              "text": "Googleが2023年に「表面符号」と呼ばれる誤り訂正符号で、物理量子ビットを増やすほど論理エラー率が下がることを実証したわ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 6676,
+              "endFrame": 6940
+            },
+            {
+              "speaker": "A",
+              "text": "それは大きな進歩なのだ！",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 6947,
+              "endFrame": 7001
+            },
+            {
+              "speaker": "B",
+              "text": "そうよ。「しきい値定理」の実証ね。ゲートエラー率が一定以下なら、物理量子ビットを増やすほど論理エラーを指数的に減らせることが示されたの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 7009,
+              "endFrame": 7277
+            },
+            {
+              "speaker": "A",
+              "text": "表面符号って何なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 7284,
+              "endFrame": 7342
+            },
+            {
+              "speaker": "B",
+              "text": "2次元格子状に量子ビットを並べて、お互いの誤りを検出・訂正する誤り訂正符号ね。論理量子ビット1つに物理量子ビット何百から何千もいるのが難点よ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 7350,
+              "endFrame": 7661
+            },
+            {
+              "speaker": "A",
+              "text": "量子優位性の実証はどうなってるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 7669,
+              "endFrame": 7754
+            },
+            {
+              "speaker": "B",
+              "text": "Googleが2019年に53量子ビットの量子回路で「量子超越性」を主張したわ。古典コンピュータで1万年かかると主張したの。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 7762,
+              "endFrame": 8015
+            },
+            {
+              "speaker": "A",
+              "text": "それは本当なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 8023,
+              "endFrame": 8071
+            },
+            {
+              "speaker": "B",
+              "text": "その後、古典シミュレーションが改善されて実際にはもっと短い時間でできることが分かったわ。量子優位性の厳密な実証は現在も続く研究テーマね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 8078,
+              "endFrame": 8347
+            },
+            {
+              "speaker": "A",
+              "text": "NISKで実用的な優位性が出る分野はあるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 8355,
+              "endFrame": 8472
+            },
+            {
+              "speaker": "B",
+              "text": "最有力候補は量子化学シミュレーションよ。VQEを使って古典では難しい分子計算を行う研究が進んでいるわ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 8480,
+              "endFrame": 8700
+            },
+            {
+              "speaker": "A",
+              "text": "フォールトトレラント量子コンピュータっていつ来るのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 8708,
+              "endFrame": 8801
+            },
+            {
+              "speaker": "B",
+              "text": "楽観的な見積もりで2030年代、慎重な見方では2040年代以降とも言われているわ。研究の進展次第ね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 8808,
+              "endFrame": 9032
+            },
+            {
+              "speaker": "A",
+              "text": "今後どんな発展が期待されるのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 9039,
+              "endFrame": 9115
+            },
+            {
+              "speaker": "B",
+              "text": "まず誤り訂正の改善でフォールトトレラント量子コンピュータの実現。次に量子化学での実用的優位性の実証。そして全く新しい量子アルゴリズムの発見ね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 9122,
+              "endFrame": 9418
+            },
+            {
+              "speaker": "A",
+              "text": "このモンタナロの論文は今でも重要なのだ？",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 9426,
+              "endFrame": 9517
+            },
+            {
+              "speaker": "B",
+              "text": "2016年に発表されて今でも広く引用されているわ。量子アルゴリズムの全体像を俯瞰できる、入門として最適な論文ね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 9525,
+              "endFrame": 9764
+            },
+            {
+              "speaker": "A",
+              "text": "最後にまとめてほしいのだ！",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 9772,
+              "endFrame": 9827
+            },
+            {
+              "speaker": "B",
+              "text": "量子アルゴリズムの4本柱。1：ショアの指数加速（暗号解読・素因数分解）。2：グローバーの二次加速（探索・振幅増幅）。3：ハミルトニアンシミュレーション（量子化学・材料設計）。4：HHLの対数加速（線形方程式・機械学習）。それぞれ量子の違う性質を巧みに利用しているわ。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 9835,
+              "endFrame": 10523
+            },
+            {
+              "speaker": "A",
+              "text": "量子コンピュータがあっても全部が速くなるわけじゃないのだ",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 10531,
+              "endFrame": 10635
+            },
+            {
+              "speaker": "B",
+              "text": "そう。量子優位性が出る問題は限られていて、問題の構造に合ったアルゴリズムを選ぶことが重要ね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 10643,
+              "endFrame": 10834
+            },
+            {
+              "speaker": "A",
+              "text": "今後も目が離せない分野なのだ！ありがとうなのだ！",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 10841,
+              "endFrame": 10944
+            },
+            {
+              "speaker": "B",
+              "text": "量子コンピュータの研究は進化が速いから、最新情報もチェックしてみてね。",
+              "section": "線形方程式系とNISQ時代",
+              "startFrame": 10952,
+              "endFrame": 11087
+            }
+          ]
+        }
       }
     ],
-    "arxivUrl": "https://arxiv.org/abs/1511.04206"
+    "arxivUrl": "https://arxiv.org/abs/1511.04206",
+    "webAudioUrl": "https://archive.org/download/paper-explain-1511-04206/paper_1511.04206_web.m4a",
+    "markdownSource": "> 出典: Ashley Montanaro, \"Quantum algorithms: an overview\", npj Quantum Information 2, 15023 (2016) / arXiv:1511.04206\n\n## 量子アルゴリズムとは何か\n\n- 量子コンピュータは**重ね合わせ・量子もつれ・干渉**を利用して古典計算を超える\n- 量子優位性のある主要領域: 暗号解読・探索と最適化・量子シミュレーション・線形方程式系\n\n$n$ 量子ビットの状態空間は $2^n$ 次元:\n$$\n|\\psi\\rangle = \\sum_{x \\in \\{0,1\\}^n} \\alpha_x |x\\rangle, \\quad \\sum_x |\\alpha_x|^2 = 1\n$$\n\n- $|\\psi\\rangle$: $n$ 量子ビットの純粋状態\n- $\\alpha_x$: 基底 $|x\\rangle$ の確率振幅（複素数）\n- 測定確率: $|\\alpha_x|^2$\n\n**量子優位性の源泉:**\n1. **重ね合わせ**: $n$ 量子ビットで $2^n$ の状態を同時表現\n2. **量子もつれ**: 複数量子ビット間の非古典的相関\n3. **干渉**: 正しい答えへの振幅を強め、誤りを打ち消す\n\n**計算複雑性による優位性の分類:**\n- クエリ複雑性: オラクルへの問い合わせ回数\n- ゲート複雑性: 量子ゲートの総数（実行時間に近い）\n\n## 暗号解読：ショアのアルゴリズム\n\n- **ショアのアルゴリズム（1994）**: 整数の素因数分解を多項式時間で解く\n- 古典最速（数体篩法）: $e^{O(N^{1/3})}$（指数時間）\n- 量子（ショア）: $O((\\log N)^3)$（多項式時間）— **指数的高速化**\n\n位数発見の核心:\n$$\na^r \\equiv 1 \\pmod{N}, \\quad \\gcd\\!\\left(a^{r/2} \\pm 1, N\\right) = \\text{素因数}\n$$\n\n- $N$: 分解したい整数、$a$: $N$ と互いに素なランダム整数\n- 量子フーリエ変換（QFT）で周期 $r$（位数）を効率よく取り出す\n- $r$ が偶数のとき、$a^{r/2} \\pm 1$ と $N$ の最大公約数が因数\n\n**影響を受ける暗号:**\n| 暗号 | 困難問題 | 量子への対処 |\n|------|---------|------------|\n| RSA | 素因数分解 | 破られる |\n| 楕円曲線暗号 | 離散対数 | 破られる |\n| AES | 総当たり（Grover二次加速） | 鍵長2倍で対応可 |\n\n**耐量子暗号（PQC）**: NIST が 2024 年に格子ベース等の標準を確定\n\n## 探索と最適化：グローバーとその発展\n\n- **グローバーのアルゴリズム（1996）**: $N$ 件の非構造化探索を $O(\\sqrt{N})$ で解く（古典 $O(N)$）\n- 最適性証明: $\\Omega(\\sqrt{N})$ が量子クエリ複雑性の下限\n\n振幅増幅の1ステップ:\n$$\n|\\psi\\rangle \\xrightarrow{O} \\text{正解に位相反転} \\xrightarrow{D} \\text{平均周りに反転}\n$$\n\n- 正解の確率振幅を毎回 $O(1/\\sqrt{N})$ ずつ増幅\n- 約 $\\frac{\\pi}{4}\\sqrt{N}$ 回の反復で確率 $\\approx 1$\n\n**量子ウォーク（Quantum Walk）:**\n- グラフ上の量子版ランダムウォーク\n- マルコフ連鎖のスペクトルギャップ $\\delta$ を二次改善: $\\delta_Q \\approx \\sqrt{\\delta_C}$\n- 三角形探索: 古典 $O(N^2)$ → 量子 $O(N^{4/3})$\n\n**QAOA（量子近似最適化アルゴリズム）:**\n$$\n|\\gamma, \\beta\\rangle = \\prod_{p=1}^{P} e^{-i\\beta_p B} e^{-i\\gamma_p C} |+\\rangle^{\\otimes n}\n$$\n\n- $C$: コスト演算子（目的関数）、$B$: ミキサー演算子\n- NISQ デバイス向け変分アルゴリズム; 組み合わせ最適化に適用\n\n## 量子系のシミュレーション\n\n- ファインマン提案（1982）: 量子系のシミュレーションには量子コンピュータが自然\n- $n$ 粒子系は $2^n$ 次元 → 古典では指数的メモリ・時間が必要\n\nハミルトニアン時間発展（積公式/トロッター分解）:\n$$\ne^{-iHt} \\approx \\left(\\prod_k e^{-iH_k t/r}\\right)^r, \\quad H = \\sum_k H_k\n$$\n\n- $H_k$: 各項のハミルトニアン（局所的・スパース）\n- 1次トロッター誤差 $O(t^2/r)$; 高次公式で精度向上\n- 必要ゲート数は時間 $t$ と精度 $\\epsilon$ に多項式\n\n**変分量子固有値ソルバー（VQE）:**\n$$\nE_0 \\leq \\langle\\psi(\\theta)|H|\\psi(\\theta)\\rangle\n$$\n\n- $|\\psi(\\theta)\\rangle$: パラメータ $\\theta$ の変分量子回路（アンザッツ）\n- 古典最適化で $\\theta$ を更新し基底エネルギー $E_0$ に接近\n- NISQ デバイスで量子化学計算に使用\n\n**応用例:**\n- FeMoCo（鉄モリブデンコファクター）: 窒素固定触媒の電子構造計算\n- 高温超伝導体・ペロブスカイト材料の設計\n- 創薬: タンパク質-薬分子相互作用のシミュレーション\n\n## 線形方程式系とNISQ時代\n\n**HHL アルゴリズム（Harrow-Hassidim-Lloyd 2009）:**\n\n$$\nAx = b \\quad \\Rightarrow \\quad |x\\rangle \\propto A^{-1}|b\\rangle\n$$\n\n| | 計算量 | $N$ 依存性 |\n|--|------|-----------|\n| 古典（共役勾配法） | $O(N\\kappa\\log(1/\\epsilon))$ | $N$ に比例 |\n| 量子（HHL） | $O(\\kappa^2 \\log N / \\epsilon^2)$ | $\\log N$ — 指数的高速化 |\n\n- $\\kappa$: 条件数（最大/最小固有値比）\n- **制約（細字条件）**: 解を全て読み出すと $O(N)$ かかる\n- 有効な用途: 内積・期待値計算、量子系のアウトプット\n\n**NISQ 時代の現状:**\n- 物理ゲートエラー率: 0.1〜1%（深い回路では誤差蓄積）\n- Google（2023）表面符号で「しきい値定理」を実証\n  - 物理量子ビット増加 → 論理エラー指数的減少を確認\n- 論理量子ビット1つに物理量子ビット数千が必要\n\n**量子優位性の厳密な実証は現在も進行中:**\n- VQE/QAOA: NISQ デバイスで実行可能だが古典との差が不明確\n- 脱量子化（dequantization）: 量子機械学習の一部は古典でも同等と判明\n- 量子化学シミュレーションが「最初の実用的量子優位性」の最有力候補\n\n**近未来のロードマップ:**\n- 2020年代後半: フォールトトレラント量子コンピュータの初期実証\n- 2030年代以降: 実用規模での量子化学・材料設計への応用\n\n## 参考ソース\n\n- https://arxiv.org/abs/1511.04206 — Ashley Montanaro, \"Quantum algorithms: an overview\", npj Quantum Information 2, 15023 (2016)",
+    "timeline": {
+      "fps": 30,
+      "totalFrames": 50319,
+      "cues": [
+        {
+          "speaker": "A",
+          "text": "みんな、こんにちはなのだ！今日も量子コンピュータの話をするのだ！",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 18,
+          "endFrame": 180
+        },
+        {
+          "speaker": "B",
+          "text": "今日はアシュリー・モンタナロという研究者の「量子アルゴリズム概観」という論文を解説するわ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 187,
+          "endFrame": 404
+        },
+        {
+          "speaker": "A",
+          "text": "どんな論文なのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 412,
+          "endFrame": 465
+        },
+        {
+          "speaker": "B",
+          "text": "量子コンピュータで使うアルゴリズムの全体像を整理した、とても重要なサーベイ論文よ。2015年に公開されて今でも広く引用されているわ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 472,
+          "endFrame": 784
+        },
+        {
+          "speaker": "A",
+          "text": "どんなことが書いてあるのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 792,
+          "endFrame": 858
+        },
+        {
+          "speaker": "B",
+          "text": "4つの分野が中心ね。暗号解読・探索と最適化・量子系のシミュレーション・線形方程式を解くこと。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 866,
+          "endFrame": 1130
+        },
+        {
+          "speaker": "A",
+          "text": "まず量子コンピュータの基本から教えてほしいのだ！",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 1137,
+          "endFrame": 1251
+        },
+        {
+          "speaker": "B",
+          "text": "普通のコンピュータはビットという単位で情報を扱うわ。0か1、電球でいえばオフかオンかの2通りね。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 1258,
+          "endFrame": 1489
+        },
+        {
+          "speaker": "A",
+          "text": "電灯のスイッチみたいなのだ！",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 1496,
+          "endFrame": 1566
+        },
+        {
+          "speaker": "B",
+          "text": "一方、量子コンピュータは量子ビット（キュービット）を使うの。0と1の状態を「重ね合わせ」として同時に持てるのが大きな違いよ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 1574,
+          "endFrame": 1896
+        },
+        {
+          "speaker": "A",
+          "text": "0と1を同時に？どういうことなのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 1904,
+          "endFrame": 2014
+        },
+        {
+          "speaker": "B",
+          "text": "コインを空中に投げている間、表か裏かが確定していない状態をイメージして。測定した瞬間に確定するの。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 2021,
+          "endFrame": 2265
+        },
+        {
+          "speaker": "A",
+          "text": "測定したら表か裏に決まるのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 2272,
+          "endFrame": 2359
+        },
+        {
+          "speaker": "B",
+          "text": "その通り。量子ビットも観測すると0か1に確定するわ。重ね合わせの状態では「0になる確率」と「1になる確率」が共存しているの。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 2367,
+          "endFrame": 2712
+        },
+        {
+          "speaker": "A",
+          "text": "nコの量子ビットがあると何が起きるのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 2720,
+          "endFrame": 2823
+        },
+        {
+          "speaker": "B",
+          "text": "2のn乗の状態を同時に表現できるの。50個の量子ビットで2の50乗、約1000兆の状態が重ね合わさった状態を扱えるわ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 2831,
+          "endFrame": 3123
+        },
+        {
+          "speaker": "A",
+          "text": "1000兆ってすごすぎるのだ！",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 3131,
+          "endFrame": 3194
+        },
+        {
+          "speaker": "B",
+          "text": "ただし「同時に1000兆の計算をする」という誤解があるわ。正確には「1000兆の状態の重ね合わせを利用して問題を解く」のよ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 3202,
+          "endFrame": 3501
+        },
+        {
+          "speaker": "A",
+          "text": "違うのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 3509,
+          "endFrame": 3543
+        },
+        {
+          "speaker": "B",
+          "text": "測定すると1つの結果しか得られないから、重ね合わせの「使い方」が重要なの。正しい答えが出る確率を上げる設計が必要よ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 3551,
+          "endFrame": 3852
+        },
+        {
+          "speaker": "A",
+          "text": "量子もつれって何なのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 3860,
+          "endFrame": 3926
+        },
+        {
+          "speaker": "B",
+          "text": "2つ以上の量子ビットが、互いに切り離せない形で相関している状態ね。一方を測定すると他方の状態が即座に決まるの。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 3934,
+          "endFrame": 4212
+        },
+        {
+          "speaker": "A",
+          "text": "離れた場所でコインを2枚投げたら、必ず表と裏になる、みたいなのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 4219,
+          "endFrame": 4403
+        },
+        {
+          "speaker": "B",
+          "text": "近い例えね。ただしコインなら事前に決まっていた可能性があるけど、量子もつれは測定の向きによって結果が変わる、より強い相関よ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 4410,
+          "endFrame": 4703
+        },
+        {
+          "speaker": "A",
+          "text": "干渉ってどういう意味なのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 4710,
+          "endFrame": 4783
+        },
+        {
+          "speaker": "B",
+          "text": "波の干渉と同じ原理よ。正しい答えへ向かう確率振幅を強め合い、間違った答えへの振幅を打ち消し合うの。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 4790,
+          "endFrame": 5044
+        },
+        {
+          "speaker": "A",
+          "text": "それが量子アルゴリズムの核心なのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 5051,
+          "endFrame": 5147
+        },
+        {
+          "speaker": "B",
+          "text": "まさに。干渉によって正しい答えを高確率で測定できるよう量子回路を設計するのが、量子アルゴリズムの本質よ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 5155,
+          "endFrame": 5412
+        },
+        {
+          "speaker": "A",
+          "text": "どうやって速さを測るのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 5420,
+          "endFrame": 5491
+        },
+        {
+          "speaker": "B",
+          "text": "計算複雑性という枠組みを使うわ。主に2種類あって、クエリ複雑性とゲート複雑性ね。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 5499,
+          "endFrame": 5720
+        },
+        {
+          "speaker": "A",
+          "text": "クエリ複雑性って？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 5727,
+          "endFrame": 5788
+        },
+        {
+          "speaker": "B",
+          "text": "オラクルという情報源に何回問い合わせが必要か、という尺度よ。量子アルゴリズムの理論的な優位性を示すのによく使われるの。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 5795,
+          "endFrame": 6073
+        },
+        {
+          "speaker": "A",
+          "text": "ゲート複雑性は？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 6080,
+          "endFrame": 6138
+        },
+        {
+          "speaker": "B",
+          "text": "実際の量子ゲート操作の回数ね。こちらが実際の実行時間に近い尺度よ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 6145,
+          "endFrame": 6322
+        },
+        {
+          "speaker": "A",
+          "text": "量子アルゴリズムには大きく分けてどんな種類があるのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 6330,
+          "endFrame": 6461
+        },
+        {
+          "speaker": "B",
+          "text": "この論文では代表的なアプローチを3つに整理しているわ。量子フーリエ変換ベース・振幅増幅ベース・量子シミュレーションベースね。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 6468,
+          "endFrame": 6764
+        },
+        {
+          "speaker": "A",
+          "text": "フーリエ変換ベースはショアのアルゴリズムなのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 6771,
+          "endFrame": 6884
+        },
+        {
+          "speaker": "B",
+          "text": "そう。振幅増幅ベースはグローバーの探索アルゴリズム。シミュレーションはハミルトニアンシミュレーションよ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 6891,
+          "endFrame": 7108
+        },
+        {
+          "speaker": "A",
+          "text": "それぞれで高速化の種類も違うのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 7116,
+          "endFrame": 7212
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。ショアは指数的高速化、グローバーは二次的高速化、シミュレーションは指数的メモリ効率の改善ね。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 7220,
+          "endFrame": 7464
+        },
+        {
+          "speaker": "A",
+          "text": "なぜ量子コンピュータがこれだけ注目されるようになったのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 7471,
+          "endFrame": 7606
+        },
+        {
+          "speaker": "B",
+          "text": "1994年にショアが素因数分解の量子アルゴリズムを発表して、今のインターネット暗号が理論的に破られることを示したの。世界中に衝撃を与えたわ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 7613,
+          "endFrame": 7973
+        },
+        {
+          "speaker": "A",
+          "text": "その前から量子コンピュータは知られていたのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 7980,
+          "endFrame": 8087
+        },
+        {
+          "speaker": "B",
+          "text": "ファインマンが1982年に「量子系は量子コンピュータでシミュレートすべき」と提案していたわ。でもショアの発表で実用的な意義が一気に広まったの。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 8094,
+          "endFrame": 8431
+        },
+        {
+          "speaker": "A",
+          "text": "今の量子コンピュータはどれくらい進んでいるのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 8439,
+          "endFrame": 8551
+        },
+        {
+          "speaker": "B",
+          "text": "NISKと呼ばれる段階ね。50から数百量子ビット規模で、ノイズがあって誤り訂正はまだ不十分な状態よ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 8558,
+          "endFrame": 8818
+        },
+        {
+          "speaker": "A",
+          "text": "ニスクって何の略なのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 8825,
+          "endFrame": 8892
+        },
+        {
+          "speaker": "B",
+          "text": "Noisy Intermediate-Scale Quantum（ノイジー・インターミディエイト・スケール・クォンタム）の略よ。プレスキルという物理学者が2018年に名付けたの。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 8899,
+          "endFrame": 9413
+        },
+        {
+          "speaker": "A",
+          "text": "暗号が解読されるのはまだ先なのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 9421,
+          "endFrame": 9521
+        },
+        {
+          "speaker": "B",
+          "text": "実際にショアのアルゴリズムを使うには、誤り訂正した論理量子ビットが数百万個必要と言われているわ。現状はまだ数百個の物理量子ビットよ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 9529,
+          "endFrame": 9847
+        },
+        {
+          "speaker": "A",
+          "text": "でも準備だけはしておかないといけないのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 9855,
+          "endFrame": 9953
+        },
+        {
+          "speaker": "B",
+          "text": "その通り。耐量子暗号の標準化が世界中で進んでいて、2024年にNISTが最初の標準を確定させたわ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 9961,
+          "endFrame": 10220
+        },
+        {
+          "speaker": "A",
+          "text": "NISTって何なのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 10227,
+          "endFrame": 10281
+        },
+        {
+          "speaker": "B",
+          "text": "米国国立標準技術研究所よ。暗号の国際標準を策定する重要な機関ね。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 10289,
+          "endFrame": 10487
+        },
+        {
+          "speaker": "A",
+          "text": "次の章から各アルゴリズムを詳しく見るのだ！どれから始めるのだ？",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 10494,
+          "endFrame": 10660
+        },
+        {
+          "speaker": "B",
+          "text": "まずショアのアルゴリズムから。世界を変えた暗号解読アルゴリズムよ。",
+          "section": "量子アルゴリズムとは何か",
+          "startFrame": 10667,
+          "endFrame": 10810
+        },
+        {
+          "speaker": "A",
+          "text": "ショアのアルゴリズムって具体的に何をするのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 10828,
+          "endFrame": 10939
+        },
+        {
+          "speaker": "B",
+          "text": "大きな整数を素数の積に分解する、素因数分解を高速に解くアルゴリズムよ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 10947,
+          "endFrame": 11131
+        },
+        {
+          "speaker": "A",
+          "text": "素因数分解って小学校でやったやつなのだ。たとえば12は2かける2かける3みたいな。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 11139,
+          "endFrame": 11352
+        },
+        {
+          "speaker": "B",
+          "text": "そう。でも数百桁の巨大な整数では、古典コンピュータでは宇宙の年齢をかけても解けないほど難しくなるの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 11360,
+          "endFrame": 11599
+        },
+        {
+          "speaker": "A",
+          "text": "なんでそんな問題が暗号に使われているのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 11607,
+          "endFrame": 11720
+        },
+        {
+          "speaker": "B",
+          "text": "2つの素数を掛け合わせるのは簡単でも、掛けた後の大きな数をもとの素数に戻すのが難しい、という非対称性を利用しているの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 11728,
+          "endFrame": 12007
+        },
+        {
+          "speaker": "A",
+          "text": "それがRSAなのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 12014,
+          "endFrame": 12082
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。Rivest・Shamir・Adlemanという3人が考えた暗号で、HTTPSなどインターネット通信の基礎になっているわ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 12089,
+          "endFrame": 12484
+        },
+        {
+          "speaker": "A",
+          "text": "RSA-2048って聞くのだ",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 12492,
+          "endFrame": 12602
+        },
+        {
+          "speaker": "B",
+          "text": "2048はビット数、つまり鍵の長さね。RSA-2048で使われる整数は約617桁。古典コンピュータでの分解は現実的に不可能よ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 12609,
+          "endFrame": 12991
+        },
+        {
+          "speaker": "A",
+          "text": "ショアのアルゴリズムはどうやってそれを解くのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 12998,
+          "endFrame": 13103
+        },
+        {
+          "speaker": "B",
+          "text": "核心は「位数発見」という問題に変換することよ。整数aをNで割り算を繰り返したとき、答えが周期的に繰り返す、その周期rを見つけるの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 13111,
+          "endFrame": 13464
+        },
+        {
+          "speaker": "A",
+          "text": "具体的に教えてほしいのだ",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 13471,
+          "endFrame": 13544
+        },
+        {
+          "speaker": "B",
+          "text": "たとえばa=7、N=15の場合。7の1乗は7、7の2乗は49でmod 15は4、7の3乗は343でmod 15は13、7の4乗はmod 15が1、となって周期r=4が出てくるの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 13552,
+          "endFrame": 14177
+        },
+        {
+          "speaker": "A",
+          "text": "1に戻るのだ！",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 14185,
+          "endFrame": 14227
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。この周期rがわかると、aのr/2乗プラス1とaのr/2乗マイナス1の、どちらかとNの最大公約数が素因数になるの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 14235,
+          "endFrame": 14567
+        },
+        {
+          "speaker": "A",
+          "text": "なぜそうなるのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 14575,
+          "endFrame": 14623
+        },
+        {
+          "speaker": "B",
+          "text": "「xの2乗マイナス1は(xプラス1)(xマイナス1)に因数分解できる」という代数の公式から来ているわ。ユーレルの定理と組み合わせた巧みな変換ね。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 14630,
+          "endFrame": 15012
+        },
+        {
+          "speaker": "A",
+          "text": "古典で周期を見つけるのは遅いのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 15019,
+          "endFrame": 15113
+        },
+        {
+          "speaker": "B",
+          "text": "周期rはNと同程度の大きさになりうるから、単純に計算するとO(r)かかる。N桁の数ならrは指数的に大きくなりえるわ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 15121,
+          "endFrame": 15440
+        },
+        {
+          "speaker": "A",
+          "text": "そこで量子フーリエ変換を使うのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 15448,
+          "endFrame": 15542
+        },
+        {
+          "speaker": "B",
+          "text": "そう！量子フーリエ変換（キューエフティー）を使うと、周期的な信号のスペクトルから周期を高速で取り出せるの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 15550,
+          "endFrame": 15812
+        },
+        {
+          "speaker": "A",
+          "text": "フーリエ変換って音楽の周波数分析に使うやつなのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 15820,
+          "endFrame": 15966
+        },
+        {
+          "speaker": "B",
+          "text": "まさに同じ原理ね。音の波形に含まれる周波数成分を取り出すフーリエ変換を、量子状態に対して行うの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 15974,
+          "endFrame": 16222
+        },
+        {
+          "speaker": "A",
+          "text": "どれくらい速くなるのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 16230,
+          "endFrame": 16293
+        },
+        {
+          "speaker": "B",
+          "text": "Nビットの整数分解で、古典最速の数体篩法は指数時間かかるわ。ショアはNの2乗程度の多項式時間で解けるの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 16301,
+          "endFrame": 16573
+        },
+        {
+          "speaker": "A",
+          "text": "指数から多項式になるのは劇的な高速化なのだ！",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 16580,
+          "endFrame": 16702
+        },
+        {
+          "speaker": "B",
+          "text": "まさに「指数的量子加速」の代表例よ。これがショアのアルゴリズムが世界を変えた理由ね。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 16709,
+          "endFrame": 16914
+        },
+        {
+          "speaker": "A",
+          "text": "離散対数問題も解けるって聞いたのだ",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 16922,
+          "endFrame": 17018
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。「aのx乗をNで割った余りがbのとき、xを求めよ」という問題ね。楕円曲線暗号やディフィー・ヘルマン鍵交換の基礎で、これも同様のアプローチで解けるわ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 17025,
+          "endFrame": 17423
+        },
+        {
+          "speaker": "A",
+          "text": "つまり今の公開鍵暗号は量子コンピュータで破られるのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 17431,
+          "endFrame": 17579
+        },
+        {
+          "speaker": "B",
+          "text": "理論的にはそう。ただし実際にショアを動かすには数百万の論理量子ビットが必要で、現在は数百個の物理量子ビット。かなり先の話よ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 17586,
+          "endFrame": 17907
+        },
+        {
+          "speaker": "A",
+          "text": "論理量子ビットと物理量子ビットって違うのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 17915,
+          "endFrame": 18031
+        },
+        {
+          "speaker": "B",
+          "text": "論理量子ビット1つを守るために、誤り訂正のために何千もの物理量子ビットが必要なの。ハードウェアのノイズを補正するために。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 18038,
+          "endFrame": 18317
+        },
+        {
+          "speaker": "A",
+          "text": "グローバーのアルゴリズムはAES暗号にも影響するのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 18325,
+          "endFrame": 18472
+        },
+        {
+          "speaker": "B",
+          "text": "AESは共通鍵暗号で、素因数分解とは関係ないわ。でもグローバーの探索アルゴリズムを使うと鍵探索が二次加速されるの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 18480,
+          "endFrame": 18777
+        },
+        {
+          "speaker": "A",
+          "text": "二次加速だと危ないのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 18785,
+          "endFrame": 18853
+        },
+        {
+          "speaker": "B",
+          "text": "AES-128なら鍵空間が2の128乗、グローバーで2の64乗になるわ。2の64乗はまだ十分安全と考えられているの。AES-256ならさらに余裕があるわ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 18861,
+          "endFrame": 19322
+        },
+        {
+          "speaker": "A",
+          "text": "耐量子暗号ってどんな数学を使うのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 19330,
+          "endFrame": 19439
+        },
+        {
+          "speaker": "B",
+          "text": "格子（ラティス）問題・ハッシュ関数・符号理論などね。これらはショアのアルゴリズムでも攻撃できない数学的困難性に基づいているわ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 19446,
+          "endFrame": 19755
+        },
+        {
+          "speaker": "A",
+          "text": "量子鍵配送（きゅーけーでぃー）は違うのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 19762,
+          "endFrame": 19893
+        },
+        {
+          "speaker": "B",
+          "text": "量子鍵配送は、量子の性質を使って「盗聴されたことを検出できる」鍵配送プロトコルよ。暗号アルゴリズムじゃなく、通信の安全性を量子力学で保証する仕組みね。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 19900,
+          "endFrame": 20298
+        },
+        {
+          "speaker": "A",
+          "text": "盗聴したら気づかれるのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 20306,
+          "endFrame": 20376
+        },
+        {
+          "speaker": "B",
+          "text": "量子状態は観測すると変わってしまう、という性質を利用しているの。盗聴者がいると鍵の照合でエラーレートが上がって検出できるわ。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 20383,
+          "endFrame": 20667
+        },
+        {
+          "speaker": "A",
+          "text": "ショアのアルゴリズムがなければ今の暗号でよかったのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 20674,
+          "endFrame": 20801
+        },
+        {
+          "speaker": "B",
+          "text": "量子コンピュータが出現するまでは問題なかったわ。でも将来に備えて、今から暗号を移行しておく必要があるの。「Harvest now, decrypt later（今収集して、後で解読）」という攻撃があるから。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 20809,
+          "endFrame": 21388
+        },
+        {
+          "speaker": "A",
+          "text": "ハーベスト・ナウって何なのだ？",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 21396,
+          "endFrame": 21480
+        },
+        {
+          "speaker": "B",
+          "text": "今の暗号化通信を大量に記録しておいて、将来量子コンピュータが完成したときに解読しようという戦略よ。特に機密性の長い情報が危ないの。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 21487,
+          "endFrame": 21811
+        },
+        {
+          "speaker": "A",
+          "text": "なるほど。だから今から準備が必要なのだ！",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 21818,
+          "endFrame": 21930
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。暗号は移行に数年から数十年かかるから、早めに行動することが重要なの。次はグローバーの探索アルゴリズムを見ていきましょう。",
+          "section": "暗号解読：ショアのアルゴリズム",
+          "startFrame": 21937,
+          "endFrame": 22241
+        },
+        {
+          "speaker": "A",
+          "text": "グローバーのアルゴリズムって何をするのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 22259,
+          "endFrame": 22342
+        },
+        {
+          "speaker": "B",
+          "text": "N件のデータから目的のものを探す「非構造化探索」を高速化するアルゴリズムよ。ロブ・グローバーが1996年に発表したわ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 22349,
+          "endFrame": 22618
+        },
+        {
+          "speaker": "A",
+          "text": "電話帳から特定の人を探すみたいなのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 22625,
+          "endFrame": 22721
+        },
+        {
+          "speaker": "B",
+          "text": "似てるわ。ただし電話帳はあいうえお順に並んでいるから構造がある。グローバーが扱うのは完全にランダムな順番のデータベースね。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 22728,
+          "endFrame": 22955
+        },
+        {
+          "speaker": "A",
+          "text": "古典だと最悪N回調べないといけないのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 22962,
+          "endFrame": 23058
+        },
+        {
+          "speaker": "B",
+          "text": "そう。平均でN/2回の確認が必要。グローバーのアルゴリズムは約ルートN回で見つけられるの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 23065,
+          "endFrame": 23261
+        },
+        {
+          "speaker": "A",
+          "text": "ルートNってどれくらい速いのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 23268,
+          "endFrame": 23335
+        },
+        {
+          "speaker": "B",
+          "text": "N=100万なら古典は50万回、グローバーは約1000回。N=1兆なら古典は5000億回、グローバーは約100万回よ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 23342,
+          "endFrame": 23611
+        },
+        {
+          "speaker": "A",
+          "text": "劇的に違うのだ！",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 23619,
+          "endFrame": 23662
+        },
+        {
+          "speaker": "B",
+          "text": "これを「二次加速」と呼ぶわ。ショアの指数加速と比べると控えめだけど、適用範囲がとても広いの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 23670,
+          "endFrame": 23860
+        },
+        {
+          "speaker": "A",
+          "text": "どんな仕組みなのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 23868,
+          "endFrame": 23910
+        },
+        {
+          "speaker": "B",
+          "text": "「振幅増幅」という技術よ。正解の候補に対応する確率振幅を繰り返し増幅し、不正解の振幅を打ち消す操作を繰り返すの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 23918,
+          "endFrame": 24181
+        },
+        {
+          "speaker": "A",
+          "text": "1回の操作で2つのステップがあるのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 24189,
+          "endFrame": 24274
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。まずオラクルが正解に位相マイナス1を掛けて「マーク」をつける。次にアダマール行列とパウリX行列を使った反転操作で振幅を移動させるの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 24282,
+          "endFrame": 24569
+        },
+        {
+          "speaker": "A",
+          "text": "それを何回繰り返すのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 24576,
+          "endFrame": 24637
+        },
+        {
+          "speaker": "B",
+          "text": "約パイ/4掛けるルートN回繰り返すと、正解の確率がほぼ1になるわ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 24645,
+          "endFrame": 24792
+        },
+        {
+          "speaker": "A",
+          "text": "パイ/4って円周率のパイなのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 24799,
+          "endFrame": 24890
+        },
+        {
+          "speaker": "B",
+          "text": "そう！確率が最大になるタイミングが幾何学的に決まっていて、角度の計算からパイ/4という美しい数が出てくるの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 24897,
+          "endFrame": 25122
+        },
+        {
+          "speaker": "A",
+          "text": "グローバーは最速なのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 25129,
+          "endFrame": 25186
+        },
+        {
+          "speaker": "B",
+          "text": "非構造化探索に関しては、ルートNのオーダーが量子コンピュータでの下限として厳密に証明されているわ。最適なアルゴリズムよ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 25193,
+          "endFrame": 25421
+        },
+        {
+          "speaker": "A",
+          "text": "振幅増幅を使うとグローバー以外にも応用できるのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 25428,
+          "endFrame": 25547
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。確率2分の1で答えを見つけるアルゴリズムなら何でも、振幅増幅で二次改善できるの。これを「振幅増幅の一般化定理」と呼ぶわ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 25555,
+          "endFrame": 25834
+        },
+        {
+          "speaker": "A",
+          "text": "量子ウォークって何なのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 25842,
+          "endFrame": 25896
+        },
+        {
+          "speaker": "B",
+          "text": "グラフの上を量子的にランダムウォークする技術ね。古典のランダムウォークと似ているけど、量子干渉によって広がり方が根本的に異なるの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 25904,
+          "endFrame": 26142
+        },
+        {
+          "speaker": "A",
+          "text": "どんなところが違うのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 26149,
+          "endFrame": 26202
+        },
+        {
+          "speaker": "B",
+          "text": "古典のランダムウォークはn歩でルートnの距離しか進めないけど、量子ウォークはnの距離まで広がれるの。二次加速よ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 26210,
+          "endFrame": 26418
+        },
+        {
+          "speaker": "A",
+          "text": "グラフ探索に使えるのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 26425,
+          "endFrame": 26485
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。マルコフ連鎖を使う古典アルゴリズムがあれば、それを量子化するとスペクトルギャップという量が二次改善されるの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 26493,
+          "endFrame": 26693
+        },
+        {
+          "speaker": "A",
+          "text": "スペクトルギャップって何なのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 26701,
+          "endFrame": 26762
+        },
+        {
+          "speaker": "B",
+          "text": "グラフの隣接行列の固有値の最大値と2番目の値の差よ。これが大きいほどランダムウォークが速く「混ざる」、つまり目標に近づく速さの指標なの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 26770,
+          "endFrame": 27051
+        },
+        {
+          "speaker": "A",
+          "text": "三角形探索って何なのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 27059,
+          "endFrame": 27128
+        },
+        {
+          "speaker": "B",
+          "text": "グラフの中に三角形（3頂点が全て繋がっているセット）があるかを調べる問題ね。古典はN頂点でNの2乗のクエリが必要よ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 27136,
+          "endFrame": 27389
+        },
+        {
+          "speaker": "A",
+          "text": "量子ウォークで速くなるのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 27397,
+          "endFrame": 27457
+        },
+        {
+          "speaker": "B",
+          "text": "Nの4/3乗程度に改善できるわ。量子ウォークの理論的成功例として有名で、量子ウォーク探索の教科書的な問題よ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 27464,
+          "endFrame": 27710
+        },
+        {
+          "speaker": "A",
+          "text": "QAOAって何なのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 27718,
+          "endFrame": 27780
+        },
+        {
+          "speaker": "B",
+          "text": "Quantum Approximate Optimization Algorithm、量子近似最適化アルゴリズムよ。キューエーオーエーと読むわ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 27787,
+          "endFrame": 28137
+        },
+        {
+          "speaker": "A",
+          "text": "何を最適化するのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 28144,
+          "endFrame": 28198
+        },
+        {
+          "speaker": "B",
+          "text": "組み合わせ最適化問題ね。旅行者問題・スケジューリング・ポートフォリオ最適化など、多くの実問題が当てはまるわ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 28206,
+          "endFrame": 28431
+        },
+        {
+          "speaker": "A",
+          "text": "古典コンピュータでも難しい問題なのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 28438,
+          "endFrame": 28524
+        },
+        {
+          "speaker": "B",
+          "text": "そう。NP困難と呼ばれるクラスの問題が多くて、最悪ケースでは古典でも指数時間かかるの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 28532,
+          "endFrame": 28714
+        },
+        {
+          "speaker": "A",
+          "text": "QAOAはそれを解けるのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 28722,
+          "endFrame": 28793
+        },
+        {
+          "speaker": "B",
+          "text": "正確には「近似解」を求めるアルゴリズムよ。最適解の保証はないけど、いい近似解を効率よく見つけることを目指しているの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 28800,
+          "endFrame": 29043
+        },
+        {
+          "speaker": "A",
+          "text": "どんな仕組みなのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 29050,
+          "endFrame": 29093
+        },
+        {
+          "speaker": "B",
+          "text": "コスト演算子とミキサー演算子を交互に適用して、良いコスト関数の値が得られる量子状態に向かって最適化するの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 29101,
+          "endFrame": 29309
+        },
+        {
+          "speaker": "A",
+          "text": "パラメータを古典コンピュータで調整するのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 29317,
+          "endFrame": 29408
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。これが変分量子アルゴリズムの特徴ね。量子回路で期待値を評価→古典で最適化→パラメータ更新→繰り返し、というループを回すの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 29415,
+          "endFrame": 29701
+        },
+        {
+          "speaker": "A",
+          "text": "NISKデバイス向けなのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 29709,
+          "endFrame": 29778
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。回路の深さが浅くても動くよう設計されているの。ただし古典との比較でどのくらいの優位性があるかは、現在も研究中のテーマよ。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 29785,
+          "endFrame": 30042
+        },
+        {
+          "speaker": "A",
+          "text": "量子アニーリングとどう違うのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 30049,
+          "endFrame": 30117
+        },
+        {
+          "speaker": "B",
+          "text": "量子アニーリングはD-Waveなどが実装している別のアプローチ。問題を磁石の系に対応させて基底状態（エネルギー最小）を見つけるの。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 30125,
+          "endFrame": 30394
+        },
+        {
+          "speaker": "A",
+          "text": "QAOAとどちらが優れているのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 30401,
+          "endFrame": 30486
+        },
+        {
+          "speaker": "B",
+          "text": "問題によって異なるわ。理論的な優位性の証明はまだ難しく、活発な研究分野ね。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 30493,
+          "endFrame": 30668
+        },
+        {
+          "speaker": "A",
+          "text": "探索と最適化はまとめると何が大事なのだ？",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 30676,
+          "endFrame": 30774
+        },
+        {
+          "speaker": "B",
+          "text": "グローバーの二次加速は理論的に最適で、振幅増幅という汎用技術の核心。量子ウォークもグラフ上の探索で有効。QAOAは近未来の応用候補ね。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 30781,
+          "endFrame": 31087
+        },
+        {
+          "speaker": "A",
+          "text": "次はシミュレーションなのだ！",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 31094,
+          "endFrame": 31146
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。量子コンピュータが最も早く実用的な優位性を発揮できると期待されている分野ね。",
+          "section": "探索と最適化：グローバーとその発展",
+          "startFrame": 31153,
+          "endFrame": 31319
+        },
+        {
+          "speaker": "A",
+          "text": "量子系のシミュレーションって量子コンピュータで量子現象を再現するのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 31337,
+          "endFrame": 31477
+        },
+        {
+          "speaker": "B",
+          "text": "その通り。ファインマンが1982年に「量子系を古典コンピュータでシミュレートするのは非効率だ。量子コンピュータを使うべきだ」と提案したのが始まりよ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 31484,
+          "endFrame": 31782
+        },
+        {
+          "speaker": "A",
+          "text": "なんで古典コンピュータだと難しいのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 31789,
+          "endFrame": 31870
+        },
+        {
+          "speaker": "B",
+          "text": "n個の量子粒子の状態を記述するには2のn乗個の数が必要ね。50個の粒子で約1000兆個のデータになるわ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 31878,
+          "endFrame": 32078
+        },
+        {
+          "speaker": "A",
+          "text": "メモリが足りないのだ！",
+          "section": "量子系のシミュレーション",
+          "startFrame": 32086,
+          "endFrame": 32129
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。粒子数が増えるにつれてメモリが指数的に増える。でも量子コンピュータなら、n量子ビットでそのままn粒子系を表現できるの。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 32137,
+          "endFrame": 32384
+        },
+        {
+          "speaker": "A",
+          "text": "ハミルトニアンシミュレーションって何なのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 32391,
+          "endFrame": 32469
+        },
+        {
+          "speaker": "B",
+          "text": "物理系のエネルギーを記述する演算子をハミルトニアンと呼ぶわ。その時間発展、つまり「この系が時間tだけ経過するとどうなるか」を量子コンピュータで計算するのよ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 32476,
+          "endFrame": 32780
+        },
+        {
+          "speaker": "A",
+          "text": "どんな系に使えるのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 32787,
+          "endFrame": 32841
+        },
+        {
+          "speaker": "B",
+          "text": "分子・材料の電子構造、素粒子の格子ゲージ理論、凝縮系物理のモデルなど。基本的に量子力学に従う系全般よ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 32848,
+          "endFrame": 33105
+        },
+        {
+          "speaker": "A",
+          "text": "計算の仕組みはどうなのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 33113,
+          "endFrame": 33174
+        },
+        {
+          "speaker": "B",
+          "text": "ハミルトニアンを小さな項の和に分解して、それぞれを量子ゲートで実装するの。「トロッター分解（積公式）」と呼ばれる手法ね。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 33181,
+          "endFrame": 33416
+        },
+        {
+          "speaker": "A",
+          "text": "トロッター分解って？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 33423,
+          "endFrame": 33471
+        },
+        {
+          "speaker": "B",
+          "text": "exp（A+B）≒exp（A）かけるexp（B）という近似を繰り返し使うの。1次近似から高次近似まで精度を上げられるわ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 33479,
+          "endFrame": 33713
+        },
+        {
+          "speaker": "A",
+          "text": "近似誤差はどれくらいなのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 33720,
+          "endFrame": 33781
+        },
+        {
+          "speaker": "B",
+          "text": "分割数を増やすほど精度が上がるわ。目標精度イプシロンに対して、必要な量子ゲート数は精度とシミュレーション時間に多項式で増えるの。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 33788,
+          "endFrame": 34032
+        },
+        {
+          "speaker": "A",
+          "text": "量子化学計算への応用が大きいのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 34039,
+          "endFrame": 34125
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。分子の電子エネルギー計算は「強相関電子系」と呼ばれる難問で、古典計算では原理的な限界があるの。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 34133,
+          "endFrame": 34369
+        },
+        {
+          "speaker": "A",
+          "text": "強相関電子系って？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 34377,
+          "endFrame": 34433
+        },
+        {
+          "speaker": "B",
+          "text": "電子同士の相互作用が無視できないくらい強い系のことよ。触媒・超伝導体・高温超伝導など重要な材料が多いけど、古典計算は非常に難しいの。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 34441,
+          "endFrame": 34739
+        },
+        {
+          "speaker": "A",
+          "text": "フェモコってよく聞くのだ",
+          "section": "量子系のシミュレーション",
+          "startFrame": 34746,
+          "endFrame": 34794
+        },
+        {
+          "speaker": "B",
+          "text": "鉄モリブデンコファクター（FeMoCo）は窒素固定酵素の活性部位ね。N2（窒素分子）をNH3（アンモニア）に変換する触媒で、農業の肥料生産に直結するの。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 34801,
+          "endFrame": 35121
+        },
+        {
+          "speaker": "A",
+          "text": "なぜ量子コンピュータが必要なのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 35128,
+          "endFrame": 35202
+        },
+        {
+          "speaker": "B",
+          "text": "FeMoCoは電子間の相関が非常に強く、古典計算では正確なエネルギー計算が難しいの。量子コンピュータなら自然に扱える可能性があるわ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 35209,
+          "endFrame": 35472
+        },
+        {
+          "speaker": "A",
+          "text": "VQEって何なのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 35480,
+          "endFrame": 35534
+        },
+        {
+          "speaker": "B",
+          "text": "Variational Quantum Eigensolver、変分量子固有値ソルバーの略でブイキューイーよ。ハミルトニアンの最小エネルギーを変分法で求める手法ね。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 35542,
+          "endFrame": 35944
+        },
+        {
+          "speaker": "A",
+          "text": "変分法って？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 35952,
+          "endFrame": 35994
+        },
+        {
+          "speaker": "B",
+          "text": "試行状態のパラメータを調整して、エネルギーの期待値を最小化するの。試行状態のエネルギーは必ず真の基底エネルギー以上なので、最小化すると近づいていけるわ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 36001,
+          "endFrame": 36304
+        },
+        {
+          "speaker": "A",
+          "text": "QAOAと同じ変分量子アルゴリズムなのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 36312,
+          "endFrame": 36417
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。どちらも量子回路のパラメータを古典コンピュータで最適化するの。VQEは化学・材料向け、QAOAは組み合わせ最適化向けね。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 36425,
+          "endFrame": 36701
+        },
+        {
+          "speaker": "A",
+          "text": "VQEはNISKデバイスで動くのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 36708,
+          "endFrame": 36804
+        },
+        {
+          "speaker": "B",
+          "text": "理論的にはそう設計されているわ。ただしノイズの影響でエラーが蓄積し、精度が落ちる問題があるの。現在改善研究が続いているわ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 36812,
+          "endFrame": 37069
+        },
+        {
+          "speaker": "A",
+          "text": "量子シミュレーションで何がわかると世界が変わるのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 37077,
+          "endFrame": 37178
+        },
+        {
+          "speaker": "B",
+          "text": "新材料の設計よ。高温超伝導体・有機太陽電池・触媒など、原子レベルで設計できれば性能を大幅に改善できる可能性があるわ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 37185,
+          "endFrame": 37467
+        },
+        {
+          "speaker": "A",
+          "text": "創薬にも使えるのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 37474,
+          "endFrame": 37528
+        },
+        {
+          "speaker": "B",
+          "text": "タンパク質と薬分子の相互作用をシミュレートして、より効果的な薬を設計できるかもしれないわ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 37535,
+          "endFrame": 37708
+        },
+        {
+          "speaker": "A",
+          "text": "FeMoCoの仕組みがわかれば農業が変わるのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 37715,
+          "endFrame": 37804
+        },
+        {
+          "speaker": "B",
+          "text": "FeMoCoの触媒機構が解明されれば、現在の高エネルギー消費なアンモニア合成法（ハーバー・ボッシュ法）を、常温常圧で動くプロセスに替えられる可能性があるの。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 37812,
+          "endFrame": 38134
+        },
+        {
+          "speaker": "A",
+          "text": "ハーバー・ボッシュ法ってどれくらいエネルギーを使うのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 38142,
+          "endFrame": 38257
+        },
+        {
+          "speaker": "B",
+          "text": "世界の総エネルギー消費の約1〜2%を使っているわ。改善できれば地球規模の省エネになるの。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 38264,
+          "endFrame": 38454
+        },
+        {
+          "speaker": "A",
+          "text": "どれくらいの規模の量子コンピュータが必要なのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 38462,
+          "endFrame": 38557
+        },
+        {
+          "speaker": "B",
+          "text": "FeMoCoの計算に必要な論理量子ビットは数百から数千規模という見積もりがあるわ。現在よりずっと大規模よ。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 38565,
+          "endFrame": 38759
+        },
+        {
+          "speaker": "A",
+          "text": "量子シミュレーションは最初の「実用的量子優位性」の候補なのだ？",
+          "section": "量子系のシミュレーション",
+          "startFrame": 38767,
+          "endFrame": 38919
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。この論文でも「量子コンピュータが最初に古典を超える分野はシミュレーション」と述べているわ。次は線形方程式系のアルゴリズムと近未来の展望を見ていきましょう。",
+          "section": "量子系のシミュレーション",
+          "startFrame": 38927,
+          "endFrame": 39232
+        },
+        {
+          "speaker": "A",
+          "text": "線形方程式系って何なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 39250,
+          "endFrame": 39325
+        },
+        {
+          "speaker": "B",
+          "text": "Aかけるxはbという形の方程式ね。Aが行列、xとbがベクトル。N個の変数とN個の方程式をまとめた連立一次方程式よ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 39332,
+          "endFrame": 39612
+        },
+        {
+          "speaker": "A",
+          "text": "よく使う問題なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 39620,
+          "endFrame": 39671
+        },
+        {
+          "speaker": "B",
+          "text": "物理・工学・機械学習・金融モデリングと、あらゆる分野の計算の中心にある問題ね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 39679,
+          "endFrame": 39867
+        },
+        {
+          "speaker": "A",
+          "text": "HHLって誰のことなのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 39875,
+          "endFrame": 39947
+        },
+        {
+          "speaker": "B",
+          "text": "Harrow・Hassidim・Lloydという3人の研究者の頭文字よ。2009年に発表したアルゴリズムね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 39954,
+          "endFrame": 40238
+        },
+        {
+          "speaker": "A",
+          "text": "どれくらい速いのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 40245,
+          "endFrame": 40291
+        },
+        {
+          "speaker": "B",
+          "text": "古典の共役勾配法はNかけるカッパかけるログ1/イプシロン程度の計算量。HHLはカッパの2乗かけるログNをイプシロンの2乗で割った程度で、Nに対して対数スケールになるの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 40298,
+          "endFrame": 40639
+        },
+        {
+          "speaker": "A",
+          "text": "カッパって何なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 40647,
+          "endFrame": 40694
+        },
+        {
+          "speaker": "B",
+          "text": "条件数カッパね。行列の最大固有値と最小固有値の比で、行列が「どれくらい扱いにくいか」を表す指標よ。カッパが大きいと問題が難しくなるの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 40701,
+          "endFrame": 41010
+        },
+        {
+          "speaker": "A",
+          "text": "対数って超速いのだ！",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 41017,
+          "endFrame": 41070
+        },
+        {
+          "speaker": "B",
+          "text": "N=100万なら古典は100万に比例するのに対し、HHLはログNで約20程度になるわ。理論上は指数的な高速化よ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 41077,
+          "endFrame": 41334
+        },
+        {
+          "speaker": "A",
+          "text": "仕組みはどうなってるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 41342,
+          "endFrame": 41394
+        },
+        {
+          "speaker": "B",
+          "text": "3つのステップよ。まず右辺bを量子状態にエンコードする。次に量子位相推定で行列Aの固有値を読み出す。最後に固有値の逆数を量子状態に乗じて、Aの逆行列を適用した状態を作るの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 41402,
+          "endFrame": 41796
+        },
+        {
+          "speaker": "A",
+          "text": "量子位相推定って何なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 41804,
+          "endFrame": 41871
+        },
+        {
+          "speaker": "B",
+          "text": "ユニタリ演算子の固有値の位相を推定するアルゴリズムよ。ショアのアルゴリズムにも使われている基本的な量子サブルーティンね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 41879,
+          "endFrame": 42095
+        },
+        {
+          "speaker": "A",
+          "text": "最後に解xを取り出すのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 42102,
+          "endFrame": 42173
+        },
+        {
+          "speaker": "B",
+          "text": "ここが重要な注意点ね。量子状態として|x>が得られるけど、これを古典的に全て読み出すには測定を何度も繰り返す必要があって、O(N)かかってしまうの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 42180,
+          "endFrame": 42530
+        },
+        {
+          "speaker": "A",
+          "text": "せっかく速く解いたのに読み出しが遅いのだ...",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 42538,
+          "endFrame": 42622
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。これがHHLの「細字条件」と呼ばれる制約の1つ。解xそのものが欲しい場合は、量子の利点がなくなってしまうの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 42630,
+          "endFrame": 42892
+        },
+        {
+          "speaker": "A",
+          "text": "じゃあどんな場合に使えるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 42899,
+          "endFrame": 42962
+        },
+        {
+          "speaker": "B",
+          "text": "解全体ではなく、解の内積や期待値だけが必要な場合よ。機械学習でのモデル評価や、物理シミュレーションでのエネルギー計算などに向いているの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 42970,
+          "endFrame": 43238
+        },
+        {
+          "speaker": "A",
+          "text": "状態準備も問題なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 43246,
+          "endFrame": 43307
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。入力データbを量子状態にエンコードする時間がO(N)かかることが多くて、これがボトルネックになりうるわ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 43315,
+          "endFrame": 43545
+        },
+        {
+          "speaker": "A",
+          "text": "量子ランダムアクセスメモリ（QRAM）が解決策になるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 43553,
+          "endFrame": 43652
+        },
+        {
+          "speaker": "B",
+          "text": "QRAMがあれば入力データを対数時間でロードできるわ。でも実用的なQRAMの実装はまだ大きな研究課題よ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 43659,
+          "endFrame": 43864
+        },
+        {
+          "speaker": "A",
+          "text": "脱量子化って何なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 43871,
+          "endFrame": 43926
+        },
+        {
+          "speaker": "B",
+          "text": "HHLを参考にして提案された量子機械学習アルゴリズムのいくつかが、古典でも同様に解けることが示されたの。「脱量子化（でくぉんたいぜーしょん）」と呼ばれるわ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 43933,
+          "endFrame": 44236
+        },
+        {
+          "speaker": "A",
+          "text": "量子コンピュータが不要になってしまうのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 44244,
+          "endFrame": 44326
+        },
+        {
+          "speaker": "B",
+          "text": "その問題の量子優位性は失われるわ。でも「本当に量子でしか解けない問題は何か」を明確にする上で重要な研究ね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 44333,
+          "endFrame": 44570
+        },
+        {
+          "speaker": "A",
+          "text": "NISKって改めて説明してほしいのだ",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 44577,
+          "endFrame": 44671
+        },
+        {
+          "speaker": "B",
+          "text": "Noisy Intermediate-Scale Quantum の略。50から数百量子ビット規模で、誤り訂正なしの現行量子コンピュータのことよ。プレスキルが2018年に命名したわ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 44678,
+          "endFrame": 45123
+        },
+        {
+          "speaker": "A",
+          "text": "誤り訂正がないとどんな問題があるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 45130,
+          "endFrame": 45222
+        },
+        {
+          "speaker": "B",
+          "text": "ゲートのエラーが蓄積して、深い回路では計算結果がノイズに埋もれてしまうの。現在の物理ゲートエラー率は約0.1%から1%程度よ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 45230,
+          "endFrame": 45508
+        },
+        {
+          "speaker": "A",
+          "text": "それって大きいのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 45516,
+          "endFrame": 45563
+        },
+        {
+          "speaker": "B",
+          "text": "1000ゲートの回路で全部正しい確率が0.999の1000乗で37%。2000ゲートでは14%になるわ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 45570,
+          "endFrame": 45796
+        },
+        {
+          "speaker": "A",
+          "text": "量子誤り訂正はどれくらい進んでいるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 45803,
+          "endFrame": 45900
+        },
+        {
+          "speaker": "B",
+          "text": "Googleが2023年に「表面符号」と呼ばれる誤り訂正符号で、物理量子ビットを増やすほど論理エラー率が下がることを実証したわ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 45908,
+          "endFrame": 46172
+        },
+        {
+          "speaker": "A",
+          "text": "それは大きな進歩なのだ！",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 46179,
+          "endFrame": 46233
+        },
+        {
+          "speaker": "B",
+          "text": "そうよ。「しきい値定理」の実証ね。ゲートエラー率が一定以下なら、物理量子ビットを増やすほど論理エラーを指数的に減らせることが示されたの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 46241,
+          "endFrame": 46509
+        },
+        {
+          "speaker": "A",
+          "text": "表面符号って何なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 46516,
+          "endFrame": 46574
+        },
+        {
+          "speaker": "B",
+          "text": "2次元格子状に量子ビットを並べて、お互いの誤りを検出・訂正する誤り訂正符号ね。論理量子ビット1つに物理量子ビット何百から何千もいるのが難点よ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 46582,
+          "endFrame": 46893
+        },
+        {
+          "speaker": "A",
+          "text": "量子優位性の実証はどうなってるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 46901,
+          "endFrame": 46986
+        },
+        {
+          "speaker": "B",
+          "text": "Googleが2019年に53量子ビットの量子回路で「量子超越性」を主張したわ。古典コンピュータで1万年かかると主張したの。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 46994,
+          "endFrame": 47247
+        },
+        {
+          "speaker": "A",
+          "text": "それは本当なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 47255,
+          "endFrame": 47303
+        },
+        {
+          "speaker": "B",
+          "text": "その後、古典シミュレーションが改善されて実際にはもっと短い時間でできることが分かったわ。量子優位性の厳密な実証は現在も続く研究テーマね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 47310,
+          "endFrame": 47579
+        },
+        {
+          "speaker": "A",
+          "text": "NISKで実用的な優位性が出る分野はあるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 47587,
+          "endFrame": 47704
+        },
+        {
+          "speaker": "B",
+          "text": "最有力候補は量子化学シミュレーションよ。VQEを使って古典では難しい分子計算を行う研究が進んでいるわ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 47712,
+          "endFrame": 47932
+        },
+        {
+          "speaker": "A",
+          "text": "フォールトトレラント量子コンピュータっていつ来るのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 47940,
+          "endFrame": 48033
+        },
+        {
+          "speaker": "B",
+          "text": "楽観的な見積もりで2030年代、慎重な見方では2040年代以降とも言われているわ。研究の進展次第ね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 48040,
+          "endFrame": 48264
+        },
+        {
+          "speaker": "A",
+          "text": "今後どんな発展が期待されるのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 48271,
+          "endFrame": 48347
+        },
+        {
+          "speaker": "B",
+          "text": "まず誤り訂正の改善でフォールトトレラント量子コンピュータの実現。次に量子化学での実用的優位性の実証。そして全く新しい量子アルゴリズムの発見ね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 48354,
+          "endFrame": 48650
+        },
+        {
+          "speaker": "A",
+          "text": "このモンタナロの論文は今でも重要なのだ？",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 48658,
+          "endFrame": 48749
+        },
+        {
+          "speaker": "B",
+          "text": "2016年に発表されて今でも広く引用されているわ。量子アルゴリズムの全体像を俯瞰できる、入門として最適な論文ね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 48757,
+          "endFrame": 48996
+        },
+        {
+          "speaker": "A",
+          "text": "最後にまとめてほしいのだ！",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 49004,
+          "endFrame": 49059
+        },
+        {
+          "speaker": "B",
+          "text": "量子アルゴリズムの4本柱。1：ショアの指数加速（暗号解読・素因数分解）。2：グローバーの二次加速（探索・振幅増幅）。3：ハミルトニアンシミュレーション（量子化学・材料設計）。4：HHLの対数加速（線形方程式・機械学習）。それぞれ量子の違う性質を巧みに利用しているわ。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 49067,
+          "endFrame": 49755
+        },
+        {
+          "speaker": "A",
+          "text": "量子コンピュータがあっても全部が速くなるわけじゃないのだ",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 49763,
+          "endFrame": 49867
+        },
+        {
+          "speaker": "B",
+          "text": "そう。量子優位性が出る問題は限られていて、問題の構造に合ったアルゴリズムを選ぶことが重要ね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 49875,
+          "endFrame": 50066
+        },
+        {
+          "speaker": "A",
+          "text": "今後も目が離せない分野なのだ！ありがとうなのだ！",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 50073,
+          "endFrame": 50176
+        },
+        {
+          "speaker": "B",
+          "text": "量子コンピュータの研究は進化が速いから、最新情報もチェックしてみてね。",
+          "section": "線形方程式系とNISQ時代",
+          "startFrame": 50184,
+          "endFrame": 50319
+        }
+      ]
+    }
   },
   {
     "id": "1803.00745",
@@ -13258,7 +16275,6 @@
     "iaUrl": "https://archive.org/details/paper-explain-2503-20020",
     "chapters": [],
     "arxivUrl": "https://arxiv.org/abs/2503.20020",
-    "singleAudioUrl": "https://archive.org/download/paper-explain-2503-20020/paper_2503.20020.mp3",
     "markdown": "<p><strong>著者</strong>: Google DeepMind Gemini Robotics Team<br />\n<strong>公開</strong>: 2025年3月<br />\n<strong>arXiv</strong>: 2503.20020  </p>\n<p>Gemini 2.0をベースに、身体的推論と直接ロボット制御を実現する新しい2つのモデルを発表。\n「デジタルAIの知能を物理世界に持ち込む」ための重要な一歩。</p>\n<hr />\n<h2>研究の背景と概要</h2>\n<ul>\n<li><strong>課題</strong>: 大規模言語モデルはデジタル領域で卓越した能力を示す一方、物理世界への展開は依然として困難</li>\n<li><strong>身体的推論（Embodied Reasoning）</strong>: ロボットが世界で行動するために必要な知識の総体</li>\n<li>3D環境の把握、物体間の関係理解、直感的物理の理解</li>\n<li><strong>キー問い</strong>: 最先端デジタルAIモデルに、汎用的かつ器用な方法で世界と対話する身体的推論能力を与えるには?</li>\n</ul>\n<p>発表された2つのモデル:\n- <strong>Gemini Robotics-ER</strong> (Embodied Reasoning): 身体的推論に特化したVLM。追加の行動データなしで空間理解・軌跡予測・把持予測が可能\n- <strong>Gemini Robotics</strong>: VLA（ビジョン・ランゲージ・アクション）モデル。クラウドバックボーン＋ローカルデコーダ構成でリアルタイム制御</p>\n<p>新規公開:\n- <strong>ERQA</strong>ベンチマーク（身体的推論の標準評価基盤）\n- 責任ある開発フレームワーク（安全性・社会的影響の評価）</p>\n<hr />\n<h2>ERQA：身体的推論ベンチマーク</h2>\n<p>Embodied Reasoning Question Answering（ERQA）— 新規公開ベンチマーク</p>\n<ul>\n<li><strong>400問</strong>の多肢選択式VQA</li>\n<li>7カテゴリ: 空間推論・軌跡推論・行動推論・状態推定・ポインティング・多視点推論・タスク推論</li>\n<li>28%がマルチ画像問題（複数フレーム間での対応付けを要求）</li>\n</ul>\n<p>既存ベンチマークとの比較:</p>\n<table>\n<thead>\n<tr>\n<th>ベンチマーク</th>\n<th>特徴</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>RealworldQA</td>\n<td>一般的な空間・画像理解</td>\n</tr>\n<tr>\n<td>BLINK</td>\n<td>原子的視覚能力評価</td>\n</tr>\n<tr>\n<td><strong>ERQA</strong></td>\n<td><strong>物理世界で行動するために必要な能力の総体的評価（最も難しい）</strong></td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Table 1（p.5）参照: Gemini 2.0がERQA・RealworldQA・BLINKの全3ベンチマークでSOTA達成</p>\n</blockquote>\n<p>Chain-of-Thought（CoT）プロンプティングの効果:\n- CoTなし → CoTあり: Gemini 2.0 Flashの性能がGemini 2.0 Pro Experimental（CoTなし）を超える水準に\n- 「段階的な空間推論トレース」が複雑な身体的推論問題を正解に導く</p>\n<blockquote>\n<p>📊 Table 2（p.5）参照: CoT有無による性能比較</p>\n</blockquote>\n<hr />\n<h2>Gemini 2.0 の身体的推論能力</h2>\n<p>Gemini 2.0が習得した6種類の身体的推論能力:</p>\n<h3>2D空間理解</h3>\n<p><strong>1. 物体検出</strong> — オープンボキャブラリで2Dバウンディングボックス予測\n- 明示的なオブジェクト名だけでなく、カテゴリ・属性・機能でも検索可能\n- 例: \"こぼれたものと掃除に使えるもの\"を同時に検出</p>\n<p><strong>2. 2Dポインティング</strong> <code>[y, x]</code>\n- 物体・物体パーツ・空間概念・アフォーダンスへのポイント\n- Paco-LVIS / Pixmo-Point / Where2placeで定量評価</p>\n<blockquote>\n<p>📊 Table 3（p.7）参照: ポインティング定量評価（Gemini Robotics-ERはMolmoを3タスク中2タスクで上回る）</p>\n</blockquote>\n<p><strong>3. 2D軌跡予測</strong> — ポインティングを応用した動作軌跡生成</p>\n<p><strong>4. トップダウングラスプ予測</strong> <code>[y, x, θ]</code>\n- Gemini Robotics-ERで強化。実機のロボット制御に直結</p>\n<h3>3D空間理解</h3>\n<p><strong>5. 多視点対応</strong> — 複数カメラ視点間での3D点対応付け\n- 大幅に異なる視点間でも正確な対応を予測</p>\n<p><strong>6. 3Dバウンディングボックス検出</strong> — 単眼画像からメトリック3Dボックスを予測</p>\n<blockquote>\n<p>📊 Table 4（p.8）参照: SUN-RGBDでGemini Robotics-ERがSOTA達成</p>\n</blockquote>\n<hr />\n<h2>ゼロショット・少数ショット制御</h2>\n<p>追加の行動データなしでのロボット制御実験（ALOHA 2ロボット）:</p>\n<h3>ゼロショット制御（コード生成）</h3>\n<p>Gemini 2.0 → コード生成 → API経由でロボット制御（外部モデル不要）</p>\n<pre><code>Gemini 2.0が自身で:\n- 物体検出・ポインティング\n- 状態推定・計画\n- コード生成・実行\n- フィードバック受信・再計画\n</code></pre>\n<blockquote>\n<p>📊 Table 5（p.10）参照: シミュレーションタスク成功率</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>平均成功率</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Gemini 2.0 Flash</td>\n<td>27%</td>\n</tr>\n<tr>\n<td><strong>Gemini Robotics-ER</strong></td>\n<td><strong>53%（約2倍）</strong></td>\n</tr>\n</tbody>\n</table>\n<h3>少数ショット制御（インコンテキスト学習）</h3>\n<p>10デモをプロンプトに組み込み、エンドエフェクタ姿勢の軌跡を直接出力</p>\n<blockquote>\n<p>📊 Table 6（p.10）参照: 実機ALOHA 2タスク成功率</p>\n</blockquote>\n<table>\n<thead>\n<tr>\n<th>モデル</th>\n<th>シミュレーション</th>\n<th>実機</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Gemini 2.0 Flash</td>\n<td>51%</td>\n<td>—</td>\n</tr>\n<tr>\n<td><strong>Gemini Robotics-ER</strong></td>\n<td><strong>65%</strong></td>\n<td><strong>65%</strong></td>\n</tr>\n</tbody>\n</table>\n<p>→ 服の折り畳みなど複雑な両腕タスクで特に効果大</p>\n<hr />\n<h2>Gemini Robotics のアーキテクチャ</h2>\n<p>低レイテンシ・高精度なVLA実現のための2コンポーネント構成:</p>\n<pre><code>[クラウド] Gemini Robotics バックボーン\n    │  ・Gemini Robotics-ERの蒸留版\n    │  ・レイテンシ: 数秒 → 160ms以下に最適化\n    │\n    ▼\n[ロボット搭載] Gemini Robotics デコーダ\n    ・バックボーンのレイテンシを補償\n    ・低レベルアクションチャンクを50Hzで出力\n</code></pre>\n<ul>\n<li><strong>エンドツーエンドレイテンシ</strong>: 約250ms</li>\n<li><strong>有効制御周波数</strong>: <strong>50Hz</strong>（アクションチャンク方式で実現）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 14（p.11）参照: モデルアーキテクチャ概観</p>\n</blockquote>\n<p>この設計により:\n- スムーズな動作と反応的な挙動を実現（バックボーンのレイテンシにもかかわらず）\n- バックボーンの汎化能力を保持</p>\n<hr />\n<h2>学習データと実験設定</h2>\n<p><strong>データ収集</strong>:\n- <strong>ALOHA 2ロボット群</strong>で12ヶ月間収集\n- 数千時間の実世界エキスパートデモ\n- 数千種類の多様なタスク（難易度・エピソード長・器用さが多様）\n- 行動データ＋非行動データ（Webドキュメント・コード・マルチモーダルコンテンツ・身体的推論データ）</p>\n<p><strong>比較ベースライン</strong>:\n- <strong>π₀ reimplementation</strong>: 同じ多様なデータ混合で訓練した再実装版（公開版より高性能）\n- <strong>Multi-task diffusion policy</strong>: ALOHA Unleashedベースのタスク条件付き拡散ポリシー</p>\n<p>評価: すべて<strong>実世界ロボット実験</strong>（A/Bテスト＋統計的分析）</p>\n<p>Gemini Roboticsはクラウドで動作。2つのベースラインはNvidia RTX 4090搭載ワークステーションで動作。</p>\n<hr />\n<h2>多様な操作タスクの実行</h2>\n<p>20タスクでの評価（洗濯室・台所・オフィス・日常活動など多様なセットアップ）:</p>\n<blockquote>\n<p>📊 Fig. 15（p.12）参照: 実験シーン例\n📊 Fig. 16（p.12）参照: 20タスクの成功率比較</p>\n</blockquote>\n<p>主な結果:\n- <strong>20タスクのうち50%以上で成功率80%超</strong>\n- 変形物体操作（\"fold pink cloth\", \"wrap the wire around the headphone\"）でベースライン圧倒\n- 困難タスク（\"open pink folder\", \"insert red block\", \"wrap wire\"）で<strong>Gemini Roboticsのみ非ゼロ成功率を達成</strong>\n- 最も器用なタスク（\"insert shoe lace\"）は多タスク設定のみでは依然困難</p>\n<p>→ 高容量モデルアーキテクチャ＋高品質な多様データ（視覚・言語・行動）の組み合わせが多タスク学習に必須</p>\n<hr />\n<h2>言語指示への追従と汎化</h2>\n<p>25の言語指示 × 5シーン（訓練内＋未見シーン）での評価:</p>\n<blockquote>\n<p>📊 Fig. 17（p.14）参照: 言語指示追従の評価結果</p>\n</blockquote>\n<p>3軸での汎化評価（85タスク: 訓練内20%, 視覚28%, 指示28%, 行動24%）:</p>\n<p><strong>1. 視覚汎化</strong>: 背景・照明条件・妨害物体・テクスチャの変化に対する不変性</p>\n<p><strong>2. 指示汎化</strong>: 言い換え・タイポへの耐性・他言語・異なる抽象レベル</p>\n<p><strong>3. 行動汎化</strong>: 初期条件（物体位置）・物体インスタンス（形状・物理特性）の変化への適応</p>\n<blockquote>\n<p>📊 Fig. 21（p.15）参照: 汎化ベンチマークの平均プログレスコア</p>\n</blockquote>\n<ul>\n<li>Gemini Roboticsはすべての汎化軸でベースラインを上回る</li>\n<li>ベースラインが完全に失敗するケース（例: 他言語での指示）でも<strong>非ゼロの成功率を達成</strong></li>\n<li>大型VLMバックボーン＋SOTA視覚エンコーダ＋多様な訓練データが汎化の源泉</li>\n</ul>\n<hr />\n<h2>長時間・高精度タスクへの特化</h2>\n<p>各タスク2000〜5000エピソードのfine-tuningで実現:</p>\n<table>\n<thead>\n<tr>\n<th>タスク</th>\n<th>特徴</th>\n<th>成功率</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>折り紙のキツネ</strong></td>\n<td>4段階の精密な折り（両腕協調必須、ずれ不可）</td>\n<td>高</td>\n</tr>\n<tr>\n<td><strong>弁当箱詰め</strong></td>\n<td>パン袋・エネルギーバー・ぶどう・容器を順次詰める（2分以上）</td>\n<td><strong>100%</strong></td>\n</tr>\n<tr>\n<td>スペリングボードゲーム</td>\n<td>物体認識→アルファベットタイル配置</td>\n<td>高（手描きスケッチ4/6正解）</td>\n</tr>\n<tr>\n<td>カードゲーム</td>\n<td>カードの配付・持つ・出す・折るの4段階</td>\n<td>高</td>\n</tr>\n<tr>\n<td>スナップエンドウ</td>\n<td>金属トング使用（両腕協調）</td>\n<td>高</td>\n</tr>\n<tr>\n<td>ナッツのサラダ</td>\n<td>スプーン使用（背の高いコンテナからすくう）</td>\n<td>高</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>📊 Fig. 23（p.17）参照: 専門化後の成功率（平均79%）</p>\n</blockquote>\n<p><strong>重要な発見</strong>:\n- ゼロから訓練した場合（事前学習なし）: <strong>全タスクで0%成功率</strong>\n- π₀ reimplementやMulti-task diffusionも同じデータでfine-tuningしても劣る\n- → 強力な汎化ベースモデル＋多様な行動データの事前学習が特化の前提条件</p>\n<hr />\n<h2>推論強化と高度な汎化</h2>\n<p>Gemini Robotics-ERの推論能力を低レベル行動に統合する実験:</p>\n<p>行動データを再ラベリング: 身体的推論能力（軌跡理解・生成）に近い形式へ変換</p>\n<p>評価カテゴリ（すべて訓練分布外）:\n- <strong>単一ステップ推論</strong>: 属性・アフォーダンスで間接的にオブジェクトを指定\n  - 例: \"ボトムライトのマウスをマッチングパイル（色合わせ）へ\"\n- <strong>意味的汎化</strong>: 未見の意味概念への対応\n  - 例: \"日本の魚料理をランチボックスへ\"→寿司を選択\n- <strong>空間理解</strong>: 未見の空間言語への対応\n  - 例: \"最小のコーラ缶を詰める\"→ミニ缶を選択</p>\n<blockquote>\n<p>📊 Fig. 24（p.18）参照: 推論強化版 vs 通常版の成功率比較</p>\n</blockquote>\n<p>推論強化版が全カテゴリで大幅に成功率向上。さらに中間ステップとして<strong>キーポイント軌跡を出力</strong>し解釈可能性も向上。</p>\n<blockquote>\n<p>📊 Fig. 25（p.18）参照: チェーン・オブ・ソートとしてのキーポイント軌跡可視化</p>\n</blockquote>\n<hr />\n<h2>新タスクへの素早い適応</h2>\n<p>長時間タスクから8つのサブタスクを選び、デモ数を変えてfine-tuning:</p>\n<blockquote>\n<p>📊 Fig. 26（p.19）参照: デモ数と成功率の関係</p>\n</blockquote>\n<p>主な結果:\n- <strong>7/8タスクで100デモ以下で70%以上の成功率</strong>\n- デモ収集コスト: 15分〜1時間（タスク難易度による）\n- 2タスクは100%成功率を達成</p>\n<p>ベースラインとの比較:\n- 易しいタスク（\"Pour lettuce\"）ではベースラインも効率的に学習\n- 困難タスク（\"Origami fox first fold\", 弁当箱系）ではベースラインが少数デモで失敗</p>\n<p>→ 強力なVLMバックボーン＋多様な行動データ事前学習が少数ショット適応の鍵</p>\n<hr />\n<h2>新ロボット形態への転移</h2>\n<p>ALOHA 2で訓練したGemini Roboticsを少数データで別形態に適応させる予備実験:</p>\n<p>対象プラットフォーム:\n- <strong>双腕Frankaロボット</strong>: 平行グリッパー装備\n- <strong>Apollo（Apptronik）</strong>: フルサイズヒューマノイド、5指の器用な手</p>\n<blockquote>\n<p>📊 Fig. 27（p.20）参照: 2種類のロボット形態での実験タスク例</p>\n</blockquote>\n<p><strong>双腕Frankaの結果</strong>:\n- 平均成功率 <strong>63%</strong>（シングルタスク拡散ポリシーと同等かそれ以上）</p>\n<blockquote>\n<p>📊 Fig. 28（p.20）参照: 汎化テスト（視覚擾乱・初期条件変化・物体形状変化）</p>\n</blockquote>\n<ul>\n<li><strong>視覚擾乱・初期条件・物体形状変化</strong>に対してもシングルタスク拡散ベースラインを大幅に上回る</li>\n<li>→ 汎化能力が異なる形態でも保持される</li>\n</ul>\n<hr />\n<h2>安全性への取り組み</h2>\n<p>2種類の安全性問題を対処:</p>\n<h3>1. コンテンツ安全性</h3>\n<ul>\n<li>Geminiの既存安全学習（ヘイトスピーチ・個人情報等）をGemini Roboticsが継承</li>\n<li>Gemini Robotics-ERで新しい出力モダリティ（ポインティング）に対する安全性訓練を追加</li>\n<li><strong>偏見を誘発するポインティングクエリ拒否率: 96%</strong>（ベースライン20%）</li>\n</ul>\n<h3>2. 意味的行動安全性</h3>\n<ul>\n<li>非構造化環境での物理的安全制約の遵守</li>\n<li>例: 熱いストーブにぬいぐるみを置かない・ワイングラスを直立で運ぶ</li>\n<li><strong>ASIMOVデータセット</strong>（同時公開）を活用してfine-tuning</li>\n<li>実世界の負傷報告（NEISS）から生成したテストケース</li>\n<li>Constitutional AI手法で性能改善</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 29（p.21）参照: 安全性評価結果（Gemini 2.0 FlashとGemini Robotics-ERが同等の高性能）</p>\n</blockquote>\n<hr />\n<h2>まとめと今後の課題</h2>\n<p><strong>4つの貢献</strong>:\n1. <strong>ERQAベンチマーク</strong>（オープンソース公開）\n2. <strong>Gemini Robotics-ER</strong>: 空間理解・軌跡予測・把持予測に優れたVLM\n3. <strong>Gemini Robotics</strong>: 50Hzリアルタイム制御、多様なタスク・形態への汎化\n4. <strong>安全性フレームワーク</strong>: コンテンツ安全性＋意味的行動安全性</p>\n<p><strong>現在の限界</strong>:\n- 長時間ビデオでの空間関係グラウンディングに課題\n- 数値予測（点・ボックス）の精度が細かい制御には不十分な場合がある\n- 推論と精密な器用さを同時に要求するタスクに課題</p>\n<p><strong>今後の課題</strong>:\n- シミュレーションを使った視覚多様性・接触豊富なデータ生成技術の開発\n- 少数データでの新形態適応\n- ゼロショットクロス形態転移の実現</p>\n<hr />\n<h2>参考ソース</h2>\n<ul>\n<li>arXiv: https://arxiv.org/abs/2503.20020</li>\n<li>ERQA Benchmark: https://github.com/embodiedreasoning/ERQA</li>\n</ul>"
   },
   {
@@ -22548,6 +25564,994 @@
     "iaUrl": "https://archive.org/details/paper-explain-ncomms5213",
     "chapters": [],
     "arxivUrl": "https://arxiv.org/abs/1304.3061",
+    "webAudioUrl": "https://archive.org/download/paper-explain-ncomms5213/paper_ncomms5213_web.m4a",
+    "markdownSource": "**A variational eigenvalue solver on a quantum processor**  \nAlberto Peruzzo, Jarrod McClean, Peter Shadbolt, Man-Hong Yung, Xiao-Qi Zhou,  \nPeter J. Love, Alán Aspuru-Guzik, Jeremy L. O'Brien  \nBristol大学・Harvard大学・Haverford College  \n*Nature Communications* 5, 4213 (2014) — arXiv:1304.3061\n\n---\n\n## 導入：量子固有値問題と既存手法の限界\n\n### なぜ固有値問題が重要か\n\n- 原子・分子の性質はシュレーディンガー方程式の固有値（エネルギー）を解くことで決まる\n- 系の規模が指数関数的に拡大 → 古典コンピュータでは2〜3原子以上は厳密解が困難\n- 量子化学以外でも、検索エンジン最適化・新材料設計・創薬にも固有値問題が現れる\n\n### 既存の量子アプローチ：QPE（量子位相推定）の問題点\n\n- QPE（量子位相推定）は固有値を指数的高速で計算できる\n- しかし精度 $p$ を得るためには $O(1/p)$ 回の $e^{-i\\mathcal{H}t}$ 演算が必要\n- 実用的な4×4行列でも最低12個のCNOTゲートが必要\n- 現在のデバイスでは数十〜数百ゲートが限界 → QPEは近未来には非現実的\n\n### 本論文の提案：VQE（変分量子固有値ソルバー）\n\n2つのアルゴリズムの組み合わせ：\n\n| アルゴリズム | 担当 | 計算の場所 |\n|------------|------|----------|\n| **Algorithm 1**: 量子期待値推定 | $\\langle\\mathcal{H}\\rangle$ の計算 | 量子プロセッサ（QPU） |\n| **Algorithm 2**: 量子変分固有値ソルバー | パラメータ最適化 | 古典プロセッサ（CPU） |\n\n- QPEの「長いコヒーレント発展」をなくし、**短いコヒーレント発展を多数回繰り返す**方式に変換\n- 今日・近未来の量子デバイスで実現可能\n\n> 📊 Fig. 1 参照（原論文）— QPUとCPUのハイブリッドアーキテクチャ\n\n---\n\n## Algorithm 1：ハミルトニアン期待値の効率的な計算\n\n### ハミルトニアンのパウリ分解\n\n任意のハミルトニアンはパウリ演算子の積の和として書ける（式1）：\n\n$$\n\\mathcal{H} = \\sum_{i\\alpha} h^i_\\alpha \\sigma_\\alpha^i + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta} \\sigma_\\alpha^i \\sigma_\\beta^j + \\cdots\n$$\n\n- ローマ字インデックス $i, j$：演算子が作用する部分空間\n- ギリシャ字インデックス $\\alpha, \\beta$：パウリ演算子の種類（$x, y, z$）\n- 係数 $h^i_\\alpha, h^{ij}_{\\alpha\\beta}$ は実数\n\n期待値の線形性により（式2）：\n\n$$\n\\langle\\mathcal{H}\\rangle = \\sum_{i\\alpha} h^i_\\alpha \\langle\\sigma_\\alpha^i\\rangle + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta} \\langle\\sigma_\\alpha^i \\sigma_\\beta^j\\rangle + \\cdots\n$$\n\n### なぜ量子コンピュータが効率的か\n\n- 量子ハードウェアはパウリ積の期待値を一定時間で測定できる\n- 必要な繰り返し回数は $O(|h|^2/p^2)$（$p$ は精度）\n- **コヒーレンス時間は $O(1)$（1回の測定で十分）**：QPEの $O(1/p)$ と対照的\n- 指数的な量子優位性を保ちながら、コヒーレンス要件を劇的に削減\n\n### 古典計算との比較\n\n| | 量子（このアルゴリズム） | 古典 |\n|--|---------|------|\n| 状態保持 | $n$ 量子ビット | $2^n$ 複素数 |\n| 期待値計算 | $O(|h|^2 M/p^2)$ 繰り返し | $O(2^n)$ 浮動小数点演算 |\n| 規模依存 | 多項式 | 指数的 |\n\n- $n$ 量子ビットで $2^n \\times 2^n$ のハミルトニアン期待値を効率計算\n- N-表現可能性問題（NP困難）が量子ハードウェアでは自然に回避される\n\n---\n\n## Algorithm 2：変分最適化によるアンザッツ状態の準備\n\n### 変分原理の活用\n\nレイリー・リッツ商の最小化（式3）：\n\n$$\n\\min_{|\\psi\\rangle} \\frac{\\langle\\psi|\\mathcal{H}|\\psi\\rangle}{\\langle\\psi|\\psi\\rangle}\n$$\n\n- 最小値を与える $|\\psi\\rangle$ が基底状態\n- 実験パラメータ $\\{\\theta_i\\}$ で $|\\psi(\\{\\theta_i\\})\\rangle$ を準備 → Algorithm 1 で期待値計算 → CPUで最小化\n\n### ユニタリ連結クラスター（UCC）アンザッツ（式4）\n\n$$\n|\\Psi\\rangle = e^{T - T^\\dagger}|\\Phi\\rangle_{\\rm ref}\n$$\n\n- $|\\Phi\\rangle_{\\rm ref}$：参照状態（通常はハートリー・フォック基底状態）\n- $T = T_1 + T_2 + \\cdots + T_N$：クラスター演算子\n  - $T_1 = \\sum_{pr} t_p^r \\hat{a}_p^\\dagger \\hat{a}_r$（1粒子励起）\n  - $T_2 = \\sum_{pqrs} t_{pq}^{rs} \\hat{a}_p^\\dagger \\hat{a}_q^\\dagger \\hat{a}_r \\hat{a}_s$（2粒子励起）\n- $(T - T^\\dagger)$ は反エルミート → $e^{T-T^\\dagger}$ はユニタリ\n- 古典コンピュータでは効率的アルゴリズムが知られていない → 量子優位性の具体例\n\n### アルゴリズムのループ\n\n1. 量子回路パラメータ $\\{\\theta_i^n\\}$ で状態 $|\\psi^n\\rangle$ を準備\n2. Algorithm 1 で $\\langle\\mathcal{H}\\rangle = f(\\{\\theta_i^n\\})$ を計算\n3. CPUの最小化アルゴリズム（Nelder-Mead 単体法）が次のパラメータ $\\{\\theta_i^{n+1}\\}$ を決定\n4. 収束まで繰り返す\n\n> 📊 Fig. 2 参照（原論文）— 実験装置（フォトニックチップ）の模式図と写真\n\n---\n\n## 実験実装：フォトニック量子回路\n\n### 量子プロセッサの構成\n\n- **集積フォトニクス技術**（ブリストル大学・O'Brienグループ）\n- 自発パラメトリック下方変換で光子対を生成、導波路に入射して $|00\\rangle$ を準備\n- 8個の電圧制御熱位相シフタ $\\phi_{1-8}$ と1個のCNOTゲートで任意の2量子ビット純粋状態を準備\n- 光子検出器 D1〜D4 の同時計数率をCPUへ送信\n- 平均統計忠実度 $F \\geq 99\\%$（Shadbolt et al. 2011）\n\n### 実験対象：He-H+ の結合解離曲線\n\nフルCI（完全配置間相互作用）ハミルトニアン（4次元 = 2量子ビット）（式5）：\n\n$$\n\\mathcal{H}(R) = \\sum_{i\\alpha} h^i_\\alpha(R) \\sigma_\\alpha^i + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta}(R) \\sigma_\\alpha^i \\sigma_\\beta^j\n$$\n\n- 係数は PSI3 計算化学パッケージで算出（最小基底 STO-3G）\n- 核間距離 $R$ をパラメータとして変化させ、各 $R$ での基底状態エネルギーを計算\n- QPEによる同等計算では最低12 CNOTゲートが必要 → 本手法では **1 CNOT** のみ\n\n### QPEとの計算コスト比較\n\n| | QPE | このアルゴリズム |\n|--|-----|----------------|\n| CNOT数 | ≥ 12 | **1** |\n| コヒーレンス要件 | 長時間（$O(1/p)$） | 短時間×多数回 |\n| 補助量子ビット | 必要 | 不要 |\n\n---\n\n## 実験結果：化学精度での基底状態エネルギー計算\n\n### 代表的な最適化実行（$R = 90$ pm）\n\n- Algorithm 2 を実行し、$\\langle\\mathcal{H}(R)\\rangle$ を最小化\n- 最適化は基底状態エネルギーに収束\n- 各ステップでのタングル（量子もつれの度合い）も追跡\n- 基底状態は小さいがゼロでないタングルを持つ（量子もつれが必要）\n\n> 📊 Fig. 3 参照（原論文）— エネルギー収束と重なり積分の最適化過程\n\n### 結合解離曲線（$R = 80〜100$ pm の79点）\n\n測定された平衡結合距離と基底状態エネルギー：\n\n$$\nR_{\\rm eq} = 92.3 \\pm 0.1 \\text{ pm}, \\quad E_0 = -2.865 \\pm 0.008 \\text{ MJ/mol}\n$$\n\n- **96%以上のデータ点が化学精度内**（理論値との誤差 < 化学精度）\n- 系統誤差 $\\varepsilon = 50$ KJ/mol を補正済み\n- 解の再現性：最適化終了後、実験パラメータから状態を効率的に再構築可能\n\n> 📊 Fig. 4 参照（原論文）— He-H+ の結合解離曲線\n\n### 誤差の原因（付録：実験詳細）\n\n| 誤差の種類 | 原因 | 将来の改善法 |\n|----------|------|------------|\n| 統計誤差（$\\sigma \\approx 37$ KJ/mol） | 光子のポアソン統計 | 測定回数増加で低減 |\n| 系統誤差（$\\varepsilon = 50$ KJ/mol） | ① 光源の不純度（高次光子数項）<br>② チップ設計誤差<br>③ 結合効率のアンバランス | ① 真の単一光子源<br>② 製造精度向上<br>③ ファイバー固定技術 |\n\n- 平均同時計数率 2000〜4000 events/秒\n- 全解離曲線測定に約158時間（冷却サイクルが律速、デューティサイクル〜5%）\n\n---\n\n## 励起状態探索と汎用ハミルトニアンへの拡張（付録）\n\n### 励起状態の探索：Folded Spectrum 法\n\n$$\n\\mathcal{H}_\\lambda = (\\mathcal{H} - \\lambda)^2\n$$\n\n- シフトパラメータ $\\lambda$ の近傍にある固有値を探索できる\n- $\\lambda$ を走査すれば全ての固有値を順番に見つけられる\n- ハミルトニアムの項数は元の2乗オーダー（わずかなオーバーヘッド）\n\n### $k$-スパースハミルトニアンへの一般化\n\n- 各行に $k$ 個以下の非ゼロ要素を持つ行列に一般化可能\n- Berry et al. 2007 の分解 $\\mathcal{H} = \\sum_j^m \\mathcal{H}_j$（$m = 6k^2$ 項、各1-スパース）を利用\n- 検索エンジン最適化や画像認識などに応用可能\n\n---\n\n## まとめ\n\n- VQE は **QPU（量子）と CPU（古典）のハイブリッド**で固有値を計算する手法\n- Algorithm 1：$\\mathcal{H}$ をパウリ積の和に分解し、**短いコヒーレンス時間**で期待値を測定\n- Algorithm 2：変分最適化（Nelder-Mead 法）で基底状態を準備 → QPEの長いコヒーレント発展を回避\n- He-H+ で実証：1 CNOTゲートのみ、96%以上が化学精度 $R_{\\rm eq} = 92.3 \\pm 0.1$ pm\n- ユニタリ連結クラスターアンザッツを量子デバイスで効率的に実装 → **古典計算には困難な計算クラス**\n- 将来の量子化学・新材料設計・創薬への応用が期待される\n\n---\n\n## 参考ソース\n\n- Peruzzo et al., *Nature Communications* 5, 4213 (2014). arXiv:1304.3061\n- Aspuru-Guzik et al., *Science* 309, 1704 (2005) — QPEを量子化学に初適用\n- Taube and Bartlett, *Int. J. Quant. Chem.* 106, 3393 (2006) — UCC理論",
+    "timeline": {
+      "fps": 30,
+      "totalFrames": 26187,
+      "cues": [
+        {
+          "speaker": "A",
+          "text": "みんな、こんにちはなのだ！ずんだもんなのだ！",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 18,
+          "endFrame": 115
+        },
+        {
+          "speaker": "B",
+          "text": "四国めたんよ。今日は量子化学計算を変えた歴史的論文、VQE（ブイキューイー）を解説するわ。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 122,
+          "endFrame": 336
+        },
+        {
+          "speaker": "A",
+          "text": "ブイキューイーって何なのだ？",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 343,
+          "endFrame": 398
+        },
+        {
+          "speaker": "B",
+          "text": "変分量子固有値ソルバー、英語でVariational Quantum Eigensolverね。2014年にネイチャー・コミュニケーションズに発表されたの。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 406,
+          "endFrame": 795
+        },
+        {
+          "speaker": "A",
+          "text": "どこの研究者が作ったのだ？",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 803,
+          "endFrame": 868
+        },
+        {
+          "speaker": "B",
+          "text": "ブリストル大学のペルッツォさん、シャドボルトさん、オブライエンさんと、ハーバード大学のマクリーンさん、アスプル＝グジクさんたちよ。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 875,
+          "endFrame": 1111
+        },
+        {
+          "speaker": "A",
+          "text": "量子化学と量子コンピュータの専門家が組んだのだな。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 1119,
+          "endFrame": 1219
+        },
+        {
+          "speaker": "B",
+          "text": "そう。この論文は量子コンピュータを使って分子のエネルギーを計算した最初の実験よ。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 1227,
+          "endFrame": 1383
+        },
+        {
+          "speaker": "A",
+          "text": "なんで分子のエネルギー計算が大変なのだ？",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 1391,
+          "endFrame": 1483
+        },
+        {
+          "speaker": "B",
+          "text": "シュレーディンガー方程式を解くのが難しいから。電子の数が増えるほど計算量が指数関数的に増える。2〜3原子以上になると古典コンピュータでは厳密解が出せないの。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 1490,
+          "endFrame": 1809
+        },
+        {
+          "speaker": "A",
+          "text": "量子コンピュータならできるのだな。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 1817,
+          "endFrame": 1877
+        },
+        {
+          "speaker": "B",
+          "text": "原理的にはね。でも2014年当時のアプローチ、「量子位相推定（QPE）」には大きな欠点があった。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 1885,
+          "endFrame": 2074
+        },
+        {
+          "speaker": "A",
+          "text": "量子位相推定って何なのだ？",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 2081,
+          "endFrame": 2149
+        },
+        {
+          "speaker": "B",
+          "text": "ハミルトニアンという演算子の固有値（エネルギー）を直接読み出すアルゴリズムよ。原理的には指数的高速なの。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 2156,
+          "endFrame": 2373
+        },
+        {
+          "speaker": "A",
+          "text": "速いのに欠点があるのだな。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 2380,
+          "endFrame": 2439
+        },
+        {
+          "speaker": "B",
+          "text": "精度pを出すためにO(1/p)回のゲート操作が連続で必要なの。同じ4×4のハミルトニアンを計算するだけで、最低12個のCNOTゲートが必要だった。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 2447,
+          "endFrame": 2784
+        },
+        {
+          "speaker": "A",
+          "text": "CNOTゲートって量子ビット同士を絡めるゲートなのだな。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 2792,
+          "endFrame": 2904
+        },
+        {
+          "speaker": "B",
+          "text": "現在の量子デバイスは数十〜数百ゲートが限界だから、ミリオン単位のゲートが必要なQPEは近未来には非現実的だったの。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 2911,
+          "endFrame": 3168
+        },
+        {
+          "speaker": "A",
+          "text": "それでVQEが生まれたのだな。",
+          "section": "導入：量子固有値問題と既存手法の限界",
+          "startFrame": 3175,
+          "endFrame": 3240
+        },
+        {
+          "speaker": "A",
+          "text": "VQEはどんな仕組みなのだ？",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 3258,
+          "endFrame": 3325
+        },
+        {
+          "speaker": "B",
+          "text": "2つのアルゴリズムの組み合わせよ。まずAlgorithm 1（アルゴリズム1）から説明するわ。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 3332,
+          "endFrame": 3518
+        },
+        {
+          "speaker": "A",
+          "text": "アルゴリズム1は何をするのだ？",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 3525,
+          "endFrame": 3594
+        },
+        {
+          "speaker": "B",
+          "text": "ハミルトニアンHの期待値⟨H⟩を効率よく計算すること。キーアイデアはHをパウリ演算子の積の和に分解することよ。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 3601,
+          "endFrame": 3836
+        },
+        {
+          "speaker": "A",
+          "text": "パウリ演算子って何なのだ？",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 3843,
+          "endFrame": 3905
+        },
+        {
+          "speaker": "B",
+          "text": "X、Y、Z の3種類の2行2列行列ね。どんなハミルトニアンもこれらの積の和で書けるの。画面の式を見て。H = Σiα hαi σαi + Σijαβ hαβij σαi σβj + …",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 3913,
+          "endFrame": 4488
+        },
+        {
+          "speaker": "A",
+          "text": "hαiが係数なのだな。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 4496,
+          "endFrame": 4561
+        },
+        {
+          "speaker": "B",
+          "text": "そう。全部実数の係数よ。量子力学の期待値の線形性から、⟨H⟩ = Σ h × ⟨σα ⊗ σβ⟩ と分解できる。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 4568,
+          "endFrame": 4879
+        },
+        {
+          "speaker": "A",
+          "text": "各パウリ積の期待値を足し合わせればいいのだな。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 4886,
+          "endFrame": 4983
+        },
+        {
+          "speaker": "B",
+          "text": "そしてパウリ積の期待値は量子デバイスで一定時間で測定できるの。これがポイントよ。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 4990,
+          "endFrame": 5144
+        },
+        {
+          "speaker": "A",
+          "text": "一回の測定で1つの期待値が出るのだな。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 5152,
+          "endFrame": 5240
+        },
+        {
+          "speaker": "B",
+          "text": "精度pを得るにはO(|h|²/p²)回の繰り返しが必要だけど、1回の測定で使うコヒーレンス時間はO(1)。QPEのO(1/p)と比べると革命的な改善ね。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 5247,
+          "endFrame": 5662
+        },
+        {
+          "speaker": "A",
+          "text": "短い測定をたくさん繰り返すほうが、長いコヒーレンス発展を1回やるより現実的なのだな。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 5670,
+          "endFrame": 5861
+        },
+        {
+          "speaker": "B",
+          "text": "QPEは長い連続動作が必要だから、途中でエラーが起きやすい。VQEは1回1回が短いから、現在のノイジーなデバイスに向いているの。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 5868,
+          "endFrame": 6151
+        },
+        {
+          "speaker": "A",
+          "text": "N-表現可能性問題というのも回避できると書いてあったのだな。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 6159,
+          "endFrame": 6300
+        },
+        {
+          "speaker": "B",
+          "text": "N-表現可能性問題はQMA困難クラスで、古典でも量子でも解くのが難しい問題よ。でもVQEでは量子ハードウェアが全体の量子状態を保持するから、この問題が自然に回避されるの。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 6307,
+          "endFrame": 6678
+        },
+        {
+          "speaker": "A",
+          "text": "要するに、短い測定を何度も繰り返すほうが、長い演算を1回やるより現実的なのだな。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 6686,
+          "endFrame": 6888
+        },
+        {
+          "speaker": "B",
+          "text": "そう。QPEは精度p を得るためにO(1/p)の連続ゲートを必要とする。VQEはO(|h|²M/p²)回の独立した測定に分割するの。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 6896,
+          "endFrame": 7285
+        },
+        {
+          "speaker": "A",
+          "text": "1回の測定のコヒーレンス時間はO(1)なのだな。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 7292,
+          "endFrame": 7426
+        },
+        {
+          "speaker": "B",
+          "text": "だから現在のデバイスで実現できる。多項式の繰り返しコストで、古典コンピュータに対する指数的な優位性を保てるの。",
+          "section": "Algorithm 1：ハミルトニアン期待値の効率的な計算",
+          "startFrame": 7434,
+          "endFrame": 7648
+        },
+        {
+          "speaker": "A",
+          "text": "アルゴリズム2は何なのだ？",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 7666,
+          "endFrame": 7724
+        },
+        {
+          "speaker": "B",
+          "text": "古典コンピュータで最適化を行って、基底状態を準備する変分アルゴリズムよ。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 7732,
+          "endFrame": 7870
+        },
+        {
+          "speaker": "A",
+          "text": "変分って何なのだ？",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 7877,
+          "endFrame": 7927
+        },
+        {
+          "speaker": "B",
+          "text": "レイリー・リッツの変分原理を使っているの。画面の式を見て。⟨ψ|H|ψ⟩/⟨ψ|ψ⟩の最小値を与えるψが基底状態ということ。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 7935,
+          "endFrame": 8251
+        },
+        {
+          "speaker": "A",
+          "text": "期待値を最小化することで基底状態を見つけるのだな。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 8259,
+          "endFrame": 8367
+        },
+        {
+          "speaker": "B",
+          "text": "パラメータ{θi}で制御できるアンザッツ（仮の答え）状態|ψ({θi})⟩を準備して、Algorithm 1 でH期待値を計算、古典コンピュータで次のθを決める、これを繰り返すの。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 8375,
+          "endFrame": 8788
+        },
+        {
+          "speaker": "A",
+          "text": "古典コンピュータの最適化アルゴリズムは何を使ったのだ？",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 8796,
+          "endFrame": 8910
+        },
+        {
+          "speaker": "B",
+          "text": "ネルダー・ミード法（Nelder-Mead、単体法）という勾配なし最適化ね。実験のノイズに強いことで選ばれたわ。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 8918,
+          "endFrame": 9075
+        },
+        {
+          "speaker": "A",
+          "text": "勾配法は使わないのだな。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 9083,
+          "endFrame": 9142
+        },
+        {
+          "speaker": "B",
+          "text": "量子デバイスの実験条件だと測定値が変動するから、勾配法は収束が難しかったの。ネルダー・ミード法のほうが最適解に安定して到達できたと論文に書いてある。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 9150,
+          "endFrame": 9458
+        },
+        {
+          "speaker": "A",
+          "text": "アンザッツ（仮の答えの形）は何を使ったのだ？",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 9466,
+          "endFrame": 9593
+        },
+        {
+          "speaker": "B",
+          "text": "ユニタリ連結クラスター、英語でUnitary Coupled Cluster、略してUCCアンザッツよ。画面の式を見て。|Ψ⟩ = exp(T - T†)|Φ_ref⟩。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 9601,
+          "endFrame": 10071
+        },
+        {
+          "speaker": "A",
+          "text": "Tってクラスター演算子のことなのだな。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 10079,
+          "endFrame": 10155
+        },
+        {
+          "speaker": "B",
+          "text": "T = T1 + T2 + … で、T1は1粒子励起（電子を1個移動させる操作）、T2は2粒子励起を表すの。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 10163,
+          "endFrame": 10544
+        },
+        {
+          "speaker": "A",
+          "text": "exp(T - T†)がユニタリになるのはなぜなのだ？",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 10551,
+          "endFrame": 10710
+        },
+        {
+          "speaker": "B",
+          "text": "(T - T†)が反エルミート行列だから、その指数関数はユニタリ行列になる。量子コンピュータの演算はユニタリだから、これを回路として実装できるの。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 10717,
+          "endFrame": 11008
+        },
+        {
+          "speaker": "A",
+          "text": "古典コンピュータではなぜ難しいのだ？",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 11015,
+          "endFrame": 11094
+        },
+        {
+          "speaker": "B",
+          "text": "BCH展開が打ち切れないから、古典では知られた効率的アルゴリズムがないの。これが量子コンピュータの具体的な優位性の例ね。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 11101,
+          "endFrame": 11330
+        },
+        {
+          "speaker": "A",
+          "text": "デバイスアンザッツという考え方も論文に出てくるのだな。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 11337,
+          "endFrame": 11447
+        },
+        {
+          "speaker": "B",
+          "text": "そう。化学的に動機づけられたアンザッツ（UCCなど）を使う代わりに、使えるハードウェアで準備できる状態の集合をアンザッツとして定義する方法ね。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 11454,
+          "endFrame": 11698
+        },
+        {
+          "speaker": "A",
+          "text": "どちらのアプローチのほうがいいのだ？",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 11706,
+          "endFrame": 11775
+        },
+        {
+          "speaker": "B",
+          "text": "論文では両方の可能性を示しているわ。デバイスアンザッツは化学的な正確性は劣るかもしれないけど、実装しやすい利点がある。将来の研究課題として提示されている。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 11783,
+          "endFrame": 12094
+        },
+        {
+          "speaker": "A",
+          "text": "量子コンピュータの能力向上に合わせて最良の手法を選べるのだな。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 12101,
+          "endFrame": 12233
+        },
+        {
+          "speaker": "B",
+          "text": "そういうこと。量子デバイスの能力と化学的な要求の両方を考慮しながら設計するのが重要なのよ。",
+          "section": "Algorithm 2：変分最適化によるアンザッツ状態の準備",
+          "startFrame": 12241,
+          "endFrame": 12422
+        },
+        {
+          "speaker": "A",
+          "text": "どんな量子コンピュータで実験したのだ？",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 12440,
+          "endFrame": 12518
+        },
+        {
+          "speaker": "B",
+          "text": "ブリストル大学のオブライエングループが開発した、シリコン光子チップよ。光（フォトン）を使った量子コンピュータね。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 12526,
+          "endFrame": 12737
+        },
+        {
+          "speaker": "A",
+          "text": "超伝導じゃないのだな。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 12745,
+          "endFrame": 12792
+        },
+        {
+          "speaker": "B",
+          "text": "フォトニクス方式は室温で動く利点がある。自発パラメトリック下方変換という非線形光学効果で光子ペアを生成して、導波路に入射するの。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 12800,
+          "endFrame": 13067
+        },
+        {
+          "speaker": "A",
+          "text": "操作はどうするのだ？",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 13075,
+          "endFrame": 13123
+        },
+        {
+          "speaker": "B",
+          "text": "8個の電圧制御型熱位相シフタと1個のCNOTゲートで、任意の2量子ビット純粋状態を準備できる。99%以上の統計忠実度を達成しているわ。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 13130,
+          "endFrame": 13435
+        },
+        {
+          "speaker": "A",
+          "text": "今回の実験ターゲットは何なのだ？",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 13442,
+          "endFrame": 13521
+        },
+        {
+          "speaker": "B",
+          "text": "He-H+（ヘリウム水素化物イオン）という2原子分子の結合解離曲線よ。核間距離Rを変えながら各Rでの基底状態エネルギーを計算するの。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 13529,
+          "endFrame": 13834
+        },
+        {
+          "speaker": "A",
+          "text": "なんでHe-H+なのだ？",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 13842,
+          "endFrame": 13921
+        },
+        {
+          "speaker": "B",
+          "text": "2量子ビット（4次元のハミルトニアン）で解けるから。より大きな分子は量子ビット数が増えるけど、原理実証としてこの分子を選んだわ。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 13929,
+          "endFrame": 14184
+        },
+        {
+          "speaker": "A",
+          "text": "ハミルトニアンの係数はどうやって計算したのだ？",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 14192,
+          "endFrame": 14291
+        },
+        {
+          "speaker": "B",
+          "text": "PSI3という計算化学パッケージでハートリー・フォック計算をして、最小基底STO-3Gでの係数を求めたの。これを量子チップに入力するの。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 14298,
+          "endFrame": 14583
+        },
+        {
+          "speaker": "A",
+          "text": "ヨルダン・ウィグナー変換というのも出てきたのだな。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 14590,
+          "endFrame": 14694
+        },
+        {
+          "speaker": "B",
+          "text": "フェルミオン（電子）の生成・消滅演算子を、量子ビット（スピン）のパウリ演算子に変換する方法ね。この変換でハミルトニアンの項数は変わらないから効率的よ。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 14701,
+          "endFrame": 15038
+        },
+        {
+          "speaker": "A",
+          "text": "QPEだと12個のCNOTが必要なのに、このアルゴリズムは1個で済むのだな。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 15046,
+          "endFrame": 15223
+        },
+        {
+          "speaker": "B",
+          "text": "そう、大幅に少ない量子資源で同じ計算ができることを示したの。これがVQEの重要なメッセージよ。",
+          "section": "実験実装：フォトニック量子回路",
+          "startFrame": 15230,
+          "endFrame": 15428
+        },
+        {
+          "speaker": "A",
+          "text": "実験結果はどうだったのだ？",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 15446,
+          "endFrame": 15506
+        },
+        {
+          "speaker": "B",
+          "text": "まずR=90pmでの代表的な最適化実行を見てみるわ。でも実験の前に、最適化アルゴリズムについて補足があるの。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 15514,
+          "endFrame": 15757
+        },
+        {
+          "speaker": "A",
+          "text": "ネルダー・ミード法はなぜ勾配法より優れているのだ？",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 15764,
+          "endFrame": 15881
+        },
+        {
+          "speaker": "B",
+          "text": "量子デバイスの測定値にはポアソン雑音が乗るから、損失関数が滑らかでないの。ネルダー・ミード法は隣接する谷を探索できるから、実験ノイズが多い環境でも収束できたわ。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 15889,
+          "endFrame": 16219
+        },
+        {
+          "speaker": "A",
+          "text": "勾配法は試したのだな。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 16226,
+          "endFrame": 16280
+        },
+        {
+          "speaker": "B",
+          "text": "論文に書いてあるわ。勾配降下法ではノイズのせいで基底状態への収束が確認できなかった。ネルダー・ミード法はほとんどの実行で大域最小値に到達できたの。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 16288,
+          "endFrame": 16588
+        },
+        {
+          "speaker": "A",
+          "text": "90pmってどのくらいの距離なのだ？",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 16596,
+          "endFrame": 16679
+        },
+        {
+          "speaker": "B",
+          "text": "1ピコメートル = 1兆分の1メートル。原子間の距離はだいたい100〜300pmくらいね。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 16686,
+          "endFrame": 16864
+        },
+        {
+          "speaker": "A",
+          "text": "目に見えない小ささなのだな。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 16871,
+          "endFrame": 16928
+        },
+        {
+          "speaker": "B",
+          "text": "Algorithm 2 を走らせると、最適化ステップとともにエネルギーが基底状態に向かって収束していく。各ステップで量子もつれ（タングル）も追跡しているわ。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 16935,
+          "endFrame": 17239
+        },
+        {
+          "speaker": "A",
+          "text": "基底状態はもつれているのだな。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 17246,
+          "endFrame": 17312
+        },
+        {
+          "speaker": "B",
+          "text": "わずかだけどゼロではないタングルを持つことも確認できたの。これは基底状態の正確な記述には量子もつれが必要であることを示しているわ。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 17319,
+          "endFrame": 17552
+        },
+        {
+          "speaker": "A",
+          "text": "R=80〜100pmの範囲で全部計算したのだな。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 17559,
+          "endFrame": 17698
+        },
+        {
+          "speaker": "B",
+          "text": "79点計測して結合解離曲線を描いたの。その結果、平衡結合距離は92.3±0.1ピコメートル、基底状態電子エネルギーは-2.865±0.008メガジュール毎モルと得られたわ。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 17705,
+          "endFrame": 18127
+        },
+        {
+          "speaker": "A",
+          "text": "理論値と合っているのだ？",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 18134,
+          "endFrame": 18190
+        },
+        {
+          "speaker": "B",
+          "text": "96%以上のデータ点が化学精度の範囲内に収まった。これは量子化学で「十分な精度」とされる基準ね。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 18198,
+          "endFrame": 18425
+        },
+        {
+          "speaker": "A",
+          "text": "誤差はどこから来るのだ？",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 18432,
+          "endFrame": 18485
+        },
+        {
+          "speaker": "B",
+          "text": "主に2種類ね。1つは統計的誤差。光子のポアソン統計から来るもので、測定回数を増やせば効率よく削減できる。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 18492,
+          "endFrame": 18718
+        },
+        {
+          "speaker": "A",
+          "text": "もう1つは何なのだ？",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 18726,
+          "endFrame": 18775
+        },
+        {
+          "speaker": "B",
+          "text": "系統誤差ね。50キロジュール毎モルの一定のずれが見られたの。光源の不純度（高次光子数項）、チップの設計誤差、結合効率のアンバランスが原因として論文は挙げているわ。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 18783,
+          "endFrame": 19120
+        },
+        {
+          "speaker": "A",
+          "text": "この系統誤差は補正したのだな。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 19127,
+          "endFrame": 19195
+        },
+        {
+          "speaker": "B",
+          "text": "そう。補正後のデータが96%以上化学精度内に収まるという結果よ。",
+          "section": "実験結果：化学精度での基底状態エネルギー計算",
+          "startFrame": 19203,
+          "endFrame": 19354
+        },
+        {
+          "speaker": "A",
+          "text": "このアルゴリズム、基底状態しか計算できないのだ？",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 19372,
+          "endFrame": 19486
+        },
+        {
+          "speaker": "B",
+          "text": "励起状態も計算できる方法が付録に書いてあるわ。Folded Spectrum 法（折りたたみスペクトル法）ね。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 19493,
+          "endFrame": 19771
+        },
+        {
+          "speaker": "A",
+          "text": "どんな方法なのだ？",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 19779,
+          "endFrame": 19824
+        },
+        {
+          "speaker": "B",
+          "text": "元のハミルトニアンHの代わりに、(H - λ)²を最小化するの。λというシフトパラメータの近くにある固有値を狙い打ちにできる。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 19832,
+          "endFrame": 20089
+        },
+        {
+          "speaker": "A",
+          "text": "λを変えながら走査すれば全部の固有値が見つかるのだな。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 20096,
+          "endFrame": 20217
+        },
+        {
+          "speaker": "B",
+          "text": "そう。2乗にすることでハミルトニアンの項数は増えるけど、古典コンピュータでの指数的な計算コストと比べれば小さなオーバーヘッドよ。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 20224,
+          "endFrame": 20457
+        },
+        {
+          "speaker": "A",
+          "text": "もっと一般的なハミルトニアンにも使えるのだ？",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 20465,
+          "endFrame": 20558
+        },
+        {
+          "speaker": "B",
+          "text": "k-スパースハミルトニアン（各行に多くてk個の非ゼロ要素）に一般化できるわ。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 20566,
+          "endFrame": 20656
+        },
+        {
+          "speaker": "A",
+          "text": "それってどんな問題に使えるのだ？",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 20664,
+          "endFrame": 20735
+        },
+        {
+          "speaker": "B",
+          "text": "論文では検索エンジン最適化や画像認識にも応用できると指摘しているわ。量子化学だけじゃなく広い応用がある。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 20743,
+          "endFrame": 20944
+        },
+        {
+          "speaker": "A",
+          "text": "どうやってページランクの計算に使うのだ？",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 20951,
+          "endFrame": 21037
+        },
+        {
+          "speaker": "B",
+          "text": "グーグルのページランクも行列の固有値問題として定式化できるの。k-スパース行列の固有値問題としてVQEで解けるということを論文は示唆しているわ。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 21045,
+          "endFrame": 21340
+        },
+        {
+          "speaker": "A",
+          "text": "でもまだ実証はされていないのだな。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 21348,
+          "endFrame": 21416
+        },
+        {
+          "speaker": "B",
+          "text": "そう、可能性の指摘にとどまっているわ。量子化学での実証が本論文の核心よ。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 21424,
+          "endFrame": 21582
+        },
+        {
+          "speaker": "A",
+          "text": "2014年に光子デバイスで実験を実際にやったのが偉いのだな。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 21589,
+          "endFrame": 21722
+        },
+        {
+          "speaker": "B",
+          "text": "理論だけでなく実験まで含めた完結した論文ね。それが「量子化学のゲームチェンジャー」と呼ばれる理由の1つよ。",
+          "section": "励起状態探索と汎用ハミルトニアンへの拡張（付録）",
+          "startFrame": 21730,
+          "endFrame": 21935
+        },
+        {
+          "speaker": "B",
+          "text": "では今日のポイントをまとめるわ。",
+          "section": "まとめ",
+          "startFrame": 21953,
+          "endFrame": 22006
+        },
+        {
+          "speaker": "A",
+          "text": "VQEってどんな手法なのだ？",
+          "section": "まとめ",
+          "startFrame": 22013,
+          "endFrame": 22081
+        },
+        {
+          "speaker": "B",
+          "text": "QPU（量子）とCPU（古典）のハイブリッドで固有値を計算する手法よ。",
+          "section": "まとめ",
+          "startFrame": 22088,
+          "endFrame": 22269
+        },
+        {
+          "speaker": "A",
+          "text": "QPEに比べてどこが優れているのだ？",
+          "section": "まとめ",
+          "startFrame": 22277,
+          "endFrame": 22376
+        },
+        {
+          "speaker": "B",
+          "text": "コヒーレンス要件が劇的に小さくなること。QPEは精度1/pにO(1/p)回の連続ゲートが必要だけど、VQEは短い測定の繰り返しで済む。",
+          "section": "まとめ",
+          "startFrame": 22384,
+          "endFrame": 22741
+        },
+        {
+          "speaker": "A",
+          "text": "He-H+で実証したのだな。",
+          "section": "まとめ",
+          "startFrame": 22749,
+          "endFrame": 22836
+        },
+        {
+          "speaker": "B",
+          "text": "フォトニック量子チップで。CNOTゲート1個のみで、QPEに必要な12個より大幅に少ない量子資源で実現したわ。",
+          "section": "まとめ",
+          "startFrame": 22843,
+          "endFrame": 23077
+        },
+        {
+          "speaker": "A",
+          "text": "平衡結合距離92.3±0.1ピコメートル、基底状態エネルギー-2.865±0.008メガジュール毎モルという結果なのだな。",
+          "section": "まとめ",
+          "startFrame": 23085,
+          "endFrame": 23417
+        },
+        {
+          "speaker": "B",
+          "text": "96%以上が化学精度内。2014年当時の量子デバイスで量子化学計算が可能なことを世界で初めて実証したの。",
+          "section": "まとめ",
+          "startFrame": 23425,
+          "endFrame": 23662
+        },
+        {
+          "speaker": "A",
+          "text": "ユニタリ連結クラスターアンザッツが量子コンピュータの優位性の例なのだな。",
+          "section": "まとめ",
+          "startFrame": 23669,
+          "endFrame": 23809
+        },
+        {
+          "speaker": "B",
+          "text": "古典では効率的に実装できないアンザッツを量子デバイスで実装できた。これがVQEの長期的な意義ね。",
+          "section": "まとめ",
+          "startFrame": 23816,
+          "endFrame": 24004
+        },
+        {
+          "speaker": "A",
+          "text": "実験では全部で158時間かかったのだな。",
+          "section": "まとめ",
+          "startFrame": 24012,
+          "endFrame": 24112
+        },
+        {
+          "speaker": "B",
+          "text": "主にデューティサイクルの問題ね。チップを冷やすのに17秒かかって稼働率が5%くらい。将来はファイバーを固定するともっと速くなるって書いてある。",
+          "section": "まとめ",
+          "startFrame": 24119,
+          "endFrame": 24380
+        },
+        {
+          "speaker": "A",
+          "text": "光子源が明るくなれば測定時間も短くなるのだな。",
+          "section": "まとめ",
+          "startFrame": 24388,
+          "endFrame": 24496
+        },
+        {
+          "speaker": "B",
+          "text": "そう。単一光子源の改良が技術的な鍵ね。より明るい単一光子源や電気光学的な位相シフタへの切り替えで大幅な高速化が見込まれると論文は述べているわ。",
+          "section": "まとめ",
+          "startFrame": 24504,
+          "endFrame": 24807
+        },
+        {
+          "speaker": "A",
+          "text": "このVQEが今の量子化学計算の基礎になっているのだな。",
+          "section": "まとめ",
+          "startFrame": 24815,
+          "endFrame": 24935
+        },
+        {
+          "speaker": "B",
+          "text": "そう。2024年時点では数百量子ビットの実機でより大きな分子の計算が試みられているわ。10年以上経った今もVQEは量子コンピュータで化学計算する標準的なアプローチとして使われているの。",
+          "section": "まとめ",
+          "startFrame": 24942,
+          "endFrame": 25309
+        },
+        {
+          "speaker": "A",
+          "text": "この論文が種まきをしたのだな。",
+          "section": "まとめ",
+          "startFrame": 25316,
+          "endFrame": 25382
+        },
+        {
+          "speaker": "B",
+          "text": "2014年の実験から始まったVQEの研究は、量子化学・材料科学・創薬への応用を目指して今も世界中で進んでいるわ。",
+          "section": "まとめ",
+          "startFrame": 25389,
+          "endFrame": 25646
+        },
+        {
+          "speaker": "A",
+          "text": "Googieやマイクロソフトも追いかけているのだ？",
+          "section": "まとめ",
+          "startFrame": 25654,
+          "endFrame": 25764
+        },
+        {
+          "speaker": "B",
+          "text": "もちろん。IBM Quantum・グーグル・マイクロソフト・IonQなど多くの企業がVQEを応用した独自アルゴリズムを研究しているわ。",
+          "section": "まとめ",
+          "startFrame": 25771,
+          "endFrame": 26034
+        },
+        {
+          "speaker": "A",
+          "text": "今日も最後まで聞いてくれてありがとうなのだ！",
+          "section": "まとめ",
+          "startFrame": 26042,
+          "endFrame": 26124
+        },
+        {
+          "speaker": "B",
+          "text": "また次の論文でお会いしましょう！",
+          "section": "まとめ",
+          "startFrame": 26131,
+          "endFrame": 26187
+        }
+      ]
+    },
     "markdown": "<p><strong>A variational eigenvalue solver on a quantum processor</strong><br />\nAlberto Peruzzo, Jarrod McClean, Peter Shadbolt, Man-Hong Yung, Xiao-Qi Zhou,<br />\nPeter J. Love, Alán Aspuru-Guzik, Jeremy L. O'Brien<br />\nBristol大学・Harvard大学・Haverford College<br />\n<em>Nature Communications</em> 5, 4213 (2014) — arXiv:1304.3061</p>\n<hr />\n<h2>導入：量子固有値問題と既存手法の限界</h2>\n<h3>なぜ固有値問題が重要か</h3>\n<ul>\n<li>原子・分子の性質はシュレーディンガー方程式の固有値（エネルギー）を解くことで決まる</li>\n<li>系の規模が指数関数的に拡大 → 古典コンピュータでは2〜3原子以上は厳密解が困難</li>\n<li>量子化学以外でも、検索エンジン最適化・新材料設計・創薬にも固有値問題が現れる</li>\n</ul>\n<h3>既存の量子アプローチ：QPE（量子位相推定）の問題点</h3>\n<ul>\n<li>QPE（量子位相推定）は固有値を指数的高速で計算できる</li>\n<li>しかし精度 $p$ を得るためには $O(1/p)$ 回の $e^{-i\\mathcal{H}t}$ 演算が必要</li>\n<li>実用的な4×4行列でも最低12個のCNOTゲートが必要</li>\n<li>現在のデバイスでは数十〜数百ゲートが限界 → QPEは近未来には非現実的</li>\n</ul>\n<h3>本論文の提案：VQE（変分量子固有値ソルバー）</h3>\n<p>2つのアルゴリズムの組み合わせ：</p>\n<table>\n<thead>\n<tr>\n<th>アルゴリズム</th>\n<th>担当</th>\n<th>計算の場所</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Algorithm 1</strong>: 量子期待値推定</td>\n<td>$\\langle\\mathcal{H}\\rangle$ の計算</td>\n<td>量子プロセッサ（QPU）</td>\n</tr>\n<tr>\n<td><strong>Algorithm 2</strong>: 量子変分固有値ソルバー</td>\n<td>パラメータ最適化</td>\n<td>古典プロセッサ（CPU）</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>QPEの「長いコヒーレント発展」をなくし、<strong>短いコヒーレント発展を多数回繰り返す</strong>方式に変換</li>\n<li>今日・近未来の量子デバイスで実現可能</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 1 参照（原論文）— QPUとCPUのハイブリッドアーキテクチャ</p>\n</blockquote>\n<hr />\n<h2>Algorithm 1：ハミルトニアン期待値の効率的な計算</h2>\n<h3>ハミルトニアンのパウリ分解</h3>\n<p>任意のハミルトニアンはパウリ演算子の積の和として書ける（式1）：</p>\n<p>$$\\mathcal{H} = \\sum_{i\\alpha} h^i_\\alpha \\sigma_\\alpha^i + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta} \\sigma_\\alpha^i \\sigma_\\beta^j + \\cdots$$</p>\n<ul>\n<li>ローマ字インデックス $i, j$：演算子が作用する部分空間</li>\n<li>ギリシャ字インデックス $\\alpha, \\beta$：パウリ演算子の種類（$x, y, z$）</li>\n<li>係数 $h^i_\\alpha, h^{ij}_{\\alpha\\beta}$ は実数</li>\n</ul>\n<p>期待値の線形性により（式2）：</p>\n<p>$$\\langle\\mathcal{H}\\rangle = \\sum_{i\\alpha} h^i_\\alpha \\langle\\sigma_\\alpha^i\\rangle + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta} \\langle\\sigma_\\alpha^i \\sigma_\\beta^j\\rangle + \\cdots$$</p>\n<h3>なぜ量子コンピュータが効率的か</h3>\n<ul>\n<li>量子ハードウェアはパウリ積の期待値を一定時間で測定できる</li>\n<li>必要な繰り返し回数は $O(|h|^2/p^2)$（$p$ は精度）</li>\n<li><strong>コヒーレンス時間は $O(1)$（1回の測定で十分）</strong>：QPEの $O(1/p)$ と対照的</li>\n<li>指数的な量子優位性を保ちながら、コヒーレンス要件を劇的に削減</li>\n</ul>\n<h3>古典計算との比較</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>量子（このアルゴリズム）</th>\n<th>古典</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>状態保持</td>\n<td>$n$ 量子ビット</td>\n<td>$2^n$ 複素数</td>\n</tr>\n<tr>\n<td>期待値計算</td>\n<td>$O(|h|^2 M/p^2)$ 繰り返し</td>\n<td>$O(2^n)$ 浮動小数点演算</td>\n</tr>\n<tr>\n<td>規模依存</td>\n<td>多項式</td>\n<td>指数的</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>$n$ 量子ビットで $2^n \\times 2^n$ のハミルトニアン期待値を効率計算</li>\n<li>N-表現可能性問題（NP困難）が量子ハードウェアでは自然に回避される</li>\n</ul>\n<hr />\n<h2>Algorithm 2：変分最適化によるアンザッツ状態の準備</h2>\n<h3>変分原理の活用</h3>\n<p>レイリー・リッツ商の最小化（式3）：</p>\n<p>$$\\min_{|\\psi\\rangle} \\frac{\\langle\\psi|\\mathcal{H}|\\psi\\rangle}{\\langle\\psi|\\psi\\rangle}$$</p>\n<ul>\n<li>最小値を与える $|\\psi\\rangle$ が基底状態</li>\n<li>実験パラメータ $\\{\\theta_i\\}$ で $|\\psi(\\{\\theta_i\\})\\rangle$ を準備 → Algorithm 1 で期待値計算 → CPUで最小化</li>\n</ul>\n<h3>ユニタリ連結クラスター（UCC）アンザッツ（式4）</h3>\n<p>$$|\\Psi\\rangle = e^{T - T^\\dagger}|\\Phi\\rangle_{\\rm ref}$$</p>\n<ul>\n<li>$|\\Phi\\rangle_{\\rm ref}$：参照状態（通常はハートリー・フォック基底状態）</li>\n<li>$T = T_1 + T_2 + \\cdots + T_N$：クラスター演算子</li>\n<li>$T_1 = \\sum_{pr} t_p^r \\hat{a}_p^\\dagger \\hat{a}_r$（1粒子励起）</li>\n<li>$T_2 = \\sum_{pqrs} t_{pq}^{rs} \\hat{a}_p^\\dagger \\hat{a}_q^\\dagger \\hat{a}_r \\hat{a}_s$（2粒子励起）</li>\n<li>$(T - T^\\dagger)$ は反エルミート → $e^{T-T^\\dagger}$ はユニタリ</li>\n<li>古典コンピュータでは効率的アルゴリズムが知られていない → 量子優位性の具体例</li>\n</ul>\n<h3>アルゴリズムのループ</h3>\n<ol>\n<li>量子回路パラメータ $\\{\\theta_i^n\\}$ で状態 $|\\psi^n\\rangle$ を準備</li>\n<li>Algorithm 1 で $\\langle\\mathcal{H}\\rangle = f(\\{\\theta_i^n\\})$ を計算</li>\n<li>CPUの最小化アルゴリズム（Nelder-Mead 単体法）が次のパラメータ $\\{\\theta_i^{n+1}\\}$ を決定</li>\n<li>収束まで繰り返す</li>\n</ol>\n<blockquote>\n<p>📊 Fig. 2 参照（原論文）— 実験装置（フォトニックチップ）の模式図と写真</p>\n</blockquote>\n<hr />\n<h2>実験実装：フォトニック量子回路</h2>\n<h3>量子プロセッサの構成</h3>\n<ul>\n<li><strong>集積フォトニクス技術</strong>（ブリストル大学・O'Brienグループ）</li>\n<li>自発パラメトリック下方変換で光子対を生成、導波路に入射して $|00\\rangle$ を準備</li>\n<li>8個の電圧制御熱位相シフタ $\\phi_{1-8}$ と1個のCNOTゲートで任意の2量子ビット純粋状態を準備</li>\n<li>光子検出器 D1〜D4 の同時計数率をCPUへ送信</li>\n<li>平均統計忠実度 $F \\geq 99\\%$（Shadbolt et al. 2011）</li>\n</ul>\n<h3>実験対象：He-H+ の結合解離曲線</h3>\n<p>フルCI（完全配置間相互作用）ハミルトニアン（4次元 = 2量子ビット）（式5）：</p>\n<p>$$\\mathcal{H}(R) = \\sum_{i\\alpha} h^i_\\alpha(R) \\sigma_\\alpha^i + \\sum_{ij\\alpha\\beta} h^{ij}_{\\alpha\\beta}(R) \\sigma_\\alpha^i \\sigma_\\beta^j$$</p>\n<ul>\n<li>係数は PSI3 計算化学パッケージで算出（最小基底 STO-3G）</li>\n<li>核間距離 $R$ をパラメータとして変化させ、各 $R$ での基底状態エネルギーを計算</li>\n<li>QPEによる同等計算では最低12 CNOTゲートが必要 → 本手法では <strong>1 CNOT</strong> のみ</li>\n</ul>\n<h3>QPEとの計算コスト比較</h3>\n<table>\n<thead>\n<tr>\n<th></th>\n<th>QPE</th>\n<th>このアルゴリズム</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>CNOT数</td>\n<td>≥ 12</td>\n<td><strong>1</strong></td>\n</tr>\n<tr>\n<td>コヒーレンス要件</td>\n<td>長時間（$O(1/p)$）</td>\n<td>短時間×多数回</td>\n</tr>\n<tr>\n<td>補助量子ビット</td>\n<td>必要</td>\n<td>不要</td>\n</tr>\n</tbody>\n</table>\n<hr />\n<h2>実験結果：化学精度での基底状態エネルギー計算</h2>\n<h3>代表的な最適化実行（$R = 90$ pm）</h3>\n<ul>\n<li>Algorithm 2 を実行し、$\\langle\\mathcal{H}(R)\\rangle$ を最小化</li>\n<li>最適化は基底状態エネルギーに収束</li>\n<li>各ステップでのタングル（量子もつれの度合い）も追跡</li>\n<li>基底状態は小さいがゼロでないタングルを持つ（量子もつれが必要）</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 3 参照（原論文）— エネルギー収束と重なり積分の最適化過程</p>\n</blockquote>\n<h3>結合解離曲線（$R = 80〜100$ pm の79点）</h3>\n<p>測定された平衡結合距離と基底状態エネルギー：</p>\n<p>$$R_{\\rm eq} = 92.3 \\pm 0.1 \\text{ pm}, \\quad E_0 = -2.865 \\pm 0.008 \\text{ MJ/mol}$$</p>\n<ul>\n<li><strong>96%以上のデータ点が化学精度内</strong>（理論値との誤差 &lt; 化学精度）</li>\n<li>系統誤差 $\\varepsilon = 50$ KJ/mol を補正済み</li>\n<li>解の再現性：最適化終了後、実験パラメータから状態を効率的に再構築可能</li>\n</ul>\n<blockquote>\n<p>📊 Fig. 4 参照（原論文）— He-H+ の結合解離曲線</p>\n</blockquote>\n<h3>誤差の原因（付録：実験詳細）</h3>\n<table>\n<thead>\n<tr>\n<th>誤差の種類</th>\n<th>原因</th>\n<th>将来の改善法</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>統計誤差（$\\sigma \\approx 37$ KJ/mol）</td>\n<td>光子のポアソン統計</td>\n<td>測定回数増加で低減</td>\n</tr>\n<tr>\n<td>系統誤差（$\\varepsilon = 50$ KJ/mol）</td>\n<td>① 光源の不純度（高次光子数項）<br>② チップ設計誤差<br>③ 結合効率のアンバランス</td>\n<td>① 真の単一光子源<br>② 製造精度向上<br>③ ファイバー固定技術</td>\n</tr>\n</tbody>\n</table>\n<ul>\n<li>平均同時計数率 2000〜4000 events/秒</li>\n<li>全解離曲線測定に約158時間（冷却サイクルが律速、デューティサイクル〜5%）</li>\n</ul>\n<hr />\n<h2>励起状態探索と汎用ハミルトニアンへの拡張（付録）</h2>\n<h3>励起状態の探索：Folded Spectrum 法</h3>\n<p>$$\\mathcal{H}_\\lambda = (\\mathcal{H} - \\lambda)^2$$</p>\n<ul>\n<li>シフトパラメータ $\\lambda$ の近傍にある固有値を探索できる</li>\n<li>$\\lambda$ を走査すれば全ての固有値を順番に見つけられる</li>\n<li>ハミルトニアムの項数は元の2乗オーダー（わずかなオーバーヘッド）</li>\n</ul>\n<h3>$k$-スパースハミルトニアンへの一般化</h3>\n<ul>\n<li>各行に $k$ 個以下の非ゼロ要素を持つ行列に一般化可能</li>\n<li>Berry et al. 2007 の分解 $\\mathcal{H} = \\sum_j^m \\mathcal{H}_j$（$m = 6k^2$ 項、各1-スパース）を利用</li>\n<li>検索エンジン最適化や画像認識などに応用可能</li>\n</ul>\n<hr />\n<h2>まとめ</h2>\n<ul>\n<li>VQE は <strong>QPU（量子）と CPU（古典）のハイブリッド</strong>で固有値を計算する手法</li>\n<li>Algorithm 1：$\\mathcal{H}$ をパウリ積の和に分解し、<strong>短いコヒーレンス時間</strong>で期待値を測定</li>\n<li>Algorithm 2：変分最適化（Nelder-Mead 法）で基底状態を準備 → QPEの長いコヒーレント発展を回避</li>\n<li>He-H+ で実証：1 CNOTゲートのみ、96%以上が化学精度 $R_{\\rm eq} = 92.3 \\pm 0.1$ pm</li>\n<li>ユニタリ連結クラスターアンザッツを量子デバイスで効率的に実装 → <strong>古典計算には困難な計算クラス</strong></li>\n<li>将来の量子化学・新材料設計・創薬への応用が期待される</li>\n</ul>\n<hr />\n<h2>参考ソース</h2>\n<ul>\n<li>Peruzzo et al., <em>Nature Communications</em> 5, 4213 (2014). arXiv:1304.3061</li>\n<li>Aspuru-Guzik et al., <em>Science</em> 309, 1704 (2005) — QPEを量子化学に初適用</li>\n<li>Taube and Bartlett, <em>Int. J. Quant. Chem.</em> 106, 3393 (2006) — UCC理論</li>\n</ul>"
   },
   {
